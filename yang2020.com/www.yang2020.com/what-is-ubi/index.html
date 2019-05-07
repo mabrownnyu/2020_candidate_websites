@@ -1,0 +1,2927 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What is Universal Basic Income? - Andrew Yang for President</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v10.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="What is Universal Basic Income? The 20 top questions asked about Universal Basic Income. Can we pay for it? Who gets it? Will people still work? Why give people money?"/>
+<link rel="canonical" href="https://www.yang2020.com/what-is-ubi/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What is Universal Basic Income? - Andrew Yang for President" />
+<meta property="og:description" content="What is Universal Basic Income? The 20 top questions asked about Universal Basic Income. Can we pay for it? Who gets it? Will people still work? Why give people money?" />
+<meta property="og:url" content="https://www.yang2020.com/what-is-ubi/" />
+<meta property="og:site_name" content="Andrew Yang for President" />
+<meta property="article:publisher" content="https://www.facebook.com/andrewyang2020" />
+<meta property="og:image" content="https://www.yang2020.com/wp-content/uploads/splash_ubi-1024x584.png" />
+<meta property="og:image:secure_url" content="https://www.yang2020.com/wp-content/uploads/splash_ubi-1024x584.png" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="584" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="What is Universal Basic Income? The 20 top questions asked about Universal Basic Income. Can we pay for it? Who gets it? Will people still work? Why give people money?" />
+<meta name="twitter:title" content="What is Universal Basic Income? - Andrew Yang for President" />
+<meta name="twitter:site" content="@andrewyang" />
+<meta name="twitter:image" content="https://www.yang2020.com/wp-content/uploads/splash_ubi.png" />
+<meta name="twitter:creator" content="@andrewyang" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//www.yang2020.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Andrew Yang for President &raquo; Feed" href="https://www.yang2020.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Andrew Yang for President &raquo; Comments Feed" href="https://www.yang2020.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.yang2020.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='aspire-pro-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/style.css?ver=1.2' type='text/css' media='all' />
+<style id='aspire-pro-inline-css' type='text/css'>
+
+		a,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu a:hover,
+		.entry-title a:hover,
+		.image-section a:hover,
+		.image-section .featured-content .entry-title a:hover,
+		.site-footer a:hover {
+			color: #da3248;
+		}
+
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.archive-pagination li a:hover,
+		.archive-pagination .active a,
+		.button,
+		.widget .button,
+		.front-page-2 .image-section,
+		.popular,
+		.genesis-nav-menu .sub-menu a:hover,
+		.genesis-nav-menu .sub-menu li.current-menu-item > a,
+		.footer-widgets .enews-widget input[type="submit"],
+		.content .portfolio .more-link:hover {
+			background-color: #da3248;
+		}
+
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.button,
+		.front-page input:focus,
+		.front-page textarea:focus,
+		.widget .button {
+			border-color: #da3248;
+		}
+
+		
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.yang2020.com/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='avenir-next-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/AvenirNext/avenir_next.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='new-policy-css-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/custom/new-policy.css?ver=1.7.10' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css?ver=4.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-social-icons-font-css'  href='https://www.yang2020.com/wp-content/plugins/simple-social-icons/css/style.css?ver=3.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='about_andrew-css'  href='https://www.yang2020.com/wp-content/plugins/about-andrew/public/css/about-andrew.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='ubi_faqs-css'  href='https://www.yang2020.com/wp-content/plugins/ubi-faqs/public/css/ubi-faqs.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/aspire-pro/js/global.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/simple-social-icons/svgxuse.js?ver=1.1.21'></script>
+<link rel='https://api.w.org/' href='https://www.yang2020.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.yang2020.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.yang2020.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel='shortlink' href='https://www.yang2020.com/?p=8' />
+<link rel="alternate" type="application/json+oembed" href="https://www.yang2020.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yang2020.com%2Fwhat-is-ubi%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.yang2020.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yang2020.com%2Fwhat-is-ubi%2F&#038;format=xml" />
+<link rel="pingback" href="https://www.yang2020.com/xmlrpc.php" />
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W68JZHN');
+  </script>
+  <!-- End Google Tag Manager -->
+<style type="text/css">.site-title a { background: url(https://www.yang2020.com/wp-content/uploads/cropped-yang2020_white_red.png) no-repeat !important; }</style>
+<meta name="twitter:partner" content="tfwp"><link rel="icon" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" />
+<meta name="msapplication-TileImage" content="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" />
+
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="What is Universal Basic Income?"><meta name="twitter:image" content="https://www.yang2020.com/wp-content/uploads/Humanity-First-What-is-UBI-1920x840-1.jpg">
+		<style type="text/css" id="wp-custom-css">
+			/* General */
+:root {
+	--black: hsl(0, 0%, 0%);
+	--blueDark: hsl(225, 72%, 28%);
+	--blueDarkTransparent: hsla(225, 72%, 28%, 0.67);
+	--blueLight: hsl(205, 70%, 58%);
+	--blueLightest: hsla(213, 100%, 95%, 0.8);
+	--blueTransparent: hsla(212, 100%, 35%, 0.9);
+	--blueTransparentLight: hsla(213, 100%, 95%, 0.44);
+	--grayDarker: hsl(0, 0%, 29%);
+	--grayDark: hsl(0, 0%, 61%);
+	--grayLight: hsl(0, 0%, 61%, 0.1);
+	--grayLighter: hsla(0, 0%, 85%, 0.2);
+	--red: hsl(352, 69%, 53%);
+	--redDark: hsl(352, 69%, 39%);
+	--white: hsl(0, 0%, 100%);
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: 0.3s background-color;
+	-moz-transition: 0.3s background-color;
+	-ms-transition: 0.3s background-color;
+	-o-transition: 0.3s background-color;
+	transition: 0.3s background-color;
+}
+
+.fadeup-effect {
+	opacity: 1 !important;
+	animation-duration: 0s !important;
+}
+
+.tablet-only {
+	display: none;
+}
+
+.mobile-only {
+	display: none;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.tablet-only {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.mobile-only {
+		display: block;
+	}
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span[style] {
+	font-family: 'Awesome Font', sans-serif;
+}
+
+span[style="font-weight: 400;"] {
+  font-weight: inherit !important;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+	p,
+	span[style] {
+		font-size: 16px;
+	}
+}
+
+button:hover,
+button:focus {
+	border-color: var(--redDark);
+	background-color: var(--redDark);
+}
+
+@media (min-width: 769px) {
+	br.mobile {
+		display: none;
+	}
+}
+
+.jumbotron {
+	position: relative;
+  min-height: 420px;
+  background: var(--blueDarkTransparent);
+}
+
+.jumbotron picture {
+	display: grid;
+}
+
+.jumbotron h1 {
+	position: absolute;
+	bottom: 30px;
+	width: 600px;
+	color: var(--white);
+	font-size: 70px;
+	font-weight: 600;
+	letter-spacing: 6px;
+	line-height: 1.36;
+	text-shadow: 4px 5px var(--blueDark);
+	text-transform: uppercase;
+}
+
+.meet-andrew .jumbotron .wrap {
+  max-width: 100%;
+  padding-left: 5%;
+}
+
+.what-is-ubi .jumbotron h1 {
+	width: 660px;
+}
+
+@media (min-width: 1025px) and (max-width: 1074px) {
+	.what-is-ubi .jumbotron h1 {
+		width: 620px;
+		font-size: 67px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.what-is-ubi .jumbotron h1 {
+		width: 600px;
+		font-size: 65px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.jumbotron h1 {
+		width: 350px;
+		font-size: 54px;
+		letter-spacing: 4px;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 480px;
+	}
+}
+
+@media (max-width: 768px) {
+	.jumbotron h1 {
+		width: 200px;
+		font-size: 31px;
+		letter-spacing: 2px;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 280px;
+	}
+}
+
+.underline-blue-dark {
+  background-image: linear-gradient(to top, var(--blueDark) 0.75ex, hsla(0, 0%, 0%, 0) 0.75ex);
+  background-position-y: -0.15ex;
+}
+
+.underline-blue-light,
+.underline-gray-light {
+  background-image: linear-gradient(to top, var(--grayLight) 0.65ex, hsla(0, 0%, 0%, 0) 0.65ex);
+  background-position-y: -0.25ex;
+}
+
+.underline-red {
+  background-image: linear-gradient(to top, var(--red) 0.5ex, hsla(0, 0%, 0%, 0) 0.5ex);
+  background-position-y: -0.35ex;
+}
+
+q,
+blockquote {
+	display: block;
+	position: relative;
+	color: var(--blueDark);
+	font-size: 39px;
+	font-style: italic;
+	letter-spacing: 3px;
+	line-height: 1.6;
+}
+
+q em {
+	text-decoration: underline;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+	position: absolute;
+	color: var(--grayLight);
+	font-family: 'Andale Mono';
+	font-size: 367px;
+	line-height: 1.1;
+}
+
+q:before,
+blockquote:before {
+	/* content: '“'; */
+	content: '';
+	top: -120px;
+	left: -120px;
+}
+
+q:after,
+blockquote:after {
+	/* content: '”'; */
+	content: '';
+	bottom: -270px;
+	right: 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	q,
+	blockquote {
+		font-size: 20px;
+	}
+
+	q:before,
+	q:after,
+	blockquote:before,
+	blockquote:after {
+		font-size: 286px;
+	}
+
+	q:before,
+	blockquote:before {
+		top: -85px;
+		left: -85px;
+	}
+
+	q:after,
+	blockquote:after {
+		content: '';
+	}
+}
+
+@media (max-width: 768px) {
+	q,
+	blockquote {
+		font-size: 13px;
+		letter-spacing: 2px;
+	}
+
+	q:before,
+	q:after,
+	blockquote:before,
+	blockquote:after {
+		font-size: 286px;
+	}
+
+	q:before,
+	blockquote:before {
+		top: -85px;
+		left: -85px;
+	}
+
+	q:after,
+	blockquote:after {
+		content: '';
+	}
+}
+
+cite {
+	display: block;
+	font-size: 30px;
+}
+
+cite:before {
+	content: '-';
+}
+
+a {
+	color: var(--blueLight);
+	text-decoration: underline;
+}
+
+.front-page a,
+.front-page .image-section a {
+	text-transform: uppercase;
+}
+
+h1.giant-header,
+h2.giant-header,
+h3.giant-header,
+h4.giant-header,
+h5.giant-header,
+h6.giant-header {
+	font-size: 140px;
+	font-weight: bold;
+	letter-spacing: 7px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.site-inner {
+	margin-top: 230px;
+}
+
+.meet-andrew .site-inner,
+.what-is-ubi .site-inner,
+.policy-page .site-inner {
+	margin-top: 30px;
+}
+
+.entry-title {
+	color: var(--blueDark);
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.entry-content p,
+.entry-content li {
+	font-size: 18px;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	h1.giant-header,
+	h2.giant-header,
+	h3.giant-header,
+	h4.giant-header,
+	h5.giant-header,
+	h6.giant-header {
+		font-size: 81px;
+		letter-spacing: 4px;
+	}
+
+	.entry-title {
+		font-size: 26px;
+	}
+}
+
+@media (max-width: 768px) {
+	h1.giant-header,
+	h2.giant-header,
+	h3.giant-header,
+	h4.giant-header,
+	h5.giant-header,
+	h6.giant-header {
+		font-size: 33px;
+		letter-spacing: 2px;
+	}
+
+	.entry-title {
+		font-size: 20px;
+	}
+
+	.entry-content p,
+	.entry-content li {
+		font-size: 16px;
+	}
+}
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.column-33 {
+	max-width: 33%;
+}
+
+.column-60 {
+	max-width: 60%;
+}
+
+.front-page .grid > div {
+	width: 30%;
+	color: var(--black);
+	text-align: left;
+}
+
+.front-page .grid h5 {
+	color: var(--blueDark);
+	font-size: 36px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.front-page .grid a.bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+@media (max-width: 768px) {
+	.front-page .grid {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.front-page .grid > div {
+		width: 100%;
+		margin-bottom: 34px;
+	}
+
+	.front-page .grid h5 {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+}
+
+.flag-header,
+.front-page-4:before,
+.front-page-5:before {
+	padding: 8px 16px;
+	background: var(--blueLight);
+	color: var(--white);
+	font-weight: 400;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+}
+
+.front-page-4:before,
+.front-page-5:before {
+	position: absolute;
+	top: -48px;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.flag-header,
+	.front-page-4:before,
+	.front-page-5:before {
+		font-size: 15px;
+		padding: 5px 9px;
+		letter-spacing: 1px;
+	}
+
+	.front-page-4:before,
+	.front-page-5:before {
+		position: absolute;
+		top: -34px;
+	}
+}
+
+@media (max-width: 768px) {
+	.flag-header,
+	.front-page-4:before,
+	.front-page-5:before {
+		font-size: 9px;
+		padding: 2px 5px;
+		letter-spacing: 1px;
+	}
+
+	.front-page-4:before,
+	.front-page-5:before {
+		position: absolute;
+		top: -23px;
+		font-size: 12px;
+	}
+
+	.flag-header {
+		padding: 3px 5px;
+	}
+}
+
+.front-page-4:after,
+.front-page-5 h4 {
+	width: 100%;
+	background: var(--blueDark);
+}
+
+.front-page-4 a,
+.front-page-5 a .text {
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-decoration: underline;
+}
+
+.front-page-3 h4,
+.front-page-6 h4 {
+	color: var(--blueDark);
+}
+
+/* Top Menu */
+
+.site-header {
+	position: absolute;
+	padding-top: 30px;
+	background-color: var(--blueDark);
+}
+
+.home-index .site-header,
+.meet-andrew .site-header,
+.what-is-ubi .site-header,
+.policy-page .site-header {
+	background-color: transparent;
+}
+
+.front-page .site-header {
+	border-bottom: none;
+}
+
+.site-header.light {
+	background-color: var(--blueDark);
+}
+
+.title-area {
+	width: 100%;
+}
+
+.title-area a {
+	background-position: center !important;
+}
+
+.site-title a {
+	background-image: url(/wp-content/uploads/yang2020_white_red.png) !important;
+}
+
+.nav-primary {
+	position: relative;
+}
+
+.nav-primary .menu-primary {
+	float: none;
+}
+
+.nav-primary .menu-item a {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 8px;
+	text-decoration: none;
+}
+
+.responsive-menu.menu-primary .menu-donate {
+	position: absolute;
+	z-index: 100;
+	top: 6px;
+	right: 100px;
+	border-radius: 3px;
+	background-color: var(--red);
+	transition: 0.3s background-color;
+}
+
+.nav-primary .menu-donate:hover {
+	background-color: var(--redDark);
+}
+
+.nav-primary .menu-donate a {
+	padding: 10px 40px;
+}
+
+.nav-primary .menu-donate span {
+	font-size: 29px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.nav-primary .menu-donate:hover {
+	position: absolute;
+}
+
+.site-header .genesis-nav-menu.responsive-menu > li.menu-donate:hover > a,
+.site-header .genesis-nav-menu.responsive-menu .menu-donate a:hover {
+	color: var(--white);
+}
+
+.genesis-nav-menu.responsive-menu li.current-menu-item > a {
+	color: var(--red);
+}
+
+.responsive-menu-icon {
+	position: absolute;
+	right: 0;
+	height: 64px;
+	padding: 16px;
+	padding-bottom: 8px;
+	margin-bottom: 0;
+	background: var(--red);
+}
+
+.responsive-menu-icon,
+.responsive-menu-icon.fa {
+	display: none;
+}
+
+
+.responsive-menu-icon:before {
+  content: "\f0c9";
+	margin: 0;
+	color: var(--white);
+  font: normal 32px/1 'FontAwesome';
+}
+
+.site-header.light,
+.home-index .site-header,
+.meet-andrew .site-header,
+.what-is-ubi .site-header,
+.policy-page .site-header,
+.front-page .site-header {
+	background-color: transparent;
+}
+
+.site-header .title-area {
+	position: relative;
+	z-index: 10;
+}
+
+.header-image .site-title > a {
+	height: 66px;
+}
+
+@media (min-width: 1025px) and (max-width: 1210px) {
+	.nav-primary .menu-item a {
+		letter-spacing: 6px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate {
+		right: 30px;
+	}
+}
+
+@media (min-width: 1201px) and (max-width: 1281px) {
+	.responsive-menu.menu-primary .menu-donate {
+	  top: 7px;
+	  right: 110px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.nav-primary .menu-item a {
+		letter-spacing: 4px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		top: 31px;
+		right: 5px;
+	}
+
+	.nav-primary .menu-donate span {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.site-header {
+		padding-top: 0;
+	}
+
+	.header-image .site-title > a {
+		height: 44px;
+		background-size: 179px !important;
+	}
+
+	.responsive-menu-icon {
+		display: none;
+	}
+
+	.responsive-menu.menu-primary,
+	.responsive-menu.menu-primary:hover {
+		display: block;
+	}
+
+	.responsive-menu.menu-primary .menu-item,
+	.genesis-nav-menu.responsive-menu li.current-menu-item,
+	.responsive-menu.menu-primary .menu-item:hover {
+		display: inline;
+	}
+
+	.responsive-menu.menu-primary li a,
+	.genesis-nav-menu.responsive-menu li.current-menu-item > a,
+	.responsive-menu.menu-primary li:not(.menu-donate) a  {
+		display: inline;
+		padding: 20px 16px;
+		font-size: 10px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.genesis-nav-menu.responsive-menu li.current-menu-item > a,
+	.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
+	.site-header .genesis-nav-menu.responsive-menu a:hover {
+		color: var(--red);
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		top: 20px;
+	  right: 25px;
+	  padding: 5px 0 7px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate span {
+		font-size: 15px;
+		letter-spacing: 1px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate a {
+	  padding: 10px 26px;
+	}
+
+	.responsive-menu.menu-primary li a:nth-child(5),
+	.responsive-menu.menu-primary .menu-donate a {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.responsive-menu-icon,
+	.responsive-menu-icon.fa {
+		display: block;
+	}
+
+	.site-header {
+		padding-top: 0;
+	}
+
+	.site-header.light,
+	.front-page .site-header {
+		background-color: transparent;
+	}
+
+	.site-header .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.header-image .site-title > a {
+		height: 34px;
+		background-position: left !important;
+		background-size: 138px !important;
+	}
+
+	.site-header .title-area {
+		position: absolute;
+		z-index: 1;
+		padding-left: 29px;
+		background-color: var(--blueDark);
+	}
+
+	.site-header.light .title-area,
+	.home-index .site-header .title-area,
+	.meet-andrew .site-header .title-area,
+	.what-is-ubi .site-header .title-area,
+	.policy-page .site-header .title-area,
+	.front-page .site-header .title-area {
+		background-color: var(--blueDarkTransparent);
+	}
+
+	.responsive-menu-icon {
+		z-index: 100;
+	}
+
+	.responsive-menu.menu-primary {
+		width: 100%;
+		padding-bottom: 0;
+		margin-top: 64px;
+		background-color: var(--blueTransparent);
+	}
+
+	.menu-primary .menu-item {
+		padding: 0 31px;
+		text-align: center;
+	}
+
+	.responsive-menu.menu-primary .menu-item a,
+	.responsive-menu.menu-primary .menu-item a:hover,
+	.responsive-menu.menu-primary .current-menu-item.menu-item a,
+	.responsive-menu.menu-primary .current-menu-item.menu-item a:hover {
+		padding: 15px 0;
+		border-bottom: 1px solid var(--blueTransparentLight);
+	}
+
+	.responsive-menu.menu-primary .menu-item a:hover {
+		border-bottom-color: var(--blueLight);
+	}
+
+	.responsive-menu.menu-primary .menu-item:hover {
+		background-color: var(--blueLight);
+	}
+
+	.menu-primary .menu-item span {
+		font-size: 20px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		position: static;
+	}
+
+	.responsive-menu.menu-primary .menu-donate:hover {
+		background-color: var(--redDark);
+	}
+
+	.nav-primary .menu-item:nth-child(5) a ,
+	.nav-primary .menu-donate a {
+		border-bottom: none;
+	}
+}
+
+/* Front Page 1 - Join Andrew Yang Section */
+
+.front-page-jumbotron {
+	display: flex;
+	justify-content: center;
+}
+
+.front-page-jumbotron .title-and-form {
+	position: absolute;
+	z-index: 100;
+	bottom: 48px;
+	display: block;
+	width: 702px;
+	margin: auto;
+	text-align: center;
+}
+
+.front-page-jumbotron .title {
+	position: relative;
+	bottom: unset;
+	display: inline-block;
+	width: 100%;
+	font-size: 60px;
+	font-weight: 600;
+	letter-spacing: 5px;
+	line-height: .9;
+	text-shadow: 5px 6px var(--blueDark);
+	text-transform: uppercase;
+}
+
+.front-page-jumbotron .subtitle {
+	color: white;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: 7px;
+}
+
+.front-page-jumbotron .join-form {
+	display: flex;
+}
+
+.front-page-jumbotron .join-form input {
+	border-width: 6px;
+	font-size: 17px;
+}
+
+.front-page-jumbotron .join-form input[name="zip"] {
+	width: 178px;
+}
+
+.front-page-jumbotron .join-form button {
+	width: 90%;
+	font-size: 27px;
+}
+
+@media (min-width: 769px) and (max-width: 1050px) {
+	.front-page-jumbotron .title {
+		margin-bottom: 7px;
+		font-size: 44px;
+		letter-spacing: 3px;
+		line-height: 1.1;
+		text-shadow: 3px 4px var(--blueDark);
+	}
+
+	.front-page-jumbotron .subtitle {
+		margin-bottom: 7px;
+		font-size: 12px;
+		letter-spacing: 5px;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		width: 500px;
+	}
+
+	.front-page-jumbotron .join-form input {
+  	padding: 15px;
+  	border-width: 5px;
+  	font-size: 14px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-jumbotron .join-form button {
+	  font-size: 25px;
+	}
+
+	.front-page-jumbotron .title-and-form input[name="zip"] {
+		width: 130px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-jumbotron {
+		justify-content: left;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		bottom: 23px;
+		width: 60%;
+		padding-left: 29px;
+		text-align: left;
+	}
+
+	.front-page-jumbotron .title {
+		width: 50%;
+		font-size: 37px;
+		line-height: 1.1;
+		text-align: left;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.front-page-jumbotron .subtitle {
+		margin-bottom: 7px;
+		font-size: 9px;
+		letter-spacing: 3px;
+		line-height: 1.7;
+	}
+
+	.front-page-jumbotron .subtitle span {
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+
+	.front-page-jumbotron .join-form {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.front-page-jumbotron .join-form input[name="zip"],
+	.front-page-jumbotron .join-form button {
+		width: 187px;
+	}
+
+	.front-page-jumbotron .join-form button {
+		padding: 2px 0;
+	  font-size: 22px;
+	}
+}
+
+@media (min-width: 691px) and (max-width: 768px) {
+	.front-page-jumbotron {
+		margin-top: -50px;
+	}
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+	.jumbotron h1 {
+		font-size: 48px;
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 420px;
+	}
+
+	.policy-page .jumbotron .wrap h1 {
+		width: 270px;
+	}
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+	.front-page-jumbotron .title-and-form {
+		top: calc(50px + 64px + 18px);
+	}
+
+	.front-page-jumbotron .title {
+		margin-bottom: 5px;
+  	font-size: 48px;
+		line-height: 1;
+	}
+
+	.front-page-jumbotron .subtitle {
+  	font-size: 11px;
+	}
+}
+
+@media (min-width: 521px) and (max-width: 690px) {
+	.front-page-jumbotron {
+		margin-top: -30px;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		top: calc(30px + 64px + 18px);
+	}
+}
+
+@media (max-width: 540px) {
+	.front-page-jumbotron .title {
+		margin-bottom: 5px;
+		line-height: 1;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		top: calc(64px + 18px);
+	}
+
+	.policy-page .jumbotron .wrap h1 {
+		width: 170px;
+	}
+}
+
+/* Front Page 3 - Humanity First Section */
+
+.front-page-3 .flexible-widgets {
+	padding-top: 0;
+}
+
+.humanity-first {
+	display: table;
+	color: var(--blueDark);
+	font-weight: 500;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.humanity-first span {
+  padding: 0 10px;
+  margin-right: -15px;
+}
+
+.humanity-first:before,
+.humanity-first:after {
+	content: '';
+	position: relative;
+	top: 0.5em;
+	display: table-cell;
+	border-top: 1px solid var(--red);
+	width: 45%;
+}
+
+.video-wrapper {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	margin-bottom: 85px;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.flag-header {
+	display: inline-block;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-3 .flexible-widgets {
+		padding-top: 0;
+	}
+
+	.humanity-first {
+		margin-bottom: 0;
+		font-size: 20px;
+		letter-spacing: 6px;
+	}
+
+	.video-wrapper {
+		margin-bottom: 45px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-3 .flexible-widgets {
+		padding-top: 0;
+	}
+
+	.humanity-first {
+  	margin-bottom: -14px;
+		font-size: 12px;
+		letter-spacing: 3px;
+	}
+
+	.front-page-3 .widget_media_video .widget-wrap {
+		margin-top: -4px;
+	}
+
+	.video-wrapper {
+  	margin-top: -3px;
+		margin-bottom: 0;
+	}
+}
+
+/* Front Page 3 - Donate */
+
+.front-page-3 .flexible-widgets > .wrap {
+	max-width: 100%;
+	padding: 0;
+}
+
+.front-page-3 h4.donate.giant-header {
+	margin-bottom: -18px;
+}
+
+.pc-computer .front-page-3 .donate.giant-header {
+	margin-bottom: -33px;
+}
+
+.front-page-3 .money {
+	background-color: var(--grayLight);
+}
+
+.front-page-3 .money .wrap {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 62px;
+	padding-bottom: 91px;
+}
+
+.front-page-3 .bill {
+	position: relative;
+	width: 24%;
+	background-color: var(--blueDark);
+	color: white;
+	font-size: 72px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: 0.3s background-color;
+}
+
+.front-page-3 .bill {
+	background-color: var(--blueDark);
+}
+
+.front-page-3 .bill:before {
+	display: block;
+	content: '';
+	position: absolute;
+	border-top: 32px solid var(--grayDark);
+	border-right: 32px solid transparent;
+}
+
+.front-page-3 a {
+	text-decoration: none;
+}
+
+.front-page-3 .donate-button {
+	display: block;
+	padding: 20px 70px;
+	margin: -41px auto 0;
+	font-size: 43px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+@media (min-width: 993px) and (max-width: 1023px) {
+	.front-page-3 .bill {
+		font-size: 54px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-3 .flexible-widgets {
+		padding-bottom: 50px;
+	}
+
+	.front-page-3 h4.donate.giant-header {
+		margin-bottom: -10px;
+	}
+
+	.pc-computer .front-page-3 .donate.giant-header {
+		margin-bottom: -19px;
+	}
+
+	.front-page-3 .money .wrap {
+		padding-top: 34px;
+		padding-bottom: 48px;
+		margin-bottom: -20px;
+	}
+
+	.front-page-3 .bill {
+		margin-bottom: 33px;
+		font-size: 41px;
+	}
+
+	.front-page-3 .bill:before {
+		border-top: 24px solid var(--grayDark);
+		border-right: 24px solid transparent;
+	}
+
+	.front-page-3 .donate-button {
+		padding: 15px 50px;
+		margin-top: -27px;
+		font-size: 24px;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-3 .flexible-widgets {
+		padding-bottom: 40px;
+	}
+
+	.front-page-3 h4.donate.giant-header {
+		margin-bottom: -5px;
+	}
+
+	.pc-computer .front-page-3 .donate.giant-header {
+		margin-bottom: -7px;
+	}
+
+	.front-page-3 .money .wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 12px;
+		padding-bottom: 32px;
+		margin-bottom: -15px;
+	}
+
+	.front-page-3 .bill {
+		width: 48%;
+		margin-bottom: 13px;
+		font-size: 32px;
+	}
+
+	.front-page-3 .bill:nth-of-type(odd) {
+		margin-right: 13px;
+	}
+
+	.front-page-3 .bill:before {
+		border-top: 16px solid var(--grayDark);
+		border-right: 16px solid transparent;
+	}
+
+	.front-page-3 .donate-button {
+		padding: 10px 40px;
+		margin-top: -20px;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 375px) {
+	.front-page-3 .bill:nth-of-type(odd) {
+		margin-right: 10px;
+	}
+}
+
+/* Front Page 4 - Policies */
+
+.front-page-4 {
+	background-color: var(--white);
+	margin-bottom: 40px;
+}
+
+.front-page-4:before {
+	content: 'Policies';
+	left: calc(50% - 82px);
+}
+
+.front-page-4:after {
+	position: absolute;
+	top: 0;
+	display: block;
+	height: 180px;
+	content: '';
+	z-index: -1;
+}
+
+.front-page-4 .flexible-widgets {
+	padding-top: 44px;
+	padding-bottom: 0;
+}
+
+.front-page-4 img {
+	width: 100%;
+	padding-bottom: 13px;
+	border-bottom: 18px solid var(--red);
+	margin-bottom: 15px;
+}
+
+.front-page-4 .grid > div {
+	position: relative;
+}
+
+.front-page-4 .grid > div:before {
+	display: block;
+	content: '';
+	position: absolute;
+	z-index: -10;
+	top: -10px;
+	left: -10px;
+	border-top: 32px solid var(--red);
+	border-right: 32px solid transparent;
+}
+
+.front-page-4 .grid h5 {
+	margin-bottom: 40px;
+	font-size: 34px;
+	font-weight: bold;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.front-page-4 .grid a {
+	color: var(--red);
+}
+
+.front-page-4 .explore {
+	color: var(--blueDark);
+	font-size: 29px;
+	font-weight: 500;
+	letter-spacing: 6px;
+}
+
+@media (min-width: 992px) and (max-width: 1023px) {
+	.front-page-4 .grid h5 {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-4 .flexible-widgets {
+		padding-bottom: 0;
+	}
+
+	.front-page-4:before {
+		left: calc(50% - 45px);
+	}
+
+	.front-page-4 .grid h5 {
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .grid  a {
+		font-size: 10px;
+	}
+
+	.front-page-4 .explore {
+		font-size: 21px;
+		letter-spacing: 4px;
+	}
+}
+
+@media (min-width: 769px) {
+	.front-page-4 .header-and-link .underline-red {
+		background-image: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-4:before {
+		left: calc(50% - 28px);
+	}
+
+	.front-page-4 {
+		background-color: var(--blueDark);
+		padding-bottom: 0;
+		margin-bottom: 60px;
+	}
+
+	.front-page-4 .flexible-widgets {
+		padding-bottom: 0;
+	}
+
+	.front-page-4 .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.front-page-4 .grid > div {
+		position: relative;
+	}
+
+	.front-page-4 .grid > div:before {
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+	.front-page-4 .grid > div:last-of-type {
+		margin-bottom: -10px;
+	}
+
+	.front-page-4 img {
+		padding-bottom: 0;
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	.front-page-4 .header-and-link {
+		position: absolute;
+		bottom: 25px;
+	}
+
+	.front-page-4 .header-and-link h5 {
+		width: 235px;
+		padding: 8px 19px 12px;
+		padding-right: 0;
+  	margin-bottom: 45px;
+		background-color: var(--blueLightest);
+		font-size: 30px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .header-and-link a {
+		position: absolute;
+		left: 19px;
+		bottom: unset;
+		color: var(--white);
+	}
+
+	.front-page-4 a,
+	.front-page-4 .explore {
+		color: var(--white);
+	}
+
+	.front-page-4 .explore {
+		position: relative;
+		display: block;
+		width: 100%;
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .explore:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -18px;
+		border-top: 32px solid hsla(0, 0%, 0%, 0);
+		border-left: 28px solid var(--red);
+		border-bottom: 32px solid hsla(0, 0%, 0%, 0);
+	}
+}
+
+/* Front Page 5 - Latest News */
+
+.front-page-5 {
+	background-image: none;
+	margin-bottom: 30px;
+}
+
+.front-page-5:before {
+	content: 'Keep Up to Date';
+	left: calc(50% - 143px);
+}
+
+.front-page-5 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-5 .flexible-widgets > .wrap {
+	max-width: 100%;
+	margin: 0;
+}
+
+.front-page-5 img {
+	width: 100%;
+	margin-bottom: 25px;
+	box-shadow: 5px 7px var(--red);
+}
+
+.front-page-5 p {
+	font-size: 26px;
+}
+
+.front-page-5 .fa-usd {
+	width: 39px;
+	height: 39px;
+	border-radius: 50%;
+	background-color: var(--blueDark);
+	color: var(--white);
+	font-size: 27px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.front-page-5 a {
+	color: var(--blueDark);
+}
+
+.front-page-5 .giant-header {
+	height: 121px;
+}
+
+.pc-computer .front-page-5 .giant-header {
+	height: 106px;
+}
+
+.front-page-5 i.fa {
+	margin-right: 10px;
+	vertical-align: sub;
+}
+
+.front-page-5 .entry {
+	margin-bottom: 0;
+}
+
+@media (min-width: 1045px) and (max-width: 1200px) {
+	.front-page-5 img {
+		margin-bottom: 20px;
+	}
+
+	.front-page-5 .grid h5 {
+		font-size: 31px;
+	}
+
+	.front-page-5 .grid p {
+		font-size: 24px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1044px) {
+	.front-page-5 .giant-header {
+	  height: 103px;
+	  font-size: 120px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 91px;
+	}
+
+	.front-page-5 .grid img {
+		margin-bottom: 15px;
+	}
+
+	.front-page-5 .grid h5 {
+		font-size: 24px;
+	}
+
+	.front-page-5 .grid p {
+		font-size: 19px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-5:before {
+		left: calc(50% - 79px);
+	}
+
+	.front-page-5 .giant-header {
+  	height: 70px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 61px;
+	}
+
+	.front-page-5 .flexible-widgets > .wrap {
+		padding: 0;
+	}
+
+	.front-page-5 .grid h5 {
+		margin-bottom: 5px;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-5 .grid p {
+		margin-bottom: 10px;
+		font-size: 13px;
+	}
+
+	.front-page-5 .grid span[style] {
+		font-size: 13px;
+	}
+
+	.front-page-5 .fa-usd {
+		width: 20px;
+		height: 20px;
+		font-size: 11px;
+		line-height: 2;
+	}
+
+	.front-page-5 .grid a,
+	.front-page-5 .grid a .text {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-5:before {
+		left: calc(50% - 62px);
+	}
+
+	.front-page-5 .giant-header {
+		padding: 10px;
+  	margin-bottom: -110px;
+		background-color: var(--grayLight);
+		color: var(--blueDark);
+		font-size: 33px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 116px;
+	}
+
+	.front-page-5 .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.front-page-5 h5 {
+		padding: 0 5%;
+		margin-bottom: 10px;
+	}
+
+	.front-page-5 img {
+		margin-bottom: 10px;
+		box-shadow: none;
+	}
+
+	.front-page-5 img,
+	.front-page-5 p {
+		margin-bottom: 16px;
+	}
+
+	.front-page-5 p,
+	.front-page-5 span[style]  {
+		padding: 0 5%;
+		font-size: 13px;
+	}
+
+	.front-page-5 .fa-usd {
+		width: 20px;
+		height: 20px;
+		font-size: 11px;
+		line-height: 2;
+	}
+
+	.front-page-5 a,
+	.front-page-5 a .text {
+		font-size: 10px;
+	}
+
+	.front-page-5 .grid a.bottom {
+		position: static;
+		padding-left: 5%;
+	}
+}
+
+/* Front Page 6 - Join the Fight */
+
+.front-page-6 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-6 .flexible-widgets > .wrap {
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-6 .flexible-widgets > .wrap {
+		padding: 0;
+	}
+}
+
+
+/* Front Page 7 - Bottom Splash Image Section */
+
+.front-page-7 {
+	z-index: -1;
+	margin-bottom: -1px;
+}
+
+.front-page-7 .wrap {
+	max-width: 768px;
+}
+
+.front-page-7 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-7 img {
+	width: 100%;
+}
+
+.front-page-7 .widget_media_image {
+	margin-bottom: 0;
+	line-height: 0;
+}
+
+/* Join the Fight Footer Form */
+
+.join-form input {
+	border: 10px solid var(--blueDark);
+	margin-right: 16px;
+	font-size: 23px;
+	font-weight: 500;
+	letter-spacing: 4px;
+}
+
+.join-form button {
+  align-self: stretch;
+	padding: 0;
+	font-size: 39px;
+	font-weight: bold;
+}
+
+.join-form.wrapped button {
+  display: block;
+	height: 80px;
+	margin: -40px auto 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.join-form input {
+		border-width: 7px;
+		padding: 21px;
+		font-size: 14px;
+		letter-spacing: 2px;
+	}
+
+	.join-form.wrapped button {
+		height: 58px;
+		margin-top: -29px;
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 768px) {
+	.join-form input {
+		max-width: 187px;
+		border-width: 4px;
+		padding: 12px;
+		margin-bottom: 9px;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+
+	.join-form.wrapped button {
+		max-width: 70%;
+		height: 34px;
+		margin-top: -17px;
+		font-size: 20px;
+	}
+}
+
+.join-form.wrapped {
+	text-align: center;
+}
+
+.join-form.wrapped .input-wrapper {
+	padding: 61px 0 90px;
+	background-color: var(--grayLight);
+}
+
+.join-form.wrapped .input-wrapper .wrap {
+	display: flex;
+	justify-content: center;
+	width: 75%;
+}
+
+.join-form.wrapped input:last-of-type {
+	margin-right: 0;
+}
+
+.join-form.wrapped button {
+	padding: 0 70px;
+}
+
+.join-form.above-footer {
+	margin-bottom: 43px;
+}
+
+.join-the-fight.giant-header {
+	margin-bottom: -18px;
+	color: var(--blueDark);
+	text-align: center;
+}
+
+.pc-computer .join-the-fight.giant-header {
+	margin-bottom: -33px;
+}
+
+@media (min-width: 993px) and (max-width: 1225px) {
+	.join-the-fight.giant-header {
+  	margin-bottom: -14px;
+		font-size: 110px;
+		letter-spacing: 5px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -26px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.join-the-fight.giant-header {
+		margin-bottom: -8px;
+		font-size: 60px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -14px;
+	}
+
+	.join-form.wrapped .input-wrapper {
+		padding: 33px 0 49px;
+		margin-bottom: -15px;
+	}
+
+	.join-form.wrapped input {
+		border-width: 5px;
+		padding: 15px;
+	}
+
+	.join-form.wrapped button {
+		padding: 0 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.join-the-fight.giant-header {
+		margin-bottom: -5px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -7px;
+	}
+
+	.join-form.wrapped.above-footer {
+		margin-bottom: 43px;
+	}
+
+	.join-form.wrapped .input-wrapper {
+		padding: 20px 0 26px;
+	}
+
+	.join-form.wrapped input {
+		padding: 6px;
+		border-width: 2px;
+	}
+
+	.join-form.wrapped button {
+		padding: 0 30px;
+		margin-top: -17px;
+	}
+}
+
+@media (max-width: 337px) {
+	.join-the-fight.giant-header {
+		font-size: 27px;
+	}
+
+	.join-the-fight.giant-header {
+		margin-bottom: -4px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -6px;
+	}
+}
+
+/* Footer */
+
+.site-footer,
+.footer-widgets {
+	background-color: var(--blueDark);
+}
+
+.footer-widgets .widget {
+	margin-bottom: 0;
+}
+
+.site-footer:before {
+	background-image: url(/wp-content/uploads/yang_white.png);
+	background-repeat: no-repeat;
+	background-size: 201px 93px;
+	width: 201px;
+	height: 93px;
+	margin: 0 auto 20px;
+}
+
+.footer-widgets-1 {
+	width: 100%;
+}
+
+.footer-widgets .wrap {
+	padding: 0;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.notice p {
+  padding: 10px;
+  border: 1px solid var(--white);
+}
+
+.site-footer p {
+	margin-top: 50px;
+	letter-spacing: 4px;
+	text-transform: capitalize;
+}
+
+.site-footer p.copyright {
+	margin-top: 0;
+}
+
+.site-footer a {
+	text-transform: none;
+	text-decoration: none;
+}
+
+.site-footer .menu-item a {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.site-footer .menu-item a:hover,
+.site-footer .menu-item a:focus {
+	color: var(--blueLight);
+}
+
+.footer-widgets-2 {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.nav-footer {
+		display: none;
+	}
+
+	.site-footer .menu-item a {
+		font-size: 13px;
+	}
+
+	.site-footer .simple-social-icons li a,
+	.site-footer .simple-social-icons li a:hover,
+	.site-footer .simple-social-icons li a:focus {
+		padding: 16px;
+	}
+
+	.site-footer .simple-social-icons svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	.site-footer p {
+		font-size: 9px;
+		letter-spacing: 3px;
+	}
+
+	.footer-widgets-2 {
+		display: block;
+		justify-content: center;
+	}
+
+	.footer-widgets-2 .menu {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-widgets-2 .menu-item {
+		border-bottom: 0;
+	}
+
+	.footer-widgets-2 .menu-item:not(:last-of-type) {
+		margin-right: 20px;
+	}
+
+	.footer-widgets-2 .menu-item a {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.footer-widgets-2 .menu-item a:hover,
+	.footer-widgets-2 .menu-item a:focus {
+		color: var(--blueLight);
+	}
+}
+
+@media (max-width: 430px) {
+	.footer-widget-area #simple-social-icons-3 ul li a,
+	.footer-widget-area #simple-social-icons-3 ul li a:hover,
+	.footer-widget-area #simple-social-icons-3 ul li a:focus {
+		padding: 10px;
+		font-size: 32px;
+	}
+}
+
+/* Meet Andrew */
+
+.meet-andrew .site-inner {
+	max-width: 100%;
+}
+
+.meet-andrew .site-inner a {
+	color: var(--blueLight);
+	text-decoration: underline;
+	text-transform: none;
+}
+
+.meet-andrew .grid {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.meet-andrew .entry-header {
+	display: none;
+}
+
+.meet-andrew .entry-content .column-33 img {
+	width: 100%;
+}
+
+.meet-andrew q {
+	margin-bottom: 70px;
+}
+
+.meet-andrew .yang-obama {
+	margin-top: 24px;
+}
+
+@media (max-width: 992px) {
+	.meet-andrew q {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.meet-andrew .site-inner {
+		padding: 0;
+	}
+
+	.meet-andrew .grid {
+		flex-direction: column;
+	}
+
+	.meet-andrew .grid > div {
+		max-width: 100%;
+	}
+
+	.meet-andrew .grid > div:first-child {
+		margin-bottom: 30px;
+	}
+
+	.meet-andrew .column-33 img {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.meet-andrew .site-inner {
+		padding: 0;
+	}
+
+	.meet-andrew .grid {
+		flex-direction: column;
+	}
+
+	.meet-andrew .grid > div {
+		max-width: 100%;
+	}
+
+	.meet-andrew .column-33 img {
+		display: none;
+	}
+}
+
+/* What is UBI? */
+
+.what-is-ubi .site-inner {
+	max-width: 100%;
+}
+
+.what-is-ubi .entry-header {
+	display: none;
+}
+
+.ubi-intro strong {
+	color: var(--red);
+	font-style: italic;
+	font-weight: normal;
+}
+
+.what-is-ubi .face-grid-cropped {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.entry {
+		margin-bottom: 10px;
+	}
+
+	.what-is-ubi .site-inner {
+		padding: 0;
+	}
+}
+
+/* All Policies Page */
+
+.policy-page .jumbotron h1 {
+  width: 400px;
+}
+
+.policy-page .entry-header {
+	display: none;
+}
+
+.featured-policies {
+	margin-bottom: 75px;
+}
+
+.featured-policies a {
+	position: relative;
+	width: 100%;
+	margin-right: 17px;
+}
+
+.featured-policies img {
+	width: 100%;
+	padding-top: 14px;
+	border-top: 29px solid var(--blueDark);
+}
+
+.featured-policies h2 {
+	position: absolute;
+	bottom: 20px;
+	width: 88%;
+	background-color: var(--blueLightest);
+	color: var(--blueDark);
+	font-size: 29px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1.05;
+  padding: 10px 23px 15px;
+	padding-right: 0;
+	text-transform: uppercase;
+}
+
+.featured-universal h2 {
+	width: 75%;
+}
+
+.featured-medicare h2 {
+	width: 65%;
+}
+
+.policy-page .grid .column {
+	margin-right: 34px;
+}
+
+.featured-policies a:last-of-type,
+.policy-page .grid .column:last-of-type {
+	margin-right: 0;
+}
+
+.policy-page .policies {
+	margin-bottom: 40px;
+}
+
+.policy-page .entry {
+	margin-bottom: 0;
+	color: var(--black);
+	font-size: 18px;
+}
+
+.policy-page .entry h4 {
+	font-weight: 500;
+}
+
+.policy-page .entry a {
+	color: var(--black);
+}
+
+.policy-page blockquote cite {
+	font-size: inherit;
+}
+
+@media (min-width: 1201px) and (max-width: 1280px) {
+	.featured-policies h2 {
+	  bottom: 17px;
+  	padding: 9px 19px 14px;
+  	font-size: 26px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.featured-policies h2 {
+	  bottom: 14px;
+  	padding: 9px 17px 13px;
+  	font-size: 20px;
+	}
+
+	.featured-medicare h2 {
+		width: 55%;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.featured-policies h2 {
+	  bottom: 11px;
+  	padding: 8px 13px 11px;
+  	font-size: 17px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.policy-page .grid {
+		flex-direction: column;
+		margin-bottom: 30px;
+	}
+
+	.featured-policies img {
+		padding-top: 12px;
+		border-top: 22px solid var(--blueDark);
+		margin-bottom: 47px;
+	}
+
+	.featured-policies h2 {
+		bottom: 70px;
+		width: 70%;
+		padding-right: 15px;
+	}
+
+	.featured-universal h2 {
+		width: 300px;
+	}
+
+	.featured-medicare h2 {
+		width: 250px;
+	}
+
+	.featured-human h2 {
+		width: 380px;
+	}
+
+	.featured-policies a:last-child img {
+		margin-bottom: 0;
+	}
+
+	.featured-policies a:last-child h2 {
+		bottom: 23px;
+	}
+
+	.policy-page blockquote {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.policy-page .grid {
+		flex-direction: column;
+	}
+
+	.featured-policies {
+		margin-bottom: 20px;
+	}
+
+	.featured-policies img {
+		padding-top: 5px;
+		border-top: 9px solid var(--blueDark);
+		margin-bottom: 19px;
+	}
+
+	.featured-policies h2 {
+		padding-right: 15px;
+		font-size: 38px;
+	}
+
+	.policy-page blockquote {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+	.featured-universal h2 {
+		width: 420px;
+	}
+
+	.featured-medicare h2 {
+		width: 280px;
+	}
+
+	.featured-human h2 {
+		width: 450px;
+	}
+}
+
+@media (max-width: 540px) {
+	.featured-policies h2 {
+		padding-right: 10px;
+		font-size: 28px;
+	}
+
+	.featured-universal h2 {
+		width: 300px;
+	}
+
+	.featured-medicare h2 {
+		width: 210px;
+	}
+
+	.featured-human h2 {
+		width: 350px;
+	}
+}
+		</style>
+		</head>
+<body class="page-template page-template-page_with_header page-template-page_with_header-php page page-id-8 custom-header header-image header-full-width full-width-content what-is-ubi" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><style>
+.events-header {
+  position: relative;
+  z-index: 1000;
+  height: 74px;
+  background-color: var(--red);
+  align-items: center;
+}
+
+.events-header.grid {
+  max-width: 100%;
+}
+
+.events-header p,
+.events-header a {
+  margin: 0;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.events-header p {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 38px;
+}
+
+.events-header a {
+  padding: 8px 23px;
+  border: 2px solid var(--white);
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.events-header a:hover {
+  text-decoration: underline;
+}
+
+.events-header + .site-header {
+  padding-top: calc(30px + 74px);
+}
+
+@media (max-width: 1024px) {
+  .events-header {
+    height: 56px;
+  }
+
+  .events-header.grid {
+    flex-direction: row;
+  }
+
+  .events-header + .site-header {
+    padding-top: calc(30px + 28px);
+  }
+
+  .events-header p {
+    margin-right: 16px;
+    font-size: 14px;
+  }
+
+  .events-header a {
+    font-size: 12px;
+  }
+
+  .events-header .hide-on-mobile {
+    display: none;
+  }
+}
+</style>
+
+<div class='events-header grid'>
+  <p>
+    <strong>Andrew Yang is touring America!</strong><br class='hide-on-mobile' />
+    <span class='hide-on-mobile'>
+      50 Days, 15 States, find the event nearest to you!
+    </span>
+  </p>
+  <a href='/events'>
+    Find an event<span class='hide-on-mobile'> near you</span>!
+  </a>
+</div>
+<header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://www.yang2020.com/">Andrew Yang for President</a></p><p class="site-description" itemprop="description">Humanity First. $1,000/month for all.</p></div><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-2149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2149"><a href="https://www.yang2020.com/meet-andrew/" itemprop="url"><span itemprop="name">Andrew&#8217;s Story</span></a></li>
+<li id="menu-item-2154" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item menu-item-2154"><a href="https://www.yang2020.com/what-is-ubi/" aria-current="page" itemprop="url"><span itemprop="name">What is UBI?</span></a></li>
+<li id="menu-item-2155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2155"><a href="https://www.yang2020.com/policies/" itemprop="url"><span itemprop="name">Policy</span></a></li>
+<li id="menu-item-2156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2156"><a href="https://my.yang2020.com/" itemprop="url"><span itemprop="name">Volunteer</span></a></li>
+<li id="menu-item-2157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2157"><a href="https://shop.yang2020.com/" itemprop="url"><span itemprop="name">Store</span></a></li>
+<li id="menu-item-2158" class="menu-donate menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a href="https://secure.actblue.com/donate/friends-of-andrew-yang" itemprop="url"><span itemprop="name">Donate</span></a></li>
+</ul></div></nav></div></header><div class="jumbotron">
+
+  <picture>
+    <!-- <source
+        media="(min-width: 1440px)"
+        srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi.png"
+        sizes="(max-width: 1440px) 100vw, 1440px" />
+
+    <source
+        media="(min-width: 1440px)"
+        srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi.png"
+        sizes="(max-width: 1440px) 100vw, 1440px" />
+
+    <source
+        media="(min-width: 1440px)"
+        srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi.png"
+        sizes="(max-width: 1440px) 100vw, 1440px" /> -->
+
+    <source
+        media="(max-width: 768px)"
+        srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi_mobile.png"
+        sizes="(max-width: 768px) 768px" />
+
+    <img srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi.png 1440w, https://www.yang2020.com/wp-content/uploads/splash_ubi-300x171.png 300w, https://www.yang2020.com/wp-content/uploads/splash_ubi-768x438.png 768w, https://www.yang2020.com/wp-content/uploads/splash_ubi-1024x584.png 1024w"
+        alt="" />
+    <!-- <img srcset="https://www.yang2020.com/wp-content/uploads/splash_ubi.png 1440w, https://www.yang2020.com/wp-content/uploads/splash_ubi-300x171.png 300w, https://www.yang2020.com/wp-content/uploads/splash_ubi-768x438.png 768w, https://www.yang2020.com/wp-content/uploads/splash_ubi-1024x584.png 1024w"
+        alt=""
+        sizes="(max-width: 1440px) 100vw, 1440px" /> -->
+  </picture>
+<div class="wrap"><h1><span class="underline-blue-dark">What is Universal Basic Income?</span></h1></div></div><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-8 page type-page status-publish has-post-thumbnail entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">What is Universal Basic Income?</h1>
+</header><div class="entry-content" itemprop="text"><div class="wrap">
+<h2 class="entry-title">Universal Basic Income Defined</h2>
+<p class="ubi-intro">In the next 12 years, <strong>1 out of 3 American workers is at risk of losing their jobs to new technologies</strong>—and unlike with previous waves of automation, this time new jobs will not appear quickly enough in large enough numbers to make up for it. To avoid an unprecedented crisis, we’re going to have to find a new solution, unlike anything we’ve done before. It all begins with Universal Basic Income for all American adults, no strings attached &#8211; a foundation on which a stable, prosperous, and just society can be built.</p>
+<div><div class="ubi-faqs"><article id="faq-'267" class="post-267 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">What is Universal Basic Income (UBI)?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Universal Basic Income (UBI) is a form of social security that guarantees a certain amount of money to every citizen within a given governed population, without having to pass a test or fulfill a work requirement. Every Universal Basic Income plan can be different in terms of amount or design. </span></p>
+<p><span style="font-weight: 400;">Andrew Yang is running for President as Democrat in 2020 on the platform of Universal Basic Income. The UBI he is proposing for the United States is a set of guaranteed payments of $1,000 per month, or $12,000 per year, to all U.S. citizens over the age of 18. Yes, that means you and everyone you know would get another $1,000/month every month from the U.S. government, no questions asked.  </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'268" class="post-268 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Why does Andrew Yang want to implement Universal Basic Income (UBI) in America?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Andrew Yang wants Universal Basic Income because we are experiencing the greatest technological shift the world has ever seen. By 2015, automation had already destroyed four million manufacturing jobs, and the smartest people in the world now predict that a third of all working Americans will lose their job to automation in the next 12 years. Our current policies are not equipped to handle this crisis. Even our most forward-thinking politicians are unprepared.</span></p>
+<p><span style="font-weight: 400;">As technology improves, workers will be able to stop doing the most dangerous, repetitive, and boring jobs. This should excite us, but if Americans have no source of income—no ability to pay for groceries, buy homes, save for education, or start families with confidence—then the future could be very dark. Our labor participation rate now is only 62.7% &#8211; lower than it has been in decades, with 1 out of 5 working-age men currently out of the workforce. This will get much worse as self-driving cars and other technologies come online.</span></p>
+<p><span style="font-weight: 400;">Andrew’s version of UBI—funded by a simple Value Added Tax—would guarantee that all Americans benefit from automation, not just big companies. UBI would provide money to cover the basics for Americans while enabling us to look for a better job, start our own business, go back to school, take care of our loved ones or work towards our next opportunity.</span></p>
+<p><span style="font-weight: 400;">For more about why Andrew Yang believes so strongly in Universal Basic Income, read his book &#8216;</span><a href="https://www.amazon.com/gp/product/0316414247?tag=hacboogrosit-20"><span style="font-weight: 400;"><em>The War on Normal People&#8217;</em></span></a><span style="font-weight: 400;"> published by Hachette on April 3rd. </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'266" class="post-266 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Who would get UBI in Andrew Yang’s plan?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Every U.S. citizen over the age of 18 would receive $1,000 a month, regardless of income or employment status, free and clear. No jumping through hoops. Yes, this means you and everyone you know would receive a check for $1,000 a month every month starting in January 2021.</span></p>
+<p>What would you do with $1,000 a month on top of whatever you now make?  Let&#8217;s find out.</p>
+      </div>
+    </article>
+
+  <article id="faq-'264" class="post-264 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">How would we pay for Universal Basic Income?</span>
+			</h3>
+      <div class="faq-content">
+        <p>It would be easier than you might think. Andrew proposes funding UBI by consolidating some welfare programs and implementing a Value-Added Tax (VAT) of 10%. Current welfare and social program beneficiaries would be given a choice between their current benefits or $1,000 cash unconditionally – most would prefer cash with no restriction.</p>
+<p>A Value-Added Tax (VAT) is a tax on the production of goods or services a business produces. It is a fair tax and it makes it much harder for large corporations, who are experts at hiding profits and income, to avoid paying their fair share. A VAT is nothing new. 160 out of 193 countries in the world already have a Value-Added Tax or something similar, including all of Europe which has an average VAT of 20 percent.</p>
+<p>The means to pay for a Universal Basic Income will come from 4 sources:</p>
+<p>1.  Current spending.  We currently spend between $500 and $600 billion a year on welfare programs, food stamps, disability and the like.  This reduces the cost of Universal Basic Income because people already receiving benefits would have a choice but would be ineligible to receive the full $1,000 in addition to current benefits.</p>
+<p>2.  A VAT.  Our economy is now incredibly vast at $19 trillion, up $4 trillion in the last 10 years alone.  A VAT at half the European level would generate $800 billion in new revenue.  A VAT will become more and more important as technology improves because you cannot collect income tax from robots or software.</p>
+<p>3.  New revenue.  Putting money into the hands of American consumers would grow the economy.  The Roosevelt Institute projected that the economy would grow by approximately $2.5 trillion and create 4.6 million new jobs.  This would generate approximately $500 &#8211; 600 billion in new revenue from economic growth and activity.</p>
+<p>4.  We currently spend over one trillion dollars on health care, incarceration, homelessness services and the like.  We would save $100 &#8211; 200 billion as people would take better care of themselves and avoid the emergency room, jail, and the street and would generally be more functional.  Universal Basic Income would pay for itself by helping people avoid our institutions, which is when our costs shoot up.  Some studies have shown that $1 to a poor parent will result in as much as $7 in cost-savings and economic growth.</p>
+      </div>
+    </article>
+
+  <article id="faq-'262" class="post-262 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">What are the benefits of Universal Basic Income?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Universal Basic Income would transform society in many positive ways and evidence shows this. Trials have led to all kinds of benefits—some expected, some surprising. Here are just a few of them: </span></p>
+<ul>
+<li><b>UBI encourages people to find work</b><span style="font-weight: 400;">. Many current welfare programs take away benefits when recipients find work, sometimes leaving them financially worse off than before they were employed. UBI is for all adults, regardless of employment status, so recipients are free to seek additional income, which most everyone does. </span></li>
+<li><b>UBI reduces bureaucracy</b><span style="font-weight: 400;">—with no-strings-attached coverage, determining who is eligible is far simpler and the cost of administering benefits is greatly reduced.  </span></li>
+<li><b>UBI increases bargaining power for workers</b><span style="font-weight: 400;"> because a guaranteed, unconditional income gives them leverage to say no to exploitative wages and abusive working conditions. Employers can&#8217;t push workers around as much.  </span></li>
+<li><strong>UBI increases entrepreneurship</strong> <span style="font-weight: 400;">because it provides for basic needs in the early lean days of a company and acts as a safety net if the business fails. It also gives you more consumers to sell to because everyone has more disposable income. The <a href="http://rooseveltinstitute.org/modeling-macroeconomic-effects-ubi/" target="_blank" rel="noopener">Roosevelt Institute</a> found that a UBI would create 4.6 million jobs and grow the economy by 12 percent continuously. UBI would be the greatest catalyst for new jobs, entrepreneurship, and creativity we have ever seen.  </span></li>
+<li><b>UBI improves the mental health of recipients </b><span style="font-weight: 400;">because it reduces conditions of scarcity, poverty, and financial insecurity, major sources of stress for millions of people. </span></li>
+<li><b>UBI helps people make smarter decisions. <a href="http://www.sciencemag.org/content/341/6149/976.abstract" target="_blank" rel="noopener"><span style="font-weight: 400;">Studies</span></a><span style="font-weight: 400;"> have shown that people in straits of economic insecurity have a reduced cognitive ability equal to 13 IQ points. UBI would provide the security people need to focus on important things like their families. </span></b></li>
+<li><strong>UBI improves physical health</strong>. <span style="font-weight: 400;">With increased economic security, people are less prone to stresses, disease, and self-destructive behavior. A UBI </span><span style="font-weight: 400;">experiment in Canada</span><span style="font-weight: 400;"> saw hospitalization rates go down 8.5%.</span></li>
+<li><strong>UBI increases art production, nonprofit work and caring for loved ones</strong> <span style="font-weight: 400;">because it provides a supplementary income for those interested in labor that isn’t supported by the market.  </span></li>
+<li><strong>UBI improves labor market efficiency</strong> <span style="font-weight: 400;">because fewer workers are stuck in jobs that are a bad fit. National productivity will improve because people will be able to seek work that is more rewarding and promote higher job satisfaction.</span></li>
+<li><strong>UBI improves relationships </strong>by reducing domestic violence, child abuse, financial stresses, and sources of conflict. It ensures that everyone has an optimistic sense of his or her own future and has the mobility to get out of abusive relationships.</li>
+</ul>
+<p>It&#8217;s amazing what a steady source of money can do to transform people&#8217;s lives. We can experience it here in America if we adopt Universal Basic Income and make it real; we are the wealthiest and most technologically advanced society in human history. It&#8217;s time to invest in our people.</p>
+<p>Imagine your life and that of everyone you know with an extra $1,000 per month – how would you spend it? How would things change?</p>
+      </div>
+    </article>
+
+  <article id="faq-'261" class="post-261 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Is there evidence to support the case for UBI?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Experiments with unconditional cash benefits around the world have proven to be one of the most successful ways of reducing poverty. The fear that cash recipients would waste their money on drugs or alcohol, stop working, or have more kids have been disproven</span><a href="http://blogs.worldbank.org/impactevaluations/do-poor-waste-transfers-booze-and-cigarettes-no" target="_blank" rel="noopener"><span style="font-weight: 400;"> by the World Bank</span></a><span style="font-weight: 400;">. Many of these behaviors were actually </span><a href="http://www.journals.uchicago.edu/doi/abs/10.1086/689575" target="_blank" rel="noopener"><span style="font-weight: 400;">reduced</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Since 1998, there have been a total of 461 research papers published on the topic. You can </span><a href="http://basicincome.org/research/" target="_blank" rel="noopener"><span style="font-weight: 400;">view them all here</span></a><span style="font-weight: 400;">. </span></p>
+<p><span style="font-weight: 400;">In the last 50 years, there have been more than 30 cash transfer programs studied. Here are a few of our favorites:</span></p>
+<ul>
+<li style="font-weight: 400;"><a href="http://basicincome.org/news/2017/03/simpson-et-al-manitoba-basic-annual-income-experiment-lessons-learned-40-years-later/" target="_blank" rel="noopener"><span style="font-weight: 400;">The &#8220;Mincome&#8221; Experiment, Manitoba, Canada</span></a><span style="font-weight: 400;"> (reduced hospitalization and no reduction in work hours)</span></li>
+<li style="font-weight: 400;"><a href="http://www.policyinnovations.org/ideas/briefings/data/000163" target="_blank" rel="noopener"><span style="font-weight: 400;">BIG Pilot Project, Namibia</span></a><span style="font-weight: 400;"> (reduced crime, reduced school dropouts, and improved health)</span></li>
+<li style="font-weight: 400;"><a href="https://www.givedirectly.org/" target="_blank" rel="noopener"><span style="font-weight: 400;">Give Directly, Kenya</span></a><span style="font-weight: 400;"> (increased assets and nutrition, and no change in drugs or violence)</span></li>
+<li style="font-weight: 400;"><a href="http://yang2020.com/35-ubi-programs-cash-transfer-experiments/" target="_blank" rel="noopener">View them all here</a>.</li>
+</ul>
+<p>The data is clear &#8211; giving people money enables them to live better lives. But put aside the data for a moment and just think about it for yourself. What would you do with an additional $1,000/month? How about your family and friends?</p>
+<p>Universal Basic Income is real and will transform our society for the better; we just need the courage and will to both care about and invest in our people.</p>
+      </div>
+    </article>
+
+  <article id="faq-'260" class="post-260 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">I’ve never heard of Universal Basic Income. Where did it come from? Who supports it?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">The idea of guaranteeing every citizen an income from the government is an old one, first recorded during the Renaissance. In America, it was picked up by founding father Thomas Paine, who referred to the payments as a “natural inheritance.”</span></p>
+<p><span style="font-weight: 400;">UBI and similar cash programs began picking up steam in the mid 20th century during the industrial revolution as early as 1918. With developed countries producing more than ever, the idea resurfaced with intensity being backed by numerous Nobel-Prize winning economists such as Milton Friedman and F.A. Hayek. </span></p>
+<p><span style="font-weight: 400;">In the 1960s, Martin Luther King Jr. gave his support, alongside over 1,000 economists from over 125 universities who </span><a href="http://www.jec.senate.gov/reports/90th%20Congress/Income%20Maintenance%20Programs%20Volume%20II%20(423).pdf" target="_blank" rel="noopener"><span style="font-weight: 400;">signed a letter</span></a><span style="font-weight: 400;"> to President Nixon requesting income guarantees.</span></p>
+<p><span style="font-weight: 400;">The idea of a guaranteed income floor was pushed into a bill under President Nixon in 1970 where it passed the United States House of Representatives. It died in the Senate because Democrats sought a higher guaranteed income.</span></p>
+<p><span style="font-weight: 400;">Today the idea has gained support from Mark Zuckerberg, Robert Reich, Elon Musk, Bill Gross, Richard Branson, Ta-Nehisi Coates, Noam Chomsky, the conservative Cato Institute, and many others.   </span></p>
+<p>Universal Basic Income is not new &#8211; it is an old idea whose time has come.</p>
+<p><strong>Here are some of the people who have supported Universal Basic Income over the years:</strong></p>
+<p><strong>Martin Luther King Jr., 1967:</strong> &#8220;I am now convinced that the simplest approach will prove to be the most effective — the solution to poverty is to abolish it directly by a now widely discussed measure: the guaranteed income.&#8221;</p>
+<p><strong>Richard Nixon, August 1969:</strong> “What I am proposing is that the Federal Government build a foundation under the income of every American family . . . that cannot care for itself&#8211;and wherever in America that family may live.”</p>
+<p><strong>Milton Friedman (Nobel-winning economist), 1980:</strong> “We should replace the ragbag of specific welfare programs with a single comprehensive program of income supplements in cash — a negative income tax . . . which would do more efficiently and humanely what our present welfare system does so inefficiently and inhumanely.”</p>
+<p><strong>Bernie Sanders, May 2014:</strong> &#8220;In my view, every American is entitled to at least a minimum standard of living . . .There are different ways to get to that goal, but that&#8217;s the goal that we should strive to reach.&#8221;</p>
+<p><strong>Barack Obama, October 2016:</strong> “as AI gets further incorporated, and the society potentially gets wealthier, the link between production and distribution, how much you work and how much you make, gets further and further attenuated . . . we’ll be debating unconditional free money over the next 10 or 20 years.”</p>
+<p><strong>Elon Musk,</strong> <strong>February </strong><strong>2017:</strong> &#8220;I think we&#8217;ll end up doing universal basic income . . . It&#8217;s going to be necessary . . .There will be fewer and fewer jobs that a robot cannot do better. I want to be clear. These are not things I wish will happen; these are things I think probably will happen.”</p>
+<p><strong>Mark Zuckerberg, May 2017:</strong> “We should explore . . . universal basic income so that everyone has a cushion to try new ideas.”</p>
+      </div>
+    </article>
+
+  <article id="faq-'259" class="post-259 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Why do we need Universal Basic Income now?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Since 2000, technology has replaced the jobs of four million American manufacturing workers and decimated communities throughout the Midwest. With new developments in technology, experts are predicting that one out of three Americans will lose their job to new technology in the next twelve years.</span></p>
+<p>Truck driving alone is the most common job in twenty-nine states with 3.5 million drivers &#8211; 94% of them male &#8211; and an additional 12 million workers supporting them in truck stops and motels across the country. What happens when the trucks start to drive themselves?</p>
+<p><span style="font-weight: 400;">We are experiencing the greatest economic and technological shift in human history, and our institutions can’t keep up. </span>Without Universal Basic Income, we will see opportunities shrink as more and more work gets performed by software, AI, and robots. Markets don&#8217;t work well when people don&#8217;t have any money to spend. Universal Basic Income is a vital step to helping society transform through the greatest automation wave in human history.</p>
+<p>For a detailed account of why we need UBI, <span style="font-weight: 400;">read Andrew&#8217;s book </span><a href="https://www.amazon.com/gp/product/0316414247?tag=hacboogrosit-20" target="_blank" rel="noopener"><span style="font-weight: 400;"><em>The War on Normal People</em></span></a><span style="font-weight: 400;">. </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'258" class="post-258 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">What impact would Universal Basic Income have on the economy?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">The Roosevelt Institute <a href="http://rooseveltinstitute.org/wp-content/uploads/2017/08/Modeling-the-Macroeconomic-Effects-of-a-UBI.pdf" target="_blank" rel="noopener">found</a> that adopting an annual $12,000 basic income for every adult U.S. citizen over the age of 18 would permanently grow the economy by 12.56-13.10 percent—or about $2.5 trillion by 2025—and it would increase the labor force by 4.5-4.7 million people.</span></p>
+<p><span style="font-weight: 400;">This is because putting money in people&#8217;s hands grows the economy, particularly when those people need the money and will spend it. Imagine a small town in Missouri with 5,000 qualifying residents. A $12,000 UBI would bring an extra $60 million of additional income into the community, most of which would be spent locally. Then imagine that playing out in every community in the country, big and small. Communities everywhere will have more vibrant local economies, creating more jobs and leading to new businesses. </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'257" class="post-257 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Wouldn’t that cause rampant inflation?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">The federal government recently printed $4 trillion for the bank bailouts in its quantitative easing program with no inflation. Our plan for a Universal Basic Income uses mostly money already in the economy. In monetary economics, leading theory states that inflation is based on changes in the supply of money. Our UBI plan has minimal changes in the supply of money because it is funded by a Value-added Tax. </span></p>
+<p>It is likely that some companies will increase their prices in response to people having more buying power, and a VAT would also increase prices marginally. However, there will still be competition between firms that will keep prices in check. Over time, technology will continue to decrease the prices of most goods where it is allowed to do so (e.g., clothing, media, consumer electronics, etc.). The main inflation we currently experience is in sectors where automation has not been applied due to government regulation or inapplicability &#8211; primarily housing, education, and healthcare. The real issue isn&#8217;t Universal Basic Income, it&#8217;s whether technology and automation will be allowed to reduce prices in different sectors.</p>
+      </div>
+    </article>
+
+  <article id="faq-'255" class="post-255 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Won’t people spend their money on dumb things like drugs and alcohol?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">The data doesn’t show this. In many of the </span><a href="https://economics.mit.edu/files/12488" target="_blank" rel="noopener"><span style="font-weight: 400;">studies</span></a><span style="font-weight: 400;"> where cash is given to the poor, there has been no increase in drug and alcohol use. In fact, many people use it to try and reduce their alcohol consumption or substance abuse. In Alaska, for example, people regularly put the petroleum dividend they receive from the state in accounts for their children&#8217;s education.  The idea that poor people will be irresponsible with their money and squander it seems to be a biased stereotype rather than a truth. </span></p>
+<p><span style="font-weight: 400;">Decision-making has been shown to improve when people have greater economic security. Giving people resources will enable them to make better decisions to improve their situation. As Dutch philosopher Rutger Bregman puts it, </span><i><span style="font-weight: 400;">“Poverty is not a lack of character. It’s a lack of cash.” </span></i></p>
+      </div>
+    </article>
+
+  <article id="faq-'254" class="post-254 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Won’t people stop working?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Decades of research on cash transfer programs have found that the only people who work fewer hours when given direct cash transfers are new mothers and kids in school. In several studies, high school graduation rates rose. In some cases, people even work more. Quoting a Harvard and MIT </span><a href="https://economics.mit.edu/files/12488" target="_blank" rel="noopener"><span style="font-weight: 400;">study</span></a><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">“we find no effects of [cash] transfers on work behavior.”</span></i></p>
+<p><span style="font-weight: 400;">In our plan, each adult would receive only $12,000 a year. This is barely enough to live on in many places and certainly not enough to afford much in the way of experiences or advancement.  To get ahead meaningfully, people will still need to get out there and work.  </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'253" class="post-253 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">What about variations in the cost of living? Wouldn&#8217;t major cities need much more money than rural areas?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Every eligible UBI recipient, regardless of location, would receive $1,000 a month. Varying the dollar amount by location would add expensive layers of bureaucracy. Plus, UBI would actually help many more Americans live where they want to. The Census Bureau </span><a href="https://www.census.gov/library/visualizations/2016/comm/cb16-189_migration.html" target="_blank" rel="noopener"><span style="font-weight: 400;">shows</span></a><span style="font-weight: 400;"> Americans are moving between states at the lowest levels on record, contributing to a stagnant economy and labor market. Moving requires a lot of money up-front, and Americans are increasingly strapped for cash. UBI would make people and families much more mobile and improve the dynamism of the labor market as people seek out new environments and opportunities.  </span></p>
+<p>$1,000 a month goes farther in some places than others. A UBI would lead to a revitalization of many communities as people take advantage of lower costs of living in certain areas instead of piling into expensive metro areas.</p>
+      </div>
+    </article>
+
+  <article id="faq-'252" class="post-252 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Why would you give Universal Basic Income to the rich?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">By giving everyone UBI, the stigma for accepting cash transfers from the government disappears. Additionally, it removes the incentive for anyone to remain within certain income brackets to receive benefits. If it&#8217;s paid for by a Value-Added Tax as in Andrew&#8217;s plan, a wealthy person will likely pay more into the system than he or she gets out of it. </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'251" class="post-251 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Why can’t we just retrain people who lose their jobs?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">This would be great &#8211; unfortunately the data indicates that retraining programs do not work on a large scale. The Trade Adjustment Assistance (TAA) program, a Federal program for displaced manufacturing workers, was <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiZwLKqis7YAhUKUd8KHeiRCbEQFggnMAA&amp;url=https%3A%2F%2Fwww.mathematica-mpr.com%2F~%2Fmedia%2Fpublications%2FPDFs%2Flabor%2FTAA_Synthesis.pdf&amp;usg=AOvVaw0iyIyWLtIH25xqlre7j5DD" target="_blank" rel="noopener">found</a> to have only 37% of its program members working in the field of work they were retrained for. </span><span style="font-weight: 400;">Michigan’s No Worker Left Behind program <a href="http://www.crainsdetroit.com/article/20150726/NEWS/307269975/disability-rolls-surge-in-state" target="_blank" rel="noopener">found</a> that one-third of its members remained unemployed after the program, similar to the 40% unemployment rate of their peers who did not enroll. About half of all Michigan workers who left the workforce between 2003 and 2013 went on disability and were not retrained for a new job. </span></p>
+<p>Many of the workers who are most at risk for displacement are middle-aged and past their primes. Many have health problems. Retraining will be difficult and many employers will prefer to hire younger employees with lower job requirements.</p>
+<p><span style="font-weight: 400;">The goalposts are now moving &#8211; by the time someone goes through a retraining program, the job they were retrained for could have changed or been automated. Technology is going to get better and better. </span>It will also be hard to keep track of who merits retraining. If a mall closes, do the retail workers get retrained? How about a call center?</p>
+<p>Though training programs are a great idea, we should acknowledge that we&#8217;re historically very bad at it even when we know displacement is happening. Retraining a massive population over a range of industries is unrealistic and won&#8217;t address the displacement caused by new technologies.</p>
+      </div>
+    </article>
+
+  <article id="faq-'250" class="post-250 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">I don’t see robots. Isn’t this early?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">No. &#8216;Robots&#8217; aren&#8217;t when some walking talking robot comes knocking on your door. It&#8217;s when software replaces thousands of helpdesk workers or cars start driving themselves or even when a mall closes down because everyone now shops from their computer. </span></p>
+<p><span style="font-weight: 400;">We are in the fourth inning of automation. Four million manufacturing jobs have been taken since 2000 and automated trucks are already <a href="https://uk.reuters.com/article/us-uber-trucking-beer/ubers-otto-hauls-budweiser-across-colorado-in-self-driving-truck-idUKKCN12P13N" target="_blank" rel="noopener">making deliveries</a> in Colorado. 1 out of 10 American workers works in retail. If we wait any longer, we will be out of time. It took the Affordable Care Act seven years to go into full effect. The time to make UBI a reality is right now, before the unemployment crisis reaches full swing.</span></p>
+<p><span style="font-weight: 400;">For more about the labor and technology trends, including how the robots are already here and replacing workers, read Andrew&#8217;s book &#8216;</span><a href="https://www.amazon.com/gp/product/0316414247?tag=hacboogrosit-20" target="_blank" rel="noopener"><span style="font-weight: 400;"><em>The War on Normal People&#8217;</em></span></a><span style="font-weight: 400;"> published by Hachette on April 3rd. </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'496" class="post-496 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">If Universal Basic Income is so great why haven&#8217;t we done it already?</span>
+			</h3>
+      <div class="faq-content">
+        <p>We came very close in the late 1960s &#8211; it actually passed the House of Representatives in 1969 before stalling in the Senate because Democrats wanted a higher floor. 1,000 economists signed a letter saying that it would be the right thing for the economy.</p>
+<p>Since then we&#8217;ve been brainwashed into thinking that what&#8217;s good for people isn&#8217;t good for the economy, but what serves big corporate interests is.</p>
+<p>The reason we haven&#8217;t done it yet is because we&#8217;d rather give money to wealthy corporations and hope it trickles down &#8211; we trust institutions more than we trust our people. This is what we must change. We must empower our people and rebuild our economy from each individual and family up.</p>
+      </div>
+    </article>
+
+  <article id="faq-'249" class="post-249 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Will this lead to mass immigration to the United States?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">America has been the world’s most desired immigration destination for 250 years. High demand for citizenship is not new. It’s true, that with UBI in place, the demand for citizenship may rise. However, only citizens can receive UBI, and the US already has one of the longest paths to citizenship in the world. UBI would make citizenship all the more meaningful.  </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'248" class="post-248 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Isn’t this Communism/Socialism?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">No. Communism is, by definition, a revolutionary movement to create a classless, moneyless, and stateless social order built upon shared ownership of production. With Socialism, the core principle is the nationalization of the means of production &#8211; i.e. the government seizes Amazon and Google. UBI is none of those things and actually fits so seamlessly into capitalism, it is projected to <a href="http://rooseveltinstitute.org/wp-content/uploads/2017/08/Modeling-the-Macroeconomic-Effects-of-a-Universal-Basic-Income.pdf" target="_blank" rel="noopener">grow the economy</a> $2.5 trillion in eight years.</span></p>
+<p><span style="font-weight: 400;">Really, UBI is necessary for the continuation of capitalism through the automation wave and displacement of workers. Markets need consumers to sell things to. Universal Basic Income is capitalism with a floor that people cannot fall beneath.  </span></p>
+      </div>
+    </article>
+
+  <article id="faq-'247" class="post-247 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">Wouldn’t employers just start paying less?</span>
+			</h3>
+      <div class="faq-content">
+        <p>&nbsp;</p>
+<p><img class="aligncenter wp-image-349" src="http://yang2020.com/wp-content/uploads/Figure2_Productivity_vs_Compensation.bmp" alt="Productivity_vs_Compensation" width="342" height="273" /></p>
+<p><span style="font-weight: 400;">Employers are already paying their employees less for doing more. Corporate productivity is up 72% since 1973, but American wages are up only 9%. UBI would put power in the hands of the worker—with consistent, unconditional cash to cover their expenses, Americans will be able to be more selective about the working conditions they’re willing to accept.</span></p>
+<p>With UBI, jobs that people naturally want to do &#8211; like being a teacher, or coach, or artist &#8211; might pay a little bit less. But jobs that people don&#8217;t want to do will actually have to pay more because workers won&#8217;t have to necessarily take that job.</p>
+      </div>
+    </article>
+
+  <article id="faq-'246" class="post-246 ubi_faqs type-ubi_faqs status-publish faq_categories-ubi-faq entry">
+      <h3 class="faq">
+				<span class="faq-icon"></span>
+				<span class="faq-title">This sounds great! What can I do to make it happen?</span>
+			</h3>
+      <div class="faq-content">
+        <p><span style="font-weight: 400;">Andrew Yang’s campaign is about more than UBI. It’s focused on building a society that puts people and quality of life first. UBI is just the first step.</span></p>
+<p><strong><a href="https://secure.actblue.com/donate/friends-of-andrew-yang">Contribute to the campaign here.</a></strong></p>
+<p><span style="font-weight: 400;">Help us make Universal Basic Income a reality. We can create a society of freedom and abundance if we have the courage to empower our people. Let&#8217;s put Humanity First.  </span></p>
+      </div>
+    </article>
+
+  <a href="#" id="close-all">Close all</a>
+
+  </div></div>
+</div>
+<p><img class="face-grid-cropped alignnone wp-image-2303 size-full" src="/wp-content/uploads/face_grid_cropped.png" alt="" width="1440" height="453" /></p>
+</div></article></main></div></div><h4 class='join-the-fight giant-header'>
+	Join the fight
+</h4>
+<form class='join-form wrapped above-footer'>
+	<div class='input-wrapper'>
+		<div class='wrap'>
+			<input
+				name='email'
+				placeholder='Email'
+				type='email'
+			/>
+			<input
+				name='zip'
+				placeholder='Zip Code'
+				type='number'
+			/>
+		</div>
+	</div>
+	<button type='submit'>
+		I'm in!
+	</button>
+</form>
+<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><nav class="nav-footer"><ul id="menu-bottom" class="genesis-nav-menu"><li id="menu-item-2182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2182"><a href="https://www.yang2020.com/additional-resources/" itemprop="url">Resources</a></li>
+<li id="menu-item-2183" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2183"><a href="https://www.yang2020.com/blog/category/press-releases/" itemprop="url">Press</a></li>
+<li id="menu-item-2184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2184"><a href="https://www.yang2020.com/contact-us/" itemprop="url">Contact</a></li>
+<li id="menu-item-2185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2185"><a href="https://www.yang2020.com/blog/" itemprop="url">Blog</a></li>
+<li id="menu-item-2642" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2642"><a href="https://jobs.lever.co/yang2020" itemprop="url">Careers</a></li>
+</ul></nav><div class="footer-widgets" id="genesis-footer-widgets"><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="simple-social-icons-3" class="widget simple-social-icons"><div class="widget-wrap"><ul class="aligncenter"><li class="ssi-facebook"><a href="https://www.facebook.com/andrewyang2020/" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-facebook" aria-labelledby="social-facebook-3"><title id="social-facebook-3">Facebook</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-facebook"></use></svg></a></li><li class="ssi-instagram"><a href="https://instagram.com/andrewyang2020" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-instagram" aria-labelledby="social-instagram-3"><title id="social-instagram-3">Instagram</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-instagram"></use></svg></a></li><li class="ssi-twitter"><a href="https://twitter.com/andrewyang" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-twitter" aria-labelledby="social-twitter-3"><title id="social-twitter-3">Twitter</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-twitter"></use></svg></a></li><li class="ssi-youtube"><a href="https://www.youtube.com/channel/UCriIuQZpMi6gEt_2P7xKCww?disable_polymer=true" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-youtube" aria-labelledby="social-youtube-3"><title id="social-youtube-3">YouTube</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-youtube"></use></svg></a></li></ul></div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="nav_menu-3" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-bottom-mobile-container"><ul id="menu-bottom-mobile" class="menu"><li id="menu-item-2248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2248"><a href="https://www.yang2020.com/contact-us/" itemprop="url">Contact Us</a></li>
+<li id="menu-item-2247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2247"><a href="https://www.yang2020.com/blog/" itemprop="url">Blog</a></li>
+<li id="menu-item-2644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2644"><a href="https://jobs.lever.co/yang2020" itemprop="url">Careers</a></li>
+</ul></div></div></section>
+</div></div></div><div class="notice"><p>Paid for by Friends of Andrew Yang</p></div><p class="copyright">&#x000A9;&nbsp;2019 Friends of Andrew Yang. <br class="mobile" />All rights reserved. <a href="/privacy_policy">Privacy Policy</a>.<br />New York, NY 10018</p></div></footer></div>  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W68JZHN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<style type="text/css" media="screen"> #simple-social-icons-3 ul li a, #simple-social-icons-3 ul li a:hover, #simple-social-icons-3 ul li a:focus { background-color: #142e7b !important; border-radius: 4px; color: #ffffff !important; border: 0px #ffffff solid !important; font-size: 40px; padding: 20px; }  #simple-social-icons-3 ul li a:hover, #simple-social-icons-3 ul li a:focus { background-color: #142e7b !important; border-color: #ffffff !important; color: #489fdf !important; }  #simple-social-icons-3 ul li a:focus { outline: 1px dotted #142e7b !important; }</style><script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.7.2'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=2.7.2'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=3.0.0-beta.1'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/about-andrew/public/js/about-andrew.js'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/ubi-faqs/public/js/ubi-faqs.js'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGUBTBgNpR1kSDjoNAFdUVxM=","queueTime":0,"applicationTime":380,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

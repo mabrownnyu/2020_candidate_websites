@@ -1,0 +1,177 @@
+/*
+  What’s up internet. We know you’re all over this. Here’s how it works.
+  We have to pull this data from a 3rd party provider, ActBlue. It’s slow.
+  So we do it manually. Thus we take our current growth rate and run at that rate every day.
+  It’s been about 1 new person per minute. We then reset manually every 24 hours.
+  It’s a little behind the real number but as accurate as we can get.
+  We’ll report the most hyper accurate number every quarter to the FEC.
+  Thanks for always keeping us honest.
+  #YangGang
+*/
+
+DomReady.ready(function () {
+
+const DONOR_GOAL = 200000;
+
+const elements = {};
+elements.donorProgressSection = document.body.querySelector('.donor-progress-section');
+elements.countHeader = document.body.querySelector('.donor-count-number');
+elements.barInner = document.body.querySelector('.donor-progress-bar .inner');
+elements.podium = document.body.querySelector('.donor-progress-bar .podium');
+elements.yangAnimated = document.body.querySelector('.yang-animated.original');
+elements.yangAnimatedRobo = document.body.querySelector('.yang-animated.cheer');
+elements.yangAnimatedCheer = document.body.querySelector('.yang-animated.robo');
+elements.yangAnimatedLightsaber = document.body.querySelector('.yang-animated.lightsaber');
+elements.goalSubtitle = document.body.querySelector('.donor-progress-section .subtitle .goal');
+elements.goalBar = document.body.querySelector('.donor-progress-section .end-of-bar .goal');
+
+const addCommas = (number) => (
+  `${number}`.replace(/(\d?\d?\d)(\d{3})/, '$1,$2')
+);
+
+const setText = (donorCount) => {
+  const donorCountString = addCommas(donorCount);
+  elements.countHeader.innerHTML = donorCountString;
+};
+
+const setGoalText = (goal) => {
+  const goalString = addCommas(goal);
+  elements.goalSubtitle.innerHTML = goalString;
+  elements.goalBar.innerHTML = goalString;
+};
+
+const setApproachingPercentage = (donorCount) => setPercentage(donorCount / DONOR_GOAL * 100);
+
+const setPercentage = (percentage) => {
+  const percentageString = `${Math.min(100, percentage)}%`;
+  elements.countHeader.style.left = percentageString;
+  elements.barInner.style.width = percentageString;
+  // elements.podium.style.left = percentageString;
+  elements.yangAnimated.style.left = percentageString;
+  elements.yangAnimatedRobo.style.left = percentageString;
+  elements.yangAnimatedCheer.style.left = percentageString;
+  elements.yangAnimatedLightsaber.style.left = percentageString;
+};
+
+const setTransitionDuration = (stepTime) => {
+  const stepTimeString = `${stepTime}ms`;
+  elements.countHeader.style.transitionDuration = stepTimeString;
+  elements.barInner.style.transitionDuration = stepTimeString;
+  elements.yangAnimated.style.transitionDuration = stepTimeString;
+  elements.yangAnimatedRobo.style.transitionDuration = stepTimeString;
+  elements.yangAnimatedCheer.style.transitionDuration = stepTimeString;
+  elements.yangAnimatedLightsaber.style.transitionDuration = stepTimeString;
+}
+
+// goals are in thousands
+const goals = [65, 100, 200, 300, 400, 500];
+
+const setAchievedGoalClasses = (donorCount) => {
+  goals.forEach(goal => {
+    if (donorCount >= goal * 1000) {
+      elements.donorProgressSection.classList.add(`achieved-${goal}k`);
+    }
+  });
+}
+
+const MAX_COUNT = goals[2] * 1000;
+
+const startTimedFunction = ({
+  initialFunction,
+  initialValues,
+  endFunction,
+  durationInMs,
+}) => {
+  endFunction = endFunction || initialFunction;
+  const ONE_HUNDRED_PERCENT = 100;
+  const STEP_PERCENT = 1;
+  const STEP_COUNT = ONE_HUNDRED_PERCENT / STEP_PERCENT;
+  const stepTime = durationInMs / STEP_COUNT;
+
+  setTransitionDuration(stepTime);
+
+  let currentPercent = 0;
+  let currentValues = initialValues;
+  const timer = setInterval(function () {
+    currentPercent += 1;
+    currentValues = initialFunction(currentValues, STEP_COUNT);
+    if (currentPercent >= ONE_HUNDRED_PERCENT) {
+      endFunction(currentValues);
+      clearInterval(timer);
+    }
+  }, stepTime);
+};
+
+const animateValues = ({start, end}) => {
+  start = start || 65000;
+  const range = end - start;
+  const durationInMs = Math.min(Math.max(range / 10, 3 * 1000), 10 * 1000);
+
+  startTimedFunction({
+    initialValues: {donorCount: start},
+    initialFunction: ({donorCount}, STEP_COUNT) => {
+      setText(donorCount);
+      setApproachingPercentage(donorCount);
+      setAchievedGoalClasses(donorCount);
+      const stepSize = Math.floor(range / STEP_COUNT);
+      return {donorCount: donorCount + stepSize};
+    },
+    endFunction: () => {
+      setText(end);
+      setApproachingPercentage(end);
+    },
+    durationInMs,
+  });
+};
+
+const increaseBar = ({donorCount}) => {
+  const start = 200000;
+  const end = 300000;
+  const range = end - start;
+  const durationInMs = Math.min(Math.max(range / 10, 3 * 1000), 10 * 1000);
+
+  startTimedFunction({
+    initialValues: {donorGoal: start},
+    initialFunction: ({donorGoal}, STEP_COUNT) => {
+      setGoalText(donorGoal);
+      setPercentage(donorCount / donorGoal * 100);
+      const stepSize = range / STEP_COUNT;
+      return {donorGoal: donorGoal + stepSize};
+    },
+    durationInMs,
+  });
+}
+
+
+
+const getDonors = function () {
+  const DONE = 4;
+  const OK = 200;
+
+  if (xhr.readyState === DONE) {
+    if (xhr.status === OK) {
+      const donorCount = Number(xhr.responseText);
+      animateValues({end: donorCount});
+    }
+    else {
+      // use latest number in case of error
+      const LAST_COUNT = 81715;
+      const LAST_SYNCED_DAY = (new Date('2019-03-26T00:00:00')).getTime();
+      const msSinceLastSyncedDay = Date.now() - LAST_SYNCED_DAY;
+      const minutesSinceLastSyncedDay = Math.floor((12 / 24) * msSinceLastSyncedDay / (60 * 1000));
+
+      const countWithAverageRate = Math.min(LAST_COUNT + minutesSinceLastSyncedDay, MAX_COUNT);
+      animateValues({end: sum});
+      console.log('Error: ' + xhr.status);
+    }
+  }
+};
+
+// use backend API that wraps ActBlue / NationBuilder numbers
+const URL = '/wp-json/yang-api/v1/donorCount?now=' + Date.now();
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = getDonors;
+xhr.open('GET', URL);
+xhr.send(null);
+
+});
