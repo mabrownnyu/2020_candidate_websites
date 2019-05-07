@@ -1,0 +1,188 @@
+.fusion-header {
+  height:initial !important;
+}
+
+.fusion-logo {
+    margin-top: initial;
+    margin-bottom: initial;
+}
+
+.fusion-header-wrapper.fusion-is-sticky .fusion-header {
+      background-color: #282828;
+}
+
+.fusion-header-v5 .fusion-header {
+    display: none;
+}
+
+.fusion-secondary-main-menu {
+    height: 73px;
+}
+
+.fusion-main-menu > ul > li > a {
+    height: 67px;
+    line-height: 67px;
+}
+
+/*
+
+.fusion-main-menu {
+    float: initial;
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+/********MOBILE PHONE NORMAL********/
+/*
+@media only screen and (max-width: 500px) {
+.fusion-main-menu {
+    float: initial;
+    width: initial;
+    margin-left: initial;
+    margin-right: initial;
+}
+}/*
+/********END PHONE NORMAL********/
+
+/************************ NEW DESIGN - START SEPTEMBER 22, 2016 ****************************/
+
+.imghover:hover {opacity:0.8;}
+#slideimgbutton img:hover {opacity:0.7;}
+
+/************* HOMEPaGE ***************/
+
+.homesignature {max-width:285px;}
+
+.homefeaturedslider .avada-skin-rev {
+    border-top: 0px solid #d2d3d4 !important;
+    border-bottom: 0px solid #d2d3d4 !important;
+}
+
+
+.homefeaturedwhitetext h1 {
+    color: #ffffff !important;
+    font-size: 70px;
+    line-height: 70px;
+padding-top:20px;
+}
+
+.homefeaturedwhitetext h3 {
+    color:#ffffff !important;
+}
+
+.homeblog .fusion-image-wrapper .fusion-rollover {
+background-image: none !important;
+background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+
+.homeblog h2.entry-title {
+  font-size:32px !important;
+  line-height:34px !important;
+  margin-bottom: 5px  !important;
+}
+
+.homeblog h2.entry-title a {color:#222222 !important;}
+.homeblog h2.entry-title a:hover {color:#444444 !important;}
+
+.homeblog .post:last-child {margin-bottom: 25px !important;}
+.homeblog .pagination {margin-top:20px !important;}
+
+/************* SIDEBAR ***************/
+.fusion-widget-area h4.widget-title {
+    font-size: 22px !important;
+    line-height: 22px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.fusion-content-widget-area .widget {
+    margin-bottom: 35px !important;
+}
+
+#black-studio-tinymce-4 .textwidget {
+    background-color: #f9f9f9;
+    padding: 6px 6px 0px;
+}
+
+#text-4 img {
+    padding-top: 20px;
+    max-width: 380px;
+    width: 100%;
+}
+
+ #text-4 .woocommerce {background-color:#f9f9f9;}
+ #text-4 .product-details {padding: 10px 15px 0px 15px !important;}
+ #text-4 .fusion-content-widget-area .products .product-title {margin-bottom: 0px;}
+ #text-4 .product-details-container {padding-bottom: 10px;}
+#text-4 h3.product-title {margin-bottom: 0px;text-align:center;}
+#text-4 .product-title a {color:#151515;}
+#text-4 .product-title a:hover {color:#BC3424;}
+#text-4 .price {text-align:center;margin: 0 auto;}
+
+
+#text-7 .textwidget {background-color:#222222;text-align:center;padding:20px 10px}
+#text-7 img {max-width:150px;}
+#text-7 h3 {margin-top:10px;margin-bottom: 0px; color:#ffffff;}
+
+#text-7 p.product.woocommerce.add_to_cart_inline  {
+    border: 0px solid #cccccc !important;
+    padding: 4px !important;
+    font-size: 20px;
+    margin: 0 auto;
+    background: #eeeeee;
+}
+
+#text-7 p {font-size: 20px;margin-bottom: 0px;}
+#text-7 a {color:#EF352E;font-weight:bold;}
+#text-7 a:hover {color:#F7726D;}
+
+/************* SIDEBARBlog Categories ***************/
+.archive .fusion-meta-info {display:none !important;}
+
+
+/************* BUTTON FONT ***************/
+.comment-form input[type="submit"], .fusion-button, .fusion-load-more-button, .ticket-selector-submit-btn[type="submit"], .woocommerce .avada-order-details .order-again .button, .woocommerce .avada-shipping-calculator-form .button, .woocommerce .cart-collaterals .checkout-button, .woocommerce .checkout #place_order, .woocommerce .checkout_coupon .button, .woocommerce .login .button, .woocommerce .register .button, .woocommerce .single_add_to_cart_button, .woocommerce .track_order .button, .woocommerce button.button, .woocommerce-MyAccount-content form .button, .wpcf7-form input[type="submit"] {
+       font-family: Roboto !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/************ Photos PAGE-ID-13 *****************/
+
+.page-id-13 .post-content h3 {
+  margin-bottom:5px !important;
+}
+
+/*********canabis-sativa***********/
+
+.videocenter {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#category-posts-4-internal .cat-post-item {
+  text-align:center;
+}
+
+.fusion-meta-info {
+    clear: both;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 5px 0;
+    border-top: 1px solid #e7e6e6;
+    border-bottom: 1px solid #e7e6e6;
+    font-size: 12px;
+    display: none;
+}
+
+.fusion-main-menu-icon {
+  margin-top: -23px;
+  margin-bottom: 34px;
+}
+
+.fusion-menu-cart .fusion-main-menu-icon {
+  margin-top: 0px;
+}

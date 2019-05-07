@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M96J785');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://joebiden.com/wp-content/themes/bexc/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://joebiden.com/wp-content/themes/bexc/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/safari-pinned-tab.svg" color="#233f94">
+  <link rel="shortcut icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="https://joebiden.com/wp-content/themes/bexc/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Terms and Conditions &ndash; Joe Biden for President 2020</title>
+  <script src="https://use.typekit.net/lwk5jsx.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+  
+<!-- This site is optimized with the Yoast SEO plugin v11.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://joebiden.com/terms/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Terms and Conditions &ndash; Joe Biden for President 2020" />
+<meta property="og:description" content="Terms &amp; Conditions Last updated April 25, 2019 PLEASE READ THESE TERMS &amp; CONDITIONS CAREFULLY. BY ACCESSING OR USING THIS SITE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS DESCRIBED HEREIN. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT USE THIS SITE. This site is operated by BFPCC, Inc., &hellip;" />
+<meta property="og:url" content="https://joebiden.com/terms/" />
+<meta property="og:site_name" content="Joe Biden for President 2020" />
+<meta property="og:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:secure_url" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Terms &amp; Conditions Last updated April 25, 2019 PLEASE READ THESE TERMS &amp; CONDITIONS CAREFULLY. BY ACCESSING OR USING THIS SITE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS DESCRIBED HEREIN. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT USE THIS SITE. This site is operated by BFPCC, Inc., [&hellip;]" />
+<meta name="twitter:title" content="Terms and Conditions &ndash; Joe Biden for President 2020" />
+<meta name="twitter:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://joebiden.com/#website","url":"https://joebiden.com/","name":"Joe Biden for President 2020","publisher":{"@id":"https://joebiden.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://joebiden.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://joebiden.com/terms/#webpage","url":"https://joebiden.com/terms/","inLanguage":"en-US","name":"Terms and Conditions &ndash; Joe Biden for President 2020","isPartOf":{"@id":"https://joebiden.com/#website"},"datePublished":"2019-04-24T21:49:07-04:00","dateModified":"2019-05-01T18:35:18-04:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//joebiden.com' />
+<link rel='stylesheet' id='bexc-main-css'  href='https://joebiden.com/wp-content/themes/bexc/css/main.css?ver=0.40' type='text/css' media='all' />
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/modernizr.min.js?ver=3.6.0'></script>
+<link rel="alternate" type="application/json+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fterms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fterms%2F&#038;format=xml" />
+<link rel="alternate" href="https://joebiden.com/terms/" hreflang="en" />
+<link rel="alternate" href="https://joebiden.com/es/terminos/" hreflang="es" />
+
+</head>
+
+<body class="page-template-default page page-id-559 language-en">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M96J785"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+  <div class="site-header-wrapper">
+    <header id="site-header" class="clearfix">
+              <div class="site-title">
+          <a href="https://joebiden.com/" rel="home">
+                        <img src="https://joebiden.com/wp-content/themes/bexc/img/logo.svg" width="135" height="56" alt="Logo for Joe Biden for President 2020">
+          </a>
+        </div>
+            <nav id="nav-header">
+        <ul class="top">
+          <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://joebiden.com/joes-story/">Joe&#8217;s Story</a></li>
+<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="https://joebiden.com/joes-vision/">Joe&#8217;s Vision</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-134"><a href="https://www.mobilize.us/joebiden/">Events</a></li>
+<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="https://store.joebiden.com/">Store</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://joebiden.com/join/">Join the Team</a></li>
+                                                                              <li class="translation"><a href="https://joebiden.com/es/terminos/">En Español</a></li>
+                                    
+                                <li class="social">
+              <ul>
+                                                      <li><a href="https://twitter.com/joebiden">
+                      <span class="icon-twitter"></span>
+                      <span class="element-invisible">Twitter</span>
+                    </a></li>
+                                                                        <li><a href="https://www.facebook.com/joebiden">
+                      <span class="icon-facebook"></span>
+                      <span class="element-invisible">Facebook</span>
+                    </a></li>
+                                                                        <li><a href="https://www.instagram.com/joebiden">
+                      <span class="icon-instagram"></span>
+                      <span class="element-invisible">Instagram</span>
+                    </a></li>
+                                                                        <li><a href="https://www.youtube.com/joebiden">
+                      <span class="icon-youtube"></span>
+                      <span class="element-invisible">Youtube</span>
+                    </a></li>
+                                                </ul>
+            </li>
+                  </ul>
+      </nav>
+                        <a href="https://secure.actblue.com/donate/joe2020" class="button red donate-button">Donate</a>
+                    <a class="burger" href="#nav-header">
+        <span class="open">Menu</span>
+        <span class="close">Close</span>
+      </a>
+    </header><!-- #site-header -->
+  </div>
+
+  <div id="main-content">
+
+<main id="main">
+
+                    <div id="donate-bar">
+    <div class="donate-bar">
+              <h2>Support Joe</h2>
+            <ul>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=5" class="button red donate">$5</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=10" class="button red donate">$10</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=20" class="button red donate">$20</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=50" class="button red donate">$50</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=100" class="button red donate">$100</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=250" class="button red donate">$250</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=500" class="button red donate">$500</a></li>
+            <li class="other"><a href="https://secure.actblue.com/donate/joe2020" class="button red donate">Other</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <article class="view-page post-559 page type-page status-publish hentry">
+
+    <header class="entry-header">
+      <h1 class="entry-title">Terms and Conditions</h1>
+    </header>
+    <div class="entry-content">
+      <p>Terms &amp; Conditions</p>
+<p>Last updated April 25, 2019</p>
+<p>PLEASE READ THESE TERMS &amp; CONDITIONS CAREFULLY. BY ACCESSING OR USING THIS SITE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS DESCRIBED HEREIN. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT USE THIS SITE.</p>
+<p>This site is operated by BFPCC, Inc., also referred to as Biden for President (together with any affiliates, “Biden for President,” “we,” or “us”). These Terms &amp; Conditions (“Terms”) apply solely to your access to, and use of, the website operated by Biden for President and other websites, mobile sites, and other online services which link to these Terms and are operated by Biden for President (the “Sites”).</p>
+<p>We reserve the right to change or modify any of the terms and conditions contained in the Terms at any time and in our sole discretion. Any changes or modifications will be effective immediately upon posting of the revisions on the Sites, and you waive any right you may have to receive specific notice of such changes or modifications. Your continued use of the Sites following the posting of changes or modifications will confirm your acceptance of such changes or modifications.</p>
+<p>All questions or comments about the Sites or site content should be directed to <a href="mailto:copyrightcomplaints@joebiden.com">copyrightcomplaints@joebiden.com</a>.</p>
+<p>1. <span style="text-decoration: underline;">Copyright and Limited License.</span> Unless otherwise indicated in the Sites, the Sites and all content and other materials on the Sites, including, without limitation, Biden for President’s logo, and all designs, text, graphics, pictures, information, data, software, tools, widgets, sound files, other files and the selection and arrangement thereof (collectively, the “Site Materials”) are the proprietary property of Biden for President or its licensors or users and are protected by U.S. and international copyright laws. You are granted a limited, non-sublicensable license to access and use the Sites and the Site Materials intended by us for your use for your informational, non-commercial and personal use only. Such license is subject to the Terms and does not include: (a) any resale or commercial use of the Sites or the Site Materials therein; (b) the reproduction, distribution, public performance or public display of any Site Materials, except as expressly permitted on the Site; (c) modifying or otherwise making any derivative uses of the Sites or the Site Materials, or any portion thereof; (d) use of any data mining, robots or similar data gathering or extraction methods; (e) downloading (other than the page caching) of any portion of the Sites, the Site Materials or any information contained therein, except as expressly permitted on the Sites; or (f) any use of the Sites or the Site Materials other than for their intended purpose. Any use of the Sites or the Site Materials other than as specifically authorized herein, without the prior written permission of Biden for President, is strictly prohibited and will terminate the license granted herein. Such unauthorized use may also violate applicable laws including without limitation copyright and trademark laws and applicable communications regulations and statutes. Unless explicitly stated herein, nothing in these Terms shall be construed as conferring any license to intellectual property rights, whether by estoppel, implication or otherwise. This license is revocable at any time.</p>
+<p>2. <span style="text-decoration: underline;">Trademarks.</span> All logos and slogans contained in the Sites are trademarks of Biden for President, its suppliers or licensors, or other third parties and may not be copied, imitated or used, in whole or in part, without the prior written permission of Biden for President or the applicable trademark holder. You may not use any metatags or any other “hidden text” utilizing “Biden for President” or any other name, trademark or product or service name of Biden for President without our prior written permission. In addition, the look and feel of the Site, including all page headers, custom graphics, button icons and scripts, is the service mark, trademark and/or trade dress of Biden for President and may not be copied, imitated or used, in whole or in part, without our prior written permission. All other trademarks, registered trademarks, product names and company names or logos mentioned in the Sites are the property of their respective owners. Reference to any products, services, processes or other information, by trade name, trademark, manufacturer, and supplier or otherwise does not constitute or imply endorsement, sponsorship, or recommendation thereof by us. You may not use a Biden for President logo or other proprietary graphic of Biden for President to link to these Sites without the express written permission of Biden for President. Further, you may not use, frame or utilize framing techniques to enclose any Biden for President trademark, logo or other proprietary information, including the images found at the Sites, the content of any text or the layout/design of any page or form contained on a page on the Sites without Biden for President’s express written consent. Except as noted above, you are not conveyed any right or license by implication, estoppel or otherwise in or under any patent, trademark, copyright or proprietary right of Biden for President or any third party.</p>
+<p>3. <span style="text-decoration: underline;">Third-Party Sites, Functionality and Content</span>. The Sites may make third-party information, advertisements, promotions and other content available on or through the Sites (“<span style="text-decoration: underline;">Third Party Content</span>”). Our Sites also may link or otherwise provide access to third-party websites and other products and services outside our control (collectively, “<span style="text-decoration: underline;">Third Party Products and Services</span>”). These Third Party Products and Services may include, for example, event and volunteer registration and management, donation and payment functionality, and other features, functionalities, and services powered by third parties. Biden for President does not endorse, adopt, sponsor, recommend, or otherwise accept responsibility for any Third Party Content or Third Party Products and Services, and we make no representation or warranties of any kind regarding them. These Third Party Products and Services and Third Party Content are not under the control of Biden for President, and Biden for President is not responsible for their content, quality, nature, reliability, privacy, data security or other practices or their handling of information you make available to them. Your business dealings with these third parties, and any terms, conditions, warranties or representations associated therewith, are solely between you and such third parties. We encourage you to review their applicable terms and policies.</p>
+<p>4. <span style="text-decoration: underline;">Electronic Communications and Privacy Policy.</span> You consent to our communicating with you about the Sites and Biden for President via email, text message, or other electronic means. Please refer to our <a href="https://joebiden.com/privacy-policy/">Privacy Policy</a> for information on how we collect, use and disclose information from our users. You agree that you will not provide any other person’s personal information to us unless you have the rights to do so under applicable law and have shared our <a href="https://joebiden.com/privacy-policy/">Privacy Policy</a> with the applicable person.</p>
+<p>5. <span style="text-decoration: underline;">Prohibited Conduct.</span> You may not access or use, or attempt to access or use, the Sites to take any action that could harm us or any other person or entity, interfere with the operation of the Sites, or use the Sites in a manner that violates any laws. For example, and without limitation, you may not:</p>
+<ul>
+<li>a. Impersonate any person or entity or otherwise misrepresent your affiliation or the origin of materials you transmit;</li>
+<li>b. Engage in unauthorized spidering, “scraping,” or harvesting of content or personal information, or use any other unauthorized automated means to compile information;</li>
+<li>c. Use the Sites to access, harvest, copy, collect, gather, or assemble information or data regarding other users of the Sites without the applicable user’s prior express consent;</li>
+<li>d. Take any action that imposes an unreasonable or disproportionately large load on our network or infrastructure;</li>
+<li>e. Use any device, software or routine to interfere or attempt to interfere with the proper working of the Sites or any activity conducted on the Sites or attempt to probe, scan, test the vulnerability of, or breach the security of any system or network, including without limitation via any viruses, corrupted data, or other harmful, disruptive or destructive files;</li>
+<li>f. Attempt to modify, copy, make derivative works of, decipher, decompile, disassemble, or reverse-engineer any of the software comprising or in any way making up a part of the Sites;</li>
+<li>g. Distribute any unauthorized materials or advertise or promote goods, services, or political campaigns without our express written permission (including, without limitation, by sending spam);</li>
+<li>h. Sublicense any of your rights under these Terms;</li>
+<li>i. Harass or materially interfere in any manner with another user’s use or enjoyment of the Sites;</li>
+<li>j. Engage in any other conduct that restricts or inhibits any person or entity from using or enjoying the Sites, or that, in our sole judgment, exposes us or any of our users, affiliates, or any other person or entity to any liability, damages, or detriment of any type; or</li>
+<li>k. Otherwise use the Sites for any unlawful or unauthorized purpose, or engage in, encourage or promote any activity that violates these Terms or any additional guidelines, policies or rules posted on the Site or otherwise provided to you.</li>
+</ul>
+<p>Violations of system or network security may result in civil or criminal liability. We may investigate and work with law enforcement authorities to prosecute users who violate these Terms. We may suspend or terminate your access to the Sites for any or no reason at any time without notice.</p>
+<p>6. <span style="text-decoration: underline;">Submissions</span>. You acknowledge and agree that any feedback, questions, comments, suggestions, ideas, or other information or materials regarding the Sites or Biden for President that are provided by you in the form of email or other submissions to Biden for President, or any such postings on the Sites, are non-confidential and shall become the sole property of Biden for President. Biden for President shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these materials for any purpose without acknowledgment or compensation to you. To the extent you have any rights, title, or interest in any of the foregoing, you shall assign, and hereby assign, any and all such rights, title, and interest to Biden for President.</p>
+<p>7. <span style="text-decoration: underline;">User Content and Interactive Areas.</span> The Sites may include interactive areas or services, such as forums, blogs, chat rooms or message boards, or other areas or services in which you or other users may create, post, share or store content, messages, materials, data, information, text, graphics, audio, video, or other items or materials on the Sites (“User Content”). You are solely responsible for your use of the Sites and use them at your own risk. You agree not to post, upload to, transmit, distribute, store, create, or otherwise publish through the Sites any User Content that would violate these Terms, including, without limitation, any of the following:</p>
+<ul>
+<li>a. User Content that is unlawful, libelous, defamatory, false, obscene, pornographic, indecent, lewd, suggestive, harassing, threatening, invasive of privacy or publicity rights, abusive, hateful, inflammatory, fraudulent, deceptive or misleading;</li>
+<li>b. User Content that would constitute, encourage or provide instructions for a criminal offense, violate the rights of any party, or that would otherwise create liability or violate any local, state, national or international law;</li>
+<li>c. User Content that may infringe, misappropriate, or otherwise violate any patent, trademark, trade secret, copyright or other intellectual or proprietary right of any party; or</li>
+<li>d. Private information of any third party, including, without limitation, addresses, phone numbers, email addresses, Social Security numbers and credit card numbers.</li>
+</ul>
+<p>Biden for President takes no responsibility and assumes no liability for any User Content posted, stored or uploaded by you or any third party, or for any loss or damage thereto, nor is Biden for President liable for any mistakes, defamation, slander, libel, omissions, falsehoods, obscenity, pornography or profanity you may encounter. Enforcement of the User Content or conduct rules set forth in these Terms is at Biden for President’s sole discretion, and failure to enforce such rules in some instances does not constitute a waiver of our right to enforce such rules in other instances. In addition, these rules do not create any private right of action on the part of any third party or any reasonable expectation that the Sites will not contain any content that is prohibited by such rules. As a provider of interactive services, Biden for President is not liable for any statements, representations, or User Content provided by its users in any public forum, blog or other area of the Sites. Although Biden for President has no obligation to do so, it reserves the right, and has sole discretion, to remove, screen or edit any User Content posted or stored on the Sites at any time and for any or no reason without notice, and you are solely responsible for creating backup copies of and replacing any User Content you post or store on the Sites at your sole cost and expense. Any use of the Sites in violation of the foregoing violates these Terms and may result in, among other things, termination, or suspension of your rights to use the Sites. Except as otherwise provided, you retain ownership of all User Content you post on the Sites. However, if you post User Content to the Sites, unless we indicate otherwise, you grant Biden for President and its affiliates a nonexclusive, royalty-free, perpetual, irrevocable, assignable, transferable, and fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, perform and display such User Content throughout the world in any manner or media now known or later developed, including without limitation in advertising, fundraising and other communications in support of Biden for President or the candidates, issues, organizations or causes supported by Biden for President, without any right of compensation or attribution. You hereby waive any moral rights you may have in User Content. You grant Biden for President and its affiliates and sublicensees the royalty-free, perpetual, irrevocable, assignable, transferable and worldwide right to use the name that you submit in connection with such content, if they choose. You represent and warrant that (a) you own and control all of the rights to the User Content that you post or you otherwise have the right to post such User Content to the Sites; (b) the User Content is accurate and not misleading; and (c) use and posting of the User Content you supply does not violate these Terms and will not violate any rights of or cause injury to any person or entity.</p>
+<p>8. <span style="text-decoration: underline;">Repeat Infringer Policy.</span> In accordance with the Digital Millennium Copyright Act (“DMCA”) and other applicable law, Biden for President has adopted a policy of terminating, in appropriate circumstances as determined by Biden for President in its sole discretion, subscribers or account holders who are deemed to be repeat infringers. Biden for President may also at its sole discretion limit access to the Sites and/or terminate the accounts of any users who infringe, misappropriate, or otherwise violate any intellectual property rights of others, whether or not there is any repeat infringement, misappropriation, or violation.</p>
+<p>9. <span style="text-decoration: underline;">Copyright Complaints.</span> If you believe that anything on the Sites infringes upon any copyright which you own or control, you may file a notification of such infringement with our Designated Agent as set forth below.</p>
+<p><strong>Name of Agent Designated to Receive Notification of Claimed Infringement:</strong> Biden for President Legal Department</p>
+<p><strong>Full Address of Designated Agent to Which Notification Should be Sent: </strong>1120 20th Street NW, Suite 250, Washington DC 20036</p>
+<p><strong>Telephone Number of Designated Agent: </strong>304-446-2020</p>
+<p><strong>E-Mail Address of Designated Agent:</strong> <a href="mailto:copyrightcomplaints@joebiden.com">copyrightcomplaints@joebiden.com</a></p>
+<p>Please see 17 U.S.C. 512(c)(3) for the requirements of a proper notification. You should note that if you knowingly misrepresent in your notification that the material or activity is infringing, you will be liable for any damages, including costs and attorneys’ fees, incurred by us or the alleged infringer as the result of our relying upon such misrepresentation in removing or disabling access to the material or activity claimed to be infringing.</p>
+<p>10. <span style="text-decoration: UNDERLINE;">INDEMNIFICATION.</span> YOU AGREE TO DEFEND, INDEMNIFY AND HOLD HARMLESS BIDEN FOR PRESIDENT, ITS INDEPENDENT CONTRACTORS, SERVICE PROVIDERS, CONSULTANTS AND JOINT COMMITTEE MEMBERS, AND THEIR RESPECTIVE SUBSIDIARIES, AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, VOLUNTEERS, ASSIGNS, AND AGENTS, FROM AND AGAINST ANY AND ALL LOSS, CLAIMS, ACTUAL OR THREATENED SUITS, DEMANDS, DAMAGES, COSTS, LIABILITIES AND EXPENSES (INCLUDING, BUT NOT LIMITED TO, REASONABLE ATTORNEYS’ FEES) ARISING OUT OF, ASSOCIATED WITH, OR RELATED TO YOUR USE OF THE SITES OR ANY ALLEGED VIOLATION BY YOU OF THESE TERMS OR THE RIGHTS OF ANY THIRD PARTY, INCLUDING, WITHOUT LIMITATION, YOUR CONDUCT AND ANY USER CONTENT YOU POST, STORE OR OTHERWISE TRANSMIT ON OR THROUGH THE SITES, OR ANY ACT OR OMISSION RELATING TO THE SITES OR THE USER CONTENT.</p>
+<p>11. <span style="text-decoration: UNDERLINE;">DISCLAIMERS.</span> YOUR USE OF THE SITES IS AT YOUR OWN RISK. EXCEPT AS EXPRESSLY PROVIDED TO THE CONTRARY IN WRITING BY BIDEN FOR PRESIDENT, THE SITES, THE SITE MATERIALS CONTAINED THEREIN AND THE SERVICES PROVIDED ON OR IN CONNECTION THEREWITH (THE “SERVICES”) ARE PROVIDED ON AN “AS IS” BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. BIDEN FOR PRESIDENT DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT OR OTHER VIOLATION OF RIGHTS AND AS TO ACCURACY OR RELIABILITY OF THE INFORMATION, CONTENT, FORMS OR OTHER SITE MATERIALS ACCESSED THROUGH THE SITE. BIDEN FOR PRESIDENT DOES NOT REPRESENT OR WARRANT THAT THE SITES, THE SITE MATERIALS, ANY THIRD-PARTY SITES LINKED TO OR FROM THE SITES, OR THE SERVICES ARE ADEQUATE, ACCURATE, COMPLETE, RELIABLE, CURRENT OR ERROR-FREE, OR THAT THE FUNCTIONS PROVIDED WILL BE UNINTERRUPTED, VIRUS-FREE, OR ERROR-FREE.</p>
+<p>BIDEN FOR PRESIDENT IS NOT RESPONSIBLE FOR, AND EXPRESSLY DISCLAIMS ANY LIABILITY FOR, ANY ERRORS OR OMISSIONS IN THE CONTENT INCLUDED IN THE SITES OR ANY THIRD-PARTY SITES LINKED TO OR FROM THE SITES, INCLUDING THOSE RELATING TO PRICING, TEXT OR PHOTOGRAPHY, AS WELL AS FOR ANY THIRD PARTY PRODUCTS AND SERVICES AND FOR ANY THIRD PARTY CONTENT. WHILE BIDEN FOR PRESIDENT ATTEMPTS TO MAKE YOUR ACCESS AND USE OF THE SITES AND SERVICES SAFE, BIDEN FOR PRESIDENT CANNOT AND DOES NOT REPRESENT OR WARRANT THAT THE SITES, THE SITE MATERIALS OR THE SERVER(S) ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS; THEREFORE, YOU SHOULD USE INDUSTRY-RECOGNIZED SOFTWARE TO DETECT AND DISINFECT VIRUSES FROM ANY DOWNLOAD. BIDEN FOR PRESIDENT IS ALSO NOT RESPONSIBLE OR LIABLE IN ANY MANNER FOR ANY THIRD PARTY ACTIVITIES, PROGRAM, OR EVENTS LISTED ON THE SITES OR FOR THE CONDUCT OF ANY EVENT, ACTIVITY, OR PROGRAM ORGANIZERS OR OTHER USERS OF THE SITES OR FOR ANY THIRD PARTY PRODUCTS AND SERVICES OR FOR ANY THIRD PARTY CONTENT. BIDEN FOR PRESIDENT RESERVES THE RIGHT TO CHANGE ANY AND ALL CONTENT CONTAINED IN THE SITES AND ANY SERVICES OFFERED THROUGH THE SITES AT ANY TIME WITHOUT NOTICE.</p>
+<p>12. <span style="text-decoration: UNDERLINE;">LIMITATION OF LIABILITY.</span> IN NO EVENT SHALL BIDEN FOR PRESIDENT, OR OUR RESPECTIVE SUBSIDIARIES, AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS, ASSIGNS OR VOLUNTEERS BE LIABLE FOR ANY DIRECT, SPECIAL, INDIRECT OR CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY OTHER DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO LOSS OF USE, LOSS OF PROFITS OR LOSS OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE) OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF OR INABILITY TO USE THE SITES, THE SERVICES, THE CONTENT OR THE SITE MATERIALS CONTAINED IN OR ACCESSED THROUGH THE SITE, INCLUDING WITHOUT LIMITATION ANY DAMAGES CAUSED BY OR RESULTING FROM RELIANCE BY USER ON ANY INFORMATION OBTAINED FROM BIDEN FOR PRESIDENT, OR THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAIL, ERRORS, DEFECTS, VIRUSES, DELAYS IN OPERATION OR TRANSMISSION OR ANY FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF GOD, COMMUNICATIONS FAILURE, THEFT, DESTRUCTION OR UNAUTHORIZED ACCESS TO BIDEN FOR PRESIDENT’S RECORDS, PROGRAMS OR SERVICES, EVEN IF ONE OR MORE OF THEM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR LOSS. IN NO EVENT SHALL THE AGGREGATE LIABILITY OF BIDEN FOR PRESIDENT, WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY, ARISING OUT OF OR RELATING TO THE USE OF OR INABILITY TO USE THE SITES OR THE SITE MATERIALS OR THESE TERMS EXCEED THE GREATER OF ONE HUNDRED DOLLARS ($100) OR THE AMOUNT THAT YOU PAID TO ACCESS THE SITES.</p>
+<p>CERTAIN STATE LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. THEREFORE, SOME OR ALL OF THE ABOVE DISCLAIMERS, EXCLUSIONS, OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MIGHT HAVE ADDITIONAL RIGHTS.</p>
+<p>13. <span style="text-decoration: underline;">Applicable Law and Venue</span>. These Terms and your use of the Sites shall be governed by and construed in accordance with the laws of the State of Delaware applicable to agreements made and to be entirely performed within the State of Delaware, without resort to its conflict of law provisions. You agree that any action at law or in equity arising out of or relating to these Terms shall be filed only in the state and federal courts located in the State of Delaware, and you hereby irrevocably and unconditionally consent and submit to the exclusive jurisdiction of such courts over any suit, action or proceeding arising out of these Terms.</p>
+<p>14. <span style="text-decoration: underline;">Termination</span>. Notwithstanding any of these Terms, Biden for President reserves the right, without notice and in its sole discretion, to terminate your license to use the Sites, and to block or prevent your access to and use of the Sites.</p>
+<p>15. <span style="text-decoration: underline;">Miscellaneous</span>. These Terms constitute the entire agreement between you and us, superseding any prior or contemporaneous communications and proposals (whether oral, written or electronic) between you and us. If any provision of these Terms shall be deemed unlawful, void or for any reason unenforceable, then that provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions and will be replaced by an enforceable provision that comes closest to the intention underlying the unenforceable provision. You agree that no joint venture, partnership, employment, or agency relationship exists between you and us as a result of these Terms or your access to and use of the Sites.</p>
+<p>Our failure to enforce any provisions of these Terms or respond to a violation by any party does not waive our right to subsequently enforce the Terms or respond to any violations. Nothing contained in these Terms is in derogation of our right to comply with governmental, court, and law enforcement requests or requirements relating to your use of the Sites or information provided to or gathered by us with respect to such use.</p>
+    </div>
+  </article>
+
+
+</main><!-- #main -->
+
+
+</div><!-- #main-content -->
+
+<footer id="site-footer">
+        <ul class="social">
+                        <li><a href="https://twitter.com/joebiden">
+            <span class="icon-twitter"></span>
+            <span class="element-invisible">Twitter</span>
+          </a></li>
+                                <li><a href="https://www.facebook.com/joebiden">
+            <span class="icon-facebook"></span>
+            <span class="element-invisible">Facebook</span>
+          </a></li>
+                                <li><a href="https://www.instagram.com/joebiden">
+            <span class="icon-instagram"></span>
+            <span class="element-invisible">Instagram</span>
+          </a></li>
+                                <li><a href="https://www.youtube.com/joebiden">
+            <span class="icon-youtube"></span>
+            <span class="element-invisible">Youtube</span>
+          </a></li>
+                  </ul>
+  
+      <div class="disclaimer">Paid for by Biden for President.</div>
+  
+      <div class="footer-text"><p>Support our presidential campaign to elect Joe Biden by signing up to <a href="https://go.joebiden.com/page/s/volunteer">volunteer</a> or making a <a href="https://joebiden.com/donate">donation</a>.</p>
+</div>
+  
+  <nav id="nav-footer">
+      <ul class="menu">
+      <li id="menu-item-357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-357"><a href="https://jobs.lever.co/joebiden">Work with Us</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://joebiden.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-559 current_page_item menu-item-567"><a href="https://joebiden.com/terms/" aria-current="page">Terms and Conditions</a></li>
+      <li>
+        &copy; Copyright 2019. All rights reserved.      </li>
+    </ul>
+  </nav>
+</footer><!-- #site-footer -->
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='https://joebiden.com/wp-content/themes/bexc/js/min/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/plugins.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/js.cookie.min.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/bodyScrollLock.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/slick.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/main.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"853c31a225","applicationID":"143000334","transactionName":"MVxbNkICCxEEVUZaWwgWeAFECgoMSkZTVFE=","queueTime":0,"applicationTime":151,"atts":"HRtYQAoYGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

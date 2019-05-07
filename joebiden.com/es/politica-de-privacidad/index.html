@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M96J785');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://joebiden.com/wp-content/themes/bexc/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://joebiden.com/wp-content/themes/bexc/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/safari-pinned-tab.svg" color="#233f94">
+  <link rel="shortcut icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="https://joebiden.com/wp-content/themes/bexc/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Política de Privacidad &ndash; Joe Biden for President 2020</title>
+  <script src="https://use.typekit.net/lwk5jsx.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+  
+<!-- This site is optimized with the Yoast SEO plugin v11.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://joebiden.com/es/politica-de-privacidad/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Política de Privacidad &ndash; Joe Biden for President 2020" />
+<meta property="og:description" content="Última actualización 25 de abril de 2019 Esta Política de privacidad explica cómo BFPCC, Inc. y sus afiliadas (“Biden for President”, “nosotros” o “nos”) recopilan, utilizan y divulgan su información sobre usted.  Esta Política de privacidad se aplica a la información que recopilamos cuando utiliza los sitios web, sitios móviles y otros servicios en línea que &hellip;" />
+<meta property="og:url" content="https://joebiden.com/es/politica-de-privacidad/" />
+<meta property="og:site_name" content="Joe Biden for President 2020" />
+<meta property="og:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:secure_url" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Última actualización 25 de abril de 2019 Esta Política de privacidad explica cómo BFPCC, Inc. y sus afiliadas (“Biden for President”, “nosotros” o “nos”) recopilan, utilizan y divulgan su información sobre usted.  Esta Política de privacidad se aplica a la información que recopilamos cuando utiliza los sitios web, sitios móviles y otros servicios en línea que [&hellip;]" />
+<meta name="twitter:title" content="Política de Privacidad &ndash; Joe Biden for President 2020" />
+<meta name="twitter:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://joebiden.com/es/inicio/#website","url":"https://joebiden.com/es/inicio/","name":"Joe Biden for President 2020","publisher":{"@id":"https://joebiden.com/es/inicio/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://joebiden.com/es/inicio/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://joebiden.com/es/politica-de-privacidad/#webpage","url":"https://joebiden.com/es/politica-de-privacidad/","inLanguage":"es-US","name":"Pol\u00edtica de Privacidad &ndash; Joe Biden for President 2020","isPartOf":{"@id":"https://joebiden.com/es/inicio/#website"},"datePublished":"2019-04-19T23:30:43-04:00","dateModified":"2019-05-01T18:34:57-04:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//joebiden.com' />
+<link rel='stylesheet' id='bexc-main-css'  href='https://joebiden.com/wp-content/themes/bexc/css/main.css?ver=0.40' type='text/css' media='all' />
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/modernizr.min.js?ver=3.6.0'></script>
+<link rel="alternate" type="application/json+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fes%2Fpolitica-de-privacidad%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fes%2Fpolitica-de-privacidad%2F&#038;format=xml" />
+<link rel="alternate" href="https://joebiden.com/privacy-policy/" hreflang="en" />
+<link rel="alternate" href="https://joebiden.com/es/politica-de-privacidad/" hreflang="es" />
+
+</head>
+
+<body class="page-template-default page page-id-143 language-es">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M96J785"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+  <div class="site-header-wrapper">
+    <header id="site-header" class="clearfix">
+              <div class="site-title">
+          <a href="https://joebiden.com/es/inicio/" rel="home">
+                        <img src="https://joebiden.com/wp-content/themes/bexc/img/logo.svg" width="135" height="56" alt="Logo for Joe Biden for President 2020">
+          </a>
+        </div>
+            <nav id="nav-header">
+        <ul class="top">
+          <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://joebiden.com/es/la-historia-de-joe/">La Historia de Joe</a></li>
+<li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"><a href="https://joebiden.com/es/la-vision-de-joe/">La Visión de Joe</a></li>
+<li id="menu-item-140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-140"><a href="https://www.mobilize.us/joebiden/">Eventos</a></li>
+<li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141"><a href="https://store.joebiden.com/">Tienda</a></li>
+<li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142"><a href="https://joebiden.com/es/unase/">Únase</a></li>
+                                                    <li class="translation"><a href="https://joebiden.com/privacy-policy/">English</a></li>
+                                                              
+                                <li class="social">
+              <ul>
+                                                      <li><a href="https://twitter.com/joebiden">
+                      <span class="icon-twitter"></span>
+                      <span class="element-invisible">Twitter</span>
+                    </a></li>
+                                                                        <li><a href="https://www.facebook.com/joebiden">
+                      <span class="icon-facebook"></span>
+                      <span class="element-invisible">Facebook</span>
+                    </a></li>
+                                                                        <li><a href="https://www.instagram.com/joebiden">
+                      <span class="icon-instagram"></span>
+                      <span class="element-invisible">Instagram</span>
+                    </a></li>
+                                                                        <li><a href="https://www.youtube.com/joebiden">
+                      <span class="icon-youtube"></span>
+                      <span class="element-invisible">Youtube</span>
+                    </a></li>
+                                                </ul>
+            </li>
+                  </ul>
+      </nav>
+                        <a href="https://secure.actblue.com/donate/spjoe2020" class="button red donate-button">Contribuya</a>
+                    <a class="burger" href="#nav-header">
+        <span class="open">Menú</span>
+        <span class="close">Menú</span>
+      </a>
+    </header><!-- #site-header -->
+  </div>
+
+  <div id="main-content">
+
+<main id="main">
+
+                    <div id="donate-bar">
+    <div class="donate-bar">
+              <h2>Apoya a Joe</h2>
+            <ul>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=5" class="button red donate">$5</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=10" class="button red donate">$10</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=20" class="button red donate">$20</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=50" class="button red donate">$50</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=100" class="button red donate">$100</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=250" class="button red donate">$250</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=500" class="button red donate">$500</a></li>
+            <li class="other"><a href="https://secure.actblue.com/donate/spjoe2020" class="button red donate">Otro</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <article class="view-page post-143 page type-page status-publish hentry">
+
+    <header class="entry-header">
+      <h1 class="entry-title">Política de Privacidad</h1>
+    </header>
+    <div class="entry-content">
+      <p><em>Última actualización 25 de abril de 2019</em></p>
+<p>Esta Política de privacidad explica cómo BFPCC, Inc. y sus afiliadas (“Biden for President”, “nosotros” o “nos”) recopilan, utilizan y divulgan su información sobre usted.  Esta Política de privacidad se aplica a la información que recopilamos cuando utiliza los sitios web, sitios móviles y otros servicios en línea que enlazan con esta Política de Privacidad (colectivamente, los &#8220;Sitios&#8221;).</p>
+<p>Podemos cambiar esta Política de Privacidad de vez en cuando.  Si realizamos cambios, se lo notificaremos revisando la fecha en la parte superior de la política y, en algunos casos, podemos proporcionarle un aviso adicional (como agregar una declaración a nuestra página de inicio o enviarle una notificación por correo electrónico).  Le recomendamos que revise la Política de Privacidad cada vez que acceda a los Sitios para mantenerse informado sobre nuestras prácticas de información y las formas en que puede ayudar a proteger su privacidad.</p>
+<h2>Colección de información</h2>
+<p><strong>Información que usted nos proporciona</strong><br />
+Recopilamos información que usted nos proporciona directamente.  Por ejemplo, podemos recopilar información cuando llena un formulario, nos envía un correo electrónico, se registra para recibir notificaciones, solicitar información, hacer una donación, compartir una historia, enviar contenido, comunicarse con nosotros a través de sitios de redes sociales de terceros o de lo contrario comunicarse con nosotros.  Los tipos de información que recopilamos pueden incluir su nombre, información de contacto (por ejemplo, correo electrónico, número de teléfono y dirección), información de pago y otra información de contacto o de identificación que elija proporcionar.</p>
+<p>Además, podemos recopilar información requerida por la Comisión Federal de Elecciones (&#8220;FEC&#8221;).  Por ejemplo, la FEC nos exige recopilar (y divulgar) el nombre, la dirección postal, la ocupación y el patrono de todas las personas cuyas donaciones superen los $ 200 por año calendario.</p>
+<p><strong>Información que recopilamos automáticamente cuando utiliza los sitios</strong><br />
+Cuando accesa o utiliza nuestros Sitios, automáticamente recopilamos información sobre usted, que incluye:</p>
+<ul>
+<li>Información de registro: Registramos información sobre su uso de los Sitios, incluido el tipo de navegador que usa, los tiempos de acceso, las páginas visitadas, su dirección IP y la página que visitó antes de navegar a nuestro Sitio.</li>
+<li>Información del dispositivo: es posible que recopilemos información sobre la computadora o dispositivo móvil que usa para acceder a nuestro Sitio, incluido el modelo de hardware, el sistema operativo y la versión, los identificadores del dispositivo y la información de la red móvil.</li>
+<li>Información transaccional: si realiza una donación o compra, podemos recopilar información sobre la transacción, como el monto de la donación, el precio de compra, los detalles del producto, la fecha y la ubicación de la transacción.</li>
+<li>Información recopilada por las cookies y otras tecnologías de seguimiento: utilizamos varias tecnologías para recopilar información, y esto puede incluir la instalación de cookies en su computadora o dispositivo móvil que identifican de forma exclusiva su navegador o dispositivo.  Las cookies son pequeños archivos de datos que se utilizan para almacenar información en su dispositivo, incluso para ayudarnos a mejorar nuestros Sitios y su experiencia, ver qué áreas y características de nuestros Sitios son populares y contar las visitas.  También podemos recopilar información mediante balizas web (también conocidas como &#8220;píxeles de seguimiento&#8221; o &#8220;GIF transparentes&#8221;).  Las balizas web son imágenes electrónicas que se pueden usar en nuestros Sitios o correos electrónicos y ayudan a entregar cookies, contar visitas, comprender el uso y la efectividad de la campaña y determinar si un correo electrónico se ha abierto y se ha activado.  Para obtener más información sobre las cookies y cómo deshabilitarlas, consulte &#8220;Sus opciones&#8221; a continuación.</li>
+</ul>
+<p><strong>Información que recopilamos de otras fuentes</strong><br />
+También podemos obtener información de otras fuentes y combinarla con la información que recopilamos a través de nuestros Sitios.  Por ejemplo, podemos recibir datos del archivo de votantes de los partidos estatales y otras organizaciones democráticas, de fuentes públicamente disponibles y de organizaciones privadas.  También podemos recibir información de un sitio de redes sociales si se conecta a nuestros Sitios a través de ese sitio.</p>
+<h2>Uso de la información</h2>
+<p>Podemos utilizar su información para diversos fines, entre ellos, los siguientes:</p>
+<ul>
+<li>Proporcionar, mantener y mejorar nuestros Sitios y enviarle confirmaciones, recibos, avisos técnicos, actualizaciones, alertas de seguridad y mensajes administrativos y de soporte;</li>
+<li>Proporcionar y entregar la información que solicita, procesar donaciones y transacciones, y enviarle información relacionada, incluidas las confirmaciones;</li>
+<li>Responda a sus correos electrónicos, presentaciones, comentarios, preguntas y solicitudes, brinde servicio al cliente, solicite que responda a una encuesta, solicite comentarios y, de lo contrario, se comunique con usted acerca de su uso de los Sitios;</li>
+<li>Enviarle boletines informativos y, de lo contrario, proporcionarle la información o los servicios que solicita o que creemos que serán de su interés, como el envío de información para mantenerlo informado sobre la campaña, diversos temas, eventos, actividades y oportunidades de voluntariado (por favor consulte “Sus opciones” a continuación para obtener información sobre cómo cancelar en cualquier momento la suscripción de ciertas comunicaciones).</li>
+<li>Ayudarle a conectarse con otros partidarios, y solicitar voluntarios, donaciones y apoyo para Biden for President y para otros candidatos, temas y organizaciones que apoyamos;</li>
+<li>Comunicarnos con usted si necesitamos información adicional, por ejemplo, si deja los campos en blanco en un formulario o si es necesaria otra información conforme a las leyes electorales federales;</li>
+<li>Recordarle que vote y se registre para votar y lo ayudará a encontrar su información de registro, lugar de votación y eventos de campaña cerca de usted;</li>
+<li>Supervisar y analizar tendencias, usos y actividades en relación con nuestros Sitios;</li>
+<li>Personalice y mejore los Sitios y proporcione anuncios, contenido o funciones que coincidan con los perfiles o intereses de los usuarios o que se basen en la información que proporcione o las acciones que tome;</li>
+<li>Notificar y contactar a participantes del concurso o sorteos;</li>
+<li>Detectar, investigar y prevenir transacciones fraudulentas y otras actividades ilegales y proteger los derechos y propiedad de Biden for President y otros, incluso mediante la aplicación de nuestros Términos y Condiciones; y</li>
+<li>Llevar a cabo cualquier otro propósito para el cual se recopiló la información.</li>
+</ul>
+<p>Biden for President tiene su sede en los Estados Unidos y la información que recopilamos se rige por la ley de EE. UU.  Al acceder o utilizar los Sitios o, de otro modo, proporcionarnos información, usted acepta el procesamiento y la transferencia de información dentro y fuera de los EE. UU. Y otros países.</p>
+<h2>Intercambio de información</h2>
+<p>Podemos compartir información sobre usted de la siguiente manera o como se describe en esta Política de Privacidad:</p>
+<ul>
+<li>Con proveedores, consultores y otros proveedores de servicios o voluntarios que necesitan acceso a dicha información para realizar trabajos en nuestro nombre;</li>
+<li>Con candidatos, organizaciones, campañas, grupos o causas que creemos que tienen puntos de vista, principios u objetivos políticos similares o comparten objetivos similares y con organizaciones que facilitan las comunicaciones y el intercambio de información entre dichos grupos;</li>
+<li>Con otros participantes en un comité conjunto de recaudación de fondos;</li>
+<li>Para informar la información requerida a la Comisión Federal de Elecciones, incluido el nombre, la dirección postal, la ocupación y el nombre de los patrones de personas cuyas contribuciones superan los $ 200 en un año calendario (para obtener información adicional, visite el sitio web de FEC en http: //www.fec.gov);</li>
+<li>Con las afiliadas actuales y futuras, un término que incluye a las compañías que controlan, están controladas por, o están bajo el control común de, Biden for President;</li>
+<li>Cuando creemos de buena fe que estamos legalmente autorizados u obligados a hacerlo o que hacerlo es razonablemente necesario o apropiado para cumplir con la ley o los procesos legales o para responder a solicitudes legales, reclamos o autoridades legales, incluida la respuesta a citaciones legales, órdenes u órdenes judiciales, o solicitudes legales de las autoridades públicas para cumplir con los requisitos de seguridad nacional o de cumplimiento de la ley;</li>
+<li>Si creemos que sus acciones son inconsistentes con el espíritu o lenguaje de nuestros acuerdos o políticas de usuario, o para proteger los derechos, propiedad y seguridad de Biden for President, sus empleados, voluntarios, constituyentes u otros;</li>
+<li>En relación con, o durante las negociaciones de, cualquier reorganización, formación de un nuevo comité u organización sucesora, venta o transferencia de activos, financiamiento o transacción de préstamo o en cualquier otra situación en la que la información personal pueda ser divulgada o transferida como uno de los activos de Biden for President; y</li>
+<li>Con su consentimiento o bajo su dirección, incluso si le notificamos a través de nuestros Sitios que la información que proporcione se compartirá de una manera particular y usted proporciona dicha información o si envía contenido o información en un área pública del sitio o información que se pretende compartir en los Sitios.</li>
+<li>También podemos compartir información agregada o anónima que no lo identifique directamente.<br />
+<h2>Enlaces a sitios de terceros</h2>
+<p>Los Sitios pueden hacer que la información de terceros, anuncios, promociones y otro contenido esté disponible en o a través de los Sitios (&#8220;Contenido de terceros&#8221;).  Nuestros Sitios también pueden vincularse o, de otro modo, proporcionar acceso a sitios web de terceros y otros productos y servicios fuera de nuestro control (en conjunto, &#8220;Productos y servicios de terceros&#8221;).  Estos productos y servicios de terceros pueden incluir, por ejemplo, el registro y la gestión de eventos y voluntarios, la funcionalidad de donación y pago, y otras características, funcionalidades y servicios impulsados por terceros.  Estos Productos y Servicios de Terceros y el Contenido de Terceros no están bajo el control de Biden for President, y Biden for President no es responsable de la seguridad o privacidad de cualquier información personal que comparta con ellos.  Antes de proporcionarles su información personal, debe actuar con precaución y revisar las políticas de privacidad aplicables de cualquier producto y servicio de terceros, incluidos aquellos que utiliza en relación con los Sitios.</p>
+<h2>Características de intercambio social</h2>
+<p>Los Sitios pueden ofrecer funciones de intercambio social y otras herramientas integradas (como el botón &#8220;Me gusta&#8221; de Facebook), que le permiten compartir las acciones que realiza en nuestros Sitios con otros medios, y viceversa.  El uso de dichas funciones permite compartir información con sus amigos o con el público, dependiendo de la configuración que establezca con la entidad que proporciona la función de compartir en redes sociales.  Para obtener más información sobre el propósito y el alcance de la recopilación y el procesamiento de datos en relación con las funciones de intercambio social, visite las políticas de privacidad de las entidades que proporcionan estas características.</p>
+<h2>Servicios de publicidad y análisis proporcionados por otros</h2>
+<p>Nosotros y terceros que proporcionamos contenido o funcionalidad en los Sitios o que nos proporcionan servicios de análisis y publicidad podemos recopilar o recibir información sobre su uso de los Sitios y otros sitios web o aplicaciones móviles, incluso mediante el uso de cookies, balizas web y tecnologías similares.  Esta información puede incluir, por ejemplo, su dirección IP, navegador, información del dispositivo, páginas visitadas, tiempo dedicado a las páginas, enlaces en los que se hizo clic e información sobre la conversión.  Esta información se puede combinar con la información recopilada en diferentes sitios web, servicios en línea y dispositivos vinculados o asociados para, entre otras cosas, analizar y rastrear datos, determinar la popularidad de cierto contenido, entregar publicidad y contenido dirigido a sus intereses y comprender mejor su contenido.  Actividad en línea.</p>
+<p>Para obtener más información sobre los anuncios basados en Internet, o para optar por no recibir publicidad dirigida de las empresas participantes, visite <a href="https://www.aboutads.info/choices">www.aboutads.info/choices</a>.</p>
+<h2>Tus opciones</h2>
+<p><strong>Cookies </strong><br />
+La mayoría de los navegadores web están configurados para aceptar cookies de forma predeterminada.  Si lo prefiere, generalmente puede elegir configurar su navegador para eliminar o rechazar las cookies del navegador.  Eliminar o rechazar las cookies del navegador no afecta necesariamente a las cookies flash de terceros que se pueden usar en relación con nuestros Sitios.  Para eliminar o desactivar las cookies flash, visite <a href="https://www.adobe.com/products/flashplayer/security">www.adobe.com/products/flashplayer/security</a> para obtener más información.  Tenga en cuenta que si elige eliminar o rechazar las cookies, esto podría afectar la disponibilidad y la funcionalidad de nuestro Sitio.</p>
+<p><strong>Comunicaciones promocionales</strong><br />
+Puede optar por no recibir correos electrónicos promocionales o mensajes de texto siguiendo las instrucciones de esos correos electrónicos o mensajes de texto.  Si opta por excluirse, es posible que aún le enviemos otros tipos de correos electrónicos, como aquellos sobre su uso de los Sitios o cualquier donación o transacción.</p>
+<h2>Seguridad</h2>
+<p>Tenga en cuenta que no se puede garantizar que ninguna transmisión o almacenamiento de datos sea 100% seguro.  Como resultado, aunque nos esforzamos por proteger la información que mantenemos, no podemos garantizar ni garantizar la seguridad de ninguna información que nos transmita.</p>
+<h2>Sus derechos de privacidad en California</h2>
+<p>La ley de California permite a los residentes de California solicitar ciertos detalles sobre cómo se comparte su información con terceros para fines de mercadeo directo.  Si usted es residente de California y desea hacer una solicitud de este tipo, contáctenos a <a href="mailto:copyrightcomplaints@joebiden.com">copyrightcomplaints@joebiden.com</a>.</p>
+<p><strong>Señales Do-Not-Track </strong></p>
+<p>Algunos navegadores web pueden transmitir señales de &#8220;no hacer seguimiento&#8221; a los sitios web y otros servicios en línea con los que se comunica el navegador.  No existe una norma que regule qué deben hacer los sitios web y los servicios en línea, si es que hacen algo, cuando reciben estas señales.  Actualmente no actuamos en respuesta a estas señales.  Si y cuando se establece un estándar para responder, podemos revisar nuestra política para responder a estas señales.</p>
+<p><strong>Contáctenos</strong><br />
+Si tiene alguna pregunta sobre esta Política de privacidad, contáctenos en <a href="mailto:copyrightcomplaints@joebiden.com">copyrightcomplaints@joebiden.com</a>.</li>
+</ul>
+    </div>
+  </article>
+
+
+</main><!-- #main -->
+
+
+</div><!-- #main-content -->
+
+<footer id="site-footer">
+        <ul class="social">
+                        <li><a href="https://twitter.com/joebiden">
+            <span class="icon-twitter"></span>
+            <span class="element-invisible">Twitter</span>
+          </a></li>
+                                <li><a href="https://www.facebook.com/joebiden">
+            <span class="icon-facebook"></span>
+            <span class="element-invisible">Facebook</span>
+          </a></li>
+                                <li><a href="https://www.instagram.com/joebiden">
+            <span class="icon-instagram"></span>
+            <span class="element-invisible">Instagram</span>
+          </a></li>
+                                <li><a href="https://www.youtube.com/joebiden">
+            <span class="icon-youtube"></span>
+            <span class="element-invisible">Youtube</span>
+          </a></li>
+                  </ul>
+  
+      <div class="disclaimer">Pagado por Biden for President.</div>
+  
+            <div class="footer-text"><p>Apoye nuestra campaña presidencial para elegir a Joe Biden inscribiéndose como <a href="https://go.joebiden.com/page/s/volunteer">voluntario</a> o haciendo una <a href="https://secure.actblue.com/donate/spjoe2020">donación</a>.</p>
+</div>
+      
+  <nav id="nav-footer">
+      <ul class="menu">
+      <li id="menu-item-358" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-358"><a href="https://jobs.lever.co/joebiden">Empleos</a></li>
+<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-143 current_page_item menu-item-145"><a href="https://joebiden.com/es/politica-de-privacidad/" aria-current="page">Política de Privacidad</a></li>
+<li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="https://joebiden.com/es/terminos/">Términos y Condiciones</a></li>
+      <li>
+        &copy; Copyright 2019. Derechos Reservados.      </li>
+    </ul>
+  </nav>
+</footer><!-- #site-footer -->
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='https://joebiden.com/wp-content/themes/bexc/js/min/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/plugins.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/js.cookie.min.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/bodyScrollLock.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/slick.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/main.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"853c31a225","applicationID":"143000334","transactionName":"MVxbNkICCxEEVUZaWwgWeAFECgoMSkZTVFE=","queueTime":0,"applicationTime":351,"atts":"HRtYQAoYGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
