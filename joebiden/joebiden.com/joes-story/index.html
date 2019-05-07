@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M96J785');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://joebiden.com/wp-content/themes/bexc/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://joebiden.com/wp-content/themes/bexc/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/safari-pinned-tab.svg" color="#233f94">
+  <link rel="shortcut icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="https://joebiden.com/wp-content/themes/bexc/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Joe&#039;s Story &ndash; Joe Biden for President 2020</title>
+  <script src="https://use.typekit.net/lwk5jsx.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+  
+<!-- This site is optimized with the Yoast SEO plugin v11.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://joebiden.com/joes-story/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Joe&#039;s Story" />
+<meta property="og:description" content="From Scranton to Wilmington to the White House—with thousands of train rides in between." />
+<meta property="og:url" content="https://joebiden.com/joes-story/" />
+<meta property="og:site_name" content="Joe Biden for President 2020" />
+<meta property="og:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:secure_url" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="From Scranton to Wilmington to the White House—with thousands of train rides in between." />
+<meta name="twitter:title" content="Joe&#039;s Story" />
+<meta name="twitter:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1024x512.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://joebiden.com/#website","url":"https://joebiden.com/","name":"Joe Biden for President 2020","publisher":{"@id":"https://joebiden.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://joebiden.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://joebiden.com/joes-story/#webpage","url":"https://joebiden.com/joes-story/","inLanguage":"en-US","name":"Joe&#039;s Story &ndash; Joe Biden for President 2020","isPartOf":{"@id":"https://joebiden.com/#website"},"datePublished":"2019-04-16T12:48:08-04:00","dateModified":"2019-04-29T22:34:48-04:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//joebiden.com' />
+<link rel='stylesheet' id='bexc-main-css'  href='https://joebiden.com/wp-content/themes/bexc/css/main.css?ver=0.40' type='text/css' media='all' />
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/modernizr.min.js?ver=3.6.0'></script>
+<link rel="alternate" type="application/json+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fjoes-story%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fjoes-story%2F&#038;format=xml" />
+<link rel="alternate" href="https://joebiden.com/joes-story/" hreflang="en" />
+<link rel="alternate" href="https://joebiden.com/es/la-historia-de-joe/" hreflang="es" />
+
+</head>
+
+<body class="page-template page-template-page-about page-template-page-about-php page page-id-26 language-en">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M96J785"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+  <div class="site-header-wrapper">
+    <header id="site-header" class="clearfix">
+              <div class="site-title">
+          <a href="https://joebiden.com/" rel="home">
+                        <img src="https://joebiden.com/wp-content/themes/bexc/img/logo.svg" width="135" height="56" alt="Logo for Joe Biden for President 2020">
+          </a>
+        </div>
+            <nav id="nav-header">
+        <ul class="top">
+          <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-26 current_page_item menu-item-34"><a href="https://joebiden.com/joes-story/" aria-current="page">Joe&#8217;s Story</a></li>
+<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="https://joebiden.com/joes-vision/">Joe&#8217;s Vision</a></li>
+<li id="menu-item-134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-134"><a href="https://www.mobilize.us/joebiden/">Events</a></li>
+<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="https://store.joebiden.com/">Store</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://joebiden.com/join/">Join the Team</a></li>
+                                                                              <li class="translation"><a href="https://joebiden.com/es/la-historia-de-joe/">En Español</a></li>
+                                    
+                                <li class="social">
+              <ul>
+                                                      <li><a href="https://twitter.com/joebiden">
+                      <span class="icon-twitter"></span>
+                      <span class="element-invisible">Twitter</span>
+                    </a></li>
+                                                                        <li><a href="https://www.facebook.com/joebiden">
+                      <span class="icon-facebook"></span>
+                      <span class="element-invisible">Facebook</span>
+                    </a></li>
+                                                                        <li><a href="https://www.instagram.com/joebiden">
+                      <span class="icon-instagram"></span>
+                      <span class="element-invisible">Instagram</span>
+                    </a></li>
+                                                                        <li><a href="https://www.youtube.com/joebiden">
+                      <span class="icon-youtube"></span>
+                      <span class="element-invisible">Youtube</span>
+                    </a></li>
+                                                </ul>
+            </li>
+                  </ul>
+      </nav>
+                        <a href="https://secure.actblue.com/donate/joe2020" class="button red donate-button">Donate</a>
+                    <a class="burger" href="#nav-header">
+        <span class="open">Menu</span>
+        <span class="close">Close</span>
+      </a>
+    </header><!-- #site-header -->
+  </div>
+
+  <div id="main-content">
+
+<main id="main">
+
+                    <div id="donate-bar">
+    <div class="donate-bar">
+              <h2>Support Joe</h2>
+            <ul>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=5" class="button red donate">$5</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=10" class="button red donate">$10</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=20" class="button red donate">$20</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=50" class="button red donate">$50</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=100" class="button red donate">$100</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=250" class="button red donate">$250</a></li>
+              <li><a href="https://secure.actblue.com/donate/joe2020?amount=500" class="button red donate">$500</a></li>
+            <li class="other"><a href="https://secure.actblue.com/donate/joe2020" class="button red donate">Other</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <article class="view-about post-26 page type-page status-publish hentry">
+
+    <header class="entry-header">
+                        <div class="background background-desktop" style="background-image: url(https://joebiden.com/wp-content/uploads/2019/04/about-hero-2.jpg);"></div>
+                <div class="entry-title">
+                      <h1 class="title h1">Joe's Story.</h1>
+                                <div class="subhead h4">From Scranton to Wilmington to the White House—with thousands of train rides in between.</div>
+                  </div>
+          </header>
+
+    <div id="chapters">
+      <div class="tracks" id="tracks"></div>
+      <img id="train" src="https://joebiden.com/wp-content/themes/bexc/img/train.svg" width="34" height="279" alt="Train">
+                        <section id="chapter-1" class="chapter odd">
+            <div class="inner">
+                              <h2 class="title">Humble Beginnings.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-1.jpg" class="attachment-large size-large" alt="Young Joe Biden with mother and siblings" sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-1.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-1-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-1-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                              <h3 class="h4 title with-body">It all starts in a little house on North Washington Avenue.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joseph Robinette Biden, Jr. is born in Scranton, Pennsylvania, the son of Catherine Eugenia Finnegan Biden and Joseph Robinette Biden, Sr., and the first of four children. </span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                              <h3 class="h4 title with-body">The Bidens move to Delaware.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">When Joe is 10, the Biden family moves to Claymont, Delaware, to look for better work. It becomes the state Joe calls home.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-4 even">
+                                                                                                      <figure class="quote">
+                        <blockquote>“During my adolescent and college years, men and women were changing the country—Martin Luther King, Jr., John F. Kennedy, Robert Kennedy—and I was swept up in their eloquence, their conviction, the sheer size of their improbable dreams.”</blockquote>
+                                              </figure>
+                                      </div>
+                                  <div class="section section-5 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-man.jpg" class="attachment-large size-large" alt="Joe as a young man." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-man.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-man-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-man-768x431.jpg 768w" />                        </figure>
+                                                                                                        <div class="body"><p><span style="font-weight: 400;">Joe enrolls at the University of Delaware, where he double majors in history and political science. He goes on to Syracuse University, where he earns his law degree.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  <section id="chapter-2" class="chapter even">
+            <div class="inner">
+                              <h2 class="title">A new leader.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-new-leader.jpg" class="attachment-large size-large" alt="A young Joe Biden delivers remarks." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-new-leader.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-new-leader-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-new-leader-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                              <h3 class="h4 title with-body">Joe starts a family.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe marries Neilia Hunter at St. Mary&#8217;s of the Lake in Skaneateles, New York. In the years to come, they have three children together—Joseph R. &#8220;Beau&#8221; Biden, III, Robert Hunter, and Naomi Christina.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                              <h3 class="h4 title with-body">The first campaign.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe practices law at a firm in Wilmington while also working part-time as a public defender. Later that year, he launches his first-ever campaign for the New Castle County Council, which he won by 2,000 votes. </span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-4 even">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-4.jpg" class="attachment-large size-large" alt="Joe Biden working in office" sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-4.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-4-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-4-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">Joe sticks up for the little guy—and never stops.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">As a member of the New Castle County Council, Joe fights against a massive 10-lane highway project that threatened to pave over Wilmington&#8217;s neighborhoods and push back on the oil companies building refineries on the Delaware coast.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-5 odd">
+                                                                                                      <figure class="quote">
+                        <blockquote>"We have too often allowed our differences to prevail among us. We have too often allowed ambitious men to play off those differences for political gain. We have too often retreated behind our differences when no one really tried to lead us beyond them."</blockquote>
+                                                   <figcaption>Joe Biden, announcing his candidacy for the U.S. Senate, 1972</figcaption>
+                                              </figure>
+                                      </div>
+                                  <div class="section section-6 even">
+                                                              <h3 class="h4 title with-body">Victory turns to tragedy.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">At age 29, Joe becomes one of the youngest people ever elected to the United States Senate. Weeks later, tragedy strikes the Biden family when Neilia and Naomi are killed and Hunter and Beau are critically injured in an auto accident.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  <section id="chapter-3" class="chapter odd">
+            <div class="inner">
+                              <h2 class="title">A young voice in the Senate.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-5.jpg" class="attachment-large size-large" alt="A young voice in the senate" sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-5.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-5-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-5-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                              <h3 class="h4 title with-body">The 120-mile commute.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe is sworn into the U.S. Senate at his sons&#8217; hospital bedsides, and begins commuting from Wilmington to Washington every day, first by car and then by train, in order to tuck his sons in bed at night and see them get up in the morning. He will continue to do so throughout his time in the Senate. For five years, Joe raises Beau and Hunter as a single father, with the help of his sister Valerie and his family. </span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                              <h3 class="h4 title with-body">An early voice for campaign finance reform.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe first calls for the public financing of campaigns in the early 1970s. In the decades to come, he&#8217;ll continue to take action to restore and strengthen our democratic institutions, starting with protecting the right to vote.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-4 even">
+                                                                                                      <figure class="quote">
+                        <blockquote>"The United States Constitution says <em>We the People</em>. Not <em>We the Donors</em>."</blockquote>
+                                                   <figcaption>Joe on campaign finance reform</figcaption>
+                                              </figure>
+                                      </div>
+                                  <div class="section section-5 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-jill-kids.jpg" class="attachment-large size-large" alt="Joe marries Jill Jacobs." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-jill-kids.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-jill-kids-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-jill-kids-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">Joe marries Jill Jacobs.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Beau and Hunter tell their dad that it&#8217;s time to ask Jill Jacobs, then a high school English teacher, to marry them. They marry at the United Nations Chapel in New York City in 1977. Jill leaves teaching to become a full-time mom—and in 1980, their family is complete with the birth of Ashley Blazer, named by her brothers. A lifelong educator, Jill will go on to earn her doctorate in education and return to teaching as an English professor at a community college in Virginia.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-6 even">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-children.jpg" class="attachment-large size-large" alt="A young Beau, Ashley, and Hunter Biden." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-children.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-children-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-young-children-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-7 odd">
+                                                              <h3 class="h4 title with-body">A leader on arms control.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe leads a delegation of senators to meet with Kremlin officials in Moscow to present U.S. conditions for the ratification of the Strategic Arms Limitation Talks&#8211;SALT II. It is the beginning of his decades-long leadership on nuclear arms control and strategic security negotiations to keep the American people safe, prevent an unchecked nuclear arms race, and establish norms of international conduct. Later, as Vice President, he will be critical to Senate approval of the New START Treaty with Russia, which brings deployed strategic nuclear weapons by the two countries to the lowest level in history.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-8 even">
+                                                              <h3 class="h4 title with-body">One of the first climate change bills.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe calls for action to address climate change and protect the environment before it was a mainstream issue, introducing the Global Climate Protection Act. Later, as Chair of the Foreign Relations Committee, he organizes several hearings on climate change and rallies support on a number of non-binding resolutions on the issue, in an attempt to build momentum for action to address climate change.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  <section id="chapter-4" class="chapter even">
+            <div class="inner">
+                              <h2 class="title">A leader in the Senate.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-leader-senate.jpg" class="attachment-large size-large" alt="Joe as a leader in the Senate." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-leader-senate.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-leader-senate-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-leader-senate-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                                                  <div class="body"><p><span style="font-weight: 400;">As Chairman or Ranking Member of the Senate Judiciary Committee for 16 years, Joe is widely recognized for his work writing and spearheading the Violence Against Women Act and blocking Jeff Sessions&#8217; and Robert Bork’s nominations to the bench.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                              <h3 class="h4 title with-body">Taking on the NRA.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Joe takes on the National Rifle Association and wins—twice. In 1993, he secures the passage of the Brady background check bill, ushering the bill through conference and defeating an NRA-supported filibuster. And in 1994, he champions the passage of bans on assault weapons and high-capacity magazines.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-4 even">
+                                                              <h3 class="h4 title with-body">Addressing the scourge of violence against women.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">At a time when gender-based violence is still considered a &#8220;family issue,&#8221; Joe writes and spearheads the Violence Against Women Act—the landmark legislation that criminalizes violence against women, creates unprecedented resources for survivors of assault, and changes the national dialogue on domestic and sexual assault.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-5 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-9.jpg" class="attachment-large size-large" alt="Joe Biden talks post-Cold-War foreign policy." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-9.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-9-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-9-768x431.jpg 768w" />                        </figure>
+                                                                                                        <div class="body"><p><span style="font-weight: 400;">As Chairman or Ranking Member of the Senate Foreign Relations Committee for 12 years, Senator Biden plays a pivotal role in shaping U.S. foreign policy. He is at the forefront of issues and legislation related to terrorism, weapons of mass destruction, post-Cold War Europe, the Middle East, and Southwest Asia.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-6 even">
+                                                                                                      <figure class="quote">
+                        <blockquote>"He's an expert on foreign policy whose heart and values are rooted firmly in the middle class. He has stared down dictators and spoken out for America's cops and firefighters. He is uniquely suited to be my partner as we work to put our country back on track." </blockquote>
+                                                   <figcaption>Barack Obama, introducing Joe Biden as his running mate</figcaption>
+                                              </figure>
+                                      </div>
+                                  <div class="section section-7 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-10.jpg" class="attachment-large size-large" alt="Joe and Barack Obama on the campaign trail." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-10.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-10-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-10-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">A running mate becomes a friend for life.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">At a speech in Springfield, Illinois, Barack Obama announces Joe as his vice-presidential running mate. In the months and years to come, they become good friends, and their families grow close.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  <section id="chapter-5" class="chapter odd">
+            <div class="inner">
+                              <h2 class="title">The 47th Vice President of the United States.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-11.jpg" class="attachment-large size-large" alt="Joe delivers remarks while Dr. Biden looks on." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-11.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-11-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-11-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                                                  <div class="body"><p><span style="font-weight: 400;">As Vice President, Joe continues his leadership on important issues facing the nation and represents our country abroad—traveling over 1.2 million miles to more than 50 countries. Vice President Biden convenes sessions of the President’s Cabinet, leads interagency efforts, and works with Congress in his fight to raise the living standards of middle-class Americans, reduce gun violence, address violence against women, and end cancer as we know it.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                              <h3 class="h4 title with-body">The biggest economic recovery plan in the history of America.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">President Obama turns to Joe to first help pass and then oversee the implementation of the Recovery Act—the biggest economic recovery plan in the history of the nation and our biggest and strongest commitment to clean energy. The President’s plan prevents another Great Depression, creates and saves millions of jobs, and leads to 75 uninterrupted months of job growth by the end of the Administration, which has continued until today. And Joe did it all with less than 1% in waste, abuse or fraud—the most efficient government program in our country&#8217;s history.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-4 even">
+                                                              <h3 class="h4 title with-body">Millions of Americans gain the peace of mind of health insurance.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">President Obama and Joe secure the passage of the Affordable Care Act, which will have reduced the number of uninsured Americans by 20 million by the time they leave office and banned insurance companies from denying coverage due to pre-existing conditions.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-5 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-12.jpg" class="attachment-large size-large" alt="Joe speaks up for LGBTQ+ individuals." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-12.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-12-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-12-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">Joe speaks up for marriage equality.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Vice President Biden vocally supports marriage equality for LGBTQ individuals at a time when most political pundits said it wasn’t a good idea. He later shows the same leadership by expressing early support for the Equality Act.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  <section id="chapter-6" class="chapter even">
+            <div class="inner">
+                              <h2 class="title">Four more years.</h2>
+                                                              <div class="section section-1 odd">
+                                                                  <figure class="standalone">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-13.jpg" class="attachment-large size-large" alt="Joe laughs with an Ohio supporter." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-13.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-13-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-13-768x431.jpg 768w" />                        </figure>
+                                                                                                                        </div>
+                                  <div class="section section-2 even">
+                                                                                  <div class="body"><p><span style="font-weight: 400;">President Obama and Vice President Biden win reelection by sweeping margins.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+                                                          </div>
+                                  <div class="section section-3 odd">
+                                                                                                      <figure class="quote">
+                        <blockquote>"The President and I are going to do everything in our power to honor the memory of your children and your wives with the work we take up here today."</blockquote>
+                                                   <figcaption>Remarks by the Vice President to families of gun violence victims, January 2013</figcaption>
+                                              </figure>
+                                      </div>
+                                  <div class="section section-4 even">
+                                                              <h3 class="h4 title with-body">Taking on the NRA, again.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">After 26 first-graders and educators are killed at Sandy Hook Elementary School, Joe leads an effort to take more than two dozen actions to make our schools and communities safer, including improving the gun background check system and narrowing the gun show loophole.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-5 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-beau.jpg" class="attachment-large size-large" alt="Beau with Jill Biden" sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-beau.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-beau-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-beau-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">The Biden family loses a hero.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">Beau Biden, Attorney General of Delaware and Joe Biden&#8217;s eldest son, passes away after battling brain cancer with the same integrity, courage, and strength he demonstrated every day of his life. Beau&#8217;s fight with cancer inspires the mission of Joe&#8217;s life—ending cancer as we know it.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-6 even">
+                                                              <h3 class="h4 title with-body">A Cancer Moonshot.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">In his final State of the Union address, President Obama asks Joe to head up a new national effort to end cancer as we know it—he ends up calling it his &#8220;Cancer Moonshot,&#8221; with the goal of </span><span style="font-weight: 400;"> </span><span style="font-weight: 400;">making a decade’s worth of advances in cancer prevention, diagnosis, and treatment in five years.</span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-7 odd">
+                                                                  <figure class="">
+                          <img width="800" height="449" src="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-15.jpg" class="attachment-large size-large" alt="Joe receives the Presidential Medal of Freedom." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/JRB-about-15.jpg 800w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-15-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/JRB-about-15-768x431.jpg 768w" />                        </figure>
+                                                                                    <h3 class="h4 title with-body">The highest civilian honor.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">In a ceremony at the White House, President Obama awards Joe the Presidential Medal of Freedom with Distinction—the nation&#8217;s highest civilian honor. </span></p>
+</div>
+                                                          </div>
+                                  <div class="section section-8 even">
+                                                              <h3 class="h4 title with-body">The Bidens head home.</h3>
+                                                              <div class="body"><p><span style="font-weight: 400;">After leaving the White House, the Bidens take their first Amtrak ride as private citizens in eight years back to their home in Delaware. In the months to come, they will continue their efforts to expand opportunity for every American with the creation of the Biden Foundation, the Biden Cancer Initiative, the Penn Biden Center for Diplomacy and Global Engagement, and the Biden Institute at the University of Delaware.</span></p>
+</div>
+                                                          </div>
+                                          </div>
+          </section>
+                  </div>
+
+          <section class="video">
+        <div class="inner">
+                      <h2 class="title">A New Chapter</h2>
+                                <div class="body"><p><b>April 25, 2019</b></p>
+<p><span style="font-weight: 400;">Joe steps up to ask for the honor of representing his country once again, announcing his candidacy for President of the United States.</span></p>
+</div>
+                                            <div class="video-wrapper" style="padding: 56.25% 0 0">
+              <iframe width="640" height="360" src="https://www.youtube.com/embed/VbOU2fTg6cI?feature=oembed&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
+                  </div>
+      </section>
+    
+
+          <section class="form">
+        <div class="inner">
+
+          <h2 class="title">
+                          <div class="title-one">That's Joe's story</div>
+                                      <div class="title-two light">—what's yours?</div>
+                      </h2>
+
+                      <form name="signup" class="bsd-signup" action="https://go.joebiden.com/page/s/tell-joe-your-story" data-ajax="https://go.joebiden.com/page/sapi/tell-joe-your-story" method="post">
+
+              <div class="form-inline clearfix">
+                <div class="fieldset" id="bsd-field-firstname">
+                  <div class="label"><label class="field">My name is</label></div>
+                  <div class="input"><input size="16" id="firstname" name="firstname" type="text" class="text" placeholder="First Name"></div>
+                </div>
+
+                <div class="fieldset" id="bsd-field-zip">
+                  <div class="label"><label class="field">I live in</label></div>
+                  <div class="input"><input size="8" id="zip" name="zip" type="text" class="text" required="required" placeholder="ZIP Code"></div>
+                </div>
+              </div>
+
+              <div class="fieldset" id="bsd-field-email">
+                <div class="label"><label class="field">You can reach me at</label></div>
+                <div class="input"><input type="email" class="text" size="48" id="email" name="email" required="required" placeholder="Email Address"></div>
+              </div>
+
+
+                              <div class="fieldset" id="bsd-field-custom-332">
+                  <div class="label"><label class="field">Here's what I want Joe to know</label></div>
+                  <div class="input"><textarea rows="20" cols="60" id="custom-332" name="custom-332" placeholder="Your Story"></textarea></div>
+                </div>
+              
+              <input value="Send it to Joe." type="submit" class="button red" data-submitting="Submitting"  data-success="Success">
+            </form>
+          
+        </div>
+      </section>
+    
+  </article>
+
+        <div id="promos" class="clearfix">
+                        <aside class="promo promo-1">
+            <a href="https://joebiden.com/join/">
+              <div class="inner">
+                <div class="title h2">Join the Team</div>
+                              </div>
+            </a>
+          </aside>
+                                <aside class="promo promo-2">
+            <a href="https://www.mobilize.us/joebiden/">
+              <div class="inner">
+                <div class="title h2">Find an Event</div>
+                              </div>
+            </a>
+          </aside>
+                                <aside class="promo promo-3">
+            <a href="https://store.joebiden.com/">
+              <div class="inner">
+                <div class="title h2">Visit the Store</div>
+                              </div>
+            </a>
+          </aside>
+                  </div>
+  
+</main><!-- #main -->
+
+
+</div><!-- #main-content -->
+
+<footer id="site-footer">
+        <ul class="social">
+                        <li><a href="https://twitter.com/joebiden">
+            <span class="icon-twitter"></span>
+            <span class="element-invisible">Twitter</span>
+          </a></li>
+                                <li><a href="https://www.facebook.com/joebiden">
+            <span class="icon-facebook"></span>
+            <span class="element-invisible">Facebook</span>
+          </a></li>
+                                <li><a href="https://www.instagram.com/joebiden">
+            <span class="icon-instagram"></span>
+            <span class="element-invisible">Instagram</span>
+          </a></li>
+                                <li><a href="https://www.youtube.com/joebiden">
+            <span class="icon-youtube"></span>
+            <span class="element-invisible">Youtube</span>
+          </a></li>
+                  </ul>
+  
+      <div class="disclaimer">Paid for by Biden for President.</div>
+  
+      <div class="footer-text"><p>Support our presidential campaign to elect Joe Biden by signing up to <a href="https://go.joebiden.com/page/s/volunteer">volunteer</a> or making a <a href="https://joebiden.com/donate">donation</a>.</p>
+</div>
+  
+  <nav id="nav-footer">
+      <ul class="menu">
+      <li id="menu-item-357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-357"><a href="https://jobs.lever.co/joebiden">Work with Us</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://joebiden.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="https://joebiden.com/terms/">Terms and Conditions</a></li>
+      <li>
+        &copy; Copyright 2019. All rights reserved.      </li>
+    </ul>
+  </nav>
+</footer><!-- #site-footer -->
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='https://joebiden.com/wp-content/themes/bexc/js/min/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/plugins.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/js.cookie.min.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/bodyScrollLock.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/slick.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/main.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"853c31a225","applicationID":"143000334","transactionName":"MVxbNkICCxEEVUZaWwgWeAFECgoMSkZTVFFLWFsNRRc=","queueTime":0,"applicationTime":388,"atts":"HRtYQAoYGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

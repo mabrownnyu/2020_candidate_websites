@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Andrew Archives - Page 5 of 13 - Andrew Yang for President</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v10.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.yang2020.com/blog/category/andrew/page/5/" />
+<link rel="prev" href="https://www.yang2020.com/blog/category/andrew/page/4/" />
+<link rel="next" href="https://www.yang2020.com/blog/category/andrew/page/6/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Andrew Archives - Page 5 of 13 - Andrew Yang for President" />
+<meta property="og:url" content="https://www.yang2020.com/blog/category/andrew/" />
+<meta property="og:site_name" content="Andrew Yang for President" />
+<meta property="og:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001-1024x683.jpg" />
+<meta property="og:image:secure_url" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001-1024x683.jpg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="683" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Andrew Archives - Page 5 of 13 - Andrew Yang for President" />
+<meta name="twitter:site" content="@andrewyang" />
+<meta name="twitter:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001.jpg" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//www.yang2020.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Andrew Yang for President &raquo; Feed" href="https://www.yang2020.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Andrew Yang for President &raquo; Comments Feed" href="https://www.yang2020.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Andrew Yang for President &raquo; Andrew Category Feed" href="https://www.yang2020.com/blog/category/andrew/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.yang2020.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='aspire-pro-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/style.css?ver=1.2' type='text/css' media='all' />
+<style id='aspire-pro-inline-css' type='text/css'>
+
+		a,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu a:hover,
+		.entry-title a:hover,
+		.image-section a:hover,
+		.image-section .featured-content .entry-title a:hover,
+		.site-footer a:hover {
+			color: #da3248;
+		}
+
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.archive-pagination li a:hover,
+		.archive-pagination .active a,
+		.button,
+		.widget .button,
+		.front-page-2 .image-section,
+		.popular,
+		.genesis-nav-menu .sub-menu a:hover,
+		.genesis-nav-menu .sub-menu li.current-menu-item > a,
+		.footer-widgets .enews-widget input[type="submit"],
+		.content .portfolio .more-link:hover {
+			background-color: #da3248;
+		}
+
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.button,
+		.front-page input:focus,
+		.front-page textarea:focus,
+		.widget .button {
+			border-color: #da3248;
+		}
+
+		
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.yang2020.com/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='avenir-next-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/AvenirNext/avenir_next.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='new-policy-css-css'  href='https://www.yang2020.com/wp-content/themes/aspire-pro/custom/new-policy.css?ver=1.7.10' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css?ver=4.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-social-icons-font-css'  href='https://www.yang2020.com/wp-content/plugins/simple-social-icons/css/style.css?ver=3.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='about_andrew-css'  href='https://www.yang2020.com/wp-content/plugins/about-andrew/public/css/about-andrew.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/aspire-pro/js/global.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/simple-social-icons/svgxuse.js?ver=1.1.21'></script>
+<link rel='https://api.w.org/' href='https://www.yang2020.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.yang2020.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.yang2020.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel="pingback" href="https://www.yang2020.com/xmlrpc.php" />
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W68JZHN');
+  </script>
+  <!-- End Google Tag Manager -->
+<style type="text/css">.site-title a { background: url(https://www.yang2020.com/wp-content/uploads/cropped-yang2020_white_red.png) no-repeat !important; }</style>
+<meta name="twitter:partner" content="tfwp"><link rel="icon" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" />
+<meta name="msapplication-TileImage" content="https://www.yang2020.com/wp-content/uploads/Y_Favicon-1-300x300.png" />
+
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Category: Andrew">
+		<style type="text/css" id="wp-custom-css">
+			/* General */
+:root {
+	--black: hsl(0, 0%, 0%);
+	--blueDark: hsl(225, 72%, 28%);
+	--blueDarkTransparent: hsla(225, 72%, 28%, 0.67);
+	--blueLight: hsl(205, 70%, 58%);
+	--blueLightest: hsla(213, 100%, 95%, 0.8);
+	--blueTransparent: hsla(212, 100%, 35%, 0.9);
+	--blueTransparentLight: hsla(213, 100%, 95%, 0.44);
+	--grayDarker: hsl(0, 0%, 29%);
+	--grayDark: hsl(0, 0%, 61%);
+	--grayLight: hsl(0, 0%, 61%, 0.1);
+	--grayLighter: hsla(0, 0%, 85%, 0.2);
+	--red: hsl(352, 69%, 53%);
+	--redDark: hsl(352, 69%, 39%);
+	--white: hsl(0, 0%, 100%);
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: 0.3s background-color;
+	-moz-transition: 0.3s background-color;
+	-ms-transition: 0.3s background-color;
+	-o-transition: 0.3s background-color;
+	transition: 0.3s background-color;
+}
+
+.fadeup-effect {
+	opacity: 1 !important;
+	animation-duration: 0s !important;
+}
+
+.tablet-only {
+	display: none;
+}
+
+.mobile-only {
+	display: none;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.tablet-only {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.mobile-only {
+		display: block;
+	}
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span[style] {
+	font-family: 'Awesome Font', sans-serif;
+}
+
+span[style="font-weight: 400;"] {
+  font-weight: inherit !important;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+	p,
+	span[style] {
+		font-size: 16px;
+	}
+}
+
+button:hover,
+button:focus {
+	border-color: var(--redDark);
+	background-color: var(--redDark);
+}
+
+@media (min-width: 769px) {
+	br.mobile {
+		display: none;
+	}
+}
+
+.jumbotron {
+	position: relative;
+  min-height: 420px;
+  background: var(--blueDarkTransparent);
+}
+
+.jumbotron picture {
+	display: grid;
+}
+
+.jumbotron h1 {
+	position: absolute;
+	bottom: 30px;
+	width: 600px;
+	color: var(--white);
+	font-size: 70px;
+	font-weight: 600;
+	letter-spacing: 6px;
+	line-height: 1.36;
+	text-shadow: 4px 5px var(--blueDark);
+	text-transform: uppercase;
+}
+
+.meet-andrew .jumbotron .wrap {
+  max-width: 100%;
+  padding-left: 5%;
+}
+
+.what-is-ubi .jumbotron h1 {
+	width: 660px;
+}
+
+@media (min-width: 1025px) and (max-width: 1074px) {
+	.what-is-ubi .jumbotron h1 {
+		width: 620px;
+		font-size: 67px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.what-is-ubi .jumbotron h1 {
+		width: 600px;
+		font-size: 65px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.jumbotron h1 {
+		width: 350px;
+		font-size: 54px;
+		letter-spacing: 4px;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 480px;
+	}
+}
+
+@media (max-width: 768px) {
+	.jumbotron h1 {
+		width: 200px;
+		font-size: 31px;
+		letter-spacing: 2px;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 280px;
+	}
+}
+
+.underline-blue-dark {
+  background-image: linear-gradient(to top, var(--blueDark) 0.75ex, hsla(0, 0%, 0%, 0) 0.75ex);
+  background-position-y: -0.15ex;
+}
+
+.underline-blue-light,
+.underline-gray-light {
+  background-image: linear-gradient(to top, var(--grayLight) 0.65ex, hsla(0, 0%, 0%, 0) 0.65ex);
+  background-position-y: -0.25ex;
+}
+
+.underline-red {
+  background-image: linear-gradient(to top, var(--red) 0.5ex, hsla(0, 0%, 0%, 0) 0.5ex);
+  background-position-y: -0.35ex;
+}
+
+q,
+blockquote {
+	display: block;
+	position: relative;
+	color: var(--blueDark);
+	font-size: 39px;
+	font-style: italic;
+	letter-spacing: 3px;
+	line-height: 1.6;
+}
+
+q em {
+	text-decoration: underline;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+	position: absolute;
+	color: var(--grayLight);
+	font-family: 'Andale Mono';
+	font-size: 367px;
+	line-height: 1.1;
+}
+
+q:before,
+blockquote:before {
+	/* content: '“'; */
+	content: '';
+	top: -120px;
+	left: -120px;
+}
+
+q:after,
+blockquote:after {
+	/* content: '”'; */
+	content: '';
+	bottom: -270px;
+	right: 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	q,
+	blockquote {
+		font-size: 20px;
+	}
+
+	q:before,
+	q:after,
+	blockquote:before,
+	blockquote:after {
+		font-size: 286px;
+	}
+
+	q:before,
+	blockquote:before {
+		top: -85px;
+		left: -85px;
+	}
+
+	q:after,
+	blockquote:after {
+		content: '';
+	}
+}
+
+@media (max-width: 768px) {
+	q,
+	blockquote {
+		font-size: 13px;
+		letter-spacing: 2px;
+	}
+
+	q:before,
+	q:after,
+	blockquote:before,
+	blockquote:after {
+		font-size: 286px;
+	}
+
+	q:before,
+	blockquote:before {
+		top: -85px;
+		left: -85px;
+	}
+
+	q:after,
+	blockquote:after {
+		content: '';
+	}
+}
+
+cite {
+	display: block;
+	font-size: 30px;
+}
+
+cite:before {
+	content: '-';
+}
+
+a {
+	color: var(--blueLight);
+	text-decoration: underline;
+}
+
+.front-page a,
+.front-page .image-section a {
+	text-transform: uppercase;
+}
+
+h1.giant-header,
+h2.giant-header,
+h3.giant-header,
+h4.giant-header,
+h5.giant-header,
+h6.giant-header {
+	font-size: 140px;
+	font-weight: bold;
+	letter-spacing: 7px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.site-inner {
+	margin-top: 230px;
+}
+
+.meet-andrew .site-inner,
+.what-is-ubi .site-inner,
+.policy-page .site-inner {
+	margin-top: 30px;
+}
+
+.entry-title {
+	color: var(--blueDark);
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.entry-content p,
+.entry-content li {
+	font-size: 18px;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	h1.giant-header,
+	h2.giant-header,
+	h3.giant-header,
+	h4.giant-header,
+	h5.giant-header,
+	h6.giant-header {
+		font-size: 81px;
+		letter-spacing: 4px;
+	}
+
+	.entry-title {
+		font-size: 26px;
+	}
+}
+
+@media (max-width: 768px) {
+	h1.giant-header,
+	h2.giant-header,
+	h3.giant-header,
+	h4.giant-header,
+	h5.giant-header,
+	h6.giant-header {
+		font-size: 33px;
+		letter-spacing: 2px;
+	}
+
+	.entry-title {
+		font-size: 20px;
+	}
+
+	.entry-content p,
+	.entry-content li {
+		font-size: 16px;
+	}
+}
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.column-33 {
+	max-width: 33%;
+}
+
+.column-60 {
+	max-width: 60%;
+}
+
+.front-page .grid > div {
+	width: 30%;
+	color: var(--black);
+	text-align: left;
+}
+
+.front-page .grid h5 {
+	color: var(--blueDark);
+	font-size: 36px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.front-page .grid a.bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+@media (max-width: 768px) {
+	.front-page .grid {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.front-page .grid > div {
+		width: 100%;
+		margin-bottom: 34px;
+	}
+
+	.front-page .grid h5 {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+}
+
+.flag-header,
+.front-page-4:before,
+.front-page-5:before {
+	padding: 8px 16px;
+	background: var(--blueLight);
+	color: var(--white);
+	font-weight: 400;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+}
+
+.front-page-4:before,
+.front-page-5:before {
+	position: absolute;
+	top: -48px;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.flag-header,
+	.front-page-4:before,
+	.front-page-5:before {
+		font-size: 15px;
+		padding: 5px 9px;
+		letter-spacing: 1px;
+	}
+
+	.front-page-4:before,
+	.front-page-5:before {
+		position: absolute;
+		top: -34px;
+	}
+}
+
+@media (max-width: 768px) {
+	.flag-header,
+	.front-page-4:before,
+	.front-page-5:before {
+		font-size: 9px;
+		padding: 2px 5px;
+		letter-spacing: 1px;
+	}
+
+	.front-page-4:before,
+	.front-page-5:before {
+		position: absolute;
+		top: -23px;
+		font-size: 12px;
+	}
+
+	.flag-header {
+		padding: 3px 5px;
+	}
+}
+
+.front-page-4:after,
+.front-page-5 h4 {
+	width: 100%;
+	background: var(--blueDark);
+}
+
+.front-page-4 a,
+.front-page-5 a .text {
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-decoration: underline;
+}
+
+.front-page-3 h4,
+.front-page-6 h4 {
+	color: var(--blueDark);
+}
+
+/* Top Menu */
+
+.site-header {
+	position: absolute;
+	padding-top: 30px;
+	background-color: var(--blueDark);
+}
+
+.home-index .site-header,
+.meet-andrew .site-header,
+.what-is-ubi .site-header,
+.policy-page .site-header {
+	background-color: transparent;
+}
+
+.front-page .site-header {
+	border-bottom: none;
+}
+
+.site-header.light {
+	background-color: var(--blueDark);
+}
+
+.title-area {
+	width: 100%;
+}
+
+.title-area a {
+	background-position: center !important;
+}
+
+.site-title a {
+	background-image: url(/wp-content/uploads/yang2020_white_red.png) !important;
+}
+
+.nav-primary {
+	position: relative;
+}
+
+.nav-primary .menu-primary {
+	float: none;
+}
+
+.nav-primary .menu-item a {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 8px;
+	text-decoration: none;
+}
+
+.responsive-menu.menu-primary .menu-donate {
+	position: absolute;
+	z-index: 100;
+	top: 6px;
+	right: 100px;
+	border-radius: 3px;
+	background-color: var(--red);
+	transition: 0.3s background-color;
+}
+
+.nav-primary .menu-donate:hover {
+	background-color: var(--redDark);
+}
+
+.nav-primary .menu-donate a {
+	padding: 10px 40px;
+}
+
+.nav-primary .menu-donate span {
+	font-size: 29px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.nav-primary .menu-donate:hover {
+	position: absolute;
+}
+
+.site-header .genesis-nav-menu.responsive-menu > li.menu-donate:hover > a,
+.site-header .genesis-nav-menu.responsive-menu .menu-donate a:hover {
+	color: var(--white);
+}
+
+.genesis-nav-menu.responsive-menu li.current-menu-item > a {
+	color: var(--red);
+}
+
+.responsive-menu-icon {
+	position: absolute;
+	right: 0;
+	height: 64px;
+	padding: 16px;
+	padding-bottom: 8px;
+	margin-bottom: 0;
+	background: var(--red);
+}
+
+.responsive-menu-icon,
+.responsive-menu-icon.fa {
+	display: none;
+}
+
+
+.responsive-menu-icon:before {
+  content: "\f0c9";
+	margin: 0;
+	color: var(--white);
+  font: normal 32px/1 'FontAwesome';
+}
+
+.site-header.light,
+.home-index .site-header,
+.meet-andrew .site-header,
+.what-is-ubi .site-header,
+.policy-page .site-header,
+.front-page .site-header {
+	background-color: transparent;
+}
+
+.site-header .title-area {
+	position: relative;
+	z-index: 10;
+}
+
+.header-image .site-title > a {
+	height: 66px;
+}
+
+@media (min-width: 1025px) and (max-width: 1210px) {
+	.nav-primary .menu-item a {
+		letter-spacing: 6px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate {
+		right: 30px;
+	}
+}
+
+@media (min-width: 1201px) and (max-width: 1281px) {
+	.responsive-menu.menu-primary .menu-donate {
+	  top: 7px;
+	  right: 110px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.nav-primary .menu-item a {
+		letter-spacing: 4px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		top: 31px;
+		right: 5px;
+	}
+
+	.nav-primary .menu-donate span {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.site-header {
+		padding-top: 0;
+	}
+
+	.header-image .site-title > a {
+		height: 44px;
+		background-size: 179px !important;
+	}
+
+	.responsive-menu-icon {
+		display: none;
+	}
+
+	.responsive-menu.menu-primary,
+	.responsive-menu.menu-primary:hover {
+		display: block;
+	}
+
+	.responsive-menu.menu-primary .menu-item,
+	.genesis-nav-menu.responsive-menu li.current-menu-item,
+	.responsive-menu.menu-primary .menu-item:hover {
+		display: inline;
+	}
+
+	.responsive-menu.menu-primary li a,
+	.genesis-nav-menu.responsive-menu li.current-menu-item > a,
+	.responsive-menu.menu-primary li:not(.menu-donate) a  {
+		display: inline;
+		padding: 20px 16px;
+		font-size: 10px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.genesis-nav-menu.responsive-menu li.current-menu-item > a,
+	.site-header .genesis-nav-menu.responsive-menu > li:hover > a,
+	.site-header .genesis-nav-menu.responsive-menu a:hover {
+		color: var(--red);
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		top: 20px;
+	  right: 25px;
+	  padding: 5px 0 7px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate span {
+		font-size: 15px;
+		letter-spacing: 1px;
+	}
+
+	.responsive-menu.menu-primary .menu-donate a {
+	  padding: 10px 26px;
+	}
+
+	.responsive-menu.menu-primary li a:nth-child(5),
+	.responsive-menu.menu-primary .menu-donate a {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.responsive-menu-icon,
+	.responsive-menu-icon.fa {
+		display: block;
+	}
+
+	.site-header {
+		padding-top: 0;
+	}
+
+	.site-header.light,
+	.front-page .site-header {
+		background-color: transparent;
+	}
+
+	.site-header .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.header-image .site-title > a {
+		height: 34px;
+		background-position: left !important;
+		background-size: 138px !important;
+	}
+
+	.site-header .title-area {
+		position: absolute;
+		z-index: 1;
+		padding-left: 29px;
+		background-color: var(--blueDark);
+	}
+
+	.site-header.light .title-area,
+	.home-index .site-header .title-area,
+	.meet-andrew .site-header .title-area,
+	.what-is-ubi .site-header .title-area,
+	.policy-page .site-header .title-area,
+	.front-page .site-header .title-area {
+		background-color: var(--blueDarkTransparent);
+	}
+
+	.responsive-menu-icon {
+		z-index: 100;
+	}
+
+	.responsive-menu.menu-primary {
+		width: 100%;
+		padding-bottom: 0;
+		margin-top: 64px;
+		background-color: var(--blueTransparent);
+	}
+
+	.menu-primary .menu-item {
+		padding: 0 31px;
+		text-align: center;
+	}
+
+	.responsive-menu.menu-primary .menu-item a,
+	.responsive-menu.menu-primary .menu-item a:hover,
+	.responsive-menu.menu-primary .current-menu-item.menu-item a,
+	.responsive-menu.menu-primary .current-menu-item.menu-item a:hover {
+		padding: 15px 0;
+		border-bottom: 1px solid var(--blueTransparentLight);
+	}
+
+	.responsive-menu.menu-primary .menu-item a:hover {
+		border-bottom-color: var(--blueLight);
+	}
+
+	.responsive-menu.menu-primary .menu-item:hover {
+		background-color: var(--blueLight);
+	}
+
+	.menu-primary .menu-item span {
+		font-size: 20px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.responsive-menu.menu-primary .menu-donate,
+	.responsive-menu.menu-primary .menu-donate:hover {
+		position: static;
+	}
+
+	.responsive-menu.menu-primary .menu-donate:hover {
+		background-color: var(--redDark);
+	}
+
+	.nav-primary .menu-item:nth-child(5) a ,
+	.nav-primary .menu-donate a {
+		border-bottom: none;
+	}
+}
+
+/* Front Page 1 - Join Andrew Yang Section */
+
+.front-page-jumbotron {
+	display: flex;
+	justify-content: center;
+}
+
+.front-page-jumbotron .title-and-form {
+	position: absolute;
+	z-index: 100;
+	bottom: 48px;
+	display: block;
+	width: 702px;
+	margin: auto;
+	text-align: center;
+}
+
+.front-page-jumbotron .title {
+	position: relative;
+	bottom: unset;
+	display: inline-block;
+	width: 100%;
+	font-size: 60px;
+	font-weight: 600;
+	letter-spacing: 5px;
+	line-height: .9;
+	text-shadow: 5px 6px var(--blueDark);
+	text-transform: uppercase;
+}
+
+.front-page-jumbotron .subtitle {
+	color: white;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: 7px;
+}
+
+.front-page-jumbotron .join-form {
+	display: flex;
+}
+
+.front-page-jumbotron .join-form input {
+	border-width: 6px;
+	font-size: 17px;
+}
+
+.front-page-jumbotron .join-form input[name="zip"] {
+	width: 178px;
+}
+
+.front-page-jumbotron .join-form button {
+	width: 90%;
+	font-size: 27px;
+}
+
+@media (min-width: 769px) and (max-width: 1050px) {
+	.front-page-jumbotron .title {
+		margin-bottom: 7px;
+		font-size: 44px;
+		letter-spacing: 3px;
+		line-height: 1.1;
+		text-shadow: 3px 4px var(--blueDark);
+	}
+
+	.front-page-jumbotron .subtitle {
+		margin-bottom: 7px;
+		font-size: 12px;
+		letter-spacing: 5px;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		width: 500px;
+	}
+
+	.front-page-jumbotron .join-form input {
+  	padding: 15px;
+  	border-width: 5px;
+  	font-size: 14px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-jumbotron .join-form button {
+	  font-size: 25px;
+	}
+
+	.front-page-jumbotron .title-and-form input[name="zip"] {
+		width: 130px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-jumbotron {
+		justify-content: left;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		bottom: 23px;
+		width: 60%;
+		padding-left: 29px;
+		text-align: left;
+	}
+
+	.front-page-jumbotron .title {
+		width: 50%;
+		font-size: 37px;
+		line-height: 1.1;
+		text-align: left;
+		text-shadow: 2px 3px var(--blueDark);
+	}
+
+	.front-page-jumbotron .subtitle {
+		margin-bottom: 7px;
+		font-size: 9px;
+		letter-spacing: 3px;
+		line-height: 1.7;
+	}
+
+	.front-page-jumbotron .subtitle span {
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+
+	.front-page-jumbotron .join-form {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.front-page-jumbotron .join-form input[name="zip"],
+	.front-page-jumbotron .join-form button {
+		width: 187px;
+	}
+
+	.front-page-jumbotron .join-form button {
+		padding: 2px 0;
+	  font-size: 22px;
+	}
+}
+
+@media (min-width: 691px) and (max-width: 768px) {
+	.front-page-jumbotron {
+		margin-top: -50px;
+	}
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+	.jumbotron h1 {
+		font-size: 48px;
+	}
+
+	.what-is-ubi .jumbotron h1 {
+		width: 420px;
+	}
+
+	.policy-page .jumbotron .wrap h1 {
+		width: 270px;
+	}
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+	.front-page-jumbotron .title-and-form {
+		top: calc(50px + 64px + 18px);
+	}
+
+	.front-page-jumbotron .title {
+		margin-bottom: 5px;
+  	font-size: 48px;
+		line-height: 1;
+	}
+
+	.front-page-jumbotron .subtitle {
+  	font-size: 11px;
+	}
+}
+
+@media (min-width: 521px) and (max-width: 690px) {
+	.front-page-jumbotron {
+		margin-top: -30px;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		top: calc(30px + 64px + 18px);
+	}
+}
+
+@media (max-width: 540px) {
+	.front-page-jumbotron .title {
+		margin-bottom: 5px;
+		line-height: 1;
+	}
+
+	.front-page-jumbotron .title-and-form {
+		top: calc(64px + 18px);
+	}
+
+	.policy-page .jumbotron .wrap h1 {
+		width: 170px;
+	}
+}
+
+/* Front Page 3 - Humanity First Section */
+
+.front-page-3 .flexible-widgets {
+	padding-top: 0;
+}
+
+.humanity-first {
+	display: table;
+	color: var(--blueDark);
+	font-weight: 500;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.humanity-first span {
+  padding: 0 10px;
+  margin-right: -15px;
+}
+
+.humanity-first:before,
+.humanity-first:after {
+	content: '';
+	position: relative;
+	top: 0.5em;
+	display: table-cell;
+	border-top: 1px solid var(--red);
+	width: 45%;
+}
+
+.video-wrapper {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	margin-bottom: 85px;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.flag-header {
+	display: inline-block;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-3 .flexible-widgets {
+		padding-top: 0;
+	}
+
+	.humanity-first {
+		margin-bottom: 0;
+		font-size: 20px;
+		letter-spacing: 6px;
+	}
+
+	.video-wrapper {
+		margin-bottom: 45px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-3 .flexible-widgets {
+		padding-top: 0;
+	}
+
+	.humanity-first {
+  	margin-bottom: -14px;
+		font-size: 12px;
+		letter-spacing: 3px;
+	}
+
+	.front-page-3 .widget_media_video .widget-wrap {
+		margin-top: -4px;
+	}
+
+	.video-wrapper {
+  	margin-top: -3px;
+		margin-bottom: 0;
+	}
+}
+
+/* Front Page 3 - Donate */
+
+.front-page-3 .flexible-widgets > .wrap {
+	max-width: 100%;
+	padding: 0;
+}
+
+.front-page-3 h4.donate.giant-header {
+	margin-bottom: -18px;
+}
+
+.pc-computer .front-page-3 .donate.giant-header {
+	margin-bottom: -33px;
+}
+
+.front-page-3 .money {
+	background-color: var(--grayLight);
+}
+
+.front-page-3 .money .wrap {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 62px;
+	padding-bottom: 91px;
+}
+
+.front-page-3 .bill {
+	position: relative;
+	width: 24%;
+	background-color: var(--blueDark);
+	color: white;
+	font-size: 72px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: 0.3s background-color;
+}
+
+.front-page-3 .bill {
+	background-color: var(--blueDark);
+}
+
+.front-page-3 .bill:before {
+	display: block;
+	content: '';
+	position: absolute;
+	border-top: 32px solid var(--grayDark);
+	border-right: 32px solid transparent;
+}
+
+.front-page-3 a {
+	text-decoration: none;
+}
+
+.front-page-3 .donate-button {
+	display: block;
+	padding: 20px 70px;
+	margin: -41px auto 0;
+	font-size: 43px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+@media (min-width: 993px) and (max-width: 1023px) {
+	.front-page-3 .bill {
+		font-size: 54px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-3 .flexible-widgets {
+		padding-bottom: 50px;
+	}
+
+	.front-page-3 h4.donate.giant-header {
+		margin-bottom: -10px;
+	}
+
+	.pc-computer .front-page-3 .donate.giant-header {
+		margin-bottom: -19px;
+	}
+
+	.front-page-3 .money .wrap {
+		padding-top: 34px;
+		padding-bottom: 48px;
+		margin-bottom: -20px;
+	}
+
+	.front-page-3 .bill {
+		margin-bottom: 33px;
+		font-size: 41px;
+	}
+
+	.front-page-3 .bill:before {
+		border-top: 24px solid var(--grayDark);
+		border-right: 24px solid transparent;
+	}
+
+	.front-page-3 .donate-button {
+		padding: 15px 50px;
+		margin-top: -27px;
+		font-size: 24px;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-3 .flexible-widgets {
+		padding-bottom: 40px;
+	}
+
+	.front-page-3 h4.donate.giant-header {
+		margin-bottom: -5px;
+	}
+
+	.pc-computer .front-page-3 .donate.giant-header {
+		margin-bottom: -7px;
+	}
+
+	.front-page-3 .money .wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 12px;
+		padding-bottom: 32px;
+		margin-bottom: -15px;
+	}
+
+	.front-page-3 .bill {
+		width: 48%;
+		margin-bottom: 13px;
+		font-size: 32px;
+	}
+
+	.front-page-3 .bill:nth-of-type(odd) {
+		margin-right: 13px;
+	}
+
+	.front-page-3 .bill:before {
+		border-top: 16px solid var(--grayDark);
+		border-right: 16px solid transparent;
+	}
+
+	.front-page-3 .donate-button {
+		padding: 10px 40px;
+		margin-top: -20px;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 375px) {
+	.front-page-3 .bill:nth-of-type(odd) {
+		margin-right: 10px;
+	}
+}
+
+/* Front Page 4 - Policies */
+
+.front-page-4 {
+	background-color: var(--white);
+	margin-bottom: 40px;
+}
+
+.front-page-4:before {
+	content: 'Policies';
+	left: calc(50% - 82px);
+}
+
+.front-page-4:after {
+	position: absolute;
+	top: 0;
+	display: block;
+	height: 180px;
+	content: '';
+	z-index: -1;
+}
+
+.front-page-4 .flexible-widgets {
+	padding-top: 44px;
+	padding-bottom: 0;
+}
+
+.front-page-4 img {
+	width: 100%;
+	padding-bottom: 13px;
+	border-bottom: 18px solid var(--red);
+	margin-bottom: 15px;
+}
+
+.front-page-4 .grid > div {
+	position: relative;
+}
+
+.front-page-4 .grid > div:before {
+	display: block;
+	content: '';
+	position: absolute;
+	z-index: -10;
+	top: -10px;
+	left: -10px;
+	border-top: 32px solid var(--red);
+	border-right: 32px solid transparent;
+}
+
+.front-page-4 .grid h5 {
+	margin-bottom: 40px;
+	font-size: 34px;
+	font-weight: bold;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.front-page-4 .grid a {
+	color: var(--red);
+}
+
+.front-page-4 .explore {
+	color: var(--blueDark);
+	font-size: 29px;
+	font-weight: 500;
+	letter-spacing: 6px;
+}
+
+@media (min-width: 992px) and (max-width: 1023px) {
+	.front-page-4 .grid h5 {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-4 .flexible-widgets {
+		padding-bottom: 0;
+	}
+
+	.front-page-4:before {
+		left: calc(50% - 45px);
+	}
+
+	.front-page-4 .grid h5 {
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .grid  a {
+		font-size: 10px;
+	}
+
+	.front-page-4 .explore {
+		font-size: 21px;
+		letter-spacing: 4px;
+	}
+}
+
+@media (min-width: 769px) {
+	.front-page-4 .header-and-link .underline-red {
+		background-image: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-4:before {
+		left: calc(50% - 28px);
+	}
+
+	.front-page-4 {
+		background-color: var(--blueDark);
+		padding-bottom: 0;
+		margin-bottom: 60px;
+	}
+
+	.front-page-4 .flexible-widgets {
+		padding-bottom: 0;
+	}
+
+	.front-page-4 .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.front-page-4 .grid > div {
+		position: relative;
+	}
+
+	.front-page-4 .grid > div:before {
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+	.front-page-4 .grid > div:last-of-type {
+		margin-bottom: -10px;
+	}
+
+	.front-page-4 img {
+		padding-bottom: 0;
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	.front-page-4 .header-and-link {
+		position: absolute;
+		bottom: 25px;
+	}
+
+	.front-page-4 .header-and-link h5 {
+		width: 235px;
+		padding: 8px 19px 12px;
+		padding-right: 0;
+  	margin-bottom: 45px;
+		background-color: var(--blueLightest);
+		font-size: 30px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .header-and-link a {
+		position: absolute;
+		left: 19px;
+		bottom: unset;
+		color: var(--white);
+	}
+
+	.front-page-4 a,
+	.front-page-4 .explore {
+		color: var(--white);
+	}
+
+	.front-page-4 .explore {
+		position: relative;
+		display: block;
+		width: 100%;
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-4 .explore:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -18px;
+		border-top: 32px solid hsla(0, 0%, 0%, 0);
+		border-left: 28px solid var(--red);
+		border-bottom: 32px solid hsla(0, 0%, 0%, 0);
+	}
+}
+
+/* Front Page 5 - Latest News */
+
+.front-page-5 {
+	background-image: none;
+	margin-bottom: 30px;
+}
+
+.front-page-5:before {
+	content: 'Keep Up to Date';
+	left: calc(50% - 143px);
+}
+
+.front-page-5 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-5 .flexible-widgets > .wrap {
+	max-width: 100%;
+	margin: 0;
+}
+
+.front-page-5 img {
+	width: 100%;
+	margin-bottom: 25px;
+	box-shadow: 5px 7px var(--red);
+}
+
+.front-page-5 p {
+	font-size: 26px;
+}
+
+.front-page-5 .fa-usd {
+	width: 39px;
+	height: 39px;
+	border-radius: 50%;
+	background-color: var(--blueDark);
+	color: var(--white);
+	font-size: 27px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.front-page-5 a {
+	color: var(--blueDark);
+}
+
+.front-page-5 .giant-header {
+	height: 121px;
+}
+
+.pc-computer .front-page-5 .giant-header {
+	height: 106px;
+}
+
+.front-page-5 i.fa {
+	margin-right: 10px;
+	vertical-align: sub;
+}
+
+.front-page-5 .entry {
+	margin-bottom: 0;
+}
+
+@media (min-width: 1045px) and (max-width: 1200px) {
+	.front-page-5 img {
+		margin-bottom: 20px;
+	}
+
+	.front-page-5 .grid h5 {
+		font-size: 31px;
+	}
+
+	.front-page-5 .grid p {
+		font-size: 24px;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1044px) {
+	.front-page-5 .giant-header {
+	  height: 103px;
+	  font-size: 120px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 91px;
+	}
+
+	.front-page-5 .grid img {
+		margin-bottom: 15px;
+	}
+
+	.front-page-5 .grid h5 {
+		font-size: 24px;
+	}
+
+	.front-page-5 .grid p {
+		font-size: 19px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-5:before {
+		left: calc(50% - 79px);
+	}
+
+	.front-page-5 .giant-header {
+  	height: 70px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 61px;
+	}
+
+	.front-page-5 .flexible-widgets > .wrap {
+		padding: 0;
+	}
+
+	.front-page-5 .grid h5 {
+		margin-bottom: 5px;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	.front-page-5 .grid p {
+		margin-bottom: 10px;
+		font-size: 13px;
+	}
+
+	.front-page-5 .grid span[style] {
+		font-size: 13px;
+	}
+
+	.front-page-5 .fa-usd {
+		width: 20px;
+		height: 20px;
+		font-size: 11px;
+		line-height: 2;
+	}
+
+	.front-page-5 .grid a,
+	.front-page-5 .grid a .text {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.front-page-5:before {
+		left: calc(50% - 62px);
+	}
+
+	.front-page-5 .giant-header {
+		padding: 10px;
+  	margin-bottom: -110px;
+		background-color: var(--grayLight);
+		color: var(--blueDark);
+		font-size: 33px;
+	}
+
+	.pc-computer .front-page-5 .giant-header {
+		height: 116px;
+	}
+
+	.front-page-5 .wrap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.front-page-5 h5 {
+		padding: 0 5%;
+		margin-bottom: 10px;
+	}
+
+	.front-page-5 img {
+		margin-bottom: 10px;
+		box-shadow: none;
+	}
+
+	.front-page-5 img,
+	.front-page-5 p {
+		margin-bottom: 16px;
+	}
+
+	.front-page-5 p,
+	.front-page-5 span[style]  {
+		padding: 0 5%;
+		font-size: 13px;
+	}
+
+	.front-page-5 .fa-usd {
+		width: 20px;
+		height: 20px;
+		font-size: 11px;
+		line-height: 2;
+	}
+
+	.front-page-5 a,
+	.front-page-5 a .text {
+		font-size: 10px;
+	}
+
+	.front-page-5 .grid a.bottom {
+		position: static;
+		padding-left: 5%;
+	}
+}
+
+/* Front Page 6 - Join the Fight */
+
+.front-page-6 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-6 .flexible-widgets > .wrap {
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.front-page-6 .flexible-widgets > .wrap {
+		padding: 0;
+	}
+}
+
+
+/* Front Page 7 - Bottom Splash Image Section */
+
+.front-page-7 {
+	z-index: -1;
+	margin-bottom: -1px;
+}
+
+.front-page-7 .wrap {
+	max-width: 768px;
+}
+
+.front-page-7 .flexible-widgets {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.front-page-7 img {
+	width: 100%;
+}
+
+.front-page-7 .widget_media_image {
+	margin-bottom: 0;
+	line-height: 0;
+}
+
+/* Join the Fight Footer Form */
+
+.join-form input {
+	border: 10px solid var(--blueDark);
+	margin-right: 16px;
+	font-size: 23px;
+	font-weight: 500;
+	letter-spacing: 4px;
+}
+
+.join-form button {
+  align-self: stretch;
+	padding: 0;
+	font-size: 39px;
+	font-weight: bold;
+}
+
+.join-form.wrapped button {
+  display: block;
+	height: 80px;
+	margin: -40px auto 0;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.join-form input {
+		border-width: 7px;
+		padding: 21px;
+		font-size: 14px;
+		letter-spacing: 2px;
+	}
+
+	.join-form.wrapped button {
+		height: 58px;
+		margin-top: -29px;
+		font-size: 25px;
+	}
+}
+
+@media (max-width: 768px) {
+	.join-form input {
+		max-width: 187px;
+		border-width: 4px;
+		padding: 12px;
+		margin-bottom: 9px;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+
+	.join-form.wrapped button {
+		max-width: 70%;
+		height: 34px;
+		margin-top: -17px;
+		font-size: 20px;
+	}
+}
+
+.join-form.wrapped {
+	text-align: center;
+}
+
+.join-form.wrapped .input-wrapper {
+	padding: 61px 0 90px;
+	background-color: var(--grayLight);
+}
+
+.join-form.wrapped .input-wrapper .wrap {
+	display: flex;
+	justify-content: center;
+	width: 75%;
+}
+
+.join-form.wrapped input:last-of-type {
+	margin-right: 0;
+}
+
+.join-form.wrapped button {
+	padding: 0 70px;
+}
+
+.join-form.above-footer {
+	margin-bottom: 43px;
+}
+
+.join-the-fight.giant-header {
+	margin-bottom: -18px;
+	color: var(--blueDark);
+	text-align: center;
+}
+
+.pc-computer .join-the-fight.giant-header {
+	margin-bottom: -33px;
+}
+
+@media (min-width: 993px) and (max-width: 1225px) {
+	.join-the-fight.giant-header {
+  	margin-bottom: -14px;
+		font-size: 110px;
+		letter-spacing: 5px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -26px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.join-the-fight.giant-header {
+		margin-bottom: -8px;
+		font-size: 60px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -14px;
+	}
+
+	.join-form.wrapped .input-wrapper {
+		padding: 33px 0 49px;
+		margin-bottom: -15px;
+	}
+
+	.join-form.wrapped input {
+		border-width: 5px;
+		padding: 15px;
+	}
+
+	.join-form.wrapped button {
+		padding: 0 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.join-the-fight.giant-header {
+		margin-bottom: -5px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -7px;
+	}
+
+	.join-form.wrapped.above-footer {
+		margin-bottom: 43px;
+	}
+
+	.join-form.wrapped .input-wrapper {
+		padding: 20px 0 26px;
+	}
+
+	.join-form.wrapped input {
+		padding: 6px;
+		border-width: 2px;
+	}
+
+	.join-form.wrapped button {
+		padding: 0 30px;
+		margin-top: -17px;
+	}
+}
+
+@media (max-width: 337px) {
+	.join-the-fight.giant-header {
+		font-size: 27px;
+	}
+
+	.join-the-fight.giant-header {
+		margin-bottom: -4px;
+	}
+
+	.pc-computer .join-the-fight.giant-header {
+		margin-bottom: -6px;
+	}
+}
+
+/* Footer */
+
+.site-footer,
+.footer-widgets {
+	background-color: var(--blueDark);
+}
+
+.footer-widgets .widget {
+	margin-bottom: 0;
+}
+
+.site-footer:before {
+	background-image: url(/wp-content/uploads/yang_white.png);
+	background-repeat: no-repeat;
+	background-size: 201px 93px;
+	width: 201px;
+	height: 93px;
+	margin: 0 auto 20px;
+}
+
+.footer-widgets-1 {
+	width: 100%;
+}
+
+.footer-widgets .wrap {
+	padding: 0;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.notice p {
+  padding: 10px;
+  border: 1px solid var(--white);
+}
+
+.site-footer p {
+	margin-top: 50px;
+	letter-spacing: 4px;
+	text-transform: capitalize;
+}
+
+.site-footer p.copyright {
+	margin-top: 0;
+}
+
+.site-footer a {
+	text-transform: none;
+	text-decoration: none;
+}
+
+.site-footer .menu-item a {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.site-footer .menu-item a:hover,
+.site-footer .menu-item a:focus {
+	color: var(--blueLight);
+}
+
+.footer-widgets-2 {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.nav-footer {
+		display: none;
+	}
+
+	.site-footer .menu-item a {
+		font-size: 13px;
+	}
+
+	.site-footer .simple-social-icons li a,
+	.site-footer .simple-social-icons li a:hover,
+	.site-footer .simple-social-icons li a:focus {
+		padding: 16px;
+	}
+
+	.site-footer .simple-social-icons svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	.site-footer p {
+		font-size: 9px;
+		letter-spacing: 3px;
+	}
+
+	.footer-widgets-2 {
+		display: block;
+		justify-content: center;
+	}
+
+	.footer-widgets-2 .menu {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-widgets-2 .menu-item {
+		border-bottom: 0;
+	}
+
+	.footer-widgets-2 .menu-item:not(:last-of-type) {
+		margin-right: 20px;
+	}
+
+	.footer-widgets-2 .menu-item a {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.footer-widgets-2 .menu-item a:hover,
+	.footer-widgets-2 .menu-item a:focus {
+		color: var(--blueLight);
+	}
+}
+
+@media (max-width: 430px) {
+	.footer-widget-area #simple-social-icons-3 ul li a,
+	.footer-widget-area #simple-social-icons-3 ul li a:hover,
+	.footer-widget-area #simple-social-icons-3 ul li a:focus {
+		padding: 10px;
+		font-size: 32px;
+	}
+}
+
+/* Meet Andrew */
+
+.meet-andrew .site-inner {
+	max-width: 100%;
+}
+
+.meet-andrew .site-inner a {
+	color: var(--blueLight);
+	text-decoration: underline;
+	text-transform: none;
+}
+
+.meet-andrew .grid {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.meet-andrew .entry-header {
+	display: none;
+}
+
+.meet-andrew .entry-content .column-33 img {
+	width: 100%;
+}
+
+.meet-andrew q {
+	margin-bottom: 70px;
+}
+
+.meet-andrew .yang-obama {
+	margin-top: 24px;
+}
+
+@media (max-width: 992px) {
+	.meet-andrew q {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.meet-andrew .site-inner {
+		padding: 0;
+	}
+
+	.meet-andrew .grid {
+		flex-direction: column;
+	}
+
+	.meet-andrew .grid > div {
+		max-width: 100%;
+	}
+
+	.meet-andrew .grid > div:first-child {
+		margin-bottom: 30px;
+	}
+
+	.meet-andrew .column-33 img {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.meet-andrew .site-inner {
+		padding: 0;
+	}
+
+	.meet-andrew .grid {
+		flex-direction: column;
+	}
+
+	.meet-andrew .grid > div {
+		max-width: 100%;
+	}
+
+	.meet-andrew .column-33 img {
+		display: none;
+	}
+}
+
+/* What is UBI? */
+
+.what-is-ubi .site-inner {
+	max-width: 100%;
+}
+
+.what-is-ubi .entry-header {
+	display: none;
+}
+
+.ubi-intro strong {
+	color: var(--red);
+	font-style: italic;
+	font-weight: normal;
+}
+
+.what-is-ubi .face-grid-cropped {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.entry {
+		margin-bottom: 10px;
+	}
+
+	.what-is-ubi .site-inner {
+		padding: 0;
+	}
+}
+
+/* All Policies Page */
+
+.policy-page .jumbotron h1 {
+  width: 400px;
+}
+
+.policy-page .entry-header {
+	display: none;
+}
+
+.featured-policies {
+	margin-bottom: 75px;
+}
+
+.featured-policies a {
+	position: relative;
+	width: 100%;
+	margin-right: 17px;
+}
+
+.featured-policies img {
+	width: 100%;
+	padding-top: 14px;
+	border-top: 29px solid var(--blueDark);
+}
+
+.featured-policies h2 {
+	position: absolute;
+	bottom: 20px;
+	width: 88%;
+	background-color: var(--blueLightest);
+	color: var(--blueDark);
+	font-size: 29px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1.05;
+  padding: 10px 23px 15px;
+	padding-right: 0;
+	text-transform: uppercase;
+}
+
+.featured-universal h2 {
+	width: 75%;
+}
+
+.featured-medicare h2 {
+	width: 65%;
+}
+
+.policy-page .grid .column {
+	margin-right: 34px;
+}
+
+.featured-policies a:last-of-type,
+.policy-page .grid .column:last-of-type {
+	margin-right: 0;
+}
+
+.policy-page .policies {
+	margin-bottom: 40px;
+}
+
+.policy-page .entry {
+	margin-bottom: 0;
+	color: var(--black);
+	font-size: 18px;
+}
+
+.policy-page .entry h4 {
+	font-weight: 500;
+}
+
+.policy-page .entry a {
+	color: var(--black);
+}
+
+.policy-page blockquote cite {
+	font-size: inherit;
+}
+
+@media (min-width: 1201px) and (max-width: 1280px) {
+	.featured-policies h2 {
+	  bottom: 17px;
+  	padding: 9px 19px 14px;
+  	font-size: 26px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.featured-policies h2 {
+	  bottom: 14px;
+  	padding: 9px 17px 13px;
+  	font-size: 20px;
+	}
+
+	.featured-medicare h2 {
+		width: 55%;
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1024px) {
+	.featured-policies h2 {
+	  bottom: 11px;
+  	padding: 8px 13px 11px;
+  	font-size: 17px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+	.policy-page .grid {
+		flex-direction: column;
+		margin-bottom: 30px;
+	}
+
+	.featured-policies img {
+		padding-top: 12px;
+		border-top: 22px solid var(--blueDark);
+		margin-bottom: 47px;
+	}
+
+	.featured-policies h2 {
+		bottom: 70px;
+		width: 70%;
+		padding-right: 15px;
+	}
+
+	.featured-universal h2 {
+		width: 300px;
+	}
+
+	.featured-medicare h2 {
+		width: 250px;
+	}
+
+	.featured-human h2 {
+		width: 380px;
+	}
+
+	.featured-policies a:last-child img {
+		margin-bottom: 0;
+	}
+
+	.featured-policies a:last-child h2 {
+		bottom: 23px;
+	}
+
+	.policy-page blockquote {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.policy-page .grid {
+		flex-direction: column;
+	}
+
+	.featured-policies {
+		margin-bottom: 20px;
+	}
+
+	.featured-policies img {
+		padding-top: 5px;
+		border-top: 9px solid var(--blueDark);
+		margin-bottom: 19px;
+	}
+
+	.featured-policies h2 {
+		padding-right: 15px;
+		font-size: 38px;
+	}
+
+	.policy-page blockquote {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+	.featured-universal h2 {
+		width: 420px;
+	}
+
+	.featured-medicare h2 {
+		width: 280px;
+	}
+
+	.featured-human h2 {
+		width: 450px;
+	}
+}
+
+@media (max-width: 540px) {
+	.featured-policies h2 {
+		padding-right: 10px;
+		font-size: 28px;
+	}
+
+	.featured-universal h2 {
+		width: 300px;
+	}
+
+	.featured-medicare h2 {
+		width: 210px;
+	}
+
+	.featured-human h2 {
+		width: 350px;
+	}
+}
+		</style>
+		</head>
+<body class="archive paged category category-andrew category-30 paged-5 category-paged-5 custom-header header-image header-full-width full-width-content" itemscope itemtype="https://schema.org/WebPage"><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><style>
+.events-header {
+  position: relative;
+  z-index: 1000;
+  height: 74px;
+  background-color: var(--red);
+  align-items: center;
+}
+
+.events-header.grid {
+  max-width: 100%;
+}
+
+.events-header p,
+.events-header a {
+  margin: 0;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.events-header p {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 38px;
+}
+
+.events-header a {
+  padding: 8px 23px;
+  border: 2px solid var(--white);
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.events-header a:hover {
+  text-decoration: underline;
+}
+
+.events-header + .site-header {
+  padding-top: calc(30px + 74px);
+}
+
+@media (max-width: 1024px) {
+  .events-header {
+    height: 56px;
+  }
+
+  .events-header.grid {
+    flex-direction: row;
+  }
+
+  .events-header + .site-header {
+    padding-top: calc(30px + 28px);
+  }
+
+  .events-header p {
+    margin-right: 16px;
+    font-size: 14px;
+  }
+
+  .events-header a {
+    font-size: 12px;
+  }
+
+  .events-header .hide-on-mobile {
+    display: none;
+  }
+}
+</style>
+
+<div class='events-header grid'>
+  <p>
+    <strong>Andrew Yang is touring America!</strong><br class='hide-on-mobile' />
+    <span class='hide-on-mobile'>
+      50 Days, 15 States, find the event nearest to you!
+    </span>
+  </p>
+  <a href='/events'>
+    Find an event<span class='hide-on-mobile'> near you</span>!
+  </a>
+</div>
+<header class="site-header" itemscope itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://www.yang2020.com/">Andrew Yang for President</a></p><p class="site-description" itemprop="description">Humanity First. $1,000/month for all.</p></div><nav class="nav-primary" aria-label="Main" itemscope itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-2149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2149"><a href="https://www.yang2020.com/meet-andrew/" itemprop="url"><span itemprop="name">Andrew&#8217;s Story</span></a></li>
+<li id="menu-item-2154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2154"><a href="https://www.yang2020.com/what-is-ubi/" itemprop="url"><span itemprop="name">What is UBI?</span></a></li>
+<li id="menu-item-2155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2155"><a href="https://www.yang2020.com/policies/" itemprop="url"><span itemprop="name">Policy</span></a></li>
+<li id="menu-item-2156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2156"><a href="https://my.yang2020.com/" itemprop="url"><span itemprop="name">Volunteer</span></a></li>
+<li id="menu-item-2157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2157"><a href="https://shop.yang2020.com/" itemprop="url"><span itemprop="name">Store</span></a></li>
+<li id="menu-item-2158" class="menu-donate menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a href="https://secure.actblue.com/donate/friends-of-andrew-yang" itemprop="url"><span itemprop="name">Donate</span></a></li>
+</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-2212 post type-post status-publish format-standard category-andrew entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/our-first-national-poll/">Our First National Poll</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-02-08T19:26:44+00:00">February 8, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/andrew/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Andrew Yang</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p style="font-weight: 400;">Hello and thank you for your support!</p>
+<p style="font-weight: 400;">I am writing this from New Hampshire where I have been campaigning the last few days.  I spoke at Phillips Exeter Academy<span style="font-weight: 400;">—</span>where I went to high school<span style="font-weight: 400;">—</span>this morning.  You can read the full text of my speech <a title="Andrew Yang's speech to Phillips Exeter Academy, from where he graduated high school" href="https://www.yang2020.com/blog/andrew-yang-keynote-at-phillips-exeter-academy-in-new-hampshire-full-text/">here</a>.</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang Speaks at Phillips Exeter" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/175/attachments/original/190208_newhampshire-3.jpg?1549652129" alt="Andrew Yang on stage shaking hands with a student after Assembly at Exeter, with other students in the audience" width="100%" /></p>
+<p style="font-weight: 400;">This week started with some huge news<span style="font-weight: 400;">—</span>I am polling nationally!  On Monday, Monmouth University came out with a national <a href="https://www.monmouth.edu/polling-institute/reports/monmouthpoll_us_020419/">poll</a> that included me.  I showed up as the top choice of 1% of voters<span style="font-weight: 400;">—</span>I was tied with Kirsten Gillibrand and Julian Castro.</p>
+<p style="font-weight: 400;">This is a big deal<span style="font-weight: 400;">—</span>national polls are going to be one of the key determinants of whether I make the Democratic primary debates in June.  The fact that we are at 1% nationally at this stage means that I have a great chance of making the debate in 4 months.</p>
+<p style="font-weight: 400;">Support will only grow as more people find out about my campaign.  I filmed a <em>Daily Show</em> segment this week that will air in a few weeks. I will be on the <em>Joe Rogan Experience</em> on Tuesday the 12th at 3 p.m. EST.  NBC, <em>Esquire</em>, and others are preparing pieces on me.</p>
+<p style="font-weight: 400;">None of this would be possible without you all supporting this campaign.  Thank you.</p>
+<p style="font-weight: 400;">The other big news from this week has been the reception in New Hampshire.  I met with the vice chair of the Democratic Party here and had 8 house parties and meet-and-greets around the state.</p>
+<p style="font-weight: 400;">The enthusiasm was palpable.  Among the things I’ve heard here:</p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“There’s a lot of buzz around you in the state.  Two different people told me I needed to come see you speak.”  </em></p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“You can compete here.” </em></p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“We’ve needed a visionary like you for a long time.”  </em>From a senior Democratic official.</p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“You’re the only candidate I’m excited about.”  </em></p>
+<p style="font-weight: 400; padding-left: 30px;"><em>&#8220;I went to summer camp with you!&#8221;  </em>(It&#8217;s true, she did)</p>
+<p style="font-weight: 400;">You can tell when you speak somewhere whether they are truly jazzed about you.  The rate at which people have been signing up to volunteer for the campaign in New Hampshire is sky-high.</p>
+<p style="font-weight: 400;">I’ve learned some new things, too.  Today, I met a group of union workers in the construction industry.  I was curious whether they’ve seen technology impact their industry.  They all said something similar to, “Oh yeah.  Technology is constantly changing our job.”</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang with Portsmouth Local 976" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/175/attachments/original/190208_newhampshire-2.jpg?1549651987" alt="Andrew Yang stands with a number of union workers in front of their sign" width="100%" /></p>
+<p style="font-weight: 400;">Mike, a metalworker, told me, “It used to take 5<span style="font-weight: 400;">–</span>8 guys a whole day to bend rebar to reinforce a bridge.  Now, they bring in a robot to do it in one night.  They talk about it like it’s helping us, but that means less work for us.”  They are organizing a bigger event for me.</p>
+<p style="font-weight: 400;">The people in New Hampshire can see what’s going on around them.</p>
+<p style="font-weight: 400;">I can see the path ahead taking shape.  Let’s do the work and take advantage of this opportunity.  Together we can change the course of history.</p>
+<p style="font-weight: 400;">I’m popping up in national polls<span style="font-weight: 400;">—</span>and they haven’t seen anything yet.</p>
+<p style="font-weight: 400;"><img title="Andrew Yang signature" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/175/attachments/original/signature-blue.jpg?1549637120" alt="Andrew Yang signature" width="136" height="75" /></p>
+<p style="font-weight: 400;">-Andrew</p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a></span> </p></footer></article><article class="post-2202 post type-post status-publish format-standard category-andrew category-press-releases entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/andrew-yang-keynote-at-phillips-exeter-academy-in-new-hampshire-full-text/">Andrew Yang Keynote at Phillips Exeter Academy in New Hampshire (Full Text)</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-02-08T14:40:24+00:00">February 8, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p style="text-align: center;"><img style="margin-right: 10px; margin-left: 10px;" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/174/attachments/original/yang_cleveland_006.jpg?1545329490" alt="yang_cleveland_006.jpg" width="282" height="188" /></p>
+<p style="text-align: center;"><em><span style="font-weight: 400;">Speaking at his alma mater, Phillips Exeter Academy, Presidential Candidate Yang discusses his time in high school, how the school helped his career as an entrepreneur, and how he made the decision to run for President.</span></em></p>
+<p><strong>Exeter, New Hampshire; February 8th, 2019: </strong>Presidential Candidate Andrew Yang will deliver a keynote address to the student body of his alma mater, Phillips Exeter Academy, today at 9:50 AM EST. He will also take questions about his presidential run, the future of work and his plan for a Universal Basic Income of $1,000 per month for all American adults.</p>
+<p>The full text of his formal speech can be found below.</p>
+<p><strong>Complete media kit is available </strong><a href="https://drive.google.com/drive/folders/1W3Gzd6rzV0BnoBXgf3mA59dJORc1aE2n"><strong>here</strong></a><strong>. </strong><strong>For media inquiries, please contact <a href="mailto:press@yang2020.com">press@yang2020.com</a>.</strong></p>
+<p><span style="text-decoration: underline;">Text from Andrew&#8217;s Speech:</span></p>
+<p style="padding-left: 30px;"><em>Hello everyone.  It’s a privilege and an honor to be back here at Phillips Exeter.  This place shaped me in fundamental ways.  I learned so much here.  I can honestly say I would never be running for President if not for my time at Exeter. </em></p>
+<p style="padding-left: 30px;"><em>That said, I didn’t really enjoy my time here.  This is my first time back in 27 years.  </em></p>
+<p style="padding-left: 30px;"><em>Most of that was on me.  I arrived here as an Upper and you all know that’s a difficult transition.  I didn’t really fit in.  There was, however, something here that may still be true today.  This place was very competitive.  And we somehow knew things about each other that we&#8217;re going to determine where we went to school. “This kid has quadruple legacy to Harvard.  That guy’s family literally built Brown University. That guy has a set of restaurant guides named after his family.  That guy was going to get an athletic scholarship to Yale.”  The subtext was always that our value and stature was going to be determined by where we got into college.  </em></p>
+<p style="padding-left: 30px;"><em>I did well here.  I got into Stanford and Brown and decided to go to Brown. That too was a minor source of controversy.  People here were like, “Stanford is better than Brown.  Why would you go to Brown?”  I visited Stanford and thought it was too nice a place to go to school. Their acceptance brochure had been a picture of a football crowd saying “Yes Stanford!” and I didn’t like football. But I mainly went to Brown because my brother was going to school nearby at Wesleyan.  </em></p>
+<p style="padding-left: 30px;"><em>Brown allowed me to grow up. I felt things very strongly throughout my adolescence, probably one reason I didn’t enjoy it here.  I had a serious college relationship that, when it ended I took it hard.  But it helped me mature.  I was pretty depressed and Brown let me get away with that.  </em></p>
+<p style="padding-left: 30px;"><em>After Brown, I still didn’t know what to do.  So I went to law school.  I spent 5 months as an unhappy lawyer at Davis Polk.  And I said, this is a terrible job.  My quote at the time was, “This firm is like a temple to the squandering of human potential.”  So I quit and started a dot-com.  </em></p>
+<p style="padding-left: 30px;"><em>I’m now thought of as a successful entrepreneur.  Some of you read my book ‘Smart People Should Build Things.’  And I’m going to share the secret to entrepreneurship:</em></p>
+<p style="padding-left: 30px;"><em>Tell everyone you know that you’re going to do something.   That way, you don’t have a choice but to do it.  </em></p>
+<p style="padding-left: 30px;"><em>I started Stargiving.com, but it unfortunately flopped.  Everyone I knew was aware that I had failed.  That hurt too.  I worked at another startup that ran out of money and then a healthcare software company. I spent my twenties working at startups that didn’t work out.  </em></p>
+<p style="padding-left: 30px;"><em>Meanwhile, most of my friends at Exeter were bankers, consultants, and lawyers living in very nice apartments in Manhattan.  I was living with a roommate, teaching classes and throwing parties on the side. It was hard to stay positive.  </em></p>
+<p style="padding-left: 30px;"><em>During this time, a friend from Exeter, Fiona Smith, called me up and asked me if I would meet with a friend of hers.  That meeting changed my life.  </em></p>
+<p style="padding-left: 30px;"><em>Her friend, Zeke had started an education company, Manhattan Prep, and asked if I could help.  I later became CEO of that company when I was 31 and Zeke stepped away.  The company eventually became number one in the country and was acquired by the Washington Post in 2009.  </em></p>
+<p style="padding-left: 30px;"><em>This is one reason why I know that Exeter shaped my career.  If Fiona hadn’t introduced me to Zeke, I never would have wound up running that company. </em></p>
+<p style="padding-left: 30px;"><em>I was still haunted by the sense that we had so many of our talented people doing one of six things in six places:  finance, consulting, tech, law, medicine or academia in New York, San Francisco, Boston, Chicago, DC or LA.  This was true of most of my friends at Exeter.  </em></p>
+<p style="padding-left: 30px;"><em>Now, you can’t be negative about something without offering a solution.  I thought about what I believed more people like you should be doing 5 or 6 years from now.  And I thought you should be starting businesses in places that need it – places like Detroit, New Orleans, Baltimore, or Birmingham.  We needed to create a path for people to do that.  </em></p>
+<p style="padding-left: 30px;"><em>So I quit my job and started Venture for America.  I donated $120k and started calling rich friends and asked them, “Do you love America.”  Classmates from Exeter helped.  Another Exonian introduced me to a Foundation that became one of our first funders.  </em></p>
+<p style="padding-left: 30px;"><em>This place is a magical, wonderful, difficult place to come of age.  You are around people constantly, yet it is easy to feel alone.  You are among the most successful high school students in the country, yet you feel your success to be challenged at all times. You are taught to do good in the world, yet it is your own success that remains the way that you are judged.  </em></p>
+<p style="padding-left: 30px;"><em>In my experience, if you want a career you will be proud of, you are going to have to fight for it.  The market will not help you.  Instead, the market will drive you to do certain things that may or may not be what you&#8217;d imagined.  And here in America in 2019, the market is the most powerful force in our society.</em></p>
+<p style="padding-left: 30px;"><em>Venture for America has a credo, that I hope some of you find useful.  I confess that this place very much influenced it.  It is:  </em></p>
+<p style="padding-left: 30px;"><em>&#8220;My career is a choice that indicates my values. There is no courage without risk. I believe that actions are the proper measure of one’s accomplishments. I will create value for myself and others. I will act with integrity in all things.</em></p>
+<p style="padding-left: 30px;"><em>Thank you, students of Phillips Exeter.  You will shape the future of this country.  Use your power wisely.  </em></p>
+<p>&nbsp;</p>
+<p><strong>About Andrew</strong></p>
+<p><span style="font-weight: 400;">One of the most exciting and unique candidates to enter the 2020 US Presidential Race, Andrew Yang is a New York and Silicon Valley entrepreneur running as a Democrat. </span></p>
+<p><span style="font-weight: 400;">In 2011, he founded Venture for America, a national public service fellowship that places recent grads in struggling communities to help local businesses revitalize the economy. Over 6 years running the organization, Andrew helped to create more than 2,500 jobs in cities like Cleveland, Detroit, and Pittsburgh. His work at VFA saw him recognized by the Obama White House as a 2012 Champion of Change and a 2015 Presidential Ambassador for Global Entrepreneurship. </span></p>
+<p><span style="font-weight: 400;">When Andrew realized that artificial intelligence and other automation technologies threatened to eliminate one-third of all American jobs and current politicians weren’t even recognizing the problem, he knew the nation needed a leader with a vision on how to enter this radically different future. </span></p>
+<p><span style="font-weight: 400;">Andrew’s innovative platform focuses on solutions to problems being faced by normal Americans, including the implementation of the Freedom Dividend: $1,000 a month for American adults, no strings attached. See his features in the </span><a href="https://www.nytimes.com/2018/02/10/technology/his-2020-campaign-message-the-robots-are-coming.html"><span style="font-weight: 400;">New York Times</span></a> <a href="https://www.cnbc.com/2018/04/11/andrew-yang-wants-to-run-for-president-promising-free-cash-handouts.html"><span style="font-weight: 400;">CNBC</span></a><span style="font-weight: 400;">, and </span><a href="https://www.rollingstone.com/politics/politics-features/andrew-yang-2020-president-780803/"><span style="font-weight: 400;">Rolling Stone</span></a><span style="font-weight: 400;">, his </span><a href="https://www.youtube.com/watch?v=ra56e0HKAiU"><span style="font-weight: 400;">keynote speech</span></a><span style="font-weight: 400;"> at Progress Iowa; his podcasts with </span><a href="http://freakonomics.com/podcast/andrew-yang/"><span style="font-weight: 400;">Freakonomics</span></a><span style="font-weight: 400;"> and </span><a href="https://samharris.org/podcasts/130-universal-basic-income/"><span style="font-weight: 400;">Sam Harris</span></a><span style="font-weight: 400;">; and his </span><a href="https://www.youtube.com/watch?v=grciW239bp0"><span style="font-weight: 400;">campaign video</span></a><span style="font-weight: 400;">.</span></p>
+<p><strong>About The Freedom Dividend / Universal Basic Income</strong></p>
+<p><span style="font-weight: 400;">Universal Basic Income (UBI) guarantees a certain minimum income to every citizen within a given governed population, without having to pass a test or fulfill a work requirement.</span></p>
+<p><span style="font-weight: 400;">Andrew Yang’s Freedom Dividend is a universal basic income set at $1,000 per month, or $12,000 per year, for all U.S. citizens between the ages of 18 and 64, paid for by a new tax on automation. Yes, that means you and everyone you know would get another $1,000/month every month from the U.S. government, no questions asked. You could use that money to pay down debt, start a business, go back to school, or shop at local boutiques. For more information, visit our campaign’s </span><a href="https://www.yang2020.com/what-is-ubi/"><span style="font-weight: 400;">UBI explainer</span></a><span style="font-weight: 400;">.</span></p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a>, <a href="https://www.yang2020.com/blog/category/press-releases/" rel="category tag">Press Releases</a></span> </p></footer></article><article class="post-2098 post type-post status-publish format-standard category-andrew entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/life-on-the-road/">Life on the Road</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-02-04T19:50:50+00:00">February 4, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/andrew/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Andrew Yang</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p style="font-weight: 400;">Hello everyone<span style="font-weight: 400;">—</span>I hope you had a wonderful weekend watching the nefarious Patriots win the Superbowl with friends and family.</p>
+<p style="font-weight: 400;">I spent Sunday afternoon in Raleigh, North Carolina, with the College Democrats of America.  I had the chance to address some of the most passionate college activists in the country.  It was a great opportunity and the campaign got some new fans.</p>
+<table style="border-style: hidden; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img title="Andrew Yang at CDA Raleigh Meeting" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/162/attachments/original/190202_collegedems.jpg?1549297097" alt="Andrew Yang is in front of an audience of college students, some of whom are raising his hand in response to a question he asked" width="100%" /></td>
+<td style="width: 50%;"><img title="Andrew Yang Talks with CDA Members" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/162/attachments/original/190202_collegedems-3.jpg?1549297189" alt="Andrew Yang stands with a smaller groups of CDA members, talking about their lives and his platform" width="100%" /></td>
+</tr>
+</tbody>
+</table>
+<p style="font-weight: 400;">I arrived in North Carolina straight from campaigning in Iowa.  I spent part of Saturday with the owner of a small trucking company<span style="font-weight: 400;">—</span>Dennis Bogaski<span style="font-weight: 400;">—</span>and learned a lot about him and the other 3.5 million truckers around the country.</p>
+<p style="font-weight: 400;">Dennis and I met at a truck stop in Altoona, Iowa, on Saturday afternoon.  I wanted to see how truckers live and work.  This truck stop had a shower, laundry, and several TV lounges for the truckers to use in addition to a giant garage for repairs.  I asked if there were beds but it turns out just about every trucker sleeps in his truck.  The bigger truck stops have movie theaters, doctors, dentists, and sit-down restaurants.  The biggest truck stop<span style="font-weight: 400;">—</span>Iowa 80 in nearby Davenport, Iowa<span style="font-weight: 400;">—</span>gets 5,000 visitors a day.</p>
+<p style="font-weight: 400;">I rode with Dennis from Altoona to Grinnell, Iowa. Dennis is 49 years old and from Scranton, Pennsylvania.  He served in the US Marine Corps in his twenties before picking up truck driving.  He moved to Iowa 9 years ago because it was a better trucking hub with better routes.  He dated someone seriously recently but is now single and doesn’t have kids.</p>
+<p style="font-weight: 400;">I’ve been in a truck before, but every time I ride in one, I&#8217;m reminded that it is a seriously impressive vehicle.  His Peterbilt 2014 cost $110,000 when he leased it 5 years ago.  He has put 500,000 miles on his truck so far in about 5 years.  A good truck can go well over 1,000,000 miles.</p>
+<p style="font-weight: 400;"><img title="Andrew and Dennis Driving" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/162/attachments/original/190202_truck.jpg?1549297389" alt="Andrew Yang and Dennis Bogaski, a truck driver, talk while Dennis drives Andrew in his truck" width="100%" /></p>
+<p style="font-weight: 400;">His schedule is brutal.  14 hours a day on the road with a max of 70 hours every 8 days.  The 10 &#8220;rest&#8221; hours are spent sleeping and often cleaning and maintaining the truck.  Many truckers spend weeks away from their families at a time and then get 3 or 4 days off before hitting the road again.  Worse yet, trucking companies often route truckers such that their route doesn’t end close to home<span style="font-weight: 400;">—</span>they might have to spend their days off across the country or somehow get home on their own dime.</p>
+<p style="font-weight: 400;">I asked if it was social on the road, whether there was any camaraderie with other truckers.  He said not really.</p>
+<p style="font-weight: 400;">“Trucking has gotten harder and harder.  New drivers come and go and no one cares.  You’re not a person, you’re just a butt in a seat.”</p>
+<p style="font-weight: 400;">His biggest complaint is that his truck is electronically monitored to comply with government time use regulations that were implemented about 8 years ago.  “As soon as my truck moves, the 14 hour timer starts.  Doesn’t matter if I want to take a nap sometime in there.  After 14 hours, the computer starts beeping and flashing that I’m in violation.  Then I don’t have a choice but to stop.  Even if I just have to go 5 more miles to another truck stop, I don’t have a choice.”</p>
+<p style="font-weight: 400;">His other complaint is that higher emissions standards have led to trucks that break down more often.  “I have nothing against the Earth.  But the new computerized trucks with lower emissions break down more often.  They’re harder to repair, too.  When you’re not on the road, you’re losing money.  The regulations keep me from putting food on the table.”</p>
+<p style="font-weight: 400;">I asked about the best parts of the job.  He said bluntly, “It’s a great way to make money, but it’s a hard life.  I don’t have a family, but most truckers do.  That’s why most of us drive.  If you were a single guy, this is not the work that you’d want to do.  Who wakes up and says, ‘I want to be a truck driver’?”  On a good year as a trucker, he made over $75,000.</p>
+<p style="font-weight: 400;">I asked him if he’d seen the YouTube videos and projections about robot trucks.  He said, “There is no way a computer could do this job.  I’m sometimes carrying 40 tons.  It takes me six seconds to stop.  You think you’d put a computer in charge of this?  No way that would work in an urban area where there are a lot of passenger cars.”</p>
+<p style="font-weight: 400;">I asked him if he thought it would be possible for a computer to do the interstate driving, and then have a driver like him take over when it got off the highway.  He paused and thought about it for a second.  Then he said, “Well, there will still be a need for a driver at the end.  If a robot wants to drive it cross-country, be my guest.  I’d be on the road less.  But there will always be a job for me.”</p>
+<p style="font-weight: 400;">We eventually arrived in Grinnell, Iowa.  We shook hands as we said goodbye.  Dennis said, “I voted for Donald Trump because I don’t think Democrats care about people like me.  They scare me.  You talk like a business guy.  The fact that you’re here spending time with me says a lot.  I’m going to keep up with you and tell my friends about you.”  I thanked him for that.  I learned a lot more from Dennis than he did from me.</p>
+<p style="font-weight: 400;"><img title="Andrew and Dennis" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/162/attachments/original/190202_truck-2.jpg?1549297429" alt="Andrew Yang and Dennis Bogaski, an Iowa-based truck driver, stand in front of Dennis' truck" width="100%" /></p>
+<p style="font-weight: 400;">Spending time with Dennis was no accident.  I am very concerned about truckers.  The cost savings associated with automating away their jobs are estimated to be $168 billion per year in saved labor costs, fuel efficiency, equipment utilization, and accident avoidance.  That is an enormous financial incentive, and it could even save lives<span style="font-weight: 400;">—</span>about 4,000 people die in accidents with trucks every year.  Robot trucks could be on the road in 5–10 years.  Amazon is testing them right now in the Midwest.</p>
+<p style="font-weight: 400;">What does the future hold for Dennis and the other 3.5 million Americans who drive a truck for a living?  Or the 1 million Uber, limo, taxi, and bus drivers?  Or the 5 million Americans who work in truck stops, motels, diners, and retail establishments across the country who rely on truckers like Dennis stopping every day?</p>
+<p style="font-weight: 400;">These are some of the most important questions of our time.  Answering them is a fundamental responsibility of a functioning government.  Unfortunately, our leadership is asleep at the switch.  It&#8217;s time to wake them up or provide new leadership.</p>
+<p style="font-weight: 400;">Today, I am filming a <em>Daily Show</em> segment in New York at our HQ.  Then I head up to New Hampshire for a multi-day tour to campaign across the state all week.  I’ll be speaking at my alma mater, Phillips Exeter, on Friday, with a couple events in Boston.  Then it’s off to Los Angeles, where I’ll be on Joe Rogan’s podcast next Tuesday.  I’ve been traveling a lot on this campaign, but I can honestly say it’s nothing compared to what Dennis and others experience every week on the road.</p>
+<p style="font-weight: 400;">Let’s answer the right questions and solve the real problems.  We have a lot of work to do.</p>
+<p style="font-weight: 400;">Your grateful candidate,</p>
+<p><img title="Andrew Yang Signature" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/162/attachments/original/signature-blue.jpg?1549291842" alt="Andrew Yang Signature" width="136" height="75" /></p>
+<p>-Andrew</p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a></span> </p></footer></article><article class="post-2092 post type-post status-publish format-standard category-andrew entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/its-adding-up-in-iowa/">It&#8217;s Adding Up in Iowa</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-02-01T20:59:40+00:00">February 1, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/andrew/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Andrew Yang</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p style="font-weight: 400;">Hello and thank you for the support!</p>
+<p style="font-weight: 400;">I’m writing this from Des Moines<span style="font-weight: 400;">—</span>it’s been a tremendous trip.  I had the opportunity to address the Democratic legislators of Iowa at the State Capitol yesterday.  They greeted me with a standing ovation, which was a welcome surprise.  The backdrop, the audience, and the reception made me feel positively Presidential.</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang Iowa Legislator Meeting" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/156/attachments/original/Dem_Meeting_2.jpg?1549035876" alt="Andrew Yang is in a room addressing legislators from Iowa" width="100%" /></p>
+<p style="font-weight: 400;">I spoke to the legislators about why Democrats are struggling in Iowa<span style="font-weight: 400;">—</span>why Donald Trump won their previously bluish/purple state by almost 10 points in 2016 and why they are now in the minority.  Iowa has lost 40,000 manufacturing jobs and 12,000 retail jobs in the past years, and 3 of their 17 malls are in danger of closing.  The Freedom Dividend would increase the consumer economy in Iowa by $16 billion and create 40,000 new jobs<span style="font-weight: 400;">—</span>it would be a game-changer for rural communities.  It would empower and compensate women who do more of the work that is unrecognized each and every day.  It would rebuild their main street economies and give their children a path forward.  The questions I got from the lawmakers were very positive<span style="font-weight: 400;">—</span>they know what is happening in their state.</p>
+<p style="font-weight: 400;">Afterwards, I met with Janet Petersen, the Democratic Senate leader, and I was deeply impressed.  She is doing a phenomenal job leading the party here in Iowa amid difficult terrain.  She has also started a maternal and infant health organization which gives you a sense of where her heart is.</p>
+<p style="font-weight: 400;">I went from there to the Fox affiliate in Des Moines for a studio interview in Iowa’s biggest media market.  The news anchor said something interesting: “I’ve interviewed every presidential candidate who has run in the past 20 years except for Donald Trump.  He didn’t need us.”  In a way, that shows what the Democrats are up against.  Donald Trump’s bully pulpit will make him formidable in 2020.</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang on Fox Affiliate" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/156/attachments/original/Fox_Interview.jpg?1549044462" alt="Andrew Yang being interviewed on a local Fox Affiliate in Des Moines" width="100%" /></p>
+<p style="font-weight: 400;">After the interview, we had a meet and greet with Story County Democrats and at Simpson College and Central College.  Everywhere we went, there was evidence that our word of mouth in Iowa is growing:</p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“Doug told me I had to come meet you.”</em></p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“My friend in Iowa City said that you were her favorite candidate.”</em></p>
+<p style="font-weight: 400; padding-left: 30px;"><em>“I drove here to see you and started a Yang Gang chapter at my college.” </em></p>
+<p style="font-weight: 400;">This is our 8<sup>th </sup>trip to Iowa, and it shows.  In my previous trips, I’ve spoken at events that had hundreds of Democrats and activists in attendance: <a title="Andrew Yang's Wing Ding Speech" href="https://www.youtube.com/watch?v=qkH0xGUgR0c&amp;t=2s">the Wing Ding in Clear Lake</a>, Johnson County Barbecue near Iowa City, and <a title="Andrew Yang's Progress Iowa Speech" href="https://www.youtube.com/watch?v=ra56e0HKAiU">Progress Iowa in Des Moines</a>.  We’ve now reached thousands of Iowans in-person across the state.</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang with College Students in Iowa" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/156/attachments/original/Students.jpg?1549044620" alt="Andrew Yang speaks with college students about his platform" width="100%" /></p>
+<p style="font-weight: 400;">The people here understand their responsibility to shape the future of the country, and they take it very seriously.  With their help, we are going to shock the world in 2020.  No one will see us coming.</p>
+<p style="font-weight: 400;"><img title="Andrew Yang's signature" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/156/attachments/original/signature-blue.jpg?1549035667" alt="Andrew Yang's signature" width="136" height="75" /></p>
+<p style="font-weight: 400;">-Andrew</p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a></span> </p></footer></article><article class="post-2090 post type-post status-publish format-standard category-andrew entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/richard-ojeda/">Richard Ojeda</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-01-29T15:23:23+00:00">January 29, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/andrew/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Andrew Yang</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p style="font-weight: 400;">On Friday, Richard Ojeda, one of the other declared Democratic candidates for President, ended his campaign. He will be working on veterans’ issues and may run for another position in West Virginia, where he is very popular. He felt that his campaign wasn’t going to succeed and that he couldn’t take money from people who needed it.</p>
+<p style="font-weight: 400;">I first learned of Richard from a friend who was supporting his Congressional campaign.  Richard has an inspirational story.  He was an army paratrooper who has completed combat tours in Iraq and Afghanistan.  After heading home to West Virginia, he decided to run for State Senate as a Democrat. As you may know, West Virginia is not a very friendly environment for Democrats.  Yet Richard won the seat because people in West Virginia could see what he’s about.  His patriotism is 100% evident.  One journalist called him &#8220;<a title="Politico Story on Richard Ojeda" href="https://www.politico.com/magazine/story/2018/03/02/richard-ojeda-west-virginia-blue-army-one-217217">JFK with tattoos and a bench press.</a>”</p>
+<p style="font-weight: 400; text-align: center;"><img title="Richard Ojeda" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/143/attachments/original/GettyImages-1063585940-1548442631-e1548442733531.jpg?1548688964" alt="Richard Ojeda at a lectern" width="100%" /></p>
+<p style="font-weight: 400;">Richard then supported the teachers’ strike in West Virginia – the teachers hadn’t received a raise in 5 years.  That strike was ultimately successful and set an example for others around the country.</p>
+<p style="font-weight: 400;">Richard became so popular that he ran a competitive race for Congress in West Virginia against a Republican who was heavily endorsed by Trump and the GOP.  I made a donation to Richard’s Congressional campaign because I thought that he was an awesome example of someone trying to do right by his community and he broadened what it meant to be a Democrat – he had voted for Donald Trump. Richard ended up falling short but lost by only 13 points in a district that Donald Trump had won by 49 points.</p>
+<p style="font-weight: 400;">Richard wasn’t done.  He decided to run for President last November as the voice of the working class.  I didn’t donate this time for obvious reasons, but I was very glad to have him in the race.  He’s a good man, a true patriot, and has a persona and perspective that is missing from much of our politics.  In a word, Richard has guts.</p>
+<p style="font-weight: 400;">His message suspending his campaign comes as a heartbreaking disappointment to many of those who supported him.  In it, he says that when he was growing up, his Mom told him that in this country anyone could grow up to be President.  But now he believes that this isn’t true – that if you don’t have vast wealth or influence, it is virtually impossible to become President.</p>
+<p style="font-weight: 400;">I called Richard yesterday to congratulate him and tell him that I and many others appreciate what drove his campaign and that we know he will continue to keep on fighting for our country.</p>
+<p style="font-weight: 400;">Richard’s story has made me appreciate what we have already accomplished together with this campaign.  We are growing each and every day and our progress is clear on every measure – followers, donations, press mentions, volunteers, even national polling.  The last two weeks alone were some of the busiest weeks we’ve had.</p>
+<p style="font-weight: 400;">But Richard’s message made me think for a moment &#8211; Is he right that you can’t win the White House without vast wealth and influence?</p>
+<p style="font-weight: 400;">I’m obviously someone who should be thinking about this question.  Some in the media make it seem as if I’m an ultra-wealthy venture capitalist.  Hardly.  I’m a guy who has had some success to be sure, but I spent the past 7 years building a non-profit that helped train hundreds of entrepreneurs to work in Detroit, Cleveland, Baltimore, New Orleans, and other cities across the country.</p>
+<p style="font-weight: 400; text-align: center;"><img title="Andrew Yang at Venture for America" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/143/attachments/original/VFA-Main-final.jpg?1548689014" alt="Andrew Yang poses with a Venture for America fellows class" width="100%" /></p>
+<p style="font-weight: 400;">With Venture for America, while I was the seed, it was other people who took the idea of rebuilding the country through entrepreneurship and made it a thriving organization that has helped create hundreds of jobs in cities around the country.</p>
+<p style="font-weight: 400;">The same has happened with this campaign.  When I declared last year, I was a relative unknown; I’m sure most of you had never heard of me.  But, bit by bit, you have taken the ideas of this campaign and helped us reach the national stage.  Our ideas have taken on a life of their own: that we need to be honest about what is happening with our economy and jobs due to accelerating technological progress.  That we need to build a more human-centered economy and evolve from a mindset of scarcity to one of capacity and abundance.  That we can actually start solving the problems of this era without settling into outdated arguments and solutions that have been proven not to work.</p>
+<p style="font-weight: 400;">When this campaign started, I wrote a personal thank you message to each person who donated, no matter the amount.  People were confused at first and most didn’t think it was me.  But I understand what it means to actually take out your credit card and throw your weight and hard-earned money behind something.  It’s a big commitment.  You have to believe that it will make a difference.</p>
+<p style="font-weight: 400;">I stopped being able to write these messages both because the number of donations went up – it’s now in the thousands – and my schedule got a lot more hectic.  But I still look at them and tell myself a story about each person. Matthew M., a gym manager in Albuquerque, New Mexico.  Caroline E., an engineer in Berkeley, CA.  Charlene M., a musician in Rhode Island.</p>
+<p style="font-weight: 400;">What is the limit for this campaign?  Based on what we’ve done, I don’t believe there is one.  We may even prove Richard wrong – that anyone can become President if enough people get behind it.</p>
+<p style="font-weight: 400;">There is an easy way to caricature this campaign.  The Asian man that no one has heard of wants to give everyone money.  We sometimes guess what Donald Trump’s nickname for me will be – our bet is Comrade Yang.  We run the risk of being marginalized at every turn.</p>
+<p style="font-weight: 400;">But the other way to see this campaign is as the right ideas at the right time with the right people.  And nothing can stop that.  That is the most powerful force in history.  That is our potential.</p>
+<p style="font-weight: 400;">This campaign attracts the best people.  I can see our potential.  Nothing will stop us.</p>
+<p style="font-weight: 400;"><img title="Andrew Yang Signature" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/143/attachments/original/signature-blue.jpg?1548632689" alt="Andrew Yang Signature" width="136" height="75" /></p>
+<p style="font-weight: 400;">-Andrew</p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a></span> </p></footer></article><div class="archive-pagination pagination"><ul><li class="pagination-previous"><a href="https://www.yang2020.com/blog/category/andrew/page/4/" >&#x000AB; Previous Page</a></li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/"><span class="screen-reader-text">Page </span>1</a></li>
+<li class="pagination-omission">&#x02026;</li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/page/3/"><span class="screen-reader-text">Page </span>3</a></li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/page/4/"><span class="screen-reader-text">Page </span>4</a></li>
+<li class="active" ><a href="https://www.yang2020.com/blog/category/andrew/page/5/" aria-label="Current page" aria-current="page"><span class="screen-reader-text">Page </span>5</a></li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/page/6/"><span class="screen-reader-text">Page </span>6</a></li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/page/7/"><span class="screen-reader-text">Page </span>7</a></li>
+<li class="pagination-omission">&#x02026;</li>
+<li><a href="https://www.yang2020.com/blog/category/andrew/page/13/"><span class="screen-reader-text">Page </span>13</a></li>
+<li class="pagination-next"><a href="https://www.yang2020.com/blog/category/andrew/page/6/" >Next Page &#x000BB;</a></li>
+</ul></div>
+</main></div></div><h4 class='join-the-fight giant-header'>
+	Join the fight
+</h4>
+<form class='join-form wrapped above-footer'>
+	<div class='input-wrapper'>
+		<div class='wrap'>
+			<input
+				name='email'
+				placeholder='Email'
+				type='email'
+			/>
+			<input
+				name='zip'
+				placeholder='Zip Code'
+				type='number'
+			/>
+		</div>
+	</div>
+	<button type='submit'>
+		I'm in!
+	</button>
+</form>
+<footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter"><div class="wrap"><nav class="nav-footer"><ul id="menu-bottom" class="genesis-nav-menu"><li id="menu-item-2182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2182"><a href="https://www.yang2020.com/additional-resources/" itemprop="url">Resources</a></li>
+<li id="menu-item-2183" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2183"><a href="https://www.yang2020.com/blog/category/press-releases/" itemprop="url">Press</a></li>
+<li id="menu-item-2184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2184"><a href="https://www.yang2020.com/contact-us/" itemprop="url">Contact</a></li>
+<li id="menu-item-2185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2185"><a href="https://www.yang2020.com/blog/" itemprop="url">Blog</a></li>
+<li id="menu-item-2642" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2642"><a href="https://jobs.lever.co/yang2020" itemprop="url">Careers</a></li>
+</ul></nav><div class="footer-widgets" id="genesis-footer-widgets"><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="simple-social-icons-3" class="widget simple-social-icons"><div class="widget-wrap"><ul class="aligncenter"><li class="ssi-facebook"><a href="https://www.facebook.com/andrewyang2020/" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-facebook" aria-labelledby="social-facebook-3"><title id="social-facebook-3">Facebook</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-facebook"></use></svg></a></li><li class="ssi-instagram"><a href="https://instagram.com/andrewyang2020" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-instagram" aria-labelledby="social-instagram-3"><title id="social-instagram-3">Instagram</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-instagram"></use></svg></a></li><li class="ssi-twitter"><a href="https://twitter.com/andrewyang" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-twitter" aria-labelledby="social-twitter-3"><title id="social-twitter-3">Twitter</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-twitter"></use></svg></a></li><li class="ssi-youtube"><a href="https://www.youtube.com/channel/UCriIuQZpMi6gEt_2P7xKCww?disable_polymer=true" target="_blank" rel="noopener noreferrer"><svg role="img" class="social-youtube" aria-labelledby="social-youtube-3"><title id="social-youtube-3">YouTube</title><use xlink:href="https://www.yang2020.com/wp-content/plugins/simple-social-icons/symbol-defs.svg#social-youtube"></use></svg></a></li></ul></div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="nav_menu-3" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-bottom-mobile-container"><ul id="menu-bottom-mobile" class="menu"><li id="menu-item-2248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2248"><a href="https://www.yang2020.com/contact-us/" itemprop="url">Contact Us</a></li>
+<li id="menu-item-2247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2247"><a href="https://www.yang2020.com/blog/" itemprop="url">Blog</a></li>
+<li id="menu-item-2644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2644"><a href="https://jobs.lever.co/yang2020" itemprop="url">Careers</a></li>
+</ul></div></div></section>
+</div></div></div><div class="notice"><p>Paid for by Friends of Andrew Yang</p></div><p class="copyright">&#x000A9;&nbsp;2019 Friends of Andrew Yang. <br class="mobile" />All rights reserved. <a href="/privacy_policy">Privacy Policy</a>.<br />New York, NY 10018</p></div></footer></div>  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W68JZHN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<style type="text/css" media="screen"> #simple-social-icons-3 ul li a, #simple-social-icons-3 ul li a:hover, #simple-social-icons-3 ul li a:focus { background-color: #142e7b !important; border-radius: 4px; color: #ffffff !important; border: 0px #ffffff solid !important; font-size: 40px; padding: 20px; }  #simple-social-icons-3 ul li a:hover, #simple-social-icons-3 ul li a:focus { background-color: #142e7b !important; border-color: #ffffff !important; color: #489fdf !important; }  #simple-social-icons-3 ul li a:focus { outline: 1px dotted #142e7b !important; }</style><script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.7.2'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=2.7.2'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=3.0.0-beta.1'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/about-andrew/public/js/about-andrew.js'></script>
+<script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGVlcBQNO","queueTime":0,"applicationTime":208,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

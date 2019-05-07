@@ -7,11 +7,10 @@ do
     domain=${LINE#'https://'}
     domain=${domain#'www.'}
     
-    output=${domain/'.com'}
-    output=${domain/'.org'}
+    output=${domain%".com"}
+    output=${output%".org"}
     
-    echo $domain
-    echo $output;
+    /usr/bin/wget $LINE --recursive --page-requisites --html-extension --domains $domain -P $output --random-wait;
     
 done < candidate_sites.txt;
 

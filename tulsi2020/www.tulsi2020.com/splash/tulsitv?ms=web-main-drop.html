@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+<!--
+  Aloha, internet friend, from all of us @ TULSI2020.com.
+-->
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="title" content="Get notified when Tulsi is in your area. | TULSI 2020" />
+<link rel="canonical" href="https://www.tulsi2020.com/splash/tulsitv" />
+<meta name="twitter:site" content="@TulsiGabbard" />
+<meta name="twitter:title" content="TULSI 2020" />
+<meta name="twitter:site:id" content="26637348" />
+<meta name="twitter:image" content="https://d3ba7j4nna908t.cloudfront.net/tulsi2020-share-image3.png" />
+<meta property="og:image" content="https://d3ba7j4nna908t.cloudfront.net/tulsi2020-share-image3.png" />
+<meta property="og:image:url" content="https://d3ba7j4nna908t.cloudfront.net/tulsi2020-share-image3.png" />
+<meta property="og:image:secure_url" content="https://d3ba7j4nna908t.cloudfront.net/tulsi2020-share-image3.png" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="manifest" href="/themes/custom/tulsi/favicon/site.manifest" />
+<link rel="mask-icon" href="/themes/custom/tulsi/favicon/safari-pinned-tab.svg" color="#0c2340" />
+<meta name="msapplication-TileColor" content="#0c2340" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="prefetch prerender" href="https://www.tulsi2020.com/" />
+<link rel="shortcut icon" href="/themes/custom/tulsi/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.tulsi2020.com/splash/tulsitv" />
+<link rel="revision" href="/splash/tulsitv" />
+<script src="/sites/default/files/google_tag/google_tag.script.js?pr0qnu"></script>
+
+    <title>Get notified when Tulsi is in your area. | TULSI 2020</title>
+    <link rel="stylesheet" href="/sites/default/files/css/css_VSrfXFHCWgzq5hLrSSCUIz_6zx_2Z_UlNZn5q6qm7lE.css?pr0qnu" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_DODbPUIAw0ksOiO9vdhCZJy8VkZuK5f3bt-32G3UWFA.css?pr0qnu" media="all" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body class="page-node-54 page-node path-node page-node-type-landing">
+        <a href="#content-top" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBBPL6B" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="content-top" class="js-content" tabindex="-1"></div>   
+    <div>
+    
+
+  </div>
+
+
+<main class="content-main" role="main">
+
+    <div>
+    <div id="block-tulsi-content" class="block block--system block--block-tulsi-content">
+  
+    
+      <article role="article" about="/splash/tulsitv">
+
+  
+    
+
+  
+  <div class="view-mode-full">
+      
+
+
+  <div  class="paragraph--type--blade-landing-video paragraph--view-mode--default">
+      <div class="c-video-splash c-splash--dark">
+      <div class="c-video-splash__body">
+
+          <img src="/themes/custom/tulsi/img/logo-tg2020--dark.png" alt="TULSI 2020" class="logo">
+
+          <div class="container">
+            <div class="video-wrap">
+              
+            <div>
+  <div class="o-blade o-blade--flush paragraph paragraph--type--blade-video paragraph--view-mode--default">
+          <div class="c-section--video">
+
+        <div class="video responsive-embed widescreen u-mb-0x">
+            <div class="video-embed-field-provider-youtube"><iframe width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/OgcitSCVZJA?autoplay=0&amp;start=0&amp;rel=0"></iframe>
+</div>
+
+
+        </div>
+        <div class="loader">
+          <img src="/themes/custom/tulsi/img/tail-spin.svg" alt="Video loading...">
+        </div>
+      </div>
+
+
+      </div>
+</div>
+      
+            </div>
+
+            <div class="content">
+                            <div class="text">
+                <div class="text">
+  <h2>Join us.</h2>
+
+<p>Get notified when Tulsi is in your area.</p>
+</div>
+
+              </div>
+              
+                            <div class="ngp-signup-form u-mb-2x">
+                
+                <div class="ngp-action">
+    <div class="ngp-form"
+    data-form-url="https://actions.ngpvan.com/v1/Forms/01Ic74XHhEauMYQiQnS50A2"
+    data-fastaction-endpoint="https://fastaction.ngpvan.com"
+    data-inline-errors="true"
+    data-labels="inline"
+    data-fastaction-nologin="true"
+    data-databag-endpoint="https://profile.ngpvan.com"
+    data-databag="everybody"
+  ></div>
+</div>
+
+              </div>
+              
+              <a href="https://www.tulsi2020.com/" class="continue">
+                Continue to website »
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+
+</main>
+
+<footer class="main-footer">
+  <div class="o-blade o-blade--black o-blade--night">
+    <div class="o-blade__media"></div>
+    <div class="o-blade__body">
+
+      <div class="c-colophon c-colophon--dark">
+        <div class="c-colophon__body">
+
+            <div class="footer__colophon">
+    <div id="block-mobiledisclaimer" class="mobile-disclaimer">
+  
+    
+        <h4>Text <span>TULSI</span> to <span>48728</span> to receive mobile alerts</h4>
+
+<p>Mobile alerts from TULSI 2020. Periodic messages. Msg &amp; data rates may apply. Text STOP to 48728 to stop receiving messages. Text HELP to 48728 for more information. <a href="https://sync.revmsg.net/public/terms-and-conditions/c023311b-0343-40c6-83c2-34a6eed42542/48728">Terms &amp; Conditions</a>.</p>
+
+  </div>
+<div id="block-militarydisclaimer" class="military-disclaimer">
+  
+    
+        <p>Tulsi Gabbard is a member of the Hawaii Army National Guard. Use of her military rank, job titles, and photographs in uniform does not imply endorsement by the Hawaii Army National Guard, the Department of the Army or the Department of Defense. All factual military information and photographs are provided in conjunction with other non-military biographical data.</p>
+
+
+  </div>
+
+  </div>
+
+            <div class="footer__legal">
+    <div id="block-footerlegal">
+  
+    
+      
+              <ul class="legal-menu align-center menu">
+                    <li class="menu-item">
+        <a href="/privacy-policy" data-drupal-link-system-path="node/5">Privacy Policy</a>
+              </li>
+        </ul>
+  
+
+
+  </div>
+
+  </div>
+
+
+          <p class="paid-for">
+            Paid for by Tulsi Now          </p>
+
+          <p class="copyright u-mb-0x">
+            &copy; 2019 TULSI 2020 <span>|</span> <a class="lang-switcher" href="/es/node/54">en Español</a>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="c-footer-tools">
+        <div class="c-footer-tools__body">
+              <div class="main-footer">
+    
+  </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/54","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"ms":"web-main-drop"}},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"f9165ecc0d06fd5f3d3802ee842bba544be9f63f48de08054ab3ef7372888d45"}}</script>
+<script src="/sites/default/files/js/js_y1Gq6z5DJhbAgO1XJtdxMMq0GRDTfX0vMgv9Tn_u98E.js"></script>
+<script src="https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877e78ad18","applicationID":"229453582","transactionName":"ZlYBY0RZVkRQB0JdCl8cIlRCUVdZHhRXUwBuUAJUXl0=","queueTime":0,"applicationTime":15,"atts":"ShECFQxDRUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--
+	
+		      ::::::::   ::::::::         ::::::::::: ::::::::  :::    ::: ::::    :::          ::::::::   ::::::::  ::: 
+		    :+:    :+: :+:    :+:            :+:    :+:    :+: :+:    :+: :+:+:   :+:         :+:    :+: :+:    :+: :+:  
+		   +:+        +:+    +:+            +:+    +:+    +:+ +:+    +:+ :+:+:+  +:+         +:+        +:+    +:+ +:+   
+		  :#:        +#+    +:+            +#+    +#+    +:+ +#++:++#++ +#+ +:+ +#+         :#:        +#+    +:+ +#+    
+		 +#+   +#+# +#+    +#+            +#+    +#+    +#+ +#+    +#+ +#+  +#+#+#         +#+   +#+# +#+    +#+ +#+     
+		#+#    #+# #+#    #+#        #+# #+#    #+#    #+# #+#    #+# #+#   #+#+#         #+#    #+# #+#    #+#          
+		########   ########          #####      ########  ###    ### ###    ####          ########   ########  ###     
+
+		Looking under the hood, eh? Thanks!
+		Let us know if you have any questions. website@johnkdelaney.com
+
+-->
+
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">	
+
+  <link rel="icon" type="image/ico" href="https://www.johndelaney.com/wp-content/themes/jkd/assets/images/favicon.ico" sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://www.johndelaney.com/wp-content/themes/jkd/assets/images/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="https://www.johndelaney.com/wp-content/themes/jkd/assets/images/favicon-32x32.png" sizes="32x32" />
+
+	<title>Conozca A John Delaney | John Delaney for President</title>
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+
+	var gtm4wp_scrollerscript_debugmode         = false;
+	var gtm4wp_scrollerscript_callbacktime      = 100;
+	var gtm4wp_scrollerscript_readerlocation    = 150;
+	var gtm4wp_scrollerscript_contentelementid  = "main";
+	var gtm4wp_scrollerscript_scannertime       = 60;
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- This site is optimized with the Yoast SEO plugin v11.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.johndelaney.com/es/biografia/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Conozca A John Delaney | John Delaney for President" />
+<meta property="og:url" content="https://www.johndelaney.com/es/biografia/" />
+<meta property="og:site_name" content="John Delaney for President" />
+<meta property="article:publisher" content="https://www.facebook.com/JohnKDelaneyJKD" />
+<meta property="og:image" content="https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013379270.jpg" />
+<meta property="og:image:secure_url" content="https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013379270.jpg" />
+<meta property="og:image:width" content="1500" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Conozca A John Delaney | John Delaney for President" />
+<meta name="twitter:site" content="@johndelaney" />
+<meta name="twitter:image" content="https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013379270.jpg" />
+<meta name="twitter:creator" content="@johndelaney" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.johndelaney.com/#organization","name":"John Delaney for President","url":"https://www.johndelaney.com/","sameAs":["https://www.facebook.com/JohnKDelaneyJKD","https://www.instagram.com/johndelaney/","https://twitter.com/johndelaney"],"logo":{"@type":"ImageObject","@id":"https://www.johndelaney.com/#logo","url":"https://www.johndelaney.com/wp-content/uploads/2019/02/Delaney-for-President_Logo_Horizontal_Color.png","caption":"John Delaney for President"},"image":{"@id":"https://www.johndelaney.com/#logo"}},{"@type":"WebSite","@id":"https://www.johndelaney.com/#website","url":"https://www.johndelaney.com/","name":"John Delaney for President","publisher":{"@id":"https://www.johndelaney.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.johndelaney.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.johndelaney.com/es/biografia/#webpage","url":"https://www.johndelaney.com/es/biografia/","inLanguage":"en-US","name":"Conozca A John Delaney | John Delaney for President","isPartOf":{"@id":"https://www.johndelaney.com/#website"},"image":{"@type":"ImageObject","@id":"https://www.johndelaney.com/es/biografia/#primaryimage","url":"https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013379270.jpg","caption":""},"primaryImageOfPage":{"@id":"https://www.johndelaney.com/es/biografia/#primaryimage"},"datePublished":"2019-04-12T14:58:20+00:00","dateModified":"2019-04-12T19:44:07+00:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.johndelaney.com' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="John Delaney for President &raquo; Feed" href="https://www.johndelaney.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="John Delaney for President &raquo; Comments Feed" href="https://www.johndelaney.com/comments/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.johndelaney.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='typekit-css'  href='//use.typekit.net/iko3ttm.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jkd-style-css'  href='https://www.johndelaney.com/wp-content/themes/jkd/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.johndelaney.com/wp-content/themes/jkd/assets/js/jquery-2.2.4.min.js'></script>
+<script type='text/javascript' src='https://www.johndelaney.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js'></script>
+<script type='text/javascript' src='https://www.johndelaney.com/wp-content/plugins/duracelltomi-google-tag-manager/js/analytics-talk-content-tracking.js'></script>
+<link rel='https://api.w.org/' href='https://www.johndelaney.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.johndelaney.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.johndelaney.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://www.johndelaney.com/?p=3117' />
+<link rel="alternate" type="application/json+oembed" href="https://www.johndelaney.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.johndelaney.com%2Fes%2Fbiografia%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.johndelaney.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.johndelaney.com%2Fes%2Fbiografia%2F&#038;format=xml" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	dataLayer.push({"visitorDoNotTrack":0,"pageTitle":"Conozca A John Delaney | John Delaney for President","pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Team Delaney","postID":3117});//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZLZ4WC');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel="icon" href="https://www.johndelaney.com/wp-content/uploads/2018/11/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.johndelaney.com/wp-content/uploads/2018/11/favicon-32x32.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.johndelaney.com/wp-content/uploads/2018/11/favicon-32x32.png" />
+<meta name="msapplication-TileImage" content="https://www.johndelaney.com/wp-content/uploads/2018/11/favicon-32x32.png" />
+</head>
+
+<body class="page-template-default page page-id-3117 page-child parent-pageid-2937 es no-sidebar has-featured-image">
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZLZ4WC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<a href="#main" class="sr-only">Skip to main content</a>
+
+	<header id="header" role="banner" class="clearfix">
+				<nav class="navbar navbar-expand-lg fixed-top">
+			<div class="container">
+				
+				<a class="navbar-brand"
+	 href="https://www.johndelaney.com/es"
+	 title="John Delaney para Presidente">
+	<h1 class="sr-only">John Delaney para Presidente</h1>
+	<svg height="50" id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.73 62.92"><title>logo</title><path class="cls-1" d="M75.23,34.65c-3.25,7-8.8,10.55-16.29,10.55a16.59,16.59,0,0,1-12.68-5.37,17.64,17.64,0,0,1-4.93-12.42,17.17,17.17,0,0,1,5.12-12.3A17.52,17.52,0,0,1,58.81,9.86c10.68,0,18,7.68,18,20.17v1.06H51.51c.87,3.56,3.43,5.43,7.74,5.43a7.34,7.34,0,0,0,5.12-1.87ZM66.86,24.1c-1.18-3.44-4-5.31-7.92-5.31-4.13,0-7.06,2.12-7.75,5.31Z"/><path class="cls-1" d="M91.59,0V44.39H81.78V0Z"/><path class="cls-1" d="M123,40.64a13,13,0,0,1-9.93,3.93,15.23,15.23,0,0,1-10.49-3.93,17,17,0,0,1-5.86-13.17A17,17,0,0,1,102.08,15a15.55,15.55,0,0,1,11.17-4.62c4.06,0,7.18,1.38,9.43,4.25V10.86h9.86V44.39H123Zm-7.74-5a7.92,7.92,0,0,0,7.8-8.12,8.15,8.15,0,0,0-8.18-8.43,8.3,8.3,0,0,0-8.3,8.31C106.57,32.09,110.19,35.65,115.25,35.65Z"/><path class="cls-1" d="M139.1,44.39V10.86h9.36l-.12,4.5c2.06-3.37,5.18-5.12,9.61-5.12,6.93,0,11.43,4.37,11.43,12v22.1h-9.87V26.22c0-4.68-1-6.8-4.8-6.8s-5.94,2.31-5.94,6.8V44.39Z"/><path class="cls-1" d="M207.77,34.65c-3.25,7-8.8,10.55-16.29,10.55a16.59,16.59,0,0,1-12.68-5.37,17.69,17.69,0,0,1-4.93-12.42A17.17,17.17,0,0,1,179,15.11a17.52,17.52,0,0,1,12.36-5.25c10.68,0,18,7.68,18,20.17v1.06H184.05c.87,3.56,3.43,5.43,7.74,5.43a7.33,7.33,0,0,0,5.12-1.87ZM199.41,24.1c-1.19-3.44-4-5.31-7.93-5.31-4.12,0-7.06,2.12-7.74,5.31Z"/><path class="cls-1" d="M217,55.25l5.06-12.92-12.3-31.47h10.92L227,30.4l7.12-19.54h10.61L226.94,55.25Z"/><path class="cls-2" d="M10.86,30.34,24.37,12.86c-.16-.17-.35-.33-.53-.49l-13,14.28Z"/><path class="cls-2" d="M27.47,22a14.34,14.34,0,0,0-1.79-7.47L19.52,34.21C24.89,33,27.47,29.11,27.47,22Z"/><path class="cls-2" d="M15.17,9.55H10.86v7.31l11.22-5.73A14,14,0,0,0,15.17,9.55Z"/><path class="cls-1 icon" d="M31.78,5.31C27.16.94,22.23,0,15.17,0H0V22.41l10.86-5.55V9.55h4.31a14,14,0,0,1,6.91,1.58l1.76,1.24c.18.16.37.32.53.49l1.31,1.71A14.34,14.34,0,0,1,27.47,22c0,7.07-2.58,11-7.95,12.17L16.33,44.39h.34c6.24,0,10.42-.88,15.17-5.5,4.24-4.18,6.43-9.74,6.43-16.48C38.27,15.11,36,9.3,31.78,5.31Z"/><path class="cls-3 icon" d="M22.08,11.13,10.86,16.86,0,22.41V38.6l10.86-12,13-14.28A8.84,8.84,0,0,0,22.08,11.13Z"/><path class="cls-4 icon" d="M24.37,12.86,10.86,30.34,0,44.39H16.33l3.19-10.18,6.16-19.64A9.57,9.57,0,0,0,24.37,12.86Z"/><path class="cls-1" d="M29,52.47H34v1.37H30.44v3H34v1.34H30.44v4.49H29Z"/><path class="cls-1" d="M39.9,53.75a5,5,0,0,1,3.62-1.49,5.08,5.08,0,0,1,3.68,1.5,5.45,5.45,0,0,1,.21,7.43,5.13,5.13,0,0,1-3.91,1.73,5,5,0,0,1-3.87-1.76,5.32,5.32,0,0,1-1.33-3.63A5.23,5.23,0,0,1,39.9,53.75Zm1,6.55a3.71,3.71,0,0,0,2.62,1.15,3.77,3.77,0,0,0,3.74-3.94,3.71,3.71,0,0,0-1-2.53,3.5,3.5,0,0,0-2.73-1.23A3.46,3.46,0,0,0,41,54.82a3.94,3.94,0,0,0-1.13,2.72A4,4,0,0,0,40.88,60.3Z"/><path class="cls-1" d="M53,62.72V52.47h3c2.49,0,3.79,1.19,3.79,3.31a2.92,2.92,0,0,1-2.91,3l2.91,3.94H57.88L54.48,58v4.76Zm2.25-4.93c2,0,3-.65,3-2s-.89-1.92-2.69-1.92H54.48v3.94Z"/><path class="cls-1" d="M71,62.72V52.47h2.38a4.69,4.69,0,0,1,2.45.43,3,3,0,0,1,1.4,2.57c0,1.84-1.31,3.12-3.58,3.12H72.5v4.13Zm2.55-5.5c1.46,0,2.18-.46,2.18-1.67s-.71-1.71-2.13-1.71H72.5v3.38Z"/><path class="cls-1" d="M81.33,62.72V52.47h3c2.5,0,3.79,1.19,3.79,3.31a2.92,2.92,0,0,1-2.91,3l2.91,3.94H86.21L82.81,58v4.76Zm2.25-4.93c2,0,3-.65,3-2s-.9-1.92-2.7-1.92H82.81v3.94Z"/><path class="cls-1" d="M92.36,62.72V52.47h5.32v1.37H93.84v3h3.84v1.34H93.84v3.08h3.84v1.41Z"/><path class="cls-1" d="M103.17,59.76a1.65,1.65,0,1,0,3.29,0c0-1.14-.62-1.44-1.75-1.79a3.1,3.1,0,0,1-2.06-1.18,2.58,2.58,0,0,1-.52-1.57A2.73,2.73,0,0,1,105,52.28a2.61,2.61,0,0,1,2.7,2.72h-1.39a1.34,1.34,0,0,0-1.35-1.37,1.39,1.39,0,0,0-1.39,1.5,1.27,1.27,0,0,0,.29.83c.43.5,1.17.53,2,.82a2.88,2.88,0,0,1,2.07,2.84,3,3,0,0,1-3.09,3.3,2.93,2.93,0,0,1-3-3.16Z"/><path class="cls-1" d="M112.11,62.72V52.47h1.49V62.72Z"/><path class="cls-1" d="M118.2,62.72V52.47h3.3a4.89,4.89,0,0,1,5.15,5.16,5,5,0,0,1-2.06,4.18,5.44,5.44,0,0,1-3.51.91Zm3.24-1.37a3.44,3.44,0,0,0,3.71-3.71c0-2.32-1.44-3.78-4-3.78h-1.53v7.49Z"/><path class="cls-1" d="M130.9,62.72V52.47h5.32v1.37h-3.83v3h3.83v1.34h-3.83v3.08h3.83v1.41Z"/><path class="cls-1" d="M140.92,62.72V52.47h1.53l5,7.75-.07-7.75h1.47V62.72h-1.43l-5.14-8,.1,8Z"/><path class="cls-1" d="M154.69,62.72V53.85h-1.92V52.47h5.32v1.38h-1.91v8.87Z"/><path class="cls-1" d="M169,62.72V61.29l3.59-3.44c.85-.83,1.47-1.4,1.47-2.33a1.8,1.8,0,0,0-1.86-1.84c-1.12,0-1.8.75-1.8,2v.11H169v0a3.24,3.24,0,0,1,3.33-3.53,3.17,3.17,0,0,1,3.19,3.19A3.78,3.78,0,0,1,174,58.29l-3.19,3h4.64v1.43Z"/><path class="cls-1" d="M179.84,56.09a3.65,3.65,0,0,1,.62-2.43,3.7,3.7,0,0,1,5.84.1,3.78,3.78,0,0,1,.55,2.27v3.13a3.81,3.81,0,0,1-.56,2.33,3.54,3.54,0,0,1-2.95,1.43,3.63,3.63,0,0,1-2.91-1.38,3.8,3.8,0,0,1-.59-2.43Zm1.53,3.44a1.92,1.92,0,0,0,.24,1.16,2.06,2.06,0,0,0,1.71.82c1.34,0,2-.72,2-2.19V55.88a2.25,2.25,0,0,0-.25-1.35,2.19,2.19,0,0,0-3.42,0,2.32,2.32,0,0,0-.27,1.38v3.66Z"/><path class="cls-1" d="M191.22,62.72V61.29l3.59-3.44c.85-.83,1.47-1.4,1.47-2.33a1.81,1.81,0,0,0-1.86-1.84c-1.13,0-1.8.75-1.8,2v.11h-1.4v0a3.23,3.23,0,0,1,3.33-3.53,3.16,3.16,0,0,1,3.18,3.19,3.78,3.78,0,0,1-1.48,2.82l-3.19,3h4.65v1.43Z"/><path class="cls-1" d="M202.1,56.09a3.65,3.65,0,0,1,.62-2.43,3.52,3.52,0,0,1,2.89-1.38,3.47,3.47,0,0,1,2.95,1.48,3.78,3.78,0,0,1,.55,2.27v3.13a3.81,3.81,0,0,1-.56,2.33,3.54,3.54,0,0,1-2.94,1.43,3.61,3.61,0,0,1-2.91-1.38,3.74,3.74,0,0,1-.6-2.43Zm1.53,3.44a1.92,1.92,0,0,0,.25,1.16,2,2,0,0,0,1.7.82c1.34,0,2-.72,2-2.19V55.88a2.25,2.25,0,0,0-.25-1.35,2,2,0,0,0-1.73-.84,2,2,0,0,0-1.68.8,2.24,2.24,0,0,0-.28,1.38v3.66Z"/></svg> 
+	<h2 id="tagline">Enfoque en el futuro</h2>
+</a>
+
+<button type="button" id="nav-toggler" class="navbar-toggler ml-auto collapsed" data-toggle="collapse" data-target="#header-left">
+  Menú <i class="fas fa-bars"></i>
+</button>
+
+<nav id="header-left" class="collapse navbar-collapse"><ul id="main-navigation" class="navbar-nav"><li id="menu-item-3120" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3117 current_page_item  active nav-item nav-item-3120"><a title="Conozca A John Delaney" href="https://www.johndelaney.com/es/biografia/" class="nav-link">Conozca A John Delaney</a></li><li id="menu-item-3247" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3247"><a title="La Visión" href="https://www.johndelaney.com/es/vision/" class="nav-link">La Visión</a></li><li id="menu-item-3122" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3122"><a title="Eventos" href="https://www.johndelaney.com/events/" class="nav-link">Eventos</a></li><li id="menu-item-3121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-3121"><a title="In English" href="https://www.johndelaney.com/" class="nav-link">In English</a></li></ul></nav>
+<nav id="header-right" class="menu-header-right-es-container"><ul id="action-navigation" class="navbar-nav ml-auto d-none d-md-flex"><li id="menu-item-3119" class="ltblue menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3119"><a title="Voluntario" href="https://go.johndelaney.com/page/signup/voluntario" class="nav-link">Voluntario</a></li><li id="menu-item-3118" class="red menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3118"><a title="Donar" href="https://secure.actblue.com/donate/john-delaney-es?refcode=es_website_header" class="nav-link">Donar</a></li></ul></nav>
+			</div><!-- /.container -->
+		</nav>
+	</header>
+
+	<main id="main" role="main">
+
+	<article id="post-3117" class="post-3117 page type-page status-publish has-post-thumbnail hentry">
+		
+		
+			
+			<header class="hero hero-primary">
+				<figure>
+					<picture>
+						<source media="(min-width: 768px)"
+			  				  	srcset="https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013379270.jpg" />
+			    	<img srcset="https://www.johndelaney.com/wp-content/uploads/2018/12/About_Header@2x_2-e1544013365997-1024x409.jpg" alt="" width="100%" class="hero-img" />
+			    </picture>
+				</figure>
+				
+				<div class="container">
+					<h1 class="entry-title">Conozca A John Delaney</h1>
+
+					<!-- <p class="lead"></p> -->
+				</div>
+			</header>
+
+			
+	<nav class="breadcrumb"><div class="container"><a href="https://www.johndelaney.com">Home</a><span class="delimiter"> &raquo; </span><a href="https://www.johndelaney.com/es/">En Español</a><span class="delimiter"> &raquo; </span>Conozca A John Delaney</div></nav>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 col-xl-8">		
+
+					<main class="entry-content">
+						
+<div class="wp-block-cover has-background-dim" style="background-image:url(https://www.johndelaney.com/wp-content/uploads/2019/01/Delaney8-w-dad.jpg)"><p class="wp-block-cover-text"><strong>Raíces Trabajadoras y de Union Familiar Fuerte</strong></p></div>
+
+
+
+<p>Crecí en una familia trabajadora en Wood-Ridge, New Jersey.  Mi papá era muy trabajador y fue miembro por 60 años de la Hermandad Internacional de Trabajadores Electricos, mientras mamá se quedaba en casa a criar a mi hermana y a mi.  El trabajo duro corre en nuestra familia.  Mis abuelos vinieron a los Estados Unidos de Irlanda e Inglaterra y encontraron trabajos en Jersey City, New Jersey, donde uno de mis abuelos trabajo en una compañia de lapices y el otro tabajando en los muelles.  Mis padres me implantaron esos mismos valores de trabajar duro.  No puedo recordar un momento cuando era niño en el cual no estaba trabajando en mi tiempo de vacaciones de la escuela.  Pase veranos como ladrillero, escabador, jardinero, pintor, y más seguido como asistente electrico, trabajando a un lado de mi papa.</p>
+
+
+
+<p>Mis padres nunca tuvieron la oportunidad de atender la universidad.  Pero gracias a las influencias de mi mama y con la ayuda de la union de trabajadores por parte de mi papa tuve la oportunidad de atender y graduarme de la Universidad de Columbia y del Centro De Leyes de La Universidad De Georgetown.  Pague mi trayectoria en Columbia con becas de la union de mi padre EBEW Local 164 Union de Trabajadores, tambien de American Legion, VFW y Lion’s Club.  Como tantos otros Americanos me extendieron la mano con ayuda e hicieron la diferencia y me abrieron las purtas a muchas oportunidades.  Entiendo el sueño Americano porque lo e vivido.</p>
+
+
+
+<p>Creciendo en Nueva Jersey era un fan de Bruce Springsteen y mi canción favorite era Thunder Road.  Hasta ahora lo e visto en mas de 30 conciertos.</p>
+
+
+
+<div class="wp-block-cover has-background-dim" style="background-image:url(https://www.johndelaney.com/wp-content/uploads/2019/01/delaney-in-office.jpg)"><p class="wp-block-cover-text"><strong>Un Empresario Éxitoso que ha creado dos empresas listadas en la Bolsa de Intercambio de Nueva York y Miles De Trabajos</strong></p></div>
+
+
+
+<p>Después de la escuela de leyes con la ayuda de mis socios, decidi &nbsp;tomar el riesgo y empezar mi propio negocio de la nada. Para el tiempo que cumpli 40 años, habia lanzado y liderado dos empresas que crearon miles de trabajos, eran admiradas por la comunidad &nbsp;e intercabiadas publicamente en La Bolsa De Intercambio De Nueva York.  Con mi primera empresa fui el Director Ejecutivo mas joven en la BINY.<br></p>
+
+
+
+<p>Tocando la campana no podria haber estado mas orgulloso sabiendo que la union que me ayudo a pagar por la Universidad estaba cruzando el río. &nbsp;En el 2004 fui nombrado Empresario Del Año de Ernst &amp; Young y mis negocios fuera votados como el mejor lugar para trabajar—y era el unico Director Ejecutivo de una empresa publica y que servia en la Casa De Representates De Los Estados Unidos durante mis tres terminos.<br></p>
+
+
+
+<blockquote class="wp-block-quote"><p>“Dirijo mis empresas con unos valores simples: Se el trabajador más duro de la empresa,</p></blockquote>
+
+
+
+<p>lidera con ejemplo, trata bien alas personas, reconoce el buen trabajo, desafia las supocisiones, establece relaciones y se honesto y justo.”<br></p>
+
+
+
+<p>Mi segunda empresa CapitolSource tenia su sede central en Montgomery County, MD y se centraba en proporcionar préstamos a empresas pequeñas y medianas que son los motores de nuestra economía y el tipo de empresas que los bancos grandes ignoran con demasiada frecuencia. Durante casi veinte años ayudamos a más de 5,000 empresas, pequeñas y medianas, alrededor de Estados Unidos y empleamos a casi 2,000 personas. Hasta el dia de hoy estoy increiblemente orgulloso de que el departamento de tesoreria de el presidente Obama nos haya otorgado el premio de empresa bancaria por nuestro trabajo invirtiendo en comunidades de bajos ingresos y en dificultades económicas. Tambien me enorgullece haber ayudado a iniciar una compañia que invirtio en los bancos comunitarios de Estados Unidos. Mirando hacia atras en mi carrera como empresario, sé que fue una combinación de buena suerte, trabajo duro y la bendicion de un excelente equipo que creó nuestro éxito.<br></p>
+
+
+
+<p>Mi tiempo en el negocio me enseño muchas habilidades importantes que se requieren para ser un líder político y exitoso – gestión, creación de empleo, estrategia, generacion de ideas, comunicación y trabajo en equipo. &nbsp;Pero son mis raíces trabajadoras, fe, compromiso con la justicia social y fuertes valores progresistas que me inspiraron a postularme para el Congreso y dedicar mi vida al servicio público.</p>
+
+
+
+<div class="wp-block-cover has-background-dim" style="background-image:url(https://www.johndelaney.com/wp-content/uploads/2018/11/IMG_1921-e1542314877375.jpg)"><p class="wp-block-cover-text"><strong>Una voz de liderato en el Congreso, en trabajos del siglo 21, educacció, temas de vertanos e infrastroctura</strong></p></div>
+
+
+
+<p>Llegue al congreso después de dos décadas como un exitoso empresario, líder innovador empresarial y sin fines de lucro. Mis compromisos de campaña eran los mismos ayer que hoy; promover valores progresivos, encontrar soluciones y puntos en común, traer nuevas ideas y crear politicas de futuro que ayuden a los estadounidenses de todos los dias.<br></p>
+
+
+
+<p>Desde que asumí el cargo en el 2012, he introducido una legislación bipartidista a gran escala sobre infraestructura, reforma fiscal, seguridad social e enversiones de impacto. Me enorgullece ser un campeón para nuestros veteranos, educación pública y el jardín infantil, llevar trabajos a las comunidades rurales y urbanas marginadas y combatir la epidemia de la opioides. &nbsp;En política extranjera, mi trabajo se ha centrado en una defensa nacional fuerte, el fortalecimineto de nuestras alianzas y la reduccion de las fuentes financieras del terrorismo. Creo que la mejor formulación de políticas se centra directamente en el futuro, por lo que he fundado el grupo Artificial Intelligence Caucus y soy miembro fundador del grupo bipartidista Climate Solution Caucus. &nbsp;Al provenir del sector privado, también sé que la única forma de hacer las cosas en Washington es dejar de lado la retórica partidista y encontrar puntos en comun. Siempre se me reconoce como uno de los miembros más bipartidistas de la Cámara de Representantes. Y en 2017, mi compromiso de encontrar puntos en común y centrarme en soluciones inteligentes me ayudó a ganar un lugar en la lista de la revista Fortune de los “50 líderes más grandes del mundo”. &nbsp;<br></p>
+
+
+
+<p>En muchos sentidos, el distrito que represento, el distrito sexton de Maryland, es América en miniatura, que abarca las colinas del oeste de Maryland hasta los suburbios de negocios del condado de Montgomery. Los desafíos y las oportunidades del distrito, desde la epidemia de la opioides hasta estimular la innovación y garantizar que los sectores públicos, privados y sin fines de lucro, funcionen bien juntos &#8211; &#8211; que sea los mismos en todo el país. Es por eso que he trabajado duro para promover un mensaje económico unificado y para comprender los desafíos y oportunidades únicas de América rural y urbana.<br></p>
+
+
+
+<div class="wp-block-cover has-background-dim" style="background-image:url(https://www.johndelaney.com/wp-content/uploads/2019/01/delaney-at-service-event.jpg)"><p class="wp-block-cover-text"><strong>Comunidad y fe</strong><br></p></div>
+
+
+
+<p>Abril y yo siempre hemos pensado en nuestras vidas como un tercio de aprendizaje, un tercio de ganancias y un tercio de servicios. Además de servir a mi país como miembro del Congreso, Abril y yo también nos hemos dedicado a servir a nuestra comunidad local y a la Iglesia Católica, cuya misión de justicia social ha sido la Estrella del Norte de mi vida. En el 2007, nos sentimos honrados de ser reconocidos como parte del Día de la Filantropía de la Capital Nacional con el Premio a los Filántropos Destacados para la region del Gran Washington, DC.  Siempre hemos creído en invertir nuestro tiempo y recursos en la comunidad, ya sea en nuestra iglesia o en las escuelas de nuestros hijos o en importantes organizaciones no lucrativas locales y nacionales. En el 2014, Abril y yo nos asociamos con nuestra alma mater, Georgetown University Law Center, para dotar el Hillary Clinton Fellowship y el Programa de Residencia-Postgraduados de Delaney.  Los dos programas sirven para alentar a los jóvenes abogados a perseguir la ley de interés público y otorgar becas significativas a los becarios que realizan trabajos legales en organizaciones como la Conferencia de Liderazgo sobre Derechos Civiles y Humanos, Asesor Legal para los Ancianos, Centro Nacional de Derecho de la Mujer, Centro de Derechos Humanos Robert F. Kennedy. , y el Sierra Club.  A principios del 2019, nos asociamos nuevamente con el Centro de Derecho de la Universidad de Georgetown para patrocinar a un grupo de estudiantes de derecho y profesores que viajaron a un centro de detención en la frontera de EE. UU. Y México en Dilley, Texas.  Allí, ayudaron a procesar los casos de madres e hijos que buscaban asilo.  También me enorgullece haber servido en la junta directiva de organizaciones sin fines de lucro sobresalientes que apoyan la educación, los niños y los derechos de las mujeres, incluyendo la Universidad de Georgetown, la Escuela Episcopal de San Patricio, la Orquesta Sinfónica Nacional, el Club de Niños y Niñas y el Centro Internacional para la investigación sobre la mujer. Finalmente, en el 2011 fundé Blueprint Maryland, una iniciativa basada en ideas 501c (3) que ofrece una voz proactiva para abogar por el desarrollo económico del sector privado y la creación de empleos en las diversas regiones de mi estado natal.</p>
+
+
+
+<div class="wp-block-cover has-background-dim" style="background-image:url(https://www.johndelaney.com/wp-content/uploads/2018/12/family-landscape-2.jpg)"><p class="wp-block-cover-text"><strong>La Familia de JOHN &#8211; su mayor logro</strong></p></div>
+
+
+
+<p>Mi mayor logro, sin embargo, es mi familia. Mi increíble esposa, Abril, y yo nos conocimos como estudiantes de derecho en la Universidad de Georgetown. Nunca me arrepentiré de haber reorganizado todo mi horario de clases solo para asegurarme de que estaba en todas las mismas clases que la inteligente y hermosa estudiante de derecho de Idaho. Hija de un agricultor de papas, Abril ha sido mi compañera de toda la vida en el servicio público. Ella es una abogada especializada en asuntos regulatorios y una defensora reconocida a nivel nacional para la alfabetización mediática de los niños y el empoderamiento de las mujeres. Más recientemente, se desempeñó como Directora de Washington para Common Sense Media y como Presidenta inmediata de la Junta Directiva del Centro de Derecho de la Universidad de Georgetown. Abril y yo también compartimos un compromiso inquebrantable con la civilidad y el bipartidismo. Ella ha presidido el Almuerzo de la Primera Dama del Club del Congreso, presidió los últimos tres Desayunos de Oración Nacionales &#8220;Reunión de Mujeres de los 50 Estados&#8221; y organizó más de 50 eventos bipartidistas.</p>
+
+
+
+<p>Hemos sido bendecidos con cuatro hijas fantásticas, que son las alegrías de nuestras vidas. Como familia, disfrutamos del aire libre y pasamos muchas vacaciones acampando y haciendo caminatas en Idaho, donde Abril creció. La fe está en el centro de nuestra vida familiar. Somos católicos activos que estamos profundamente involucrados en nuestra parroquia, la Arquidiócesis de Washington y la Universidad de Georgetown. Hemos tenido la suerte de llamarle hogar a Maryland durante más de dos décadas y vivir en el condado de Montgomery con nuestras hijas y nuestros dos perros.<br></p>
+					</main>
+
+				</div>
+			</div>
+		</div>
+		
+		<div class="share-nav">
+      <div class="share-nav-inner">
+        <div class="button">
+        	<i class="fa fa-share-alt" aria-hidden="true"></i>
+        </div>
+        <div class="share-nav-slider">
+          <div class="menu">
+						<ul>
+							<li>
+								<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/es/biografia/"><i class="fab fa-facebook fa-2x"></i><span class="sr-only"> Share</span></a>
+							</li>
+							<li>
+								<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Conozca+A+John+Delaney&url=https%3A%2F%2Fwww.johndelaney.com%2Fes%2Fbiografia%2F&via=johnkdelaney"><i class="fab fa-twitter fa-2x"></i><span class="sr-only"> Tweet</span></a>
+							</li>
+							<li>
+								<a target="_blank" href="mailto:?subject=Check out this post from John Delaney&body=Conozca A John Delaney&#32;&#32;https://www.johndelaney.com/es/biografia/"><i class="far fa-envelope fa-2x"></i><span class="sr-only">Email</span></a>
+							</li>
+						</ul>
+					</div>
+        </div>
+        
+      </div>
+    </div>
+
+	</article>
+
+
+	</main><!-- #main -->
+
+	<footer id="footer" class="site-footer">
+		
+			<div id="footer-actions" class="menu-header-right-es-container"><ul id="menu-header-right-es" class=""><li class="ltblue menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3119"><a title="Voluntario" href="https://go.johndelaney.com/page/signup/voluntario" class="nav-link">Voluntario</a></li><li class="red menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3118"><a title="Donar" href="https://secure.actblue.com/donate/john-delaney-es?refcode=es_website_header" class="nav-link">Donar</a></li></ul></div>		
+		<div class="container">
+			
+			<span class="disclaimer">
+				Paid for by Friends of John Delaney.
+			</span>
+			
+							<span>*Opta por no recibir mensajes de texto del equipo Delaney en cualquier momento. Se pueden aplicar tarifas por mensajes y data.</span>
+			
+		</div>
+	</footer><!-- #footer -->
+
+<script type='text/javascript' src='https://www.johndelaney.com/wp-content/themes/jkd/assets/js/main.min.js'></script>
+<script type='text/javascript' src='https://www.johndelaney.com/wp-includes/js/wp-embed.min.js'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"82920e9ea9","applicationID":"258621444","transactionName":"ZlAAZxQHWhIFBRFaXV8aI1ASD1sPSxYEVFc=","queueTime":0,"applicationTime":166,"atts":"ShcDEVwdSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,309 @@
+.new-policy .site-inner {
+	max-width: 100%;
+	padding: 0;
+	margin-top: 200px;
+	font-size: 18px;
+}
+
+.new-policy .entry-content ul ul {
+	margin-left: 30px;
+}
+
+.new-policy .entry-meta {
+  display: none;
+}
+
+.new-policy .grid .column {
+	width: 100%;
+}
+
+.new-policy .grid .column:first-child {
+	margin-right: 70px;
+}
+
+.new-policy blockquote,
+.guiding-principles,
+.goals {
+  margin: 0;
+  background-color: var(--blueDark);
+  color: var(--white);
+}
+
+.new-policy h4,
+.new-policy h5,
+.new-policy blockquote,
+.new-policy cite,
+.new-policy p,
+.new-policy q {
+  font-size: 18px;
+}
+
+.new-policy h4,
+.new-policy h5 {
+	font-weight: bold;
+}
+
+.new-policy h5,
+.problems-to-be-solved h4 {
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.excerpt h4,
+.as-president h4 {
+	color: var(--blueDark);
+}
+
+.new-policy cite {
+  display: inline;
+	margin-right: 5px;
+  color: var(--red);
+  font-style: normal;
+  font-weight: bold;
+}
+
+.new-policy cite:before {
+  content: '';
+}
+
+.new-policy q {
+  display: inline;
+  color: var(--black);
+  font-style: normal;
+}
+
+.new-policy .entry-content ul {
+	margin-left: 0;
+}
+
+.new-policy .entry-content ul li {
+	list-style: none;
+}
+
+.new-policy .entry-content ul li:before {
+  content: '';
+}
+
+.new-policy .entry-header {
+	margin-bottom: 30px;
+}
+
+.new-policy .entry-header:before {
+	content: '';
+	display: block;
+	width: 78px;
+	height: 84px;
+	margin: 0 auto 23px;
+	background-image: url(/wp-content/themes/aspire-pro/images/yang_shield.png);
+	background-repeat: no-repeat;
+	background-size: 78px 84px;
+}
+
+/* Title */
+.new-policy .entry-title {
+	font-size: 44px;
+	text-align: center;
+}
+
+.new-policy .entry-title:before {
+	content: 'Policy';
+	display: block;
+	color: red;
+	font-size: 21px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.new-policy blockquote,
+.problems-to-be-solved,
+.guiding-principles,
+.goals,
+.as-president {
+	margin-bottom: 25px;
+}
+
+/* Brief */
+
+.brief {
+	padding: 20px 0 10px;
+	background-color: hsl(0, 0%, 98%);
+}
+
+.brief a {
+	color: var(--red);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* Quote */
+.new-policy blockquote {
+	padding: 80px 0 40px;
+	text-align: center;
+}
+
+.new-policy blockquote:before {
+  content: '“';
+  top: 0px;
+  left: calc(50% - 75px);
+  color: hsl(60, 4%, 85%);
+	font-size: 161px;
+}
+
+.new-policy blockquote .wrap {
+	width: 75%;
+	margin: 0 auto;
+}
+
+/* Problems to be Solved */
+.problems-to-be-solved {
+
+}
+
+.problems-to-be-solved h4 {
+	margin: 0 auto 20px;
+  color: var(--red);
+	text-align: center;
+}
+
+.problems-to-be-solved .column:first-child {
+  margin-right: 100px;
+}
+
+.problems-to-be-solved ul li:before {
+	background-image: url(/wp-content/themes/aspire-pro/images/policy_checkmark_blue.png);
+}
+
+.problems-to-be-solved h4 {
+	width: 50%;
+	padding-bottom: 20px;
+	border-bottom: 3px solid var(--red);
+}
+
+.problems-to-be-solved ul,
+.goals ul {
+	margin-left: 45px;
+}
+
+.problems-to-be-solved ul li,
+.goals ul li {
+	position: relative;
+	margin-bottom: 15px;
+	line-height: 1.4;
+}
+
+.problems-to-be-solved ul li:before,
+.goals ul li:before {
+	content: '';
+  position: absolute;
+  top: 0px;
+  left: -45px;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+}
+
+/* Guiding Principles */
+.guiding-principles {
+	padding: 20px 0;
+	background-color: var(--red);
+}
+
+.guiding-principles .wrap {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.guiding-principles h5,
+.guiding-principles ul li:not(:last-child) {
+	margin-right: 20px;
+}
+
+.guiding-principles h5,
+.guiding-principles ul,
+.guiding-principles ul li {
+	display: inline;
+}
+
+.guiding-principles ul li {
+	font-size: 23px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-decoration: underline;
+}
+
+/* Goals */
+.goals {
+	padding: 20px 0px;
+}
+
+.goals h5 {
+	width: 600px;
+  margin: 0 auto 20px;
+}
+
+.goals ul {
+  width: 600px;
+  padding-top: 20px;
+  border-top: 3px solid var(--white);
+  margin: 0 auto;
+}
+
+.goals ul li:before {
+	background-image: url(/wp-content/themes/aspire-pro/images/policy_checkmark_white.png);
+}
+
+/* As President */
+.as-president {
+
+}
+
+/* Excerpt */
+.excerpt {
+
+}
+
+@media (max-width: 1023px) {
+	.new-policy .grid {
+		flex-direction: column;
+	}
+
+	.guiding-principles .wrap {
+		width: 100%;
+	}
+
+	.goals h5 {
+		width: 100%;
+		padding-bottom: 20px;
+	  border-bottom: 3px solid var(--white);
+		margin-bottom: 20px;
+	}
+
+	.goals ul {
+		width: 100%;
+		padding-top: 0;
+		border-top: 0;
+  	padding-left: 45px;
+	}
+}
+
+@media (max-width: 768px) {
+	.new-policy .site-inner {
+		margin-top: 100px;
+	}
+
+	.new-policy blockquote {
+		padding: 20px 0;
+	}
+
+	.new-policy blockquote:before {
+		content: '';
+	}
+
+	.new-policy blockquote .wrap {
+		width: 100%;
+	}
+
+	.guiding-principles h5 {
+		display: block;
+	}
+}

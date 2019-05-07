@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /design-internal
+Disallow: /design
+Disallow: /thank-you
+Disallow: /hp-r2
+Disallow: /playground
+
+Sitemap: http://www.marianne2020.com/sitemap.xml
+

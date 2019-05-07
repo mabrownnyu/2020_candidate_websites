@@ -1,0 +1,12 @@
+/* make iOS able to "click" - makes everything use the pointer cursor */
+/iP/i.test(navigator.userAgent) && $('*').css('cursor', 'pointer');
+
+/* mobile menu */
+$(function() {
+	$('#menu button').click(function() {
+		$('#menu nav').slideToggle();
+		$(this).toggleClass('active');
+		$('#menu #animation').toggleClass('open');
+	});
+	$(".fitvids").fitVids();
+});

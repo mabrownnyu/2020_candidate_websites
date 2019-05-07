@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M96J785');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://joebiden.com/wp-content/themes/bexc/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://joebiden.com/wp-content/themes/bexc/favicons/site.webmanifest">
+  <link rel="mask-icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/safari-pinned-tab.svg" color="#233f94">
+  <link rel="shortcut icon" href="https://joebiden.com/wp-content/themes/bexc/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-config" content="https://joebiden.com/wp-content/themes/bexc/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>La Visión de Joe &ndash; Joe Biden for President 2020</title>
+  <script src="https://use.typekit.net/lwk5jsx.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+  
+<!-- This site is optimized with the Yoast SEO plugin v11.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://joebiden.com/es/la-vision-de-joe/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="LA VISIÓN DE JOE PARA ESTADOS UNIDOS" />
+<meta property="og:description" content="Estamos en una batalla por el alma de nuestro país. Es hora de recordar quiénes somos." />
+<meta property="og:url" content="https://joebiden.com/es/la-vision-de-joe/" />
+<meta property="og:site_name" content="Joe Biden for President 2020" />
+<meta property="og:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:secure_url" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Estamos en una batalla por el alma de nuestro país. Es hora de recordar quiénes somos." />
+<meta name="twitter:title" content="LA VISIÓN DE JOE PARA ESTADOS UNIDOS" />
+<meta name="twitter:image" content="https://joebiden.com/wp-content/uploads/2019/04/biden-share-1024x512.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://joebiden.com/es/inicio/#website","url":"https://joebiden.com/es/inicio/","name":"Joe Biden for President 2020","publisher":{"@id":"https://joebiden.com/es/inicio/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://joebiden.com/es/inicio/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://joebiden.com/es/la-vision-de-joe/#webpage","url":"https://joebiden.com/es/la-vision-de-joe/","inLanguage":"es-US","name":"La Visi\u00f3n de Joe &ndash; Joe Biden for President 2020","isPartOf":{"@id":"https://joebiden.com/es/inicio/#website"},"datePublished":"2019-04-19T23:09:07-04:00","dateModified":"2019-04-29T22:36:11-04:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//joebiden.com' />
+<link rel='stylesheet' id='bexc-main-css'  href='https://joebiden.com/wp-content/themes/bexc/css/main.css?ver=0.40' type='text/css' media='all' />
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/modernizr.min.js?ver=3.6.0'></script>
+<link rel="alternate" type="application/json+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fes%2Fla-vision-de-joe%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://joebiden.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjoebiden.com%2Fes%2Fla-vision-de-joe%2F&#038;format=xml" />
+<link rel="alternate" href="https://joebiden.com/joes-vision/" hreflang="en" />
+<link rel="alternate" href="https://joebiden.com/es/la-vision-de-joe/" hreflang="es" />
+
+</head>
+
+<body class="page-template page-template-page-vision page-template-page-vision-php page page-id-137 language-es">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M96J785"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+  <div class="site-header-wrapper">
+    <header id="site-header" class="clearfix">
+              <div class="site-title">
+          <a href="https://joebiden.com/es/inicio/" rel="home">
+                        <img src="https://joebiden.com/wp-content/themes/bexc/img/logo.svg" width="135" height="56" alt="Logo for Joe Biden for President 2020">
+          </a>
+        </div>
+            <nav id="nav-header">
+        <ul class="top">
+          <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://joebiden.com/es/la-historia-de-joe/">La Historia de Joe</a></li>
+<li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-137 current_page_item menu-item-139"><a href="https://joebiden.com/es/la-vision-de-joe/" aria-current="page">La Visión de Joe</a></li>
+<li id="menu-item-140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-140"><a href="https://www.mobilize.us/joebiden/">Eventos</a></li>
+<li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141"><a href="https://store.joebiden.com/">Tienda</a></li>
+<li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142"><a href="https://joebiden.com/es/unase/">Únase</a></li>
+                                                    <li class="translation"><a href="https://joebiden.com/joes-vision/">English</a></li>
+                                                              
+                                <li class="social">
+              <ul>
+                                                      <li><a href="https://twitter.com/joebiden">
+                      <span class="icon-twitter"></span>
+                      <span class="element-invisible">Twitter</span>
+                    </a></li>
+                                                                        <li><a href="https://www.facebook.com/joebiden">
+                      <span class="icon-facebook"></span>
+                      <span class="element-invisible">Facebook</span>
+                    </a></li>
+                                                                        <li><a href="https://www.instagram.com/joebiden">
+                      <span class="icon-instagram"></span>
+                      <span class="element-invisible">Instagram</span>
+                    </a></li>
+                                                                        <li><a href="https://www.youtube.com/joebiden">
+                      <span class="icon-youtube"></span>
+                      <span class="element-invisible">Youtube</span>
+                    </a></li>
+                                                </ul>
+            </li>
+                  </ul>
+      </nav>
+                        <a href="https://secure.actblue.com/donate/spjoe2020" class="button red donate-button">Contribuya</a>
+                    <a class="burger" href="#nav-header">
+        <span class="open">Menú</span>
+        <span class="close">Menú</span>
+      </a>
+    </header><!-- #site-header -->
+  </div>
+
+  <div id="main-content">
+
+<main id="main">
+
+                    <div id="donate-bar">
+    <div class="donate-bar">
+              <h2>Apoya a Joe</h2>
+            <ul>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=5" class="button red donate">$5</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=10" class="button red donate">$10</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=20" class="button red donate">$20</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=50" class="button red donate">$50</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=100" class="button red donate">$100</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=250" class="button red donate">$250</a></li>
+              <li><a href="https://secure.actblue.com/donate/spjoe2020?amount=500" class="button red donate">$500</a></li>
+            <li class="other"><a href="https://secure.actblue.com/donate/spjoe2020" class="button red donate">Otro</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <article class="view-vision post-137 page type-page status-publish hentry">
+
+          <header class="entry-header">
+                  <div class="background background-desktop" style="background-image: url(https://joebiden.com/wp-content/uploads/2019/04/biden-vision-b-1.jpg);"></div>
+                          <div class="background background-mobile" style="background-image: url(https://joebiden.com/wp-content/uploads/2019/04/biden-vision-mobile-b-1.jpg);"></div>
+                <h1 class="entry-title h1">
+                      <div class="title">LA VISIÓN DE JOE PARA</div>
+                                <div class="title light">ESTADOS UNIDOS</div>
+                  </h1>
+      </header>
+    
+          <section class="body">
+        <div class="inner clearfix">
+                      <h2 class="title h3">Estados Unidos es una idea. </h2>
+          
+                      <figure>
+              <img width="932" height="522" src="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-america.jpg" class="attachment-large size-large" alt="La gente ve a Joe hablar." sizes="(min-width: 768px) 50vw, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-america.jpg 932w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-america-300x168.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-america-768x430.jpg 768w" />            </figure>
+          
+                                    <div class="paragraph">
+                <p>Estados Unidos es una idea. Una idea que se remonta a nuestro principio fundador de que todos somos creados iguales. Es una idea que es más fuerte que cualquier ejército, más grande que cualquier océano, más poderosa que cualquier dictador. Da esperanza a las personas más desesperadas de la Tierra. Inculca en cada persona en este país la creencia de que no importa dónde empiecen en la vida, no hay nada que no puedan lograr si trabajan en ello.</p>
+              </div>
+                          <div class="paragraph">
+                <p>Estamos en una batalla por el alma de nuestro país. Es hora de recordar quiénes somos. Somos estadounidenses: fuertes, resistentes, pero siempre llenos de esperanza. Es hora de tratarnos con dignidad, de construir una clase media que funcione para todos, de luchar contra los increíbles abusos de poder que estamos viendo. Es el momento de unir fuerzas y de recordar que nuestros mejores días aún están por venir.</p>
+              </div>
+                          <div class="paragraph">
+                <p>Es hora de un liderazgo respetado en el escenario mundial y un liderazgo digno internamente. Es tiempo de igualdad de oportunidades, de igualdad de derechos y de igualdad de justicia. Es hora de una economía que recompense a quienes realmente hacen el trabajo. Es hora de que un presidente nos defienda a todos.</p>
+              </div>
+                              </div>
+
+                  <div class="subhead h1">Esta es la visión de Joe para Estados Unidos.</div>
+              </section>
+    
+          <div class="sections">
+        <ul class="section-tabs clearfix">
+                                    <li><a href="#section-0"><span>Tenemos que reconstruir la columna vertebral del país: la clase media.</span></a></li>
+                                                <li><a href="#section-1"><span>Tenemos que demostrar liderazgo respetado en el escenario mundial.</span></a></li>
+                                                <li><a href="#section-2"><span>Tenemos que asegurarnos de que nuestra democracia incluya a todos.</span></a></li>
+                              </ul>
+                              <section class="section" id="section-0">
+              <header class="section-header">
+                <a href="#section-inner-0">
+                  <div class="inner">
+                    <h2 class="title">Tenemos que reconstruir la columna vertebral del país: la clase media.</h2>
+                    <span class="text open">Leer Más</span>
+                    <span class="text close">Menú</span>
+                    <span class="icon icon-down"></span>
+                  </div>
+                </a>
+              </header>
+              <div class="section-inner" id="section-inner-0">
+                                  <figure class="quote">
+                    <blockquote>"Este país no fue construido por los banqueros y directores generales de Wall Street, ni por los administradores de fondos de inversión. Fue construido por nuestra clase media".</blockquote>
+                                      </figure>
+                                                  <figure class="image">
+                    <img width="1024" height="465" src="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-middle-class-1-1024x465.jpg" class="attachment-large size-large" alt="Joe habla con un grupo de trabajadores." sizes="(min-width: 768px) 880px, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-middle-class-1-1024x465.jpg 1024w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-middle-class-1-300x136.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-middle-class-1-768x349.jpg 768w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-middle-class-1.jpg 1320w" />                  </figure>
+                                                  <div class="body"><p>La clase media no es un número, es un conjunto de valores: poseer su casa, enviar a tus hijos a la universidad, poder ahorrar y salir adelante. En todo el país, demasiadas familias se quedan atrás. El próximo presidente debe entender lo que no hace el actual: en Estados Unidos, no importa dónde empieces en la vida, no debería haber ningún límite a lo que puedes lograr.</p>
+<p>Necesitamos reconstruir la clase media y esta vez asegurarnos de que todos, independientemente de su raza, género, religión, orientación sexual o discapacidad, tengan una oportunidad justa.</p>
+</div>
+                
+                                  <div class="issues">
+                                                                  <div class="issue">
+                          <h3><a href="#issue-0-0">Restaurar el acuerdo básico para los trabajadores estadounidenses.</a></h3>
+                          <div class="body" id="issue-0-0">
+                            <p>La clase media estadounidense construyó este país, sin embargo, actualmente, los directores generales y Wall Street ponen las ganancias por encima de los trabajadores, simple y llanamente. Está mal. En este país solía haber un acuerdo básico de que cuando uno trabaja duro, puede compartir la prosperidad que su trabajo ayuda a crear. Es hora de restaurar la dignidad del trabajo y devolver a los trabajadores el poder de ganar lo que valen.</p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-1">Garantizar a cada estadounidense las destrezas y la educación que necesitan para salir adelante.</a></h3>
+                          <div class="body" id="issue-0-1">
+                            <p><b><span style="font-weight: 400;">La educación está en el corazón del Sueño Americano y es esencial para que Estados Unidos compita a nivel mundial en las próximas décadas. Los estadounidenses deben tener la oportunidad durante toda su vida de obtener las destrezas y la educación necesarias para desarrollar todo su potencial, comenzando mucho antes de ingresar al jardín de infantes y durante todo el proceso a través de un programa de certificación, capacitación en el trabajo, colegio comunal o un grado de cuatro años. Y todos deberían tener la oportunidad de actualizar sus habilidades tan rápidamente como la economía cambie.</span></b></p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-2">Garantizar que la tranquilidad del seguro de salud sea un derecho, no un privilegio.</a></h3>
+                          <div class="body" id="issue-0-2">
+                            <p><span style="font-weight: 400;">Esa es la razón por la que Barack Obama y Joe Biden lucharon tan duramente por la Ley del Cuidado Asequible de la Salud. Debemos defender y basarnos en la Ley del Cuidado Asequible de la Salud para garantizar que cada uno de nuestros vecinos tenga acceso a una atención médica de calidad y asequible. Y debemos utilizar la fuerza de nuestra experiencia y los recursos de nuestra nación para enfrentar nuestros mayores desafíos de salud pública, incluyendo el cáncer, la adicción a los opioides y la salud mental. </span></p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-3">Enfrentar el cambio climático y la contaminación para proteger a nuestras comunidades.</a></h3>
+                          <div class="body" id="issue-0-3">
+                            <p><b><span style="font-weight: 400;">El cambio climático amenaza a las comunidades a través del país, desde las ciudades costeras frente a la playa hasta las granjas rurales en la zona central. Debemos impulsar nuestros esfuerzos para enfrentar el cambio climático y garantizar que todos los estadounidenses tengan acceso a agua potable limpia, aire limpio y un entorno libre de contaminantes. </span></b></p>
+<p>&nbsp;</p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-4">Reformar nuestro sistema de justicia penal.</a></h3>
+                          <div class="body" id="issue-0-4">
+                            <p><span style="font-weight: 400;">Necesitamos reformar el sistema de justicia penal para priorizar la prevención, eliminar las disparidades raciales en cada etapa, poner fin a nuestro sistema de prisiones modernas de deudores en forma de fianza en efectivo, deshacer las prácticas de sentencia que no están en acorde con el delito y ayudar a asegurar que las personas previamente encarceladas que han cumplido sus condenas puedan participar plenamente en nuestra democracia y economía. Tenemos que tomar medidas para reducir la violencia con armas de fuego y los delitos de odio, fortalecer la histórica Ley de Violencia contra las Mujeres y proteja a todas las comunidades</span><span style="font-weight: 400;">.</span></p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-5">Recompensar el trabajo, no solo la riqueza.</a></h3>
+                          <div class="body" id="issue-0-5">
+                            <p><span style="font-weight: 400;">La desigualdad económica está desgarrando a nuestro país. Necesitamos leyes laborales más estrictas y un código impositivo que recompense a una clase media que ha sido eliminada durante décadas de crecimiento económico, no sólo a los ricos, quienes han obtenido demasiadas exenciones tributarias durante demasiado tiempo.</span></p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-6">Asegurar que nuestros trabajadores y comunidades se beneficien del comercio internacional.</a></h3>
+                          <div class="body" id="issue-0-6">
+                            <p><span style="font-weight: 400;">Antes que nada, debemos hacer cumplir las leyes comerciales existentes e invertir en la competitividad de nuestros trabajadores y comunidades aquí en casa para que compitan en igualdad de condiciones. Luego, debemos escribir las reglas del juego para el comercio internacional a través de un proceso moderno e inclusivo: reglas que protejan a nuestros trabajadores, protejan el medio ambiente, defiendan los estándares laborales y los salarios de la clase media, fomenten la innovación y asuman grandes desafíos globales, como la concentración corporativa, la corrupción y el cambio climático. Si no lo hacemos, otros países escribirán las reglas por nosotros. </span></p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-0-7">Gestionar una política de inmigración humanitaria que defienda nuestros valores, fortalezca nuestra economía y proteja nuestra frontera.</a></h3>
+                          <div class="body" id="issue-0-7">
+                            <p><span style="font-weight: 400;">No es un secreto que nuestro sistema de inmigración está roto y, durante años, no hemos tenido la voluntad política para solucionarlo. Podemos asegurar nuestra frontera y hacer cumplir nuestras leyes sin hechar a un lado nuestros valores, nuestros principios y nuestra humanidad. Enjaular a seres humanos y arrancar a los niños de sus padres no es la respuesta. Tenemos que abordar las causas fundamentales de la migración que empujan a las personas a abandonar sus hogares y todo lo que conocen para emprender un peligroso viaje con la esperanza de una vida mejor, trabajo que el Vicepresidente Biden dirigió en la Administración Obama-Biden. Al mismo tiempo, nunca debemos olvidar que la inmigración es la razón por la que los Estados Unidos ha podido renovarse y reinventarse constantemente — la inmigración legal es una increíble fuente de fortaleza para nuestro país.</span></p>
+                          </div>
+                        </div>
+                                                            </div>
+                
+              </div>
+            </section>
+                                        <section class="section" id="section-1">
+              <header class="section-header">
+                <a href="#section-inner-1">
+                  <div class="inner">
+                    <h2 class="title">Tenemos que demostrar liderazgo respetado en el escenario mundial.</h2>
+                    <span class="text open">Leer Más</span>
+                    <span class="text close">Menú</span>
+                    <span class="icon icon-down"></span>
+                  </div>
+                </a>
+              </header>
+              <div class="section-inner" id="section-inner-1">
+                                  <figure class="quote">
+                    <blockquote>"Los Estados Unidos es más fuerte cuando lideramos no solo con el ejemplo de nuestro poder, sino con el poder de nuestro ejemplo”. </blockquote>
+                                      </figure>
+                                                  <figure class="image">
+                    <img width="1024" height="465" src="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-global-leader-1024x465.jpg" class="attachment-large size-large" alt="Joe habla ante una audiencia internacional." sizes="(min-width: 768px) 880px, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-global-leader-1024x465.jpg 1024w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-global-leader-300x136.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-global-leader-768x349.jpg 768w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-global-leader.jpg 1320w" />                  </figure>
+                                                  <div class="body"><p>El mundo enfrenta desafíos ineludibles: un clima rápidamente cambiante, el riesgo de conflictos nucleares, guerras comerciales, una China en ascenso y una Rusia agresiva, millones de refugiados buscando asilo y seguridad, y ataques a los derechos humanos universales y las libertades fundamentales. El próximo presidente debe reparar nuestras relaciones con nuestros aliados y enfrentar a los hombres fuertes y rufianes en el escenario mundial para alentar al mundo a enfrentar estos desafíos. Podemos reclamar nuestra posición de toda la vida como líderes morales y económicos del mundo.</p>
+</div>
+                
+                                  <div class="issues">
+                                                                  <div class="issue">
+                          <h3><a href="#issue-1-0">Renovar nuestros valores básicos estadounidenses.</a></h3>
+                          <div class="body" id="issue-1-0">
+                            <p>La inclusión, la tolerancia, la diversidad, el respeto a la ley, la libertad de expresión, la libertad de prensa, la libertad de religión; estos valores son la base de nuestra democracia y la fuente de nuestra capacidad para liderar el mundo en colaboración con nuestros aliados. Debemos luchar por nuestros valores aquí en casa y donde quiera que estén bajo ataque.</p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-1-1">Comprometernos nuevamente con nuestros aliados.</a></h3>
+                          <div class="body" id="issue-1-1">
+                            <p>Ninguno de los grandes desafíos que enfrentemos se puede abordar solos. Si no somos el líder mundial, alguien más lo hará. Debemos reafirmar y reformar las alianzas e instituciones que, desde la Segunda Guerra Mundial, han llevado al mundo a la más grande prosperidad y seguridad de la historia.</p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-1-2">Usar el poder militar de forma responsable.</a></h3>
+                          <div class="body" id="issue-1-2">
+                            <p>Nuestro ejército es un instrumento de nuestra caja de herramientas, junto con la diplomacia, el poder económico, la educación, la ciencia y la tecnología. Debemos invertir y fortalecer todos los elementos de nuestro poder. Y debemos modernizar nuestras fuerzas armadas para prepararnos para las guerras del mañana, mientras nos aseguramos de solo enviar a las tropas estadounidenses al camino del peligro cuando esté en nuestro interés vital de seguridad nacional.</p>
+                          </div>
+                        </div>
+                                                            </div>
+                
+              </div>
+            </section>
+                                        <section class="section" id="section-2">
+              <header class="section-header">
+                <a href="#section-inner-2">
+                  <div class="inner">
+                    <h2 class="title">Tenemos que asegurarnos de que nuestra democracia incluya a todos.</h2>
+                    <span class="text open">Leer Más</span>
+                    <span class="text close">Menú</span>
+                    <span class="icon icon-down"></span>
+                  </div>
+                </a>
+              </header>
+              <div class="section-inner" id="section-inner-2">
+                                  <figure class="quote">
+                    <blockquote>"O todos decidimos quién dirige y gana el cargo electo, o solo unos pocos lo hacen".</blockquote>
+                                      </figure>
+                                                  <figure class="image">
+                    <img width="1024" height="465" src="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-democracy-1-1024x465.jpg" class="attachment-large size-large" alt="La gente ve a Joe hablar." sizes="(min-width: 768px) 880px, 100vw" srcset="https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-democracy-1-1024x465.jpg 1024w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-democracy-1-300x136.jpg 300w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-democracy-1-768x349.jpg 768w, https://joebiden.com/wp-content/uploads/2019/04/jrb-vision-democracy-1.jpg 1320w" />                  </figure>
+                                                  <div class="body"><p>Nuestra política está rota y excluye a demasiados estadounidenses. Hasta que reparemos las financiaciones de campaña, los derechos de votación y la creación fraudulenta de escaños políticos, seguirá siendo más polarizada, más fea y más mezquina.</p>
+</div>
+                
+                                  <div class="issues">
+                                                                  <div class="issue">
+                          <h3><a href="#issue-2-0">Proteger el derecho al voto.</a></h3>
+                          <div class="body" id="issue-2-0">
+                            <p>Votar es el acto más puro, más fundamental, de la ciudadanía. Los esfuerzos para privar de derechos a los votantes elegibles son tan antiestadounidenses ahora como lo fueron durante Jim Crow. Debemos fortalecer nuestra democracia garantizando que el voto de cada estadounidense esté protegido. Tenemos que hacer más fácil, no más difícil, que los estadounidenses ejerzan su derecho al voto, independientemente de su código postal o del color de su piel, y asegurarnos de contar la voz de todos los votantes por igual. Finalmente, debemos proteger nuestras cabinas de votación y las listas de votantes de las potencias extranjeras que buscan socavar nuestra democracia e interferir en nuestras elecciones.</p>
+                          </div>
+                        </div>
+                                                                                        <div class="issue">
+                          <h3><a href="#issue-2-1">Poner fin al predominio del gran dinero en nuestra democracia.</a></h3>
+                          <div class="body" id="issue-2-1">
+                            <p>Los intereses especiales de los ricos, las corporaciones y las influencias extranjeras, están sesgando el proceso de políticas en Washington en su propio favor, al aprovechar la forma en que financiamos las elecciones. Necesitamos crear un sistema de financiamiento público para campañas federales y aprobar una enmienda constitucional para anular Citizens United y así amplificar las voces de cada individuo y garantizar que los funcionarios electos trabajen para la gente. Mientras tanto, el público tiene derecho a saber quién contribuye a qué anuncios e iniciativas de campaña.</p>
+                          </div>
+                        </div>
+                                                            </div>
+                
+              </div>
+            </section>
+                        </div>
+    
+  </article>
+
+  
+      <div id="promos" class="clearfix">
+                        <aside class="promo promo-1">
+            <a href="https://joebiden.com/es/unase/">
+              <div class="inner">
+                <div class="title h2">Únase al Equipo</div>
+                              </div>
+            </a>
+          </aside>
+                                <aside class="promo promo-2">
+            <a href="https://www.mobilize.us/joebiden/">
+              <div class="inner">
+                <div class="title h2">Encuentre un Evento</div>
+                              </div>
+            </a>
+          </aside>
+                                <aside class="promo promo-3">
+            <a href="https://store.joebiden.com/">
+              <div class="inner">
+                <div class="title h2">Visite la Tienda</div>
+                              </div>
+            </a>
+          </aside>
+                  </div>
+  
+</main><!-- #main -->
+
+
+</div><!-- #main-content -->
+
+<footer id="site-footer">
+        <ul class="social">
+                        <li><a href="https://twitter.com/joebiden">
+            <span class="icon-twitter"></span>
+            <span class="element-invisible">Twitter</span>
+          </a></li>
+                                <li><a href="https://www.facebook.com/joebiden">
+            <span class="icon-facebook"></span>
+            <span class="element-invisible">Facebook</span>
+          </a></li>
+                                <li><a href="https://www.instagram.com/joebiden">
+            <span class="icon-instagram"></span>
+            <span class="element-invisible">Instagram</span>
+          </a></li>
+                                <li><a href="https://www.youtube.com/joebiden">
+            <span class="icon-youtube"></span>
+            <span class="element-invisible">Youtube</span>
+          </a></li>
+                  </ul>
+  
+      <div class="disclaimer">Pagado por Biden for President.</div>
+  
+            <div class="footer-text"><p>Apoye nuestra campaña presidencial para elegir a Joe Biden inscribiéndose como <a href="https://go.joebiden.com/page/s/volunteer">voluntario</a> o haciendo una <a href="https://secure.actblue.com/donate/spjoe2020">donación</a>.</p>
+</div>
+      
+  <nav id="nav-footer">
+      <ul class="menu">
+      <li id="menu-item-358" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-358"><a href="https://jobs.lever.co/joebiden">Empleos</a></li>
+<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-145"><a href="https://joebiden.com/es/politica-de-privacidad/">Política de Privacidad</a></li>
+<li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="https://joebiden.com/es/terminos/">Términos y Condiciones</a></li>
+      <li>
+        &copy; Copyright 2019. Derechos Reservados.      </li>
+    </ul>
+  </nav>
+</footer><!-- #site-footer -->
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='https://joebiden.com/wp-content/themes/bexc/js/min/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/plugins.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/js.cookie.min.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/bodyScrollLock.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/slick.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-content/themes/bexc/js/min/main.min.js?ver=0.40'></script>
+<script type='text/javascript' src='https://joebiden.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"853c31a225","applicationID":"143000334","transactionName":"MVxbNkICCxEEVUZaWwgWeAFECgoMSkZTVFFLT1ARWQwL","queueTime":0,"applicationTime":285,"atts":"HRtYQAoYGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

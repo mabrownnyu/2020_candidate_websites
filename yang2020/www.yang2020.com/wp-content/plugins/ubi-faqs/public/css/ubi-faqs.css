@@ -1,0 +1,158 @@
+/* CSS for ubi-faqs plugin -
+Based on styling from this example:
+https://codepen.io/SebaGarciaM/pen/waRYrv?q=faq+accordion&limit=all&type=type-pens */
+:root {
+	--black: hsl(0, 0%, 0%);
+  --blueDark: hsl(242, 37%, 30%);
+	--blueLight: hsl(212, 72%, 59%);
+	--blueLighter: hsla(212, 72%, 59%, 0.1);
+	--grayDark: hsl(0, 0%, 61%);
+	--grayLight: hsl(0, 0%, 61%, 0.1);
+	--red: hsl(349, 96%, 54%);
+	--white: hsl(0, 0%, 100%);
+}
+
+.ubi-faqs {
+  margin: 31px 0;
+}
+
+article.ubi_faqs {
+  margin-bottom: 22px;
+}
+
+.faq {
+  display: flex;
+}
+
+.faq,
+.faq .faq-icon {
+	cursor: pointer;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+
+.faq .faq-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 4px;
+	margin-right: 24px;
+  background-color: var(--red);
+	color: var(--white);
+  font-size: 21px;
+}
+
+.faq .faq-icon:hover {
+  background-color: var(--blueLight);
+}
+
+.faq .faq-icon:before {
+	content: '+';
+}
+
+.faq.active .faq-icon {
+	background-color: var(--blueLight);
+}
+
+.faq.active .faq-icon:hover {
+	background-color: var(--red);
+}
+
+.faq.active .faq-icon:before {
+	content: '-';
+}
+
+.faq .faq-title {
+	width: calc(100% - 26px);
+  font-size: 25px;
+	font-weight: 600;
+}
+
+.faq-content {
+	padding-left: 50px;
+  line-height: 1.7;
+}
+
+.faq-content p:last-child {
+	margin-bottom: 0;
+}
+
+#close-all {
+  background-color: #EA2B06;
+  bottom: 30px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: fixed;
+  right: 10%;
+  text-decoration: none;
+  z-index: 1;
+}
+
+@media (min-width: 641px) and (max-width: 1280px) {
+	.ubi-faqs {
+	  margin: 25px 0;
+	}
+
+	article.ubi_faqs {
+	  margin-bottom: 16px;
+	}
+
+	.faq {
+		margin-bottom: 16px;
+	}
+
+	.faq .faq-icon {
+		width: 19px;
+		height: 19px;
+		margin-right: 13px;
+	  font-size: 14px;
+	}
+
+	.faq .faq-title {
+		width: calc(100% - 19px);
+	  font-size: 18px;
+	}
+
+	.faq-content {
+		padding-left: 32px;
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 640px) {
+	.ubi-faqs {
+	  margin: 20px 0;
+	}
+
+	article.ubi_faqs {
+	  margin-bottom: 11px;
+	}
+
+	.faq {
+		margin-bottom: 11px;
+	}
+
+	.faq .faq-icon {
+		width: 17px;
+		height: 17px;
+		margin-right: 10px;
+	  font-size: 13px;
+	}
+
+	.faq .faq-title {
+		width: calc(100% - 17px);
+	  font-size: 16px;
+	}
+
+	.faq-content {
+		padding-left: 27px;
+		font-size: 12px;
+	}
+}

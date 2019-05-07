@@ -1,0 +1,36 @@
+$(function() {
+  // Track all link clicks internal and external
+  $('a').click(function(e) {
+      var linkUrl = e.target.href;
+      var linkText = $(this).text();
+
+      if (this.hostname && this.hostname !== location.hostname) {
+          dataLayer.push({
+              'event' : 'gaEvent',
+              'eventCategory' : 'Outbound Link',
+              'eventAction' : linkText,
+              'eventLabel' : linkUrl,
+              'transport' : 'beacon'
+          });
+      } else {
+          dataLayer.push({
+              'event' : 'gaEvent',
+              'eventCategory' : 'Internal Link',
+              'eventAction' : linkText,
+              'eventLabel' : linkUrl
+          });
+      }
+  });
+
+  // Track email contact links
+  $('a[href^="mailto:"]').click(function(e) {
+      var linkUrl = e.target.href;
+      var linkText = $(this).text();
+      dataLayer.push({
+          'event' : 'gaEvent',
+          'eventCategory' : 'Mailto',
+          'eventAction' : linkText,
+          'eventLabel' : linkUrl
+      });
+  });    
+});
