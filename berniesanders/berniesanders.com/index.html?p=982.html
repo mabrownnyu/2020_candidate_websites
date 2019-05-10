@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="e57b000d278677ae192a0774-text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revitalizing Rural America - Bernie Sanders</title>
+<link rel="stylesheet" href="https://use.typekit.net/osh1jbn.css">
+<link rel="stylesheet" href="https://berniesanders.com/wp-content/themes/bernie/style.css">
+
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-228.png" sizes="228x228">
+
+<link rel="shortcut icon" sizes="196x196" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-196.png">
+
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-180.png" sizes="180x180">
+
+<meta name="msapplication-TileColor" content="#0073E6">
+<meta name="msapplication-TileImage" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-144.png">
+
+<meta name="msapplication-config" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/browserconfig.xml" />
+<script type="e57b000d278677ae192a0774-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="e57b000d278677ae192a0774-text/javascript" src="https://act.berniesanders.com/resources/actionkit.js"></script>
+
+<script type="e57b000d278677ae192a0774-text/javascript">
+  var _vwo_code=(function(){
+  var account_id=392140,
+  settings_tolerance=2000,
+  library_tolerance=2500,
+  use_existing_jquery=false,
+  /* DO NOT EDIT BELOW THIS LINE */
+  f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+  </script>
+
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<meta name="description" content="Bernie Sanders has a plan to ensure our rural communities thrive economically and ecologically." />
+<link rel="canonical" href="https://berniesanders.com/issues/revitalizing-rural-america/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Revitalizing Rural America - Bernie Sanders" />
+<meta property="og:description" content="Bernie Sanders has a plan to ensure our rural communities thrive economically and ecologically." />
+<meta property="og:url" content="https://berniesanders.com/issues/revitalizing-rural-america/" />
+<meta property="og:site_name" content="Bernie Sanders" />
+<meta property="og:image" content="https://berniesanders.com/wp-content/uploads/2019/05/2M9A2445-2-e1557028413126.jpg" />
+<meta property="og:image:secure_url" content="https://berniesanders.com/wp-content/uploads/2019/05/2M9A2445-2-e1557028413126.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="629" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Bernie Sanders has a plan to ensure our rural communities thrive economically and ecologically." />
+<meta name="twitter:title" content="Revitalizing Rural America - Bernie Sanders" />
+<meta name="twitter:image" content="https://berniesanders.com/wp-content/uploads/2019/05/2M9A2445-3-e1557028565812.jpg" />
+
+<link rel='dns-prefetch' href='//berniesanders.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="e57b000d278677ae192a0774-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/berniesanders.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://berniesanders.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<script type="e57b000d278677ae192a0774-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type="e57b000d278677ae192a0774-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="e57b000d278677ae192a0774-text/javascript" src='https://berniesanders.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<link rel='https://api.w.org/' href='https://berniesanders.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://berniesanders.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://berniesanders.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://berniesanders.com/?p=982' />
+<link rel="alternate" type="application/json+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2Fissues%2Frevitalizing-rural-america%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2Fissues%2Frevitalizing-rural-america%2F&#038;format=xml" />
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+</head>
+<body class="page-template-default page page-id-982 page-child parent-pageid-311">
+<header class="header ">
+<h1 class="logo ">
+<a class="logo__link" href="/">
+<span class="sr-only"></span>
+</a>
+</h1>
+
+<div class="menu-main-header-container"><ul id="menu-main-header" class="menu"><li id="menu-item-891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-891"><a href="https://berniesanders.com/kickoff/">Volunteer</a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-602"><a href="https://berniesanders.com/issues/">Issues</a></li>
+<li id="menu-item-309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-309"><a href="https://map.berniesanders.com">Events</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="https://berniesanders.com/es/para-todos/">en Español</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="https://store.berniesanders.com/?utm_source=website&#038;utm_medium=navigation">Store</a></li>
+</ul></div>
+<button class="header__menu-toggle" type="button">
+<span class="sr-only">Toggle Menu</span>
+<span class="menu__bar"></span>
+</button>
+
+<a href="https://secure.actblue.com/donate/bern-site?refcode=splash-top-right" class="header__donate" data-aos="slide-left" data-aos-delay="800" data-aos-easing="ease-out-quad" data-aos-duration="400">
+Donate </a>
+</header><div class="hero">
+<div class="hero__main" style="background-image: url('https://berniesanders.com/wp-content/uploads/2019/05/2M9A2445-e1557006063141.jpg')">
+<div class="hero__heading">
+<h1 class="hero__title" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-out-quad" data-aos-duration="1000">
+Revitalizing Rural America </h1>
+<div class="hero__content" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-quad" data-aos-duration="800">
+<p>Fundamental change in America’s agricultural and rural policies is no longer just an option; it’s an absolute necessity. With the right support and policies, we can have rural communities that are thriving economically and ecologically.</p>
+<img src="https://berniesanders.com/wp-content/themes/bernie/assets/img/signature.png" class="signature">
+</div>
+</div>
+<video id="bg-vid" playsinline autoplay muted loop>
+
+<source src="" type="video/webm">
+<source src="" type="video/mp4">
+</video>
+</div>
+</div>
+<article class="main post-982 page type-page status-publish hentry" id="post-982">
+<div data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-easing="ease-out-quad" data-aos-duration="1000" class="default">
+<p>Agriculture today is not working for the majority of Americans. It is not working economically for farmers, it is not working for rural communities, and it is not working for the environment. But it is working for big agribusiness corporations that are extracting our rural resources for profit. <br></p>
+<p>For far too long, government farm policies have incentivized a “get big or get out” approach to agriculture. This approach has consolidated the entire food system, reducing farm net income, and driving farmers off the land in droves. As farms disappear, so do the businesses, jobs, and communities they support.<br></p>
+<p>Moreover, one in six American children still live in food-insecure homes, industrial agriculture has taken a toll on the environment, and our rural communities have been left in a chronic state of economic decline and decay.<br></p>
+<p>Our mid-size and small towns have been decimated. Local businesses were replaced with national chains, many schools and hospitals shut down, and good jobs left at an alarming rate. The next generation of rural Americans is finding better opportunities outside of the small towns where they grew up in.<br></p>
+<p>Fundamental change in America’s agricultural and rural policies is no longer just an option; it’s an absolute necessity. Farmers, foresters, and ranchers steward rural landscapes, which benefit all Americans. They provide us with essential resources such as food, fiber, building materials, renewable energy, clean water, and habitat for biodiversity. They also have an enormous potential to address climate change. With the right support and policies, we can have rural communities that are thriving economically and ecologically. The following policies will drive a transition in our agricultural system away from a consolidated, profit-driven industrial model to one that rebuilds and restores rural communities. <br></p>
+<h3><strong><a href="#Section-1">1) Policies Leveling the Playing Field for Farmers and Farmworkers</a></strong></h3>
+<h3><strong><a href="#Section-2">2) Policies to Empower Farmers, Foresters &amp; Ranchers to Address Climate Change and Protect Ecosystems</a></strong></h3>
+<h3><strong><a href="#Section-3">3) Policies to Foster Investment to Revitalize Rural Communities</a></strong><br></h3>
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://berniesanders.com/wp-content/uploads/2019/05/IMG_1778.jpg" alt="" class="wp-image-1001" srcset="https://berniesanders.com/wp-content/uploads/2019/05/IMG_1778.jpg 5317w, https://berniesanders.com/wp-content/uploads/2019/05/IMG_1778-300x200.jpg 300w, https://berniesanders.com/wp-content/uploads/2019/05/IMG_1778-768x512.jpg 768w, https://berniesanders.com/wp-content/uploads/2019/05/IMG_1778-1024x683.jpg 1024w" sizes="(max-width: 5317px) 100vw, 5317px" /></figure></div>
+<hr class="wp-block-separator" />
+<h2 id="Section-1"><strong><em>Policies Leveling the Playing Field for Farmers and Farmworkers </em></strong><br></h2>
+<p><strong>Corporate control over agriculture: </strong>We need to address corporate consolidation and control of our food and agriculture system — all the way up the food chain from seed companies; fruit, vegetable, and grain growers; food processors; food distributors; and grocery chains. When markets become too concentrated, they begin to act more like monopolies than free markets. </p>
+<ul><li><strong>Enact and enforce Roosevelt-style trust-busting laws to stop monopolization of markets and break-up existing massive agribusinesses; Place a moratorium on future mergers of large agribusiness corporations and break-up existing massive agribusinesses. </strong>According to Food &amp; Water Watch, <strong>“</strong>consolidation in the pork packing industry has contributed to the <a href="https://www.foodandwaterwatch.org/sites/default/files/Food%20Monopolies%20Report%20Nov%202012.pdf">82% decline</a> in the number of hog farms in Iowa between 1982 and 2007.” In our country, just four companies slaughter <a href="https://www.gipsa.usda.gov/psp/publication/ar/2016_psp_annual_report.pdf">85%</a> of beef cattle. USDA reports that between 2000 and 2015 &#8220;soybean sales from the largest four sellers rose from 51 to <a href="https://www.ers.usda.gov/amber-waves/2017/april/mergers-and-competition-in-seed-and-agricultural-chemical-markets/">76%</a>.&#8221; Additionally, after the Bayer-Monsanto merger, the two largest conglomerates now control <a href="https://concentrationcrisis.openmarketsinstitute.org/industry/corn-seed/">78% </a>of the corn seed market. &nbsp;If Teddy Roosevelt were alive today, you know what he would say to these behemoth agribusiness companies: He would say, break them up. &nbsp;And, working together, that is exactly what we are going to do.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Place a moratorium on vertical integration of large agribusiness corporations. </strong>As <a href="https://www.foodandwaterwatch.org/sites/default/files/Food%20Monopolies%20Report%20Nov%202012.pdf">Food &amp; Water Watch </a>details <strong>“</strong>Pork packers often secure livestock through contract marketing arrangements with farmers. Farmers agree to deliver a certain number of hogs at a future date. These contracts give farmers a guaranteed market for their hogs, but large contract buyers can extract lower prices and distort and conceal prices.” &nbsp;According to the 2017 USDA Census of Agriculture, <a href="https://www.nass.usda.gov/Publications/AgCensus/2017/Full_Report/Volume_1,_Chapter_1_US/">42% of hogs and 96% of chickens</a> in the US were grown under production contracts where the farmer never owns the animal. We must impose an immediate moratorium on agribusiness mergers.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Reestablish and strengthen the Grain Inspectors, Packers and Stockyards Administration (GIPSA), the agency that </strong><a href="https://newfoodeconomy.org/usda-gipsa-agency-meatpacking-antitrust/"><strong>oversees antitrust</strong></a><strong> in the packing industry. </strong>Lobbyists and the Trump administration have gutted GIPSA and blocked rules helping farmers. As the National Sustainable Agriculture Coalition details, “The <a href="http://sustainableagriculture.net/blog/what-is-the-gipsa-rider/">2008 Farm Bill</a> required USDA to write regulations to empower GIPSA to provide basic protections for farmers who do business with these companies. &nbsp;But when USDA tried to write the regulations, the meat and poultry industries launched a full-scale attack to get GOP lawmakers to pass <a href="https://inthesetimes.com/rural-america/entry/20158/chicken-industry-corporate-agriculture-usda-farmer-fair-practices-rules">appropriations riders</a> to block USDA from finalizing those farmer protections.” Working together, we will restore the agency that enforces antitrust laws in the meatpacking industry – an agency that Trump eliminated.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Ensure farmers have the Right to Repair their own equipment. </strong>In rural America today, farmers can’t even repair their own tractors or other equipment because of the greed of companies like John Deere. As noted in <a href="https://www.wired.com/story/john-deere-farmers-right-to-repair/">Wired Magazine</a>, “Farmers can’t change engine settings, can’t retrofit old equipment with new features, and can’t modify their tractors to meet new environmental standards on their own” without going through an authorized repair agent. When we are in the White House, we will pass a national right-to-repair law that gives every farmer in America full rights over the machinery they buy.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Reform patent law to protect farmers from predatory patent lawsuits from seed corporations. </strong>We cannot continue to allow Monsanto to control <a href="http://fortune.com/2014/06/26/monsanto-gmo-crops/">80%</a> of U.S. corn and more than <a href="http://fortune.com/2014/06/26/monsanto-gmo-crops/">90% </a>of U.S. soybean seed patents – a situation that has only gotten worse after the Trump administration approved Monsanto’s disastrous merger with Bayer. We are going to reform our patent laws to protect farmers from <a href="https://www.theguardian.com/environment/2013/feb/12/monsanto-sues-farmers-seed-patents">predatory patent lawsuits</a> from companies like Monsanto.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Change regulations to improve markets for family farms &#8212; Strengthen organic standards so behemoth agribusinesses cannot circumvent rules and cut out small producers who make investments in their communities and environment. We must begin by reversing the erosion of standards in recent years. According to the Organic Trade Association, </strong>The organic food market is now a <a href="https://ota.com/news/press-releases/20632">$50 billion market</a>, and <a href="https://www.bloomberg.com/news/features/2018-07-11/trump-s-usda-is-killing-rules-that-organic-food-makers-want">over the last five years</a>, the organic-food business has grown 10% annually, and makes up about 6% of the total food sold in America. The Trump administration has been <a href="https://www.npr.org/sections/thesalt/2017/12/15/571187112/trump-administration-moves-to-kill-rules-for-organic-eggs">working</a> to rescind organic rules that organic farmers want. Those certification rules strengthen the sales pitch of organic products to consumers. When we are in the White House, we will undo this damage.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Allow meat slaughtered at a state-inspected facility to be sold across state lines. </strong>Foreign meat that has “<a href="http://www.ncsl.org/research/agriculture-and-rural-development/federal-food-safety-laws.aspx#interstate">equivalent</a>” inspection standards as our federal standards can be sold across state lines freely in the United States, while state inspected beef cannot, even when those state standards meet or exceed federal standards. This puts domestic producers at a disadvantage. We must level the playing field.</li></ul>
+<p><strong>Fair trade deals: </strong>Our current trade policies encourage overproduction and push low-cost commodities on foreign countries, effectively undercutting and destroying local agricultural systems while enriching multinational corporations. Our agricultural trade policies should not threaten the domestic food security of the U.S. or any of our trading partners. <br></p>
+<ul><li><strong>Classify food supply security as a national security issue. </strong>We need trade policies that safeguard food security at home and around the globe. Over 800 million people worldwide are affected by undernourishment or food deprivation, including millions of small farmers threatened by climate change, volatile prices, and unfair trade practices. By 2050, food demand is expected to grow by 60% while at the same time the amount of arable land is <a href="http://time.com/5216532/global-food-security-richard-deverell/">estimated</a> to shrink due to climate change, urbanization, and soil degradation. We’ve already seen how food insecurity and conflict are linked in ongoing famines in East Africa, South Sudan, and Yemen. When we are in the White House, food supply security will be the core of our national security. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Develop fair trade partnerships that do not drive down the prices paid to food producers and that, instead, protect farmers here and abroad.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Enforce country-of-origin-labeling so companies cannot import foreign meat for slaughter, passing it off as American grown to undercut domestic producers. </strong>Unfair trade policy has let foreign countries overturn our country-of-origin-labeling laws even though <a href="https://consumerfed.org/pdfs/CFA-COOL-poll-press-release-May-2013.pdf">90%</a> of the American people support country-of-origin labeling. We must respect the will of the people and allow them to know where their food is coming from.</li></ul>
+<div class="wp-block-image"><figure class="alignright is-resized"><img src="https://berniesanders.com/wp-content/uploads/2019/05/WillieNelson-008-1024x681.jpg" alt="" class="wp-image-1066" width="389" height="258" srcset="https://berniesanders.com/wp-content/uploads/2019/05/WillieNelson-008-1024x681.jpg 1024w, https://berniesanders.com/wp-content/uploads/2019/05/WillieNelson-008-300x199.jpg 300w, https://berniesanders.com/wp-content/uploads/2019/05/WillieNelson-008-768x511.jpg 768w" sizes="(max-width: 389px) 100vw, 389px" /></figure></div>
+<p><strong>Ensure a fair price for family farmers:</strong> Independent family farms have been decimated by past and current farm policies, in the pursuit of short-run economic efficiency. The food security of the nation still depends on farmers on family-scale farms who are committed to being good stewards of the land and good citizens of their communities and nation.</p>
+<ul><li><strong>Enact supply management programs to prevent shortages and surpluses to ensure farmers make a living wage and ensure consumers receive a high-quality, stable, and secure supply of agricultural goods. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Re-establish a national grain and feed reserve to help alleviate the need for government subsidies and ensure we have a food supply in case of extreme weather events. </strong>As we saw with the most recent flooding in the Midwest, we can lose a huge amount of agricultural land and goods in a single weather event. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Reform agricultural subsidies so that more federal support goes to small- and mid-sized family farms, rather than that support going disproportionately to a handful of the largest producers. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Transition toward a parity system to guarantee farmers a living wage. That means setting price floors and matching supply with demand so farmers are guaranteed the cost of production and family living expenses.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Pass comprehensive disaster coverage and allocate payments to independent family farming operations.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Provide relief to help prevent independent family farm bankruptcies, which in areas like the Midwest are at their highest level in a decade. &nbsp;</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Help beginning and socially disadvantaged farmers get fair access to land and resources. </strong>When the average age of farmers is 58 and 95% of farmers are white, we need to help new farmers transition on to the land and ensure farming is a viable profession to support their families.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Strengthen oversight of foreign acquisitions of American farmland in order to prevent that farmland from being controlled by foreign governments and foreign corporations. </strong>According to the <a href="https://newfoodeconomy.org/who-really-owns-american-farmland/">New Food Economy</a><strong>,&nbsp;</strong>“the<a href="https://www.fsa.usda.gov/Internet/FSA_File/afida_thru_12312011.pdf"> most recent figures</a> from USDA show that roughly 25 million acres, about 2% of our national total of 930,000,000 acres, are in foreign hands. And the pace of investment seems to be picking up.” <strong>This is a national security issue and we must treat it like one. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Invest in beginning farmers to purchase land and equipment for sustainable farming.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-block-image"><figure class="alignright is-resized"><img src="https://berniesanders.com/wp-content/uploads/2019/05/IMG_0325-1024x683.jpg" alt="" class="wp-image-1062" width="390" height="259" srcset="https://berniesanders.com/wp-content/uploads/2019/05/IMG_0325-1024x683.jpg 1024w, https://berniesanders.com/wp-content/uploads/2019/05/IMG_0325-300x200.jpg 300w, https://berniesanders.com/wp-content/uploads/2019/05/IMG_0325-768x512.jpg 768w" sizes="(max-width: 390px) 100vw, 390px" /></figure></div>
+<ul><li><strong>Allocate government funding to purchase easements to ensure land stays in agriculture. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Incentivize community ownership of farmland to allow more people to work the land and produce food for local consumers. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Make government owned farmland available as incubator farms for beginning farmers. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Incentivize programs &#8212; including 4H, extension programs, or others &#8212; to ensure diversity of age, race, gender, ability, and sexual orientation so we begin to eradicate systems and cultures that prevent fair access to agricultural land and opportunities. &nbsp;</strong><a href="https://www.bloomberg.com/news/articles/2019-04-11/more-black-u-s-farmers-but-fewer-own-land-or-make-big-bucks">In 2017</a>, 95% of all farmers accounted for were white, with black farmers reporting ownership declining at ten times the rate it did for white farmers. That’s on top of Black farmers losing 80% of their land between 1910 and 2007, in no small part due to systematic discrimination. Today only <a href="https://www.bloomberg.com/news/articles/2019-04-11/more-black-u-s-farmers-but-fewer-own-land-or-make-big-bucks">about 5%</a> of black farmers reporting earning over $50,000, compared to 15% of white farmers.. <a href="https://www.politico.eu/sponsored-content/how-to-break-down-discrimination-barriers-for-women-in-agriculture/">52%</a> of American women farmers said they felt gender discrimination. When we are in the White House we will eradicate discrimination in agricultural land and opportunities. </li></ul>
+<p><strong>Rebuild regional agricultural infrastructure</strong>: Past and current policies that support large corporate infrastructure have destroyed small and medium scale agricultural and food processing infrastructure in rural communities. <br></p>
+<ul><li><strong>Fund development of local, independent processing, aggregation, and distribution facilities. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Incentivize rural cooperative business models and utilities, such as rural electric cooperatives, food co-ops, and credit unions. </strong>In 2009, of the <a href="https://www.census.gov/newsroom/cspan/farming/usda-2-16-2012.pdf">2.2 million</a> total farms in this country, <a href="https://www.rd.usda.gov/files/CIR45-13.pdf">2,389</a> were farm co-operatives. What we know is that when employees have an ownership stake in their company they will be more productive and they will earn a better living.</li></ul>
+<figure class="wp-block-image"><img src="https://berniesanders.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.05.22-AM-e1557029192273-1024x578.png" alt="" class="wp-image-1120" srcset="https://berniesanders.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.05.22-AM-e1557029192273-1024x578.png 1024w, https://berniesanders.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.05.22-AM-e1557029192273-300x169.png 300w, https://berniesanders.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-05-at-12.05.22-AM-e1557029192273-768x433.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<hr class="wp-block-separator" />
+<h2 id="Section-2"><strong><em>Policies to Empower Farmers, Foresters &amp; Ranchers to Address Climate Change and Protect Ecosystems</em></strong></h2>
+<p><strong>Combat climate change and invest in the working landscape</strong>: Our current food system accounts for 25% of all greenhouse gas emissions. &nbsp;Not only can we drastically reduce on-farm emissions, farmers have the potential to actually sequester <a href="http://www.fao.org/soils-portal/soil-management/soil-carbon-sequestration/en/">10% </a>of ALL human-caused emissions in the soil. Agriculture, forestry, and fishing are the industries most vulnerable to climate change. We need to incentivize farming systems that help farmers both mitigate climate change and build resilience to its impacts.<br></p>
+<ul><li><strong>Pass comprehensive legislation to address climate change that includes a transition to regenerative, independent family farming practices. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Help farms of all sizes transition to sustainable agricultural practices that rebuild rural communities, protect the climate, and strengthen the environment.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Provide grants, technical assistance, and debt relief to farmers to support their transition to more sustainable farming practices.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Support a transition to more sustainable management of livestock systems that are ecologically sound, improve soil health, and sequester carbon in soil.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Create financial mechanisms that compensate farmers for improving ecosystems.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Establish a program to permanently set aside ecologically fragile farm and ranch land.</strong></li></ul>
+<p><strong>Protect the environment for all rural residents:</strong> &nbsp;We have strong federal laws in place, but the current administration lacks the will to enforce them, particularly on mega-farms. Regulations should be scale-appropriate, and focus attention on the operations with largest impact. &nbsp;Farm practices should not infringe on the ability of other farmers and neighbors to carry out the normal activities of farming and rural lifestyles. <br></p>
+<ul><li><strong>Enforce the Clean Air and Water Acts for large, factory farms, and ensure all farmers have access to tools and resources to help them address pollution. &nbsp;</strong>According to the <a href="https://www.epa.gov/sites/production/files/2017-09/documents/_epaoig_20170919-17-p-0396.pdf">EPA Inspector General</a>, the EPA has spent over ten years and $15 million failing to develop a reliable method for measuring whether factory farms are complying with the Clean Air act and other regulations of dangerous air pollution. Industrial animal feeding operations, and the millions of pounds of untreated waste they create, are a major source of air pollution and driver of climate change. We will end this weak oversight of factory farms and ensure every farmer has the resources to address all forms of pollution. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Ensure rural residents have the right to protect their families and properties from chemical and biological pollution, including pesticide and herbicide drift.</strong></li></ul>
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://berniesanders.com/wp-content/uploads/2019/05/IMG_0332-1024x683.jpg" alt="" class="wp-image-1043" /></figure></div>
+<hr class="wp-block-separator" />
+<h2 id="Section-3"><strong><em>Policies to Foster Investment to Revitalize Rural Communities</em></strong></h2>
+<p><strong>Education</strong>: We must prepare the next generation to rebuild, rather than to abandon, rural America. We must guarantee a strong public education system from childcare up to college and jobs training programs for every child and young adult in America. <br></p>
+<ul><li><strong>Enact a universal childcare program for every child in America that provides rural Americans access to local daycares.</strong> It is unacceptable that <a href="https://www.desmoinesregister.com/story/news/2018/11/13/iowa-rural-child-day-care-crisis-cost-town-only-daycare-center-education-iowa-falls-riverbend/1811078002/">more than half</a> of all children in Iowa don&#8217;t have access to a childcare space, while tens of thousands of Iowans live in childcare deserts.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Increase funding for rural public education including ESL programs, classes for students with disabilities, student transportation, college accredited classes, etc. </strong>According to the <a href="http://www.centerforpubliceducation.org/research/out-loop-rural-education-us">Center for Public Education</a>, roughly one-fifth of students nationally are in rural schools. In some states, this statistic rises to over one in three students. Rural schools face different challenges than their urban counterparts. About 64% of rural counties report high rates of child poverty, compared to less than half of urban counties. Over the first decade of this century, rural schools saw a 150% increase in Latino students, who are more likely than any other group to require English as a second language programs. Rural schools also report substantially lower access to advanced mathematics and Advanced Placement courses than urban schools. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Pay rural teachers a living wage, health benefits and strengthen rural union bargaining power. </strong>Research from the <a href="http://www.ncsl.org/research/education/tackling-teacher-and-principal-shortages-in-rural-areas.aspx">National Conference of State Legislatures </a>(NCSL) found that “Rural teachers made an average starting salary of $33,200, compared with their suburban counterparts, who earned $40,500. The average salary that same year for a rural principal was $80,200, while suburban principals made $101,600.” NCSL <a href="http://www.ncsl.org/research/education/tackling-teacher-and-principal-shortages-in-rural-areas.aspx">also noted</a> that, “A shortage of teachers and principals across the United States has intensified in recent years, disproportionately affecting rural communities. Rural schools face significant challenges filling vacancies for educators.”</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Stop consolidating rural schools and start building rural schools that can access and utilize distance learning opportunities. </strong><a href="https://www.dailyyonder.com/close-rural-school-hurt-rural-community/2017/08/14/20474/">Thirty-five states</a> have considered or passed laws that encourage smaller rural schools to close and consolidate. “<a href="https://www.dailyyonder.com/close-rural-school-hurt-rural-community/2017/08/14/20474/">In 1930</a>, the country had more than 262,000 public schools. Today only about 95,000 public schools exist, even though the U.S. population has more than doubled since 1930. In many rural areas, schools are still closing.”</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Provide free higher education, job training, apprenticeship programs and other professional development programs that cover low-income and rural areas. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Substantially end the burden of the outrageous levels of student debt in this country.</strong></li></ul>
+<div class="wp-block-image"><figure class="alignright is-resized"><img src="https://berniesanders.com/wp-content/uploads/2019/05/events_016-1024x734.jpg" alt="" class="wp-image-1057" width="391" height="280" srcset="https://berniesanders.com/wp-content/uploads/2019/05/events_016-1024x734.jpg 1024w, https://berniesanders.com/wp-content/uploads/2019/05/events_016-300x215.jpg 300w, https://berniesanders.com/wp-content/uploads/2019/05/events_016-768x551.jpg 768w" sizes="(max-width: 391px) 100vw, 391px" /></figure></div>
+<p><strong>Health care: </strong>We will guarantee health care to all people as a right, not a privilege, through a Medicare-for-all, single-payer program. Rural people in particular have suffered the negative consequences that result from a lack of access to affordable, quality health care. Access to health care is a top issue for farmers and have some of the highest uninsured rate, in fact <a href="https://www.agriculture.com/family/health-safety/farming-without-a-net">41% of dairy farmers</a> lack health insurance. With Medicare-for-All, small business owners, including farmers, will no longer have to worry about providing health care to their families or employees. <br></p>
+<ul><li><strong>Provide funding to rebuild and expand rural health care infrastructure, including hospitals, maternity wards, mental health clinics, dental clinics, dialysis centers, home care services, ambulance services, and emergency departments in rural areas. </strong>As part of the Affordable Care Act, Bernie helped create the Community Health Center Fund, which has directed over $20 billion to health centers nationwide in medically underserved areas. In 2017, community health centers served one in five people living in rural areas and almost one million agricultural workers. When we are in the White House, we will provide even more funding for health centers. We will also expand funding for the National Health Service Corps, which places health care providers in underserved areas and will bring more providers to rural America. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Expand access to public addiction recovery services in rural areas.</strong> None of us is immune to the effects of the opioid epidemic. It doesn&#8217;t matter if you live in New York City or rural Vermont. According to the <a href="https://www.cdc.gov/media/releases/2017/p1019-rural-overdose-deaths.html">CDC</a>, the drug overdose rates are higher in rural areas than urban areas. Furthermore, in <a href="https://www.fb.org/issues/other/rural-opioid-epidemic/">one survey</a> almost 75% farmers they had been directly impacted by opioid abuse. We must make sure people have access to treatment, so they can get help where and when they need it.</li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Lower the cost of prescription drugs and make prescription drugs more accessible to people in rural areas. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Promote local foods to encourage healthy lifestyle and wellness, including incentives for schools to source their meals from local farmers. &nbsp;</strong></li></ul>
+<div class="wp-block-image"><figure class="alignright is-resized"><img src="https://berniesanders.com/wp-content/uploads/2019/05/bernie-sanders-immokalee-ad-immigrant-workers-ciw-tomato_850_508.jpg" alt="" class="wp-image-1121" width="389" height="232" srcset="https://berniesanders.com/wp-content/uploads/2019/05/bernie-sanders-immokalee-ad-immigrant-workers-ciw-tomato_850_508.jpg 850w, https://berniesanders.com/wp-content/uploads/2019/05/bernie-sanders-immokalee-ad-immigrant-workers-ciw-tomato_850_508-300x179.jpg 300w, https://berniesanders.com/wp-content/uploads/2019/05/bernie-sanders-immokalee-ad-immigrant-workers-ciw-tomato_850_508-768x459.jpg 768w" sizes="(max-width: 389px) 100vw, 389px" /></figure></div>
+<p><strong>Immigration</strong>: Immigrants play critical role in America’s agricultural sector and rural communities, but many undocumented workers live in constant fear of deportation and lack basic human rights. &nbsp;<br></p>
+<ul><li><strong>Enact policies that allow immigrant workers who already live here to stay in this country. &nbsp;That means long term visas and a pathway to citizenship.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Protect farmworkers from Trump’s deportation machine.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Enforce fair and just labor laws &#8212; including the right to organize and overtime protections &#8212; to end wage theft, harassment and discrimination and mass immigration raids. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Ensure farmworkers regardless of immigration status can safely report workplace and human rights violations and abuses.</strong></li></ul>
+<p><strong>Rural Economic Development:</strong> Our rural and economic development programs have destroyed employment opportunities, led to an abandonment of rural infrastructure, generally depressed local economies and caused massive population decline in rural America. <br></p>
+<ul><li><strong>Ensure access to high-speed broadband internet to every American.&nbsp;</strong>It is absurd that we do not have universal, high quality, affordable broadband access for every single American. According to the <a href="https://www.fcc.gov/reports-research/reports/broadband-progress-reports/2018-broadband-deployment-report">FCC</a>, 39% of Americans living in rural areas lacked access to high-speed broadband internet and 30% don’t have access to mobile LTE broadband. We need strong broadband coverage across this country if business is going to thrive, create jobs and be competitive in the national and global economies. Quality broadband is essential for health care services, education and for the day-to-day needs of rural Americans. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Raise the minimum wage to at least $15/hour. </strong>&nbsp;We have got to raise the minimum wage in this country to a living wage of at least $15 an hour. By 2024, the <a href="https://www.epi.org/publication/why-america-needs-a-15-minimum-wage/">Economic Policy Institute</a> projects that a single childless adult will need at least $31,200 (the annual pay of a $15 full-time worker) to afford a “modest but adequate standard of living” in areas across the United States. According to EPI, a single childless adult in rural Missouri will need to earn $35,706 (a full-time worker earning $17.17 per hour) to “cover typical rent, food, transportation, and other basic living costs.” </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Start investing in small businesses in rural areas and stop handing out tax breaks to big corporations.</strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Remove Right to Work, pass fair labor laws, and make it easier to form a union, including agricultural and food system workers. </strong>When we are in the White House we will end, once and for all, disastrous right-to-work laws, and we are going to pass the Workplace Democracy Act. If we are serious about creating an economy that works for all of us, not just the top 1%, not only do we need to defeat Donald Trump and rollback his anti-union policies, we need to expand the trade union movement in America to roll back wage stagnation for rural and urban workers alike. According to the <a href="https://www.resilience.org/stories/2019-03-07/to-revive-rural-america-we-must-fix-our-broken-food-system/">Open Markets Institute</a>, the average slaughterhouse worker has seen their average wage increase only a few dollars over the last thirty years, while the Chairman and CEO of Smithfield Food’s holding company made $291 million in 2017 or the equivalent of 10,457 slaughterhouse workers. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Enact a federal job guarantee that will create good-paying jobs and much needed rural infrastructure. </strong></li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Invest in affordable rural housing housing and end housing discrimination that segregates rural communities by race and income. </strong>One quarter of the country’s most rural counties have witnessed spikes in severely cost-burdened households, meaning those that spend over half their income on housing. Roughly one half of rural renters are cost-burdened, meaning they pay at least a third of their income in rent. We need to expand federal assistance for affordable housing in rural areas and reject the Trump administration’s proposed cuts to rural housing programs. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Focus substantial federal resources on distressed rural communities that have high levels of poverty. </strong>When we are in White House, we will take Rep. Jim Clyburn’s 10-20-30 approach to federal investments. Under this plan, at least 10% of funding for any program would need to go to counties where at least 20% of the population has lived below the federal poverty level for at least 30 years. &nbsp;These nearly 500 counties span the rural and racial divide, including majority black counties in the deep South, predominantly Hispanic counties in the Southwest, Native American communities in the West, and largely white counties in Appalachia. As much as 80% of the counties targeted by the policy can be defined as rural. </li></ul>
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<ul><li><strong>Provide support &nbsp;for rural community banks, CDFIs, and credit unions, not Wall Street.</strong></li></ul>
+</div>
+</article>
+<div class="bump bump-- ">
+<div class="bump__container">
+<div class="bump__main">
+<div class="bump__img" style="background-image: url('');"></div>
+<h2 class="bump__h">
+</h2>
+<div class="bump__action flex flexJustify--between">
+<a class="bump__btn bump__btn--auto " href="https://secure.actblue.com/donate/?express_lane=&amount=&refcode=_"></a>
+</div>
+<small class="bump__small">
+</small>
+</div>
+</div> </div>
+<footer class="footer">
+<div class="footer__address">Bernie 2020<br>
+PO Box 391<br>
+Burlington, VT 05402 </div>
+<div class="footer__paidfor">
+<span class="footer__disclaimer">Paid for by Bernie 2020</span>
+<div class="footer__bill">
+(not the billionaires)
+</div>
+</div>
+<div class="footer__sub">
+<span class="">© Bernie 2020 | <a href="/privacy-policy/">Privacy Policy</a> | <a href="https://boards.greenhouse.io/bernie2020" target="_blank">Jobs</a> | <a href="/podcast">Podcast</a></span> | <a href="/tax-returns">Taxes</a>
+</div>
+</footer>
+<script type="e57b000d278677ae192a0774-text/javascript">
+	window.VWO = window.VWO || [];
+	window.VWO.push(['track.goalConversion',1]);
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-803021594" type="e57b000d278677ae192a0774-text/javascript"></script>
+<script type="e57b000d278677ae192a0774-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-803021594');
+</script>
+
+<script type="e57b000d278677ae192a0774-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '736881459842197');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=736881459842197&ev=PageView
+  &noscript=1"/>
+</noscript>
+
+
+<script type="e57b000d278677ae192a0774-text/javascript">
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o13k7');
+  twq('track','PageView');
+</script>
+
+<script type="e57b000d278677ae192a0774-text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-118768463-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="e57b000d278677ae192a0774-text/javascript">
+  (function(m,o,v,a,b,l,e) {
+    if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+    m['MovableInkTrack'] = b;
+    l = o.createElement(v);
+    e = o.getElementsByTagName(v)[0];
+    l.type = 'text/javascript'; l.async = true;
+    l.src = '//' + a + '/p/js/1.js';
+    m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+    e.parentNode.insertBefore(l, e);
+
+    /* Exclusively for Bernie 2020 */
+  })(window, document, 'script', 'ycwht5le.micpn.com', 'mitr');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="e57b000d278677ae192a0774-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/aos.js" type="e57b000d278677ae192a0774-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/float-labels.js" type="e57b000d278677ae192a0774-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/custom.min.js" type="e57b000d278677ae192a0774-text/javascript"></script>
+<script type="e57b000d278677ae192a0774-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b90cc6c8e3","applicationID":"236271046","transactionName":"YFNWZERRD0JRUhENDlkZdVNCWQ5fH0EEAwQ=","queueTime":0,"applicationTime":208,"atts":"TBRVEgxLHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="e57b000d278677ae192a0774-|49" defer=""></script></body>
