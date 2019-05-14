@@ -3,14 +3,15 @@
 <head >
 <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Uncategorized Archives - Page 3 of 3 - Andrew Yang for President</title>
+<title>Uncategorized Archives - Page 3 of 4 - Andrew Yang for President</title>
 
 <!-- This site is optimized with the Yoast SEO Premium plugin v10.0 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="https://www.yang2020.com/blog/category/uncategorized/page/3/" />
 <link rel="prev" href="https://www.yang2020.com/blog/category/uncategorized/page/2/" />
+<link rel="next" href="https://www.yang2020.com/blog/category/uncategorized/page/4/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="object" />
-<meta property="og:title" content="Uncategorized Archives - Page 3 of 3 - Andrew Yang for President" />
+<meta property="og:title" content="Uncategorized Archives - Page 3 of 4 - Andrew Yang for President" />
 <meta property="og:url" content="https://www.yang2020.com/blog/category/uncategorized/" />
 <meta property="og:site_name" content="Andrew Yang for President" />
 <meta property="og:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001-1024x683.jpg" />
@@ -18,7 +19,7 @@
 <meta property="og:image:width" content="1024" />
 <meta property="og:image:height" content="683" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Uncategorized Archives - Page 3 of 3 - Andrew Yang for President" />
+<meta name="twitter:title" content="Uncategorized Archives - Page 3 of 4 - Andrew Yang for President" />
 <meta name="twitter:site" content="@andrewyang" />
 <meta name="twitter:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001.jpg" />
 <!-- / Yoast SEO Premium plugin. -->
@@ -2555,7 +2556,38 @@ h6.giant-header {
 <li id="menu-item-2156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2156"><a href="https://my.yang2020.com/" itemprop="url"><span itemprop="name">Volunteer</span></a></li>
 <li id="menu-item-2157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2157"><a href="https://shop.yang2020.com/" itemprop="url"><span itemprop="name">Store</span></a></li>
 <li id="menu-item-2158" class="menu-donate menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a href="https://secure.actblue.com/donate/friends-of-andrew-yang" itemprop="url"><span itemprop="name">Donate</span></a></li>
-</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-1737 post type-post status-publish format-standard category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/the-next-generation/">The Next Generation</a></h2>
+</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-1741 post type-post status-publish format-standard category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/pittsburgh/">Pittsburgh</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-10-29T15:49:34+00:00">October 29, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/carly/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Carly Reilly</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>Like all of you, I was devastated by the events at the Tree of Life synagogue in Pittsburgh this weekend.  It is heartbreaking that so many innocent lives were brutally taken in a place of worship and peace.</p>
+<p>I feel particularly terrible and terrified for my Jewish friends.  So many have lost family members to violence and anti-Semitism across the years.  This weekend, their worst fears were realized here and now.  It is truly a nightmare come to life in America.</p>
+<p>Unfortunately, the shooter represents a larger trend. The shooter used a far-right alternative to Twitter that has 635,000 subscribers, up 50% from March of this year.  Anti-Semitic incidents were up 60% in 2017.  The bombs mailed to Democratic leaders this past week were born of a similar sense of hatred.  America is heading toward a dangerous spiral of political and ethnically charged violence as our institutional failure continues.</p>
+<p>I <a title="Amazon link for The War on Normal People" href="https://www.amazon.com/War-Normal-People-Disappearing-Universal/dp/0316414247?keywords=war+on+normal+people&amp;qid=1540823356&amp;sr=8-1">wrote</a> last year:</p>
+<p style="padding-left: 30px;">There will be more random mass shootings in the months ahead as middle-aged white men self-destruct and feel that life has no meaning.  As the mindset of scarcity spreads and deepens, people’s executive functioning will erode. Contributing to the discord will be a climate that equates opposing ideas or speech to violence and hate.  Anti-Semitic violence [will] break out&#8230; there are approximately 270 to 310 million firearms in the United States, almost one per human being.  We are the most heavily armed society in the history of mankind.  Disintegration is unlikely to be gentle.</p>
+<p>Hateful rhetoric and the advent of Donald Trump have made things worse.  But after he is gone the hatred will not fade like a fever dream. It will be with us for years to come – and is likely to deepen, driven by increased economic stresses, changing demographics, and the ongoing disintegration of institutional authority.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Confidence in US Institutions - 1970 to 2017 (Declining)" src="https://d3n8a8pro7vhmx.cloudfront.net/yang2020/mailings/60/attachments/original/image.png?1540822626" alt="Declining Confidence in US Institutions" width="392" height="309" /></p>
+<p>We are heading in the wrong direction.  We need to think much bigger about how we can turn back the hate and improve our society.</p>
+<p>Most politicians talk about how we need to love and understand each other and treat each other with respect.  Improved rhetoric and norms would help.  I confess though – I find this approach to be frustratingly vapid and ineffective even though I know it is part of the solution.</p>
+<p>In practical terms, it is extraordinarily difficult to secure civilian locations and places of worship against armed attack.  It would require ubiquitous trained armed guards in a way that would transform the country and be extremely costly, and even then it wouldn’t work.  The Pittsburgh shooter wounded 3 highly trained police officers during his attack, for example.</p>
+<p>It is more realistic, though still difficult, to make guns harder to get.  We should do <a title="Andrew Yang's Gun Control Policy Page" href="https://www.yang2020.com/policies/gun-control-second/">everything in our power</a>:</p>
+<ol>
+<li>Fine gun manufacturers when their weapons are used in a mass shooting – $1 million per victim – to align their incentives with the public&#8217;s;</li>
+<li>Establish licensing procedures for guns analogous to a driver&#8217;s license, and build in education and training;</li>
+<li>Restrict gun ownership among those with a history of criminal behavior, mental illness, or domestic violence;</li>
+<li>Raise the legal ownership age to 21;</li>
+<li>Restrict private ownership of assault weapons and military-style weapons;</li>
+<li>Create an ammunition registry;</li>
+<li>Offer to buy back weapons, or upgrade firearms so they can only be fired by the owner;</li>
+<li>Start a Helpline to allow for the identification of people who pose a danger to the public;</li>
+<li>Invest in technology that would help track and identify weapons; and</li>
+<li>Dramatically increase available mental health resources available to those who need help.</li>
+</ol>
+<p>Even here, though, these measures would not prevent anti-Semitic and racially motivated violence from rising in the years ahead.  America is set to become majority minority by 2045.  This will be a truly dangerous time as we are currently automating away the most common middle-class jobs, which will lead to economic stress, social polarization, anger, and violence. It&#8217;s already begun.</p>
+<p>To me, the biggest, most positive move we can make is to replace the sense of scarcity with a sense of abundance and pass a Freedom Dividend of $1,000/month per adult.  This would alleviate stress levels, improve mental health, and decrease economic and social tensions.  It would give everyone a sense of security.</p>
+<p>If you’re walking around worried about how to survive month-to-month you are more likely to lash out and respond to hateful messages and ideas.  We need to get people thinking about the future knowing that their place in it is assured.</p>
+<p>Would a Universal Basic Income have prevented the violence in Pittsburgh?  Perhaps not – but I believe it would have a better chance of preventing the next one than just about anything else we could do.  And yes, that includes thoughts and prayers.</p>
+<p>My greatest fear is that we slump into a world where the occasional shooting – even one as horrific as what happened in Pittsburgh – becomes something we become accustomed to.  We adapt to it.  That cannot be allowed to happen.  We must translate heartbreak into action.  We owe it to ourselves, our children, our fellow citizens, and the victims of the Tree of Life synagogue, Parkland, Sandy Hook, and every other recent massacre to overcome the gun lobby and get this right.</p>
+<p style="font-weight: 400;">Let&#8217;s fight for a future where Americans can pray without fear, and gather in peace.  It will require redefining our society in the ways that matter.  The challenge is historic and our solutions should be the same.</p>
+<p style="font-weight: 400;">
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/uncategorized/" rel="category tag">Uncategorized</a></span> </p></footer></article><article class="post-1737 post type-post status-publish format-standard category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/the-next-generation/">The Next Generation</a></h2>
 <p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-10-26T23:27:28+00:00">October 26, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/andrew/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Andrew Yang</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>Thank you for getting behind my campaign from the early days!  I really appreciate it.</p>
 <p>On Thursday, I spoke at Net Impact 2018, a gathering of 1,600+ college students, business school students, and young professionals in Phoenix, Arizona.  Net Impact is a non-profit based in the Bay Area that organizes hundreds of chapters of students and professionals on how to do good in their communities.  They have been galvanizing young people since 1993.</p>
 <p><img class="CToWUd" title="Andrew
@@ -2599,60 +2631,12 @@ Facebook" href="https://my.yang2020.com/r?u=27Ax0UmWOX2J8J_QwK9Z6vRfozuKqDKtFz_g
 <p>Read the (very short) review <a href="https://andrewtobias.com/the-war-on-normal-people/">here</a>.</p>
 </div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/uncategorized/" rel="category tag">Uncategorized</a></span> </p></footer></article><article class="post-1322 post type-post status-publish format-standard has-post-thumbnail category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/donate-one-humanity/">Watch Andrew&#8217;s Keynote in Iowa that Earned a Standing Ovation</a></h2>
 <p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-05-22T14:19:49+00:00">May 22, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/katie/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Katie Bloom</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>Watch Andrew Yang&#8217;s headline speech at the 2018 Iowa Wing Ding, the largest Democratic event in the state of Iowa with 1,000+ activists, that received a standing ovation and countless press stories.</p>
-</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/uncategorized/" rel="category tag">Uncategorized</a></span> </p></footer></article><article class="post-2581 post type-post status-publish format-standard category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/thecaninedividend/">The Canine Dividend (April Fools&#8217; Day!)</a></h2>
-<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-04-01T19:14:44+00:00">April 1, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><div style="border: 1px solid gray; padding: 16px;">
-<h4>Brief</h4>
-<p><span style="font-weight: 400;">GDP continues to go up and up, while the number of dogs per household has remained stagnant. Nothing would do more to improve the mental health of every American than providing them with 1,000 dogs (of varying breeds) per month, free and clear, no questions asked. </span></p>
-<p><span style="font-weight: 400;">Studies show that simply by petting a friendly dog, radical improvements are seen in the health of humans. Petting dogs:</span></p>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Lowers blood pressure</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Slows heart rates</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Regulates breathing</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Relaxes muscles</span></li>
-</ul>
-<p><span style="font-weight: 400;">These health benefits are possible with just one dog; imagine the stress-reducing benefits of owning 12,000 dogs.</span></p>
-</div>
-<p>&nbsp;</p>
-<blockquote class="grayBox"><p><img class=" wp-image-512 alignleft" src="https://yang2020.com/wp-content/uploads/title494431657.png" alt="" width="110" height="110" /></p>
-<div><i><span style="font-weight: 400;">&#8220;Who’s a good boy? Yes, you’s a good boy. Oh yes you are. Yes you are. Yes you are.&#8221; -Andrew</span></i></div>
-<p><em> <span class="quoteAuthor">— Andrew</span></em></p></blockquote>
-<p>&nbsp;</p>
-<h4 style="text-align: left;">Problems to be Solved</h4>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Every American does not currently receive 1,000 dogs/month.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Too many leftovers go uneaten.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Not enough Americans have a good excuse to go for a walk.</span></li>
-</ul>
-<div style="border: 1px solid gray; padding: 16px;">
-<div class="row">
-<div id="col-a" class="col-md-4">
-<h5 style="text-align: left;">Goals</h5>
-<ul style="text-align: left;">
-<li style="font-weight: 400;"><span style="font-weight: 400;">Make Americans happy in the most direct way possible: giving people dogs.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Make every American home more secure.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Ensure an unprecedented stimulus to the carpet-cleaning industry.</span></li>
-</ul>
-</div>
-<div id="col-b" class="col-md-4">
-<h5 style="text-align: left;">Guiding Principles</h5>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Dogs are awesome</span></li>
-</ul>
-</div>
-</div>
-</div>
-<p>&nbsp;</p>
-<h4><span style="font-weight: 400;">As President, I will…</span></h4>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Create a federal agency tasked with the distribution of 1,000 dogs per month to every American.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Implement a tennis ball tax credit.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Direct the Bureau of Land Management to set aside 50% of federal land for dog parks.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Encourage the introduction of the 28th Amendment: The Right to Bear Dogs.</span></li>
-</ul>
 </div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/uncategorized/" rel="category tag">Uncategorized</a></span> </p></footer></article><div class="archive-pagination pagination"><ul><li class="pagination-previous"><a href="https://www.yang2020.com/blog/category/uncategorized/page/2/" >&#x000AB; Previous Page</a></li>
 <li><a href="https://www.yang2020.com/blog/category/uncategorized/"><span class="screen-reader-text">Page </span>1</a></li>
 <li><a href="https://www.yang2020.com/blog/category/uncategorized/page/2/"><span class="screen-reader-text">Page </span>2</a></li>
 <li class="active" ><a href="https://www.yang2020.com/blog/category/uncategorized/page/3/" aria-label="Current page" aria-current="page"><span class="screen-reader-text">Page </span>3</a></li>
+<li><a href="https://www.yang2020.com/blog/category/uncategorized/page/4/"><span class="screen-reader-text">Page </span>4</a></li>
+<li class="pagination-next"><a href="https://www.yang2020.com/blog/category/uncategorized/page/4/" >Next Page &#x000BB;</a></li>
 </ul></div>
 </main></div></div><h4 class='join-the-fight giant-header'>
 	Join the fight
@@ -2698,4 +2682,4 @@ Facebook" href="https://my.yang2020.com/r?u=27Ax0UmWOX2J8J_QwK9Z6vRfozuKqDKtFz_g
 <script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=3.0.0-beta.1'></script>
 <script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/about-andrew/public/js/about-andrew.js'></script>
 <script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGVlcBQNO","queueTime":0,"applicationTime":189,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGVlcBQNO","queueTime":0,"applicationTime":260,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

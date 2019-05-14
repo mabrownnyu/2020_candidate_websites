@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+
+  <link rel="icon" type="image/x-icon" href="/wp-content/themes/cftf/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.typotheque.com/WF-032393-010559.css" type="text/css" >
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+      {'gtm.start': new Date().getTime(),event:'gtm.js'}
+
+    );var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLVRFC8');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Educación Las Personas Primero - Julián 2020</title>
+<link rel="alternate" hreflang="en" href="https://www.julianforthefuture.com/news-events/people-first-education/" />
+<link rel="alternate" hreflang="es" href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/" />
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Educación Las Personas Primero - Julián 2020" />
+<meta property="og:description" content="La inversión más inteligente La educación es el corazón del Sueño Americano. Es el cimiento que apoya lo que colectivamente le hemos prometido a todos los estudiantes, si trabajan con empeño, tendrán la oportunidad de lograr sus sueños. La educación de calidad permite la movilidad económica, ayuda a disminuir la pobreza, y asegura que haya &hellip;" />
+<meta property="og:url" content="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/" />
+<meta property="og:site_name" content="Julián 2020" />
+<meta property="article:section" content="Sin categorizar" />
+<meta property="article:published_time" content="2019-05-13T15:45:44+00:00" />
+<meta property="og:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<meta property="og:image:secure_url" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<meta property="og:image:width" content="1100" />
+<meta property="og:image:height" content="740" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="La inversión más inteligente La educación es el corazón del Sueño Americano. Es el cimiento que apoya lo que colectivamente le hemos prometido a todos los estudiantes, si trabajan con empeño, tendrán la oportunidad de lograr sus sueños. La educación de calidad permite la movilidad económica, ayuda a disminuir la pobreza, y asegura que haya [&hellip;]" />
+<meta name="twitter:title" content="Educación Las Personas Primero - Julián 2020" />
+<meta name="twitter:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.julianforthefuture.com/es/#organization","name":"","url":"https://www.julianforthefuture.com/es/","sameAs":[]},{"@type":"WebSite","@id":"https://www.julianforthefuture.com/es/#website","url":"https://www.julianforthefuture.com/es/","name":"Juli\u00e1n 2020","publisher":{"@id":"https://www.julianforthefuture.com/es/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.julianforthefuture.com/es/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#webpage","url":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/","inLanguage":"es-ES","name":"Educaci\u00f3n Las Personas Primero - Juli\u00e1n 2020","isPartOf":{"@id":"https://www.julianforthefuture.com/es/#website"},"image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#primaryimage","url":"https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg","width":1100,"height":740},"primaryImageOfPage":{"@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#primaryimage"},"datePublished":"2019-05-13T15:45:44+00:00","dateModified":"2019-05-13T15:45:44+00:00"},{"@type":"Article","@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#article","isPartOf":{"@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#webpage"},"author":{"@id":"https://www.julianforthefuture.com/es/news-events/author/binsler/#author","name":"Brielle Insler"},"publisher":{"@id":"https://www.julianforthefuture.com/es/#organization"},"headline":"Educaci\u00f3n Las Personas Primero","datePublished":"2019-05-13T15:45:44+00:00","dateModified":"2019-05-13T15:45:44+00:00","commentCount":0,"mainEntityOfPage":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#webpage","image":{"@id":"https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/#primaryimage"},"articleSection":"Sin categorizar"},{"@type":"Person","@id":"https://www.julianforthefuture.com/es/news-events/author/binsler/#author","name":"Brielle Insler","image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/es/#personlogo","url":"https://secure.gravatar.com/avatar/31b238ec00b8a8b2edd56305efadf471?s=96&d=mm&r=g","caption":"Brielle Insler"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.julianforthefuture.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Julián 2020 &raquo; Educación Las Personas Primero RSS de los comentarios" href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.julianforthefuture.com/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='site-css-css'  href='https://www.julianforthefuture.com/wp-content/themes/cftf/style.css?ver=1557748587' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://www.julianforthefuture.com/es/wp-json/' />
+<link rel='shortlink' href='https://www.julianforthefuture.com/es/?p=563' />
+<link rel="alternate" type="application/json+oembed" href="https://www.julianforthefuture.com/es/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fes%2Fnews-events%2Feducacion-las-personas-primero%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.julianforthefuture.com/es/wp-json/oembed/1.0/embed/?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fes%2Fnews-events%2Feducacion-las-personas-primero%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.1.3 stt:1,2;" />
+
+</head>
+
+<body class="post-template-default single single-post postid-563 single-format-standard wrapper" data-template="base.twig">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLVRFC8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div class="wrapper__content">
+    <svg class="sprite" width="0" height="0" style="position:absolute"><symbol viewBox="0 0 23 23" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M11.175 22.995C4.974 22.823 0 17.742 0 11.5 0 5.149 5.149 0 11.5 0S23 5.149 23 11.5c0 5.288-3.57 9.743-8.432 11.086v-9.262h2.453c.181 0 .328-.138.328-.31l.001-2.493a.3.3 0 0 0-.096-.218.339.339 0 0 0-.232-.091h-2.454V8.753c0-.701.177-1.057 1.146-1.057h1.406c.181 0 .328-.14.328-.31V5.071c0-.17-.147-.309-.328-.31l-2.086-.002c-2.344 0-3.86 1.465-3.86 3.732v1.72H9.078c-.182 0-.328.14-.328.31v2.494c0 .17.147.309.328.309h2.098v9.671z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="instagram" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm-4.494-4.759h8.988a2.247 2.247 0 0 0 2.247-2.247V7.006a2.247 2.247 0 0 0-2.247-2.247H7.006a2.247 2.247 0 0 0-2.247 2.247v8.988a2.247 2.247 0 0 0 2.247 2.247zm10.112-2.247c0 .62-.503 1.124-1.124 1.124H7.006c-.62 0-1.124-.503-1.124-1.124v-3.932h2.81c.019 0 .036-.01.055-.011a2.809 2.809 0 0 0 5.506 0c.02 0 .036.01.056.01h2.809v3.933zM9.815 11.5a1.685 1.685 0 1 1 3.37 0 1.685 1.685 0 0 1-3.37 0zm5.65-2.776a1.19 1.19 0 1 1 0-2.38 1.19 1.19 0 0 1 0 2.38z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol id="logo" viewBox="0 0 1181.1 384.8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.cst0{fill:#1380d9}.cst1{fill:#003}</style><path class="cst0" d="M736.1 358.7c0-14.8 9.6-26.1 24.8-26.1 6.5 0 11.6 2 15.1 4.6v17l-.2.1c-3.4-3.3-7.8-5.7-12.1-5.7-5.9 0-9.5 3.7-9.5 10 0 6.4 3.7 10.1 9.8 10.1 5 0 9.3-2.3 12.5-5.1l.3.1-1.9 17.1c-3.5 2.2-7.8 3.8-14.5 3.8-14 0-24.3-9.9-24.3-25.9zM803.9 333.4h20.5l17.9 50.4h-18.6l-2.1-6.8h-15.7l-2.1 6.8H786l17.9-50.4zm14.2 30.3l-4.4-13.9-4.4 13.9h8.8zM871.2 332.5c6.6 0 12.1 1.7 15.6 3.6v15.1h-.1c-4-2.4-10.8-4.9-15.1-4.9-2.1 0-2.7.6-2.7 1.5 0 1.2 1.3 1.9 5.6 3.5 9.8 3.5 15.2 7.4 15.2 16.8 0 10.5-7.8 16.6-19.9 16.6-6.7 0-12.7-2-16.6-4.6l-1.5-16.1.2-.1c5.5 4 13 7.1 17.3 7.1 2.5 0 3.3-.6 3.3-1.8 0-1.2-.9-1.9-6-3.6-8.6-3.1-14.8-7.1-14.8-16.5-.1-9.5 7-16.6 19.5-16.6zM930.6 348.8v35h-17.5v-35h-13.9v-15.4h45.2v15.4h-13.8zM974.7 368.5v15.3h-17.5v-50.4h20.5c14.5 0 21.3 5.9 21.3 16.6 0 6.3-3 11.2-7.8 14.3l12.7 19.5H984l-9.3-15.3zm-.3-22v10.4h2c3.4 0 5.5-1.8 5.5-5.3s-2.1-5-5.5-5h-2zM1036.4 332.4c15 0 25.4 11.2 25.4 26.1 0 15.2-10.4 26.3-25.6 26.3-15.3 0-25.4-11.2-25.4-26.1.1-15 10.5-26.3 25.6-26.3zm0 36.9c4.7 0 7.6-3.9 7.6-10.7 0-6.8-3.1-10.8-7.7-10.8-4.8 0-7.6 4-7.6 10.7 0 6.9 3 10.8 7.7 10.8zM821.7 72.3l61-72.3h-77.3l-60.2 72.3z"/><path class="cst1" d="M109.2 95.4h72.5v136.3c0 47.4-30.1 74.9-77.2 74.9-21.2 0-37-4.5-49.5-10.7l-6.3-62.6.9-.6c12.5 7.5 23 10.4 34.9 10.4 14.6 0 24.8-9.5 24.8-25.1V95.4zM205.8 95.4h72.5V214c0 20 9.2 29.5 24.5 29.5 15.5 0 24.5-9.5 24.5-29.5V95.4h71.3v114.5c0 65-34.6 97.5-96.3 97.5-62.3 0-96.3-32.5-96.3-97.5V95.4zM419.7 95.4h72.5v144.9h70.4v63.8H419.7V95.4zM580.4 95.4h72.5v208.8h-72.5V95.4zM739.9 95.4h84.7l74.3 208.8H822l-8.7-28.3h-65l-8.7 28.3H666l73.9-208.8zM799 220.9l-18.2-57.6-18.2 57.6H799zM1110.6 304.1H1051l-69.8-91.6.9 91.6h-70.7V95.4h70.1l59.6 78.1-.9-78.1h70.4v208.7z"/><g><path class="cst1" d="M19.3 56.9L730 55.1l16.1-19.3-726.9 1.8-19.2.1v332.5h701.5v-19.3H19.3zM1161.7 34.8l-279.3.7-16.3 19.3 295.7-.7v296.8h-69.6v19.3H1181.1V34.7z"/></g></symbol><symbol viewBox="0 0 31 30" id="star" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 24.875L5.92 30l1.83-10.854L0 11.459l10.71-1.584L15.5 0l4.79 9.875L31 11.46l-7.75 7.687L25.08 30z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="twitter" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm3.703-17.448c-.125 0-.25.018-.321.018-.643.056-1.196.315-1.678.759-.66.592-1.018 1.332-1.072 2.238-.017.277 0 .573.054.85 0 .056 0 .075-.036.075h-.071a9.972 9.972 0 0 1-1.268-.185C8.847 8.863 7.223 7.864 5.92 6.292c-.036-.056-.071-.093-.125-.148-.393.74-.518 1.517-.34 2.33.18.814.608 1.443 1.269 1.943-.482 0-.947-.148-1.375-.389 0 .777.214 1.462.678 2.054.464.591 1.054.98 1.768 1.146a3.136 3.136 0 0 1-.821.111c-.179 0-.375 0-.554-.037.5 1.35 1.464 2.09 2.875 2.22a5.733 5.733 0 0 1-2.143 1.129 5.998 5.998 0 0 1-1.714.24c-.232 0-.446-.018-.678-.037l.053.056a8.616 8.616 0 0 0 2.785 1.165c.411.092.822.166 1.25.166h1.5a9.39 9.39 0 0 0 1.571-.296c1.678-.462 3.071-1.387 4.196-2.737 1.375-1.702 2.107-3.663 2.178-5.864v-.019-.536c0-.056.018-.074.054-.111a6.73 6.73 0 0 0 1.035-.999c.16-.185.304-.388.447-.61-.304.129-.59.24-.875.314a6.67 6.67 0 0 1-.875.167 3.26 3.26 0 0 0 1.339-1.758 2.704 2.704 0 0 0-.232.13 6.683 6.683 0 0 1-1.643.629h-.035c-.036 0-.072-.019-.108-.056-.624-.629-1.357-.943-2.196-.943z" fill="currentColor" fill-rule="evenodd"/></symbol></svg>    <header class="mobile-header">
+      <div class="mobile-header__bar">
+        <a href="https://www.julianforthefuture.com/es/" class="mobile-header__logo">
+          <svg>
+            <title>Julián 2020</title>
+            <use xlink:href="#logo"></use>
+          </svg>
+        </a>
+        <button class="mobile-header__toggle" aria-label="Menu"><span></span></button>
+      </div>
+      <div class="mobile-header__menu">
+        <nav class="utility">
+          <div class="utility__inner container">
+            <ul class="utility__toggle">
+      <li class="utility__toggle-item">
+      <a href="https://www.julianforthefuture.com/news-events/people-first-education/">English</a>
+    </li>
+      <li class="utility__toggle-item is-current">
+      <a href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/">Español</a>
+    </li>
+  </ul>
+            <div class="social social--white">
+  <a href="https://www.facebook.com/Julian-Castro-97458155742/" class="social__icon">
+    <svg>
+      <title>Facebook</title>
+      <use xlink:href="#facebook" />
+    </svg>
+  </a>
+  <a href="https://twitter.com/juliancastro" class="social__icon">
+    <svg>
+      <title>Twitter</title>
+      <use xlink:href="#twitter" />
+    </svg>
+  </a>
+  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
+    <svg>
+      <title>Instagram</title>
+      <use xlink:href="#instagram" />
+    </svg>
+  </a>
+</div>          </div>
+        </nav>
+        <nav class="header container">
+          <a href="https://www.julianforthefuture.com/es/" class="header__logo">
+            <svg>
+              <title>Julián 2020</title>
+              <use xlink:href="#logo"></use>
+            </svg>
+          </a>
+          <ul class="header__nav nav nav--dark">
+                          <li class="nav__item"><a href="https://www.julianforthefuture.com/es/about/">Acerca</a></li>
+                          <li class="nav__item is-active"><a href="https://www.julianforthefuture.com/es/noticias-eventos/">Noticias</a></li>
+                          <li class="nav__item"><a href="https://mobilize.us/julianforthefuture">Eventos</a></li>
+                          <li class="nav__item"><a href="https://action.julianforthefuture.com/page/s/mantente-informado/">Mantente Informado</a></li>
+                          <li class="nav__item"><a href="https://store.julianforthefuture.com/">Tienda</a></li>
+                      </ul>
+                      <div class="header__button">
+              <a href="https://secure.actblue.com/donate/es-julianforthefuture" class="badge">
+                <span class="badge__decoration" role="presentation">
+                    <svg class="badge__star" aria-hidden="true">
+                      <use xlink:href="#star"></use>
+                    </svg>
+                  </span>
+                <span class="badge__text">Contribuir</span>
+              </a>
+            </div>
+                  </nav>
+      </div>
+    </header>
+
+      <main class="background--light">
+    <div class="container">
+      <header class="post__header post__header--full">
+        <h1 class="post__headline" itemprop="headline">Educación Las Personas Primero</h1>
+        <p class="post__info">By Julián Castro on mayo 13, 2019</p>
+      </header>
+    </div>
+    <div class="blog__inner container">
+      <article class="blog__post" id="post-563" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <section itemprop="articleBody">
+                    <img class="blog__feature-image" src="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" alt="">
+                    <h2>La inversión más inteligente</h2>
+<p>La educación es el corazón del Sueño Americano. Es el cimiento que apoya lo que colectivamente le hemos prometido a todos los estudiantes, si trabajan con empeño, tendrán la oportunidad de lograr sus sueños. La educación de calidad permite la movilidad económica, ayuda a disminuir la pobreza, y asegura que haya oportunidades disponibles para todos los estudiantes.</p>
+<p>Sin embargo, nuestro gobierno no ha cumplido su parte del contrato. La subinversión crónica en nuestras escuelas, maestros y estudiantes durante décadas, y a todos los niveles, nos ha relegado, y convertido a un sistema ya desigual, en aún más injusto. Los defectos estructurales, la creciente carga financiera, y el inadecuado apoyo para los estudiantes y para las familias han impedido que muchos de nuestros ciudadanos tengan acceso a una educación de calidad, desde la infancia hasta la educación postsecundaria. Nuestro anticuado compromiso con un sistema K-12, que permite que algunos estudiantes comiencen con ventajas, y evita que muchos otros continúen su educación después de la preparatoria, ha dejado a nuestros estudiantes y a nuestra nación en total desventaja.</p>
+<p>Es por lo que necesitamos un nuevo compromiso y planteamiento, cuyo enfoque sea primero la gente — un compromiso que considere que el papel del gobierno federal en la educación es apoyar un sistema efectivo e ininterrumpido, desde el nivel preescolar hasta después de la escuela preparatoria. Si Estados Unidos pretende continuar siendo un líder en generaciones futuras, esto significa que no podemos darnos el lujo de desperdiciar el potencial de un solo estudiante. Esto comienza con la ampliación de nuestro compromiso con el aprendizaje a nivel prekínder, el cual según las investigaciones es uno de los períodos más críticos para el desarrollo infantil. Pero no debemos conformarnos con eso. Debemos asegurarnos de que todos los estudiantes en nuestro sistema de educación pública puedan graduarse de la escuela preparatoria, y así abrir las puertas de la universidad, de la formación vocacional, o de una carrera de calidad. Esto también significa que aquellos que se han comprometido con continuar su educación universitaria, no acumulen miles y miles de dólares de deuda de préstamos estudiantiles que impida su capacidad para formar una familia, comprar una casa o iniciar sus carreras. También tenemos que hacer un nuevo compromiso con los miles de maestros y personal de apoyo que guían y enseñan a nuestros hijos. Necesitamos incrementar el salario de nuestros maestros, reducir el tamaño de las clases para fomentar el aprendizaje individualizado, y equipar a nuestros maestros y a nuestras escuelas con los recursos necesarios para tener éxito.</p>
+<p>Finalmente, debemos hacer un nuevo compromiso para garantizar que nuestras escuelas sean más justas y equitativas para todos los estudiantes. Al inicio, nuestro sistema de educación pública valoraba el éxito de un estudiante por encima de otro. Aunque terminamos la segregación legal en nuestras escuelas hace ya muchos años, las disparidades generalizadas entre estudiantes continúan en la actualidad. No podemos tener escuelas integradas si nuestras viviendas y comunidades están segregadas. Tampoco hemos hecho lo suficiente para proteger a los estudiantes LGBTQ, o para garantizar que los estudiantes con capacidades diferentes tengan la misma oportunidad de éxito en todas las comunidades. No es suficiente solo invertir en nuestras escuelas y esperar que las desigualdades desaparezcan — necesitamos planteamientos enfocados que garanticen que todos los estudiantes tengan acceso a una educación de calidad.</p>
+<p>Mi plan de Educación Las Personas Primero establecerá un nuevo compromiso por parte del gobierno federal para asegurar que todos los estudiantes tengan acceso a una educación de calidad, desde el prekínder hasta la universidad y más allá. Mi plan ayudará a cerrar la brecha, tanto en el acceso como en los logros académico, al garantizar que todos los estudiantes comiencen la escuela primaria con una base sólida, y que salgan de la preparatoria listos para la universidad o para obtener un buen empleo. Mi plan invertirá en los maestros de nuestra nación, y garantizará que la carrera de maestro continúe siendo competitiva y atractiva para las generaciones futuras. Mi plan ayudará a mitigar las desigualdades crónicas entre estudiantes, y a extender nuestro compromiso educativo a quienes no se han visto incluidos en el pasado. Y mi plan abordará la dominante crisis de la deuda de préstamos estudiantiles, tanto para aquellos que se sienten agobiados por una deuda insuperable, como para aquellos que aún no se han matriculado en la educación postsecundaria. Estas inversiones no solo son útiles para abordar los problemas de antaño en nuestro sistema educativo, sino que también son necesarias si pretendemos seguir siendo un líder competitivo por generaciones futuras.</p>
+<h3>1. Pre-K for USA: (Prekínder para Todos) La Educación de Prekínder Debe ser el Cimiento del Aprendizaje Para Toda la Vida</h3>
+<p>Décadas de investigación han revelado que una parte importante del desarrollo infantil comienza antes de ingresar al kindergarten. Estos años formativos sientan las bases que determinarán la salud futura y éxito de los estudiantes de nuestra nación. Mientras que nuestra competencia, Alemania, Japón y China han realizado importantes inversiones en la educación de la primera infancia, y en la preparación escolar, Estados Unidos continúa quedándose atrás, tanto en matriculación como en calidad de los programas de prekínder. En una economía global cada vez más competitiva, Estados Unidos no puede darse el lujo de dejar en desventaja a nuestros estudiantes más pequeños. Como ex alcalde de la ciudad de San Antonio, conozco de primera mano los beneficios de invertir en el acceso a la educación preescolar de alta calidad. Pedí a los residentes de San Antonio que apoyaran una iniciativa de prekínder en toda la ciudad, <a href="https://prek4sa.com/">‘Pre-K for SA’</a>, la cual ha transformado el sistema educativo de nuestra ciudad, y entregado resultados positivos a miles de niños y familias participantes.</p>
+<p>Mi plan de Educación Las Personas Primero tiene como objetivo cerrar la brecha de acceso al prekínder, al ofrecer un programa preescolar universal de alta calidad para niños de 3 y 4 años en todo Estados Unidos, a través de un programa nacional &#8220;Pre-K for USA&#8221;.  Esto requerirá una inversión seria en programas locales existentes, y la implementación de modelos exitosos a otras comunidades, impulsar la capacitación, educación, salarios, y apoyar los maestros de prekínder en todo el país, y conectar el prekínder con las escuelas primarias para garantizar una transición ininterrumpida. Por cada dólar que invertimos en la educación de la primera infancia, vemos hasta $ 9 en rendimiento de inversión. Invertir en la educación de la primeria infancia, no solo es lo que debemos hacer por nuestros hijos, es también una oportunidad de inversión que no podemos dejar pasar.</p>
+<ul>
+<li><b>Establecer un programa universal, de alta calidad, financiado con fondos públicos, de día completo para niños de 3 y 4 años de educación </b><b>prekínder</b><b> para EE. UU. </b> Financiado a través de un programa de subvenciones para gobiernos estatales y locales, este programa otorgará a los niños los cimientos para el éxito educativo, y les dará a los padres de familia la flexibilidad para regresar al trabajo si así lo desean.</li>
+<li><b>Apoyar la continua capacitación y educación para los maestros de </b><b>prekínder</b>, incluyendo acceso a títulos postsecundarios, y desarrollo de destrezas profesionales, para garantizar que todos los maestros tengan, o estén en vías de obtener, las competencias necesarias y los títulos apropiados para educar a nuestros estudiantes más pequeños. Apoyar asociaciones a nivel estatal, con instituciones de educación superior, que permitan la capacitación de maestros de programas de educación de la primera infancia.</li>
+<li><b>Requerir conexiones efectivas entre los sistemas de </b><b>prekínder</b><b> y K-12,</b> lo que garantizará la preparación para el kindergarten y una transición ininterrumpida a programas de kindergarten de día completo y de alta calidad que encuadren con las normas académicas, planes de estudio y capacitación profesional de docentes.</li>
+<li><b>Ampliar el programa de visitas al hogar, y otros programas para bebés y niños pequeños</b>, a través de Early Head Start y sociedades relevantes entre el estado y el gobierno federal. Estos programas promueven resultados saludables prenatales para mujeres embarazadas, mejoran el desarrollo de los bebés y niños pequeños, y promueven ambientes de apoyo y saludables para las familias.</li>
+</ul>
+<h3><strong>2. </strong>Volver a imaginar el Concepto de Educación Preparatoria</h3>
+<p>En una economía global cada vez más competitiva, en la cual Estados Unidos no puede darse el lujo de desperdiciar el potencial de un solo estudiante, graduarse de la preparatoria sigue siendo de gran importancia, tanto para el potencial del éxito a nivel individual, como para la competitividad de Estados Unidos en el mundo. Con aproximadamente un índice de graduación del 85%, EE. UU. permanece muy por detrás de nuestra competencia internacional. Para continuar siendo competitivos en los próximos años, debemos garantizar que todos los estudiantes puedan graduarse de la escuela preparatoria, y dirigir recursos necesarios  a los estudiantes y escuelas donde aún existen brechas persistentes, y que los estudiantes egresen de la preparatoria con las destrezas necesarias para tener éxito en la universidad, el colegio comunitario, programa de aprendizaje, o en la fuerza laboral.</p>
+<p>Mi plan Educación Las Personas Primero ayudará a los estudiantes a ingresar a la universidad al ampliar el acceso a créditos universitarios y oportunidades aceleradas de aprendizaje. Mi plan garantizará que los estudiantes tengan la flexibilidad y el apoyo para obtener carreras en el campo del comercio, y alentará a las escuelas preparatorias a asociarse con empresas para ayudar a los estudiantes obtener oportunidades de aprendizaje a base de empleo después de graduarse. Además, mi plan apoyará y alentará a los estudiantes interesados en oportunidades en las artes y en programas lingüísticos — para fortalecer los programas que celebran el aprendizaje cultural y lingüístico que son necesarios en una economía global interconectada.</p>
+<ul>
+<li><b>Cerrar la brecha de modernización en las escuelas de nuestra nación. </b>Hacer una inversión de $ 150 mil millones de dólares en instalaciones escolares, infraestructura tecnológica, y apoyo organizativo en todo el sistema educacional desde el prekínder hasta el décimo segundo grado, para garantizar que los maestros cuenten con el apoyo y herramientas necesarias para educar a los estudiantes, y que los gobiernos estatales contribuyan con fondos para calificar para esta asistencia.</li>
+<li><strong>Apoyar la inversión en los programas de música, artes e idiomas extranjeros</strong> para presentar una amplia gama de oportunidades educativas en la escuela preparatoria.</li>
+<li><b>Garantizar que todos los estudiantes tengan la oportunidad de graduarse de la escuela preparatoria, con por lo menos un año de crédito universitario, sin costo adicional</b>, al ampliar el acceso a la matrícula doble, universidad temprana y otras oportunidades de aprendizaje acelerado, especialmente para los estudiantes tradicionalmente desatendidos, y aquellos que probablemente necesitarán apoyo correctivo a nivel postsecundario.</li>
+<li><b>Brindar flexibilidad a los maestros y las escuelas públicas en definir el significado de éxito</b>, incluyendo las evaluaciones basadas en competencias, y apoyo en transiciones para alejarse de los requisitos de horas de instrucción. Brindar la máxima flexibilidad para que los líderes educacionales, maestros y estudiantes colaboren para desarrollar programas rigurosos basados en competencias, para obtener un diploma, y credenciales reconocidas por la industria.</li>
+<li><b>Abordar la escasez de trabajadores calificados en la economía </b>mediante la creación de programas de destrezas técnicas especializadas en la escuela preparatoria, y asociaciones entre escuelas y empresas. Ampliar las oportunidades de aprendizaje a base de empleo, diseño de programa basado en datos, tanto a nivel secundario como postsecundario, de acuerdo con las necesidades del mercado laboral, y otorgar créditos fiscales federales para apoyar la contratación y las oportunidades educativas en el trabajo.</li>
+</ul>
+<h3>3. Crear Vías Accesibles hacia el Éxito Después de la Escuela Preparatoria</h3>
+<p>La crisis de deuda de préstamos estudiantiles ya ha superado los $ 1.5 billones (U.S. trillions), rebasando tanto la deuda de préstamos para automóviles y de tarjetas de crédito a nivel nacional. A medida que los estados se han responsabilizado cada vez menos de los costos de las universidades y colegios públicos, han incrementado los costos de matrícula para poder costear sus operaciones, lo que ha obligado a los estudiantes a obtener treinta, cuarenta, cincuenta e incluso cien mil dólares en préstamos solo para obtener su licenciatura. Para empeorar las cosas, el gobierno federal no ha podido intervenir efectivamente para apoyar a los estudiantes y a las universidades, lo que ha llevado a más y más estudiantes a obtener préstamos costosos que a veces son predatorios. No nos equivoquemos: esto es una crisis. Más y más estudiantes no pueden cumplir con sus préstamos, lo que arruinará su crédito durante muchos años. A los graduados universitarios les resulta cada vez más difícil obtener títulos avanzados, comprar casa, o emprender un negocio, o simplemente mantenerse al día con sus cuentas cotidianas. <b>Ya es hora de acabar con la competencia de opción entre trabajar o estudiar.</b></p>
+<p>Los problemas serios como estos merecen soluciones serias. Es por lo que mi plan de Educación Las Personas Primero eliminará el costo de matrícula en universidades públicas, colegios comunitarios y programas técnicos y vocacionales, expandirá los programas de becas y de préstamos para estudiantes de bajos ingresos, aumentará la transparencia y la responsabilidad de los programas de préstamos estudiantiles, e instituirá programa de pago basado en ingresos, que garantiza que ningún estudiante tendrá que pagar más de lo que sus ingresos le permiten. Los estudiantes y graduados que se han comprometido a invertir en su futuro deberían recibir una inversión de su gobierno a cambio. Mi plan hará esa inversión, sabiendo que pagará beneficios tanto para los estudiantes como para nuestra prosperidad nacional a largo plazo.</p>
+<ul>
+<li><b>Eliminar los costos de matrícula en colegios públicos, universidades públicas, colegios comunitarios y escuelas técnicas y vocacionales</b>, acabando de esta manera con la competencia de opción entre trabajar o estudiar. Compartir el financiamiento de los costos de matrícula con los gobiernos estatales y ofrecer incentivos, para reducir el costo de programas universitarios, incluyendo tarifas, y alentar la inversión de los estados en la educación pública. Requerir rendición de cuentas, y normas que incluyan salario justo para todos los empleados y personal, incluyendo profesores adjuntos y personal no docente, y respeto a su derecho de sindicalizarse.</li>
+<li><b>Aliviar el agobio de la deuda existente de préstamos estudiantiles, </b>al garantizar que ningún estudiante pague más de lo que sus ingresos le permitan. Reformar el sistema de préstamos estudiantiles, y el proceso de pago para garantizar que no se exija pago sino hasta que la inversión de la educación superior comience a pagar al prestatario, y que la deuda del préstamo estudiantil no impida opciones importantes de la vida.
+<ul>
+<li>Hasta que un prestatario gane por lo menos el 250% del nivel federal de pobreza, el pago mensual de su préstamo se limitará a $ 0 sin intereses acumulados durante tres años, y eximirá la mitad de los intereses no pagados después de tres años. <strong>Esto no es un pago diferido. La cantidad pagadera es  de $0.</strong></li>
+<li><b>Una vez que el prestatario gane más del 250% del nivel federal de pobreza, no pagará más del 10% de sus ingresos calificados cada mes. </b>Ingreso calificado se refiere al ingreso bruto ajustado con una cantidad equivalente al 250% del nivel federal de pobreza exenta.</li>
+<li>Después de hacer 240 pagos mensuales (incluyendo en situaciones donde la cantidad de pago se limitó a $ 0), el prestatario recibirá una condonación de la deuda del préstamo sin impuestos de cualquier cantidad restante.</li>
+<li>Todos los préstamos tendrán un límite de acumulación de intereses en relación con la cantidad del préstamo para limitar el aumento vitalicio del préstamo al 50%, y cualquier saldo en exceso, recibirá condonación de la deuda del préstamo.</li>
+<li>Este programa será simplificado y fácil de usar para los prestatarios, incluyendo la inscripción automática una vez que los préstamos se comiencen a pagar, de esta manera simplificando el proceso para aquellos que optan por participar. Este programa permitirá a los prestatarios acreditar los pagos realizados en otros programas, incluyendo programas de pago basados en los ingresos existentes, el cual finalizarán para prestatarios futuros. Se prohibirá el cargo por origen de préstamo o tarifas similares.</li>
+</ul>
+</li>
+<li>Ampliar el programa Pell Grat a una beca máxima de $ 10,000 y permitir que estas becas se utilicen para gastos de manutención, programas de verano, programas a corto plazo y asistencia de emergencia.</li>
+<li><b>Apoyar las Universidades Históricamente Afroamericana (HBCU, por sus siglas en inglés) y otras instituciones que prestan servicios a minorías</b>, las cuales desempeñan un papel importante en la sociedad estadounidense a través de una inversión adicional de $ 3 mil millones por año, destinado a servir de apoyo financiero, y aumentar del acceso para estudiantes de bajos ingresos.</li>
+<li><b>Establecer un nuevo programa de condonación de préstamos específicos</b> para condonar la proporción de préstamos de personas que califican, con verificación de recursos, y que reciben asistencia federal tal como Seguridad de Ingreso Suplementario (SSI, por sus siglas en inglés), Programa de Asistencia Nutricional Suplementaria (SNAP, por sus siglas en inglés) o Medicaid por tres años dentro de un período de cinco años.</li>
+<li><b>Permitir que los prestatarios cancelen o estructuren un plan de pago para préstamos estudiantiles a través de la bancarrota.</b></li>
+<li><b>Reformar y Mejorar el Programa de Condonación de Préstamos por Servicio Público</b> para que sea significativamente más fácil de usar para el prestatario y transparente.
+<ul>
+<li>Simplificar el programa al automatizar el proceso de inscripción, y acabar la práctica de sacar del programa a los prestatarios por falta de pago, o sin su conocimiento.</li>
+<li>Permitir que los préstamos consolidados, los antiguos préstamos del Programa Federal de Préstamos para Educación de la Familia y todos los demás tipos de préstamos estudiantiles sean elegibles para la condonación de préstamos.</li>
+<li>Otorgar crédito anticipado para la condonación de préstamos a intervalos antes de que hayan transcurrido diez años.<b></b></li>
+</ul>
+</li>
+<li><b>Requerir que las universidades certifiquen préstamos privados</b>, brindar asesoramiento financiero e informar a los estudiantes sobre cualquier préstamo federal que pueda ofrecer términos más favorables. Fortalecer las protecciones federales al consumidor a través de la Oficina para la Protección Financiera del Consumidor, incluyendo la capacidad de respuesta a las quejas, para los prestatarios que tengan préstamos privados.</li>
+<li><b>Reestructurar el impuesto de dotación universitaria</b> de la Ley de Empleos y Reducción de Impuestos de 2017 para financiar el alivio de deuda de estudiantes, y permitir que las escuelas que brindan ayuda financiera importante a los estudiantes de pregrado tengan una exención del impuesto.</li>
+<li><b>Simplificar el programa de Solicitud Gratuita de Ayuda Federal para Estudiantes</b> (FAFSA, por sus siglas en inglés) para reducir la complejidad y promover la precisión, incluso mediante la llenada automática de la FAFSA con información de las declaraciones de impuestos presentadas.</li>
+<li><b>Poner fin al apoyo público para universidades privadas con fines de lucro</b>, incluyendo el uso de beneficios y préstamos estudiantiles federales en instituciones privadas y garantizar la supervisión de las escuelas con fines de lucro que pasan a obtener estatus de entidades sin fines de lucro, después de un período de transición, para minimizar el daño a los estudiantes actuales.</li>
+<li><b>Aumentar el conocimiento de las oportunidades de educación superior,</b> especialmente entre los estudiantes de familias de bajos ingresos. Ayudar a las comunidades a establecer programas específicos tal como el &#8220;Cafe College&#8221; de San Antonio, que brinda a los estudiantes información útil sobre las opciones de educación superior, ingreso a la universidad y ayuda financiera.</li>
+<li><b>Garantizar la transparencia y la responsabilidad en la educación superior</b>, incluso mediante la expansión de la iniciativa College Scorecard (Calificación de Universidades) con datos disponibles para los futuros estudiantes y sus familias, para comprender mejor los costos universitarios, el índice la finalización y los resultados de empleo; y al crear un sistema de responsabilidad que proteja a los estudiantes de las universidades, que con demasiada frecuencia dejan a los estudiantes llenos deudas y sin título o mejor prospectos de empleo.</li>
+</ul>
+<h3>4. La Evaluación de la Profesión de Maestro</h3>
+<p>Los maestros juegan un papel vital en la formación del éxito de nuestros estudiantes y de la prosperidad de nuestra nación. Representan el elemento principal de nuestro sistema educativo y dan forma a las vidas de sus estudiantes desde prekínder hasta la universidad y más allá. Y, sin embargo, con demasiada frecuencia, los maestros no reciben un salario justo por su importante trabajo, y no están equipados con los recursos e instalaciones necesarios para satisfacer las necesidades de nuestros estudiantes. A nivel nacional, casi el 80% de los padres dicen que los maestros de sus hijos no reciben el salario justo y, ajustado a la inflación, el salario promedio nacional de los maestros ha disminuido un 4.5% en la década pasada. Esto salarios crónicamente bajos, y la subestimación de los maestros de nuestra nación ha llevado a una disminución severa en la matrícula universitaria en programas de educación, a un alto índice de maestros que abandonan la profesión en un plazo de cinco años, y a una escasez de maestros que algunos estiman en los millones.</p>
+<p>Además, la falta de inversión sostenida en la infraestructura de nuestras escuelas ha contribuido al descuido de los edificios escolares, y las desigualdades en el acceso a Internet de banda ancha, creando una brecha multimillonaria entre lo que se gasta actualmente en educación y lo que se necesita para modernizar completamente nuestras escuelas. Mi plan Educación Las Personas Primero acabará con décadas de falta de inversión en los maestros de nuestra nación. Ayudará a cerrar la brecha de modernización en nuestros sistemas escolares, al garantizar que los maestros, debidamente equipados, tengan las instalaciones y la tecnología necesaria para fomentar un aprendizaje de calidad. Mi plan también ayudará a garantizar que la enseñanza sea una profesión atractiva para las generaciones futuras— al fortalecer los programas que incentiven la enseñanza y atraer maestros de calidad que sean representativos de la diversidad de nuestro país para las comunidades menos favorecidas.</p>
+<ul>
+<li><b>Cerrar la brecha salarial de maestros</b> con un crédito fiscal federal que aumente el salario de los maestros hasta por $ 10,000 por año, con un crédito mínimo de $ 2,000 y un aumento para los maestros en escuelas en función de la proporción de estudiantes que participan en el programa de almuerzos gratuitos o a precio reducido dentro de sus escuelas. Esta inversión ayudará a abordar la subinversión crónica en educación, a combatir el desgaste de los maestros, a dar incentivos para que los gobiernos estatales y locales paguen a los maestros de manera justa, y dirigir los recursos federales a las comunidades de mayor necesidad.</li>
+<li><b>Apoyar la sindicalización en el sector educativo de los maestros y de los estudiantes trabajadores</b>, incluyendo los estudiantes de posgrado, en todos los niveles de política de educación federal, incluyendo la política judicial.</li>
+<li><b>Crear un flujo claro y consistente de maestros calificados para áreas de alta necesidad, y combatir la escasez de maestros con una iniciativa nacional de residencia de maestros. </b>Financiar programas de 1 año de residencia de maestros, y subvenciones a los estados para respaldar las transiciones de estudiantes locales y profesionales de la educación hacia una carrera de maestro, incluyendo programas tales como Grow Your Own (Cultivo de los Nuestros), al dirigir estas iniciativas a individuos que desean comprometerse de por vida con la enseñanza. Integrar estos programas con programas de preparación para maestros en las Instituciones de Servicios para Minorías para apoyar la contratación y retención de maestros que pertenecen a grupos minoritarios. Los programas de residencias se priorizarán en las comunidades de alta necesidad y desatendidas mediante la colocación y la capacitación, y apoyará a los participantes y mentores en estos programas durante cinco años a través de subvenciones directas y estipendios.</li>
+<li><b>Incentivar la profesión de maestro en las comunidades más necesitadas </b>a través de subvenciones competitivas a los estados y a través de créditos fiscales federales, programas de condonación de préstamos, y mejorar la financiación de subvenciones para compensar a todos los maestros que prestan servicios en puestos y escuelas que experimentan dificultan en contratar personal.</li>
+<li><b>Fomentar ambientes de enseñanza favorables y gratificantes</b> a través de inversiones específicas en infraestructura escolar que aumenten el acceso a la salud mental y apoyos conductuales, disminuir el tamaño de las clases, mejorar los espacios físicos y el acceso a los recursos tecnológicos clave, y garantizar que los estudiantes, las familias y los maestros formen una unidad comunitaria cohesiva y colaborativa.</li>
+</ul>
+<h3>
+5. Equidad en la Educación</h3>
+<p>A pesar de la meta de nuestro sistema de educación pública de ofrecer movilidad y oportunidades a todos los estudiantes, el status quo empeora, en lugar de aliviar, las inequidades que existen entre los estudiantes. Las marcadas disparidades históricas entre ricos y pobres, blancos y negros, documentados e indocumentados, con y sin capacidades diferentes, se agravan por décadas de subinversión en un sistema de escuelas públicas que, en muchos sentidos, permanece segregado. Además de estas desigualdades, las investigaciones nos indican que la raza es un elemento importante para determinar si un estudiante es suspendido o expulsado, y afecta la colocación en programas para estudiantes dotados y talentosos. Todas estas disparidades nos han llevado a una brecha de logros entre los estudiantes, y se resalta que la raza y la clase social de un niño son factores que claramente pronostican el potencial de éxito educativo.</p>
+<p>Mi plan Educación Las Personas Primero procura combatir las desigualdades en nuestro sistema escolar, que existen desde el prekínder hasta la universidad. Mi plan tomará medidas importantes para cerrar las brechas, tanto en el acceso como en el rendimiento para estudiantes que perteneces a grupos minoritarios, extenderá las protecciones contra la discriminación para los estudiantes LGBTQ, aumentará la diversidad en las universidades y colegios comunitarios, y garantizará que ningún estudiante, independientemente de sus antecedentes penales o su estatus migratorio se le impida obtener una educación de calidad.</p>
+<ul>
+<li><b>Terminar con la &#8216;vía de escuela a prisión&#8217; y reformar las prácticas de disciplina estudiantil. </b>Combatir los métodos disciplinarios injustos, rígidos y desiguales al garantizar que las escuelas que reciben fondos federales se comprometan a realizar reformas, incluyendo la eliminación del uso de oficiales de policía en función de agentes disciplinarios, implementar prácticas disciplinarias positivas basadas en evidencia y requerir capacitación acerca del prejuicio inconsciente para el personal escolar. Otorgar subvenciones federales para promover climas escolares positivos y de apoyo, y reformar las prácticas disciplinarias. Otorgar apoyo y asesoramiento ampliado para los estudiantes y capacitación para maestros y personal.</li>
+<li><b>Combatir la segregación racial en las escuelas y reducir las disparidades educativas al trabajar para integrar las comunidades. </b>Cumplir la promesa de <i>Brown v. Board of Education</i> a través de una política de vivienda progresiva que incluya el fomento afirmativo de vivienda equitativa, e implementar reformas de zonificación y expandir la vivienda accesible en áreas de alta necesidad. Estos esfuerzos reducirán la segregación racial en los salones de clase.</li>
+<li><b>Crear ambientes escolares accesibles, afirmativos e inclusivos para los estudiantes con capacidades diferentes, incluyendo las discapacidades de aprendizaje. </b>Financiar y expandir integralmente los programas de discapacidad bajo la Ley de Educación para Individuos con Discapacidades para garantizar que todas las escuelas que reciben fondos federales estén equipadas para satisfacer las necesidades de los estudiantes con capacidades diferentes. Apoyar mayor flexibilidad y planes educativos personalizados para todos los estudiantes que podrían beneficiarse de ellos. Asociarse con escuelas para establecer un camino hacia un empleo significativo, para estudiantes con capacidades diferentes después de graduarse de la escuela. Además, todos los profesionales de la educación deben tener acceso a capacitación profesional significativa y continua para mejorar sus destrezas y fortalecer el aprendizaje de los estudiantes con capacidades diferentes.</li>
+<li><b>Ampliar las oportunidades educativas, incluyendo educación superior, a las personas actualmente encarceladas o detenidas.</b> Poner fin a la discriminación contra las personas anteriormente encarceladas en educación superior y en ingreso a la universidad y decisiones de ayuda financiera, incluyendo la asistencia financiera y los Pell Grants. Apoyar oportunidades educativas para individuos jóvenes y adultos que están encarcelados. Garantizar que las personas que se encuentran en centros de detención de inmigrantes tengan acceso a oportunidades educativas.</li>
+<li><b>Fortalecer y aclarar las protecciones del Título IX para que se extiendan completamente a todos los estudiantes. </b>Emitir regulaciones que aclaren que las protecciones del Título IX incluyen la prohibición contra la discriminación basada en la orientación sexual, identidad de género, embarazo, y estado de paternidad. Aumentar la supervisión y cumplimiento para garantizar que las infracciones a los derechos de los estudiantes en virtud del Título IX , se aborden adecuadamente.</li>
+<li><b>Fomentar la participación familiar significativa en las escuelas. </b>Establecer subvenciones federales para que las escuelas adopten políticas de participación familiar y comunitaria, para fomentar el liderazgo compartido y auténticas asociaciones entre la familia, la comunidad y la escuela para apoyar mejor el aprendizaje de los estudiantes, incluyendo padres de familia LGBTQ, y familias no tradicionales, tales como padres solteros, padres de crianza temporal y abuelos que están criando a sus nietos como sus propios hijos.</li>
+<li><b>Impulsar un plan de 8 años para extender el modelo de escuelas comunitarias en escuelas de áreas de alta necesidad</b> para operar como centros comunitarios que cuenten con recursos e instalaciones, tales como centros de salud, clases de educación para adultos, bancos de alimentos y otras instalaciones de apoyo para familias, y apoyar la nutrición a través de despensas de alimentos para combatir el hambre y atender las necesidades nutricionales de los estudiantes, sus familias y sus comunidades, y al mismo tiempo reducir el desperdicio de alimentos.</li>
+<li><b>Garantizar que ni un solo estudiante pase hambre en la escuela. </b>Establecer una asociación entre el Departamento de Educación y el Departamento de Agricultura de EE. UU. para ampliar los programas de desayuno y almuerzo gratuitos para todos los estudiantes en las escuelas públicas, y para ampliar el acceso a las comidas durante el verano.</li>
+<li><b>Instituir fuertes protecciones federales contra agresión sexual, la intimidación y el acoso en la escuela. </b>Establecer reglamentos federales que promuevan procesos transparentes, responsables y justos para las víctimas. Apoyar la disciplina y métodos de resolución positivos y que se basan en evidencia y, cuando sea práctico, se basan en un modelo de justicia restaurativa.</li>
+<li><b>Equipar las escuelas públicas para apoyar a las familias inmigrantes. </b>Prohibir a los agentes de inmigración realizar arrestos, entrevistas, cateos o vigilancia en escuelas y paradas de autobuses escolares. Garantizar apoyo a las familias que se están integrando a Estados Unidos a través de programas de inglés como segundo idioma con suficiente financiación.</li>
+<li><b>Garantizar que los beneficiarios de DACA, titulares de TPS y DED califiquen para recibir asistencia federal para la educación superior. </b>A la espera de la aprobación final de la Ley de Sueños y Promesas, garantizar de que estas personas puedan acceder a fondos federales y otros programas de educación pública, y que el estado de ciudadanía no se considere en las decisiones de ingreso a las escuelas públicas o las instituciones de educación superior.</li>
+<li><b>Garantizar que los estadounidenses en Puerto Rico, territorios estadounidenses y las comunidades indígenas no sean desatendidas. </b>Invertir en infraestructura educacional, en programas de residencia y de aumento de salarios para maestros, que incluya la totalidad de Estados Unidos.</li>
+<li><b>Proteger a los estudiantes en escuelas y universidades de la violencia con armas de fuego </b>al revocar las políticas de la administración Trump que promueven armar a los educadores, y mejor tomar medidas significativas para abordar la violencia con armas de fuego, tales como instituir verificaciones universales de antecedentes, renovar la prohibición de armas de asalto, y órdenes de protección contra riesgos extremos.</li>
+<li><b>Colaborar con las comunidades locales para combatir el acoso cibernético</b> y respaldar leyes que permitan que los funcionarios encargados del orden público investiguen y prevengan casos de acoso cibernético, incluso mediante sanciones penales para los adultos que permiten o incitan este tipo de comportamiento.</li>
+<li><b>Priorizar el bienestar de los estudiantes. </b>Hacer una inversión importante en el personal local escolar del cuidado de la salud, incluyendo enfermeras escolares, consejeros y proveedores de salud mental.</li>
+</ul>
+
+        </section>
+      </article>
+      <aside class="blog__sidebar">
+        <div class="blog__signup">
+          <form action="https://juliancastro.bsd.net/page/s/" id="blog_signup" class="js-tools-signup form form--vertical" data-success="!Gracias por registrate!">
+      <h2 class="form__title">Regístrate ahora para ayudar a nuestro futuro.</h2>
+    <div class="form__inner">
+    <div class="form__field form__field--long input">
+      <input type="email" name="email" required id="blog_signup-email" class="input__field" autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,63}$"/>
+      <label for="blog_signup-email" class="input__label">Correo Electronico</label>
+    </div>
+    <div class="form__field form__field--short input">
+      <input type="tel" name="zip" required id="blog_signup-zip" class="input__field" autocomplete="postal-code" pattern="^[0-9]{5}(?:-[0-9]{4})?$"/>
+      <label for="blog_signup-zip" class="input__label">Zip</label>
+    </div>
+    <input type="hidden" name="custom-12" id="blog_signup-custom-12" value="1">
+    <button class="button button--dark-blue button--large" type="submit">Regístrate Aquí</button>
+  </div>
+</form>          
+        </div>
+      </aside>
+    </div>
+  </main>
+  </div>
+<div class="wrapper__footer">
+    <footer class="footer">
+    <div class="footer__inner container container--padded">
+      <nav class="footer__nav">
+        <ul class="nav nav--light">
+                      <li class="nav__item"><a href="https://www.julianforthefuture.com/es/about/">Acerca de nosotros</a></li>
+                      <li class="nav__item"><a href="https://www.julianforthefuture.com/es/noticias-eventos/">Noticias</a></li>
+                      <li class="nav__item"><a href="https://www.julianforthefuture.com/es/contact/">Contáctenos</a></li>
+                  </ul>
+      </nav>
+      <div class="footer__cta">
+        <div class="social footer__social social--white social--right social--medium">
+  <a href="https://www.facebook.com/Julian-Castro-97458155742/" class="social__icon">
+    <svg>
+      <title>Facebook</title>
+      <use xlink:href="#facebook" />
+    </svg>
+  </a>
+  <a href="https://twitter.com/juliancastro" class="social__icon">
+    <svg>
+      <title>Twitter</title>
+      <use xlink:href="#twitter" />
+    </svg>
+  </a>
+  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
+    <svg>
+      <title>Instagram</title>
+      <use xlink:href="#instagram" />
+    </svg>
+  </a>
+</div>                  <a class="button button--blue button--large" href="https://secure.actblue.com/donate/es-julianforthefuture">Contribuir</a>
+              </div>
+      <div class="footer__links-text">
+        <ul class="footer__small-links">
+                      <li class="footer__small-link"><a href="https://www.julianforthefuture.com/es/privacy-policy/">Privacy Policy</a></li>
+                  </ul>
+        <p class="footer__text">Julián for the Future
+P.O. Box 501<br>
+San&nbsp;Antonio, TX
+78292</p>
+      </div>
+      <p class="footer__paid-copy">Paid for by Julián for the Future</p>
+      </div>
+    </div>
+  </footer>
+  <script type='text/javascript' src='https://www.julianforthefuture.com/wp-content/themes/cftf/assets/js/source.js?ver=1557748587'></script>
+<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1bc4e2a25b","applicationID":"259152731","transactionName":"b1cBZkIEXUUCUhVfV1YdIlFEDFxYTEIIWF9NXgJA","queueTime":0,"applicationTime":403,"atts":"QxACEAoeTks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
