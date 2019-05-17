@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="41439f55d0c7d7b53b43bb9e-text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ep. 6: But Can He Win? - Bernie Sanders</title>
+<link rel="stylesheet" href="https://use.typekit.net/osh1jbn.css">
+<link rel="stylesheet" href="https://berniesanders.com/wp-content/themes/bernie/style.css">
+
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-228.png" sizes="228x228">
+
+<link rel="shortcut icon" sizes="196x196" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-196.png">
+
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-180.png" sizes="180x180">
+
+<meta name="msapplication-TileColor" content="#0073E6">
+<meta name="msapplication-TileImage" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-144.png">
+
+<meta name="msapplication-config" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/browserconfig.xml" />
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript" src="https://act.berniesanders.com/resources/actionkit.js"></script>
+
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  var _vwo_code=(function(){
+  var account_id=392140,
+  settings_tolerance=2000,
+  library_tolerance=2500,
+  use_existing_jquery=false,
+  /* DO NOT EDIT BELOW THIS LINE */
+  f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+  </script>
+
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<meta name="description" content="In 2016, Americans across the political spectrum were bowled over by the election of a president who had been a media punchline for decades." />
+<link rel="canonical" href="https://berniesanders.com/2019/05/16/ep-6-but-can-he-win/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ep. 6: But Can He Win? - Bernie Sanders" />
+<meta property="og:description" content="In 2016, Americans across the political spectrum were bowled over by the election of a president who had been a media punchline for decades." />
+<meta property="og:url" content="https://berniesanders.com/2019/05/16/ep-6-but-can-he-win/" />
+<meta property="og:site_name" content="Bernie Sanders" />
+<meta property="article:section" content="Transcripts" />
+<meta property="article:published_time" content="2019-05-16T16:41:11+00:00" />
+<meta property="article:modified_time" content="2019-05-16T16:47:41+00:00" />
+<meta property="og:updated_time" content="2019-05-16T16:47:41+00:00" />
+<meta property="og:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:secure_url" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="In 2016, Americans across the political spectrum were bowled over by the election of a president who had been a media punchline for decades." />
+<meta name="twitter:title" content="Ep. 6: But Can He Win? - Bernie Sanders" />
+<meta name="twitter:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+
+<link rel='dns-prefetch' href='//berniesanders.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Bernie Sanders &raquo; Ep. 6: But Can He Win? Comments Feed" href="https://berniesanders.com/2019/05/16/ep-6-but-can-he-win/feed/" />
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/berniesanders.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://berniesanders.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript" src='https://berniesanders.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<link rel='https://api.w.org/' href='https://berniesanders.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://berniesanders.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://berniesanders.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://berniesanders.com/?p=1193' />
+<link rel="alternate" type="application/json+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F05%2F16%2Fep-6-but-can-he-win%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F05%2F16%2Fep-6-but-can-he-win%2F&#038;format=xml" />
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+</head>
+<body class="post-template-default single single-post postid-1193 single-format-standard">
+<header class="header ">
+<h1 class="logo ">
+<a class="logo__link" href="/">
+<span class="sr-only"></span>
+</a>
+</h1>
+
+<div class="menu-main-header-container"><ul id="menu-main-header" class="menu"><li id="menu-item-891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-891"><a href="https://berniesanders.com/kickoff/">Volunteer</a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a href="https://berniesanders.com/issues/">Issues</a></li>
+<li id="menu-item-309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-309"><a href="https://map.berniesanders.com">Events</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="https://berniesanders.com/es/para-todos/">en Español</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="https://store.berniesanders.com/?utm_source=website&#038;utm_medium=navigation">Store</a></li>
+</ul></div>
+<button class="header__menu-toggle" type="button">
+<span class="sr-only">Toggle Menu</span>
+<span class="menu__bar"></span>
+</button>
+
+<a href="https://secure.actblue.com/donate/bern-site?refcode=splash-top-right" class="header__donate" data-aos="slide-left" data-aos-delay="800" data-aos-easing="ease-out-quad" data-aos-duration="400">
+Donate </a>
+</header>
+<div class="hero">
+<div class="hero__main" style="background-image: url('')">
+<div class="hero__heading">
+<h1 class="hero__title" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-out-quad" data-aos-duration="1000">
+Ep. 6: But Can He Win? </h1>
+<div class="hero__content" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-quad" data-aos-duration="800">
+</div>
+</div>
+<video id="bg-vid" playsinline autoplay muted loop>
+
+<source src="" type="video/webm">
+<source src="" type="video/mp4">
+</video>
+</div>
+</div>
+<article class="main post-1193 post type-post status-publish format-standard hentry category-transcripts" id="post-1193">
+<div data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-easing="ease-out-quad" data-aos-duration="1000" class="default">
+<figure><iframe width="100%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/620171673&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe></figure>
+<p><strong>Briahna Joy Gray: </strong> Electability, it&#8217;s the word of the week, the litmus test of the season, and it&#8217;s no wonder. In 2016, Americans across the political spectrum were bowled over by the election of a president who had been a media punchline for decades. From the Simpsons. </p>
+<p><strong>Lisa Simpson: </strong>&nbsp;As you know, we&#8217;ve inherited quite a budget crunch from President Trump. How bad is it, secretary van Houten?</p>
+<p><strong>Milhouse Van Houten: </strong>&nbsp;We&#8217;re broke.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;To Home Alone.</p>
+<p><strong>Macaulay Culkin: </strong>&nbsp;Excuse me, where&#8217;s the lobby?</p>
+<p><strong>Donald Trump: </strong>&nbsp;Down the hall and to the left.</p>
+<p><strong>Macaulay Culkin: </strong>&nbsp;Thanks.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;To the occasional McDonald&#8217;s ad costarring Grimace.</p>
+<p><strong>Donald Trump: </strong>&nbsp;Together, Grimace, we could own this town. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Now, looking down the barrel of another four years of right-wing Supreme Court appointments, draconian border policies, and catastrophic indifference to the climate crisis, the chief priority of many left-leaning voters is a Democratic primary candidate who can get Trump out of office. In a recent poll, a full 92% of Democrats say defeating Trump is the most important quality in a 2020 candidate. But what exactly does that take? What makes a candidate likely to be electable? And given how poorly pundits and prognosticators predicted who was electable in the last election, how should we be thinking differently about this question in 2020? </p>
+<p>This is Hear the Bern, a podcast about the people, ideas, and politics that are driving the Bernie Sanders 2020 campaign and the movement to secure a dignified life for everyone living in this country. My name is Briahna Joy Gray, coming to you from campaign headquarters in Washington, DC. In 2016, Trump was perceived by many in the Democratic establishment to be an easy mark. </p>
+<p><strong>George Clooney: </strong>&nbsp;There&#8217;s not going to be a president Donald Trump. That&#8217;s not going to happen.</p>
+<p><strong>Nancy Pelosi: </strong>&nbsp;Donald Trump is not going to be president of the United States. Take it to a bank. I guarantee it. </p>
+<p><strong>Seth Meyers: </strong>&nbsp;Donald Trump has been saying that he will run for president as a Republican, which is surprising since I just assumed he was running as a joke. </p>
+<p><strong>John Oliver: </strong>&nbsp;Do it, do it. Look at me, do it.</p>
+<p><strong>John Oliver: </strong>&nbsp;I will personally write you a campaign check now.</p>
+<p><strong>Reporter: </strong>&nbsp;In no part of your mind or brain can you imagine Donald Trump standing up one day and delivering a State of the Union address?</p>
+<p><strong>Barack Obama: </strong>&nbsp;Well, I can imagine it in a Saturday Night skit.</p>
+<p><strong>Speaker 13: </strong>&nbsp;Donald Trump will never be elected president of the United States. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Many thought Trump&#8217;s nomination was a gift, and some still seem not to have learned from that hubris. Just last December, Joe Biden was confident that anyone could take Trump down.</p>
+<p><strong>Reporter: </strong>&nbsp;Why is this your time? </p>
+<p><strong>Joe Biden: </strong>&nbsp;I think anybody can beat him.</p>
+<p><strong>Reporter: </strong>&nbsp;Anybody, anybody on the Democratic side?</p>
+<p><strong>Joe Biden: </strong>&nbsp;Any of the mainstream Democrats can beat him.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;But we know all too well that even a traditionally qualified candidate, someone with executive experience and name recognition and high popularity ratings going into the 2016 primaries, wasn&#8217;t able to do so. </p>
+<p>Perhaps then it&#8217;s time to reconsider what qualities voters actually desire, what it really means to be electable. Turn on the news and you could easily get the impression that a candidate&#8217;s electability begins and ends with his being white, male, and centrist. Certainly, racism and sexism are obstacles to politicians just as they continue to be the basis of discrimination in the world more broadly. But the victory of Barack Hussein Obama, a black dude with a, quote unquote, &#8220;funny name,&#8221; and the weakness of myriad white male traditional candidates over the years should be proof enough that things aren&#8217;t, well, so black and white.</p>
+<p>Black voters aren&#8217;t so one dimensional that they&#8217;ll vote for any old black candidate. After all, Bernie has been leading Kamala Harris two to one among black voters, and the majority of white women chose Trump over Hillary Clinton in 2016. In 2012, Barack Obama, a black man, won the biggest popular vote victory of the modern era. It&#8217;s almost as if voters are motivated by things other than, or at least in addition to, demographics. So how did Obama do it? Recall that his stump speech was, in the words of George W. Bush&#8217;s speech writer, quote, “Very much an FDR Democratic class warfare speech. He&#8217;s very much running on economic populist themes in tough economic times.” End quote.</p>
+<p><strong>Barack Obama: </strong>&nbsp;We came together in 2008 because our country had strayed from these basic values. A record surplus was squandered on tax cuts for people who didn&#8217;t need them and weren&#8217;t even asking for them. Two wars were being waged on a credit card. Wall Street speculators reaped huge profits by making bets with other people&#8217;s money. Manufacturing left our shores. A shrinking number of Americans did fantastically well, while most people struggled with falling incomes, rising costs, the slowest job growth in half a century. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Unsurprisingly, Americans of all stripes care about the economy. Working-class voters of all backgrounds were drawn to the fact that Obama recognized that the hardships they endured were not their own failures, but a deliberate choice to put corporate greed before American workers. But in 2016, 4.4 million people who were galvanized by those issues and that candidate stayed home. White voters won&#8217;t reliably turn out just because a candidate is white, but they will come out for a black candidate who seems to stand for something. The perception that a candidate can actually materially change someone&#8217;s life for the better is a primary motivator of citizens to get to the ballot box. In Wisconsin, a state Democrats lost by 22,000 votes in 2016, turnout was down nearly four points since 2012, and black voter turnout alone was down nearly 88,000 votes.</p>
+<p>The key to understanding electability is understanding what happened there. I spoke to Malaika Jabali, a public policy attorney from New York and writer at outlets like Essence, Current Affairs, and Jacobin, who interviewed many Milwaukeeans as part of an investigative piece she wrote for Current Affairs about what happened in Wisconsin. </p>
+<p><strong>Malaika Jabali: </strong>&nbsp;White voters on average vote for a Republican 55% of the time, so the key for me was looking at what was going on marginally, in the Midwest, where the election was actually decided. I decided to home in on these Rust Belt states, looking at some data that came out pretty quickly after the election with the census &#8211; they have a voter supplement. It shows that Milwaukee, or Wisconsin I should say, had the lowest black voter turnout in its recorded history. That opened up another can of worms, like why did this happen? What were the reasons for people staying home &#8211; was there voter suppression, were there other issues involved? The crux of the argument there is that when people are dealing with economic anxiety across race, they are going to be disillusioned and less inclined to vote, and the story of 2016 is really a story of nonvoters. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Right. I think that&#8217;s so, such an important point because so much of the conversation around economic anxiety is about whether or not it exists and less so about the reality that across racial groups, as you say, Americans are obviously suffering and in many of the same ways. In the course of that article, you talked to so many black people in Milwaukee about why it was, why it was that they stayed home. What kinds of things did you hear? </p>
+<p><strong>Malaika Jabali: </strong>&nbsp;There are many things, and I&#8217;m going to put my attorney hat here because there&#8217;s rarely just kind of one answer to some of this stuff. There&#8217;s unprecedented segregation, there&#8217;s unprecedented numbers of black people who were going through foreclosure in Wisconsin. They have the highest black male incarceration rate in the country in Wisconsin, the highest black male joblessness rate in the country in Wisconsin. A lot of these things lead to civil unrest, but there&#8217;s something undergirding it, not just thinking about police repression, but what is that match point. If people are feeling disillusioned from the state policies and the state police issue, you would consider that that might have some impact on whether or not people go to the polls. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Can you put into some context for people what the extent of the voter decline in Milwaukee actually was? </p>
+<p><strong>Malaika Jabali: </strong>&nbsp;Milwaukee&#8217;s black, and just to put this in context too, people might not realize that Milwaukee is 40% black or about 40% black, for the last 10 years that&#8217;s been the plurality of the city so it&#8217;s the highest demographic in the city are black people who live in the central area. Their voter turnout declined from 2012 to 2016, 79% to 47%, so that&#8217;s almost half. It&#8217;s the lowest in the state&#8217;s recorded history, because there&#8217;s some arguments that well of course it&#8217;s going to decline after a black president. It&#8217;s a historic presidency. Black people are going to be less enthusiastic. But this decline&#8217;s the lowest that the state has ever seen, or at least that&#8217;s what&#8217;s been recorded by the census. To put that into some raw numbers, Hillary Clinton lost the state by about 22,000 votes. The decline to 47% reflected about 88,000 votes. So about 88,000 black voters stayed home between 2012 and 2016. The white voter turnout also fell by about 1%, since they are in the majority of the state. That reflected about 44,000 votes. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;So, 22,000 is the margin we&#8217;re trying to make up and even if you were only interested in black voters, we lost nearly 88,000, you said, votes between 2012 and 2016. The question becomes, why is there a focus on, when we&#8217;re talking about electability, one certain kind of voting demographic? This electability narrative, it feels in large part like it boils down to who can appeal to white voters, and that appeal is solely rooted and the identity of the candidate. There&#8217;s a presumption that the person who can most appeal to white voters is a white male candidate.</p>
+<p><strong>Malaika Jabali: </strong>&nbsp;A white male.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Exactly, despite the fact that Barack Obama had such a good showing with that exact demographic group, and there seems to be a kind of, um, erasure of the substantive reasons why a person might have wanted to vote for Barack Obama based on his campaign promises in 2008 and also someone like Donald Trump who was promising, inaccurately and inauthentically, but promising nonetheless a different kind of hope and change and outsider message. </p>
+<p><strong>Malaika Jabali: </strong>&nbsp;I think there are different things that come into play, and one is that we can&#8217;t treat black voters like a monolith, but we also can&#8217;t treat white voters like a monolith. Thinking about some of Barack Obama&#8217;s success in the region, he was probably the most successful in Wisconsin at luring white working-class voters that typically vote for a white candidate. He was most successful in Wisconsin at luring them over. He had similar success in Michigan, but you can&#8217;t say the same about Ohio or some of the other states in the Midwest, but it was very stark in Wisconsin and Michigan. And some of that you can point to a history of progressivism. There&#8217;s a history of unions, there&#8217;s a history of socialism in Wisconsin. So, you see these things pretty sharply in those two states in particular, and black voters in those states were also a part of this progressive movement. </p>
+<p>There are many ways, of course, that they were alienated and marginalized even within that, because we still live in a racist society, there&#8217;s still white supremacy. It&#8217;s going to be more limited in terms of their access and success, but they still end up doing better off there than some other states around the country and compared to some other states even in the Midwest. The problem is that I think a lot of people are ignorant of that history, and if you&#8217;re not attuned to the plethora of black political thought, black radical thought that exists in the Midwest, if you&#8217;re not attuned to the way that black voters have diverged from southern voters and black radical politics has diverged from the Civil Rights Movement, that a lot of black radical politics was founded in the Midwest. I mean, if you think about Malcolm X or Fred Hampton. Malcolm X was a communist. Fred Hampton was a socialist. </p>
+<p>A group that I grew up in, it&#8217;s called the New Africa People&#8217;s Organization, they were based in Detroit. The Nation of Islam was founded in Detroit. If you&#8217;re not thinking about this rich history of black people who migrated from the south to carry these more radical traditions, you&#8217;re overlooking a huge demographic that shifts elections. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;A CNN politics headline I saw earlier today said, Joe Biden&#8217;s running is the big question of the Democratic Party: what&#8217;s more important, policy or beating Trump? It seems to me that upon a cursory glance, one might ask the question, what would happen if a politician who was good on policy was actually what the people wanted out of a candidate, and that that person was the best positioned to beat Trump?</p>
+<p><strong>Malaika Jabali: </strong>&nbsp;What we&#8217;re seeing is that a lot of people are interested in some of these progressive issues across the board. There was a study that Washington Post analyzed and somehow said that even though voters are becoming more liberal, somehow that makes Joe Biden more electable, which is a really strange conclusion for me to see. But if you have more and more voters who are moving towards these progressive politics, whether it&#8217;s Medicare for All, whether it&#8217;s free college tuition, free higher education, even some of the &#8230; I guess the more controversial positions, you&#8217;ve got some people who, more than half of people will want to see a candidate who&#8217;s talking about reparations. If you see people who are moving more and more closely to progressive policies, to me that makes somebody electable if they are a progressive, and that just seems like common sense to me. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Yeah, there was an article at The Intercept a few months ago, I think by Mehdi Hasan, that was called something like &#8230; Alexandria Ocasio-Cortez is the new face of moderate America because all of the policy prescriptions that she advances are actually mainstream, including majorities and at times overwhelming majorities of Americans supporting things like a $15 minimum wage, Medicare for All, free college, debt-free college, myriad, myriad issues right down the line. I just hope that we don&#8217;t end up making the same mistakes and electability errors that were made in 2016, where there was this presumption that electability basically means that everyone has to swallow a bitter pill, and electability means that you just can&#8217;t have any of the nice things, even though a majority of Americans want all the nice things and we have universal agreement, not universal, but overwhelming agreement over what would make this country actually great again. </p>
+<p>My question, my final question to you is, what are the policy prescriptions that you think candidates support that would actually encourage a higher voter turnout across the board and particularly among the black voters in places like this where that voter turnout is so crucial to winning an election? What actually makes them electable? </p>
+<p><strong>Malaika Jabali: </strong>&nbsp;I think you really have to look at economic issues. Bernie Sanders won over Wisconsin&#8217;s black voters more than in any other state, by 31%. That was a highest percentage he got in the Democratic primaries, and he ran off of the same issues that we&#8217;re talking about. If you are honing in on people&#8217;s economic needs, then I think that is going to invoke a lot more enthusiasm than you would by talking about &#8230; just simply relying on maybe some of the more ideological, or I should say racially ideological things that we come up with that don&#8217;t intersect class. If you&#8217;re only invoking black identity like Hillary Clinton had in 2016, but you&#8217;re not also intersecting that identity with class issues and saying, “Okay, I understand for instance that we have high black unemployment, that we have low black home ownership rates, but why is that? Why do we have a greater wealth gap,” because we&#8217;re looking at specifically kind of these racial wealth gaps.</p>
+<p>So, if you speak to the way that that race and class intersect or the race for specifically people of color, or if you&#8217;re also looking at economic issues across race, then you&#8217;re going to build more enthusiasm. I think that that showed when Bernie Sanders won Michigan, surprisingly, he won Wisconsin, he won some of these other Midwest States. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;In a University of Wisconsin-Madison study cited by Malaika in her Current Affairs article, when asked why they didn&#8217;t vote 33% of black Milwaukee non-voters said that they were unhappy with the choice of candidates or issues. 8.8% said that they were not interested, and 6.6% said their vote would not have mattered. Voter suppression is an important factor in many parts of the country, but fewer than 4% of respondents said that they did not have adequate photo ID, were told at a polling place that ID was inadequate, or that lines were too long. A Pew Research Center poll of all non-voters showed the same thing. A quarter of registered voters who did not vote in 2016 said the main reason was dislike of the candidates or the issues. Another 15% said they didn&#8217;t think their vote would make a difference. </p>
+<p>Unfortunately, more often than not, nonvoters are shamed as somehow indifferent to what happens to their country. </p>
+<p><strong>Cut to News: </strong>&nbsp;Go vote.</p>
+<p>You can&#8217;t complain if you don&#8217;t vote. As you say, go vote.</p>
+<p>Go vote.</p>
+<p>Vote early. </p>
+<p>Vote today.</p>
+<p>You can&#8217;t complain if you don&#8217;t vote. </p>
+<p>It doesn&#8217;t matter where you stand.</p>
+<p>You just need to vote.</p>
+<p>Watch Fox 7 News on election day and see who cared enough to vote.</p>
+<p>You can&#8217;t complain if you don&#8217;t vote.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;But the reality is a bit more complex. Look at who votes the most. The older, richer, and more educated you are, the more likely you are to vote. Part of that is a story about voter suppression. Part of it is about the fact that lower-income people find it harder to take time off work and to commute to polling places, especially if they&#8217;re juggling childcare or elder care responsibilities. </p>
+<p>But part of it is that for years, generations even, working-class people haven&#8217;t seen enough difference in their daily lives between one administration and the next to make the efforts seem worthwhile. The unexpected enthusiasm around Bernie in 2016, it wasn&#8217;t because he was white. All the Democratic candidates were that year, and I don&#8217;t think it was because he was male. </p>
+<p>What I heard back then and continue to hear from Sanders supporters is that they&#8217;re for Bernie because they see Bernie as there for them &#8211; and also because they see him as the best possible candidate to take on and defeat Donald Trump. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;To me, he&#8217;s not a partisan. He&#8217;s really trying to reach everybody and help everybody. There&#8217;s so many people that I know who feel disenfranchised and are apathetic towards the political system, and Bernie gives them hope that someone is real out there who&#8217;s really listening and really doing something. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;He cares a lot more about people in general, everybody.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;Each policy that he supports has the support of both Republicans and Democrats. If you look at say Medicare for All, more than 50% of Republicans support Medicare for all. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;I think Bernie is a man that can get this done. I think he can get Medicare for All in this country.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;He&#8217;s going to be able to answer questions in debates where Trump is just going to dodge bullets the whole way through.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;When you&#8217;ve got the polling data behind you, you got the policies behind you, you got the people behind you, like, that&#8217;s why he should run.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;I think Bernie is probably the most prepared candidate that we have. He&#8217;s been doing this for years. He&#8217;s said the same thing for years, since the beginning. We can trust what he has to say because he&#8217;s been saying it the whole time.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;He&#8217;s been speaking the same truth for more than 40 years and so he&#8217;s got the gravitas to take on Trump. He would be the adult in the room.</p>
+<p><strong>Bernie Supporter: </strong>&nbsp;He not afraid. He&#8217;s not afraid of saying the things to regulate large corporations. He&#8217;s not in it for the money. He&#8217;s in it for us. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;When we are met with an extreme right-wing agenda, when we are met with fascism, these policies that Bernie has, we need bold policies and we need bold action that can take on the racism, take on the oppression. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;He has the support of the people behind him and not powerful interests. </p>
+<p><strong>Bernie Supporter: </strong>&nbsp;Bernie appeals to the regular people. He was born to just a normal family. Donald Trump grew up with millions of dollars. He doesn&#8217;t care about working people. He doesn&#8217;t know any working people. Bernie is in front of a room full of people that work for a living. Everybody in this room works. They understand the struggles. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Now, obviously that&#8217;s anecdotal electability evidence, which comes with its own potential biases, but the only alternative we have our polls, which are notoriously fraught in their own right. I spoke to Ben Tulchin, pollster for Bernie&#8217;s 2016 campaign and his 2020 campaign, about how to understand all the numbers whizzing indiscriminately around social media. </p>
+<p>So why do people think that the best person to beat Trump is Joe Biden right now? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;When you say people, those are pundits in Washington. You have to remember, what drives the electability narrative comes from pundits and the Beltway in Washington, DC. Their perception of electability is different than the average voter that&#8217;s out there. The average voters out there is just like, is this person, do I perceive them as being tough enough to take on Trump and can they withstand the rigors of the campaign? That&#8217;s why, from my perspective, Bernie voters do see Bernie as electable &nbsp;and that&#8217;s why when we did polls in these key battleground states of Wisconsin, Michigan, and Pennsylvania, Bernie was beating Trump, in Michigan and Wisconsin, is beating by, by double digits because Bernie does really well with independents, he does really well with millennials, and he is seen as somebody who can fight for change and fight for them and is on their side. </p>
+<p>Millennials have a lower response rate to phone calls and surveys, so they&#8217;re much harder to get on the phone. They&#8217;re also largely on cell phones, which are more expensive for us to call. Not to get too much in the weeds on this, but as pollsters we are allowed to call landlines, autodial landlines. It&#8217;s a lot cheaper to call a landline. Very few millennials have landlines so then we have to hand dial cell phones, which is time consuming and expensive. What happens then is public polls are often done on the cheap. I mean media budgets, newsroom, budgets have been cut, so public polling that&#8217;s out there tends to be done &#8230; It&#8217;s sponsored by news agencies, tend to be done on the cheap and so they tend to cut corners. The way to save money and cut corners in polling is to not call as many young people on cell phones, which is expensive and time consuming. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Is there a way that you internally then &#8230; Is there like a filter that you put those numbers from public cheaper polls through to get a better understanding of what you think is actually going on in the world or are there internal polls that use different, that have a different strategy that tries to better capture those groups that are usually underrepresented and coincidentally are also those groups that tend to vote disproportionately for progressive policies and for Bernie Sanders in particular? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Yeah, it&#8217;s one of the challenges we face as the campaign&#8217;s pollster, but we rely more heavily on our internal polling. I&#8217;ll tell a story from last time in 2016, where we were pulling New Hampshire, and we were the only pollster that predicted Bernie&#8217;s landslide margin. We had Bernie up 21 points in the last round of polling we did right before the New Hampshire primary in 2016, and he won by 22 points. But the public polling had him only up 10 to 12 points and had the race tightening over the last week, while we had the race pretty even and pretty steady. The big reason why we nailed it and no one else did it was that we recognized the campaign was bringing in a lot of these young people, millennials and independents, into the fold who were supporting Bernie, and many of them had never voted before in an election, or at least in a presidential primary election. </p>
+<p>Most public polling that was being done was ignoring all these new voters that we were bringing into the campaign, but the campaign knew it and we knew it as a campaign&#8217;s pollster. We factor that into our sampling so we were able to call them and get them into our sample and interview them and get them into our poll results. As a result, our polling was the most accurate of anyone. That was a good example of the public polling and even other private polling from what we heard, missed this whole dynamic, of this segment of the electorate that Bernie does really well with and which are hard to reach and typically were being left out of a lot of the public polling. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;That&#8217;s an interesting point, that a lot of these polls do focus in on likely voters. How are they defining likely voters as opposed to what you just described, which is that there are a lot of people who had not previously voted before who came out to vote for Bernie Sanders last time around?</p>
+<p><strong>Ben Tulchin: </strong>&nbsp;It&#8217;s extremely difficult to predict, and that&#8217;s where pollsters, we face real challenges at the beginning of the campaign cycle where who is going to vote. In 2016, the Iowa caucuses for example, based on entrance polling data, nearly half of everyone who showed up in the Iowa caucuses in 2016 had never participated in a caucus previously. Our view is you cast as wide a net as possible, give everyone a chance to have an opportunity to participate, and then down the road, like later this year and early next, we&#8217;ll have a better handle on who&#8217;s more likely to vote and who&#8217;s not. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Is there any utility to all of the polls that are flying around right now or should we just kind of shut our eyes and ears and ignore them for another six months? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;I would probably ignore them. The internal polling we&#8217;ll use is more strategic and it helps give the campaign guidance and direction, but the public polling is a lot of noise ,and it&#8217;s easy to get caught up with them and when the polling is great, you feel good, and when the polling is bad, you feel bad. For everyone&#8217;s mental health, it&#8217;s best to kind of tune them out as best you can at this stage of the game or else it&#8217;s going to be a very long, intense and dramatic campaign. Remember this is a marathon, not a sprint, so we all have to kind of make it through next year and so if you&#8217;re living and dying by every poll that comes out in May of 2019, it&#8217;s going to be a very challenging election to survive. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I hear that and as a responsible adult, I want to take heed, but also as someone who is very online and very much on Twitter and sees people drawing a lot of conclusions about electability based on these poles and also as someone who saw the electability narrative turn into a self-fulfilling prophecy in 2016 where &#8230; There was a point in time where Bernie Sanders had very little name recognition, his candidacy wasn&#8217;t taken seriously at all, and in the fall of 2015, it was seen as a symbolic candidacy by most. The idea that it was going to be Hillary Clinton, that it was her turn, it became such a powerful theme that actual polls which showed that Bernie Sanders fared better in a matchup with Donald Trump were completely dismissed in favor of this kind of electability feeling, this like sensibility. </p>
+<p>My concern is whether or not polls which show certain people leading at this point so far in advance, if those leads stay robust, that you might start to see the same thing where people are ignoring the substantive reasons why one candidate might be better than another in favor of these largely pundit driven, largely sample skewed polls. Does that not worry you? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Look, it&#8217;s a challenge we face for this campaign and in every other campaign that&#8217;s not the front runner. Every campaign has to deal with the narrative around poll numbers and most poll numbers help fundraising. If you have good poll numbers, it&#8217;s easier to raise money. If your poll numbers aren&#8217;t as good, it&#8217;s harder to raise money. I don&#8217;t discount them entirely, but in terms of trying to stay focused, having a strategy and staying focused and executing that strategy, that&#8217;s the most important thing for the campaign to do. If we&#8217;re successful in that, executing that strategy, Bernie will do well. He&#8217;ll do well in the polling, and then everything else flows from there. We&#8217;re not ignoring the electability argument this time, and that was why we did these polls in these three states of Michigan, Wisconsin, Pennsylvania, because Bernie has real strength there, and trying to explain to insiders and to voters writ large, that Bernie&#8217;s electable and can beat Trump. </p>
+<p>I think if we can convey to voters, hey, Bernie is electable and he passes that threshold, then they can focus on the substance of what he has to say more effectively. Yeah, the nature of the media is they tend to &#8230; Most of their stories are process stories, how much money did the candidates raise, what do the poll numbers say? It&#8217;s harder to break through on substance, but look, I think Bernie ran a really effective campaign last time. He had a very focused message. You know, rigged economy propped up by corrupt political finance system, and this time he has a similar message, but it&#8217;s evolving and trying to be more inclusive too, fighting racial justice, not just economic justice. It&#8217;s our job as a campaign to get the campaign to focus on that message, have Bernie focus on that message, have it breakthrough so then it resonates with voters in Iowa and New Hampshire, those early states, his poll numbers do well, and then you develop a positive narrative based on positive polling data. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Based on what you&#8217;ve seen, out polling data from those three states you mentioned, can you tell listeners what you think our electability case is? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Bernie&#8217;s got &#8230; He&#8217;s beating Trump in these three battleground states. He&#8217;s got the three states that cost Democrats the election last time in Michigan, Wisconsin, and Pennsylvania. They&#8217;re known as the blue wall states because Democrats figured they were the blue wall, that it was very hard for us to lose them and therefore the White House. If you just, you know, basically win the solidly blue states plus those three states, you win the White House, you get to 270 electoral college votes. Then the wall collapsed on us. In 2016, Trump won Michigan, Wisconsin, and Pennsylvania, and it was a big surprise to the world really. In my view and in the campaign&#8217;s view, the easiest path back to the White House for Democrats is to take back those three states because if you don&#8217;t win those three states then you got to win states that have been much more competitive or have leaned Republican over the years and are more difficult. </p>
+<p>We&#8217;ve seen since 2016, the primary, that Bernie has real strength in the industrial heartland of America. He won Michigan. We call it the Michigan miracle. All the prognosticators said that he had no chance to win the primary in Michigan. He came storming back and won, down by 20 points, to shock the world, and he won Wisconsin by double digits, won Indiana, did really well in downstate Illinois, again, a rural and more conservative and white working-class part of the state. Bernie has shown strength in industrial battleground areas and states, which are key to winning the White House. So, if he can beat Trump in those three states, you can hold on to all the solid blue states like New York and California, and then you win back the White House. </p>
+<p>We&#8217;ve seen Bernie do well in these states, since the 2016 primary he&#8217;s got &#8230; His message of taking on the corporate powers and fighting for a fair economy for everyone, including standing up for working families, resonates really well in these states that have seen &#8230; have hemorrhaged manufacturing jobs, have seen their economies really struggle with these bad trade deals that have been signed. Bernie&#8217;s message has particular resonance in these three states, and again, a lot of these states where Obama won twice, a lot of these voters voted for Obama twice then flipped and voted for Trump, so it&#8217;s a lot easier to win back voters who have voted for Democrats in the past than trying to go to a different state that Democrats have never won before and trying to win over voters that have never voted Democratic before. That&#8217;s why the focus on these three states is so intense, for good reason, because it&#8217;s the clearest and simplest strategy for Democrats to win back the White House. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Are there repeated errors in interpreting these polls that you see that &#8230; When you&#8217;re sitting down with your friends at dinner or you log onto the internet and you&#8217;re reading these articles, there&#8217;s something &#8211; 20-some electability articles that came out this week alone &#8211; are there repeated mistakes that people are making that you wish you could just sit down and give people a tutorial about so you never had to read some bad poll prognosticating ever again?</p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Yeah, I would say that that polls this far out are not very predictive or they tend not to be, their track record is very poor. I think the best analogy for this, the 2020 Democratic nominating contest is the 2004 race, where you had Joe Lieberman, a former vice-presidential nominee who was leading in the polls early. Then, over the course of the campaign, he eventually faded because quite frankly, he was badly out of step with the Democratic Party at the time, and he had strongly supported the war in Iraq, which was a seminal issue in that election. It&#8217;s a good analogy, if someone&#8217;s starting strong, who was seen as electable, who had good credentials, had been on the ticket as vice president in the 2000 election, and then eventually, once voters took a closer look at his record, they felt he was badly out of step with the Democratic Party. </p>
+<p>That&#8217;s a good example of someone starting strong with high name ID because of their past record and experience, but under closer scrutiny their support withered and ultimately fade down the stretch. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I asked Ben about his thoughts on a CNN poll from earlier this month, which showed Biden&#8217;s pull numbers had spiked, putting him now 20 or 30 points in front of Bernie rather than Bernie being five points ahead, as an April 15th Emerson poll had suggested.</p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Yeah, it was a CNN poll, and it under-sampled, it undercounted young people and independents, two groups by the way, which Bernie does really well with. It also was done immediately in the aftermath of Biden announcing. No one did a poll the day after Bernie announced or the three days after the week he announced. Basically, they captured the peak of Biden&#8217;s announcement, which was his dominating the media, was getting the most media coverage and it&#8217;s mostly positive. That&#8217;s a classic case of the establishment media setting it up well for the establishment front runner to look good and hurting an outsider candidate like Bernie. That is an example where they &#8230; Yeah, they set it up, the timing was perfect for Biden to capture his maximum impact he&#8217;s having on the race, and it under sampled young people and independents, who by the way are allowed to participate in the process in most states and with whom Bernie does really well. So, it really was set up to help Biden and under count Bernie support. </p>
+<p>That&#8217;s why you can&#8217;t live and die by every poll because, as a pollster, I have to look at the methodologies for all these public polls, and they routinely are lacking in one area or another. The most suspicious thing about that CNN poll was the previous poll, they had released data among young people and independents. The previous poll they had Bernie doing better. They had more young people and independents in their sample, and Bernie was doing better in that poll. In this poll, they didn&#8217;t have enough to report how many young people they had. They got some, but we don&#8217;t know how many, but they obviously got less than the last poll. You&#8217;re trying to compare apples to apples, but one poll has fewer young people and independents than the previous poll and this poll has Bernie doing worse&#8230; There&#8217;s a reason why Bernie is doing worse, because you didn&#8217;t call &#8230; you didn&#8217;t talk to the people who are more likely to support Bernie. That&#8217;s an example where, for whatever reason, their methodology was flawed, but then &#8230; CNN is in the business of getting people to read, click on their headlines and make news, and so they generated news by capturing an optimal balance for Biden. </p>
+<p>The good news from Bernie&#8217;s campaign&#8217;s perspective is, reality is, Biden got a bounce, but he&#8217;ll likely fade as every&#8230; frontrunners tend to fade over time. When the next poll is done, and Biden&#8217;s lost five or eight points, then we&#8217;ll benefit from that narrative saying, oh, Biden&#8217;s slipping. What polls giveth, they also taketh away, and vice versa, so we just have to, as a campaign, be prepared to weather the storm for polls that may not be the best for whatever reason. Then if there&#8217;s a good poll, then we ought to drive the narrative because that&#8217;s what the press likes talking about.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;What do you make of the narrative that Biden is specifically pulling support from Bernie Sanders? That his gains are Bernie Sanders&#8217; losses in particular? </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;I would say that&#8217;s not accurate. He&#8217;s gained post announcement. He got a bump like every other candidate got, and his gains have come at everyone&#8217;s expense. If you look at broadly the polling that&#8217;s been done, every other candidate&#8217;s lost support as well. Some as a percentage more dramatically than we have. Kamala Harris is down, Pete Buttigieg is down, Beto&#8217;s down, Warren&#8217;s down and been down. I feel like quite frankly, we&#8217;re back to where we were around December before everyone got into the race and made some gains, that Biden got in and got a bounce, but it restored him to essentially where he was in December. Now the race gets reset. He&#8217;s officially in, and then this is the starting line. We just got to the starting line. So, this one&#8217;s going to be a very long race. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;All right. That&#8217;s good advice. Thank you so much for talking to me, Ben. I really appreciate it. </p>
+<p><strong>Ben Tulchin: </strong>&nbsp;Yeah, sure thing. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;If you&#8217;re frustrated by all the misinformation about polling swirling around and want some guidance about how to respond to friends or family who just take them at face value, listen to how Senator Sanders responded in a recent MSNBC interview with Al Sharpton.</p>
+<p><strong>Al Sharpton: </strong>&nbsp;With New Hampshire&#8217;s polling saying, your neighboring state, that Joe Biden is two to one ahead, is there a point where you start going after Joe Biden? Will you confront him in the debates, will you confront him to show the difference between Biden and Bernie? </p>
+<p><strong>Bernie Sanders: </strong>&nbsp;Al, if you look at that particular poll, they had two thirds of the people that they reached out to were all over the age of 50 and that&#8217;s not the way the people of New Hampshire vote. I think it was a selection of older people, which is not accurate. I feel very good about the campaign. We have over a million volunteers. There was a poll that came out just a little bit before that had us winning in New Hampshire, and I&#8217;m confident we are going to win in New Hampshire. The reason I think we&#8217;re going to win this election, win the primary election and defeat Trump, is that the issues that we are talking about are the issues that are on the hearts and minds of the American people. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;First, he noted the flawed methodology, that the poll over-sampled older voters who tend to be more conservative. Second, he emphasized substantive indicators of grassroots support, namely that the campaign has already engaged a record number of volunteers, over 1 million so far. You might also note that the Bernie campaign received more donations from individual donors than any other campaign. 223,000 people donated in the first 24 hours alone. That&#8217;s more than double Biden&#8217;s number. The individual donation number is a more meaningful indicator of grassroots energy than polls. After all, those 223,000 donors are likely to translate into 223,000 voters. Finally, and most importantly, Bernie talks about the issues. The poll results that people should be paying attention to are the ones that show that progressive ideas are being embraced all across this country. Ultimately, that is why we&#8217;re going to win.</p>
+<p>What seems increasingly clear is that electability is the newest synonym for pragmatism or incrementalism, both of which are code words for a moderate, overly conciliatory brand of milquetoast politics that has been shown over and over again to lose. Why would voters want to vote for Democrats dressed up like Republicans when voters who prefer Republicans could simply vote for the real thing? People don&#8217;t want more of the same status quo they&#8217;ve been suffering under for decades. Frustration with the status quo is exactly why some voters decided, ill advisedly, to shake things up with Trump. In every presidential election at the 21st century, the candidate who wins is not the most moderate, compromising, prevaricating politician who is led by polls like a kite on a string. It&#8217;s the candidate who&#8217;s able to present a new vision of the future that offers real change for people&#8217;s lives. </p>
+<p>The case for electability now seems based on a perceived appeal to rural and blue-collar voters, specifically white, blue collar voters. Let&#8217;s take a look at what rural and blue-collar voters of all races actually want. According to a recent poll, 68% of rural voters identify as conservative or moderate, but the Democratic platform consistently performs better in those areas than Democratic politicians. A majority of rural Americans support Medicare for All. 95% of rural voters think folks deserve equal access to education, whether K through 12 or college. 89% of rural voters think that no one should have to drive 50 miles for a checkup and that law makers need to invest in keeping rural clinics open. 87% of rural voters agree we have to get big money donors out of our political system. </p>
+<p>Rural voters want higher wages, and they want to protect immigrant farm workers without whom local farming would struggle to survive. They want more access to affordable housing and investments in transportation. What they want is Bernie. </p>
+<p>Too often, electability is defined as opposition to things people really want, but are told they can&#8217;t have. But increasingly, because of the efforts of politicians like Bernie Sanders, Ro Khanna, Pramila Jayapal, Alexandria Ocasio-Cortez, and progressive activists and local leaders across the country, Americans&#8217; vision of what is possible is finally expanding to match what we deserve. </p>
+<p>According to exit polls, Bernie&#8217;s surprise Michigan primary victory happened because the majority of primary voters prioritized &#8220;honest and trustworthy&#8221; over &#8220;could win in November.&#8221; I think Americans increasingly understand that those two qualities are one and the same. </p>
+<p>That&#8217;s it for this week. Let us know what you think at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4bcb1b5a6a0bcb1b6b1a6ba94b6b1a6babdb1a7b5bab0b1a6a7fab7bbb9">[email&#160;protected]</a>, or send us a tweet with the hashtag #HearTheBern. If you haven&#8217;t already, please take a moment to rate, review, or like us on Apple Podcasts, SoundCloud, or wherever you&#8217;re listening. Transcripts will be up soon. Till next time.<br></p>
+</div>
+</article>
+<footer class="footer">
+<div class="footer__address">Bernie 2020<br>
+PO Box 391<br>
+Burlington, VT 05402 </div>
+<div class="footer__paidfor">
+<span class="footer__disclaimer">Paid for by Bernie 2020</span>
+<div class="footer__bill">
+(not the billionaires)
+</div>
+</div>
+<div class="footer__sub">
+<span class="">© Bernie 2020 | <a href="/privacy-policy/">Privacy Policy</a>
+| <a href="https://boards.greenhouse.io/bernie2020" target="_blank">Jobs</a>
+| <a href="/podcast">Podcast</a>
+| <a href="/tax-returns/">Taxes</a>
+| <a href="/commitment-to-diversity-equity-and-inclusion/">Commitment to Diversity, Equity, and Inclusion</a>
+| <a href="/press/">Press</a>
+</span>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+	window.VWO = window.VWO || [];
+	window.VWO.push(['track.goalConversion',1]);
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-803021594" type="41439f55d0c7d7b53b43bb9e-text/javascript"></script>
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-803021594');
+</script>
+
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '736881459842197');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=736881459842197&ev=PageView
+  &noscript=1"/>
+</noscript>
+
+
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o13k7');
+  twq('track','PageView');
+</script>
+
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-118768463-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">
+  (function(m,o,v,a,b,l,e) {
+    if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+    m['MovableInkTrack'] = b;
+    l = o.createElement(v);
+    e = o.getElementsByTagName(v)[0];
+    l.type = 'text/javascript'; l.async = true;
+    l.src = '//' + a + '/p/js/1.js';
+    m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+    e.parentNode.insertBefore(l, e);
+
+    /* Exclusively for Bernie 2020 */
+  })(window, document, 'script', 'ycwht5le.micpn.com', 'mitr');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="41439f55d0c7d7b53b43bb9e-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/aos.js" type="41439f55d0c7d7b53b43bb9e-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/float-labels.js" type="41439f55d0c7d7b53b43bb9e-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/custom.min.js" type="41439f55d0c7d7b53b43bb9e-text/javascript"></script>
+<script type="41439f55d0c7d7b53b43bb9e-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b90cc6c8e3","applicationID":"236271046","transactionName":"YFNWZERRD0JRUhENDlkZdVNCWQ5fH0IMCgZbUw==","queueTime":0,"applicationTime":155,"atts":"TBRVEgxLHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="41439f55d0c7d7b53b43bb9e-|49" defer=""></script></body>
