@@ -1,0 +1,272 @@
+:root {
+  --splashGray: hsla(60, 4%, 85%, 1);
+  --purple: hsla(221, 30%, 22%, 1);
+}
+
+.new-splash {
+  display: none;
+}
+
+body.splash-is-open {
+  background-color: var(--blueDark);
+}
+
+body.splash-is-open .new-splash {
+  display: block;
+}
+
+body.splash-is-open .site-container {
+  display: none;
+}
+
+.new-splash .genesis-skip-link,
+.new-splash .site-footer {
+  display: none;
+}
+
+.new-splash {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--blueDark);
+}
+
+.new-splash .wrapper-relative {
+  position: relative;
+}
+
+.new-splash .splash-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(/wp-content/themes/aspire-pro/images/new_splash_background.png);
+  background-repeat: no-repeat;
+  background-position-x: calc(50% + 45px);
+  background-position-y: calc(50% + 45px);
+  background-size: 514px 639px;
+}
+
+.new-splash .container {
+  position: relative;
+  z-index: 1;
+  max-width: 768px;
+  padding: 0 65px;
+  margin: 0 auto;
+}
+
+.new-splash .container.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 52px;
+}
+
+.new-splash .logo {
+  height: 58px;
+}
+
+.new-splash .container.main {
+  padding-bottom: 64px;
+}
+
+.new-splash .container.main p {
+  margin-bottom: 24px;
+}
+
+.new-splash p,
+.new-splash a,
+.new-splash .continue-to-site {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.new-splash p .line {
+  display: block;
+}
+
+.new-splash a,
+.new-splash .continue-to-site {
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.new-splash a:hover,
+.new-splash .continue-to-site:hover {
+  color: var(--white);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.new-splash .join-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+}
+
+.new-splash .join-form input {
+  width: 250px;
+  padding: 16px;
+  border: 7px solid var(--splashGray);
+  margin-bottom: 14px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.new-splash .join-form input[name='zip'] {
+  width: 184px;
+  margin-bottom: 24px;
+}
+
+.new-splash .join-form button,
+.new-splash .donate-link button {
+  width: 119px;
+  height: 40px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.new-splash footer {
+  padding: 38px 0;
+  background-color: var(--purple);
+}
+
+.new-splash footer p {
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.new-splash footer p > span,
+.new-splash footer .notice p {
+  opacity: 0.3;
+}
+
+.new-splash footer a {
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: none;
+}
+
+@media (max-width: 992px) {
+  .new-splash .join-form input {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 992px) {
+  .new-splash .join-form input {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 735px) and (max-width: 760px) {
+  .new-splash .splash-background {
+    background-position-x: calc(50% + 70px);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 734px) {
+  .new-splash .splash-background {
+    background-position-x: calc(50% + 80px);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 700px) {
+  .new-splash .splash-background {
+    background-position-x: calc(50% + 0px);
+    background-position-y: calc(0% + 95px);
+    background-size: 370px 460px;
+  }
+
+  .new-splash .container {
+    padding: 0 48px;
+  }
+
+  .new-splash .container.flex {
+    margin-bottom: 215px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .new-splash .splash-background {
+    background-position-x: calc(50% + 0px);
+    background-position-y: calc(0% + 45px);
+    background-size: 300px 373px;
+  }
+
+  .new-splash .container {
+    padding: 0 36px;
+  }
+
+  .new-splash .container.flex {
+    margin-bottom: 185px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-splash .splash-background {
+    background-position-x: calc(50% + 0px);
+    background-position-y: calc(0% + 35px);
+    background-size: 258px 321px;
+  }
+
+  .new-splash .container {
+    padding: 0 24px;
+  }
+
+  .new-splash .container.flex {
+    margin-bottom: 170px;
+  }
+
+  .new-splash .logo {
+    height: 37px;
+  }
+
+  .new-splash .donate-link button {
+    width: 89px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .new-splash .container.main {
+    padding-bottom: 17px;
+  }
+
+  .new-splash .container.main p {
+    margin-bottom: 18px;
+  }
+
+  .new-splash p,
+  .new-splash a {
+    font-size: 17px;
+  }
+
+  .new-splash .join-form {
+    margin-bottom: 20px;
+  }
+
+  .new-splash .join-form input {
+    width: 210px;
+    border-width: 5px;
+    margin-bottom: 12px;
+  }
+
+  .new-splash .join-form input[name='zip'] {
+    width: 154px;
+    margin-bottom: 18px;
+  }
+
+  .new-splash footer p {
+    padding: 18px 0;
+    font-size: 11px;
+  }
+}
