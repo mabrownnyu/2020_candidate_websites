@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="9525a58351c689358b1e56f7-text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ep. 7: Bail, Bills, and Criminal Injustice - Bernie Sanders</title>
+<link rel="stylesheet" href="https://use.typekit.net/osh1jbn.css">
+<link rel="stylesheet" href="https://berniesanders.com/wp-content/themes/bernie/style.css">
+
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-228.png" sizes="228x228">
+
+<link rel="shortcut icon" sizes="196x196" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-196.png">
+
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-180.png" sizes="180x180">
+
+<meta name="msapplication-TileColor" content="#0073E6">
+<meta name="msapplication-TileImage" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-144.png">
+
+<meta name="msapplication-config" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/browserconfig.xml" />
+<script type="9525a58351c689358b1e56f7-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="9525a58351c689358b1e56f7-text/javascript" src="https://act.berniesanders.com/resources/actionkit.js"></script>
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<link rel="canonical" href="https://berniesanders.com/2019/05/21/ep-7-bail-bills-and-criminal-injustice/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ep. 7: Bail, Bills, and Criminal Injustice - Bernie Sanders" />
+<meta property="og:description" content="Bernie Sanders:  There are some 400,000 people in jail today. You know what their crime is? Speaker: &nbsp;Poverty? Bernie Sanders: &nbsp;That&#8217;s right. And follow it through, poverty of what? They can&#8217;t afford &#8230; Speaker: &nbsp;Bail. Bernie Sanders: &nbsp;They can&#8217;t afford the bail. Take a deep breath. This is not Charles Dickens&#8217; England of 150 years &hellip;" />
+<meta property="og:url" content="https://berniesanders.com/2019/05/21/ep-7-bail-bills-and-criminal-injustice/" />
+<meta property="og:site_name" content="Bernie Sanders" />
+<meta property="article:section" content="Transcripts" />
+<meta property="article:published_time" content="2019-05-21T13:23:31+00:00" />
+<meta property="article:modified_time" content="2019-05-21T13:23:41+00:00" />
+<meta property="og:updated_time" content="2019-05-21T13:23:41+00:00" />
+<meta property="og:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:secure_url" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Bernie Sanders:  There are some 400,000 people in jail today. You know what their crime is? Speaker: &nbsp;Poverty? Bernie Sanders: &nbsp;That&#8217;s right. And follow it through, poverty of what? They can&#8217;t afford &#8230; Speaker: &nbsp;Bail. Bernie Sanders: &nbsp;They can&#8217;t afford the bail. Take a deep breath. This is not Charles Dickens&#8217; England of 150 years [&hellip;]" />
+<meta name="twitter:title" content="Ep. 7: Bail, Bills, and Criminal Injustice - Bernie Sanders" />
+<meta name="twitter:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+
+<link rel='dns-prefetch' href='//berniesanders.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Bernie Sanders &raquo; Ep. 7: Bail, Bills, and Criminal Injustice Comments Feed" href="https://berniesanders.com/2019/05/21/ep-7-bail-bills-and-criminal-injustice/feed/" />
+<script type="9525a58351c689358b1e56f7-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/berniesanders.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://berniesanders.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<script type="9525a58351c689358b1e56f7-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type="9525a58351c689358b1e56f7-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="9525a58351c689358b1e56f7-text/javascript" src='https://berniesanders.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<link rel='https://api.w.org/' href='https://berniesanders.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://berniesanders.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://berniesanders.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://berniesanders.com/?p=1237' />
+<link rel="alternate" type="application/json+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F05%2F21%2Fep-7-bail-bills-and-criminal-injustice%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F05%2F21%2Fep-7-bail-bills-and-criminal-injustice%2F&#038;format=xml" />
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+</head>
+<body class="post-template-default single single-post postid-1237 single-format-standard">
+<header class="header ">
+<h1 class="logo ">
+<a class="logo__link" href="/">
+<span class="sr-only"></span>
+</a>
+</h1>
+
+<div class="menu-main-header-container"><ul id="menu-main-header" class="menu"><li id="menu-item-891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-891"><a href="https://berniesanders.com/kickoff/">Volunteer</a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a href="https://berniesanders.com/issues/">Issues</a></li>
+<li id="menu-item-309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-309"><a href="https://map.berniesanders.com">Events</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="https://berniesanders.com/es/para-todos/">en Español</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="https://store.berniesanders.com/?utm_source=website&#038;utm_medium=navigation">Store</a></li>
+</ul></div>
+<button class="header__menu-toggle" type="button">
+<span class="sr-only">Toggle Menu</span>
+<span class="menu__bar"></span>
+</button>
+
+<a href="https://secure.actblue.com/donate/bern-site?refcode=splash-top-right" class="header__donate" data-aos="slide-left" data-aos-delay="800" data-aos-easing="ease-out-quad" data-aos-duration="400">
+Donate </a>
+</header>
+<div class="hero">
+<div class="hero__main" style="background-image: url('')">
+<div class="hero__heading">
+<h1 class="hero__title" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-out-quad" data-aos-duration="1000">
+Ep. 7: Bail, Bills, and Criminal Injustice </h1>
+<div class="hero__content" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-quad" data-aos-duration="800">
+</div>
+</div>
+<video id="bg-vid" playsinline autoplay muted loop>
+
+<source src="" type="video/webm">
+<source src="" type="video/mp4">
+</video>
+</div>
+</div>
+<article class="main post-1237 post type-post status-publish format-standard hentry category-transcripts" id="post-1237">
+<div data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-easing="ease-out-quad" data-aos-duration="1000" class="default">
+<figure><iframe width="100%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/623871321&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe></figure>
+<p><strong>Bernie Sanders: </strong> There are some 400,000 people in jail today. You know what their crime is?</p>
+<p><strong>Speaker: </strong>&nbsp;Poverty?</p>
+<p><strong>Bernie Sanders: </strong>&nbsp;That&#8217;s right. And follow it through, poverty of what? They can&#8217;t afford &#8230;</p>
+<p><strong>Speaker: </strong>&nbsp;Bail.</p>
+<p><strong>Bernie Sanders: </strong>&nbsp;They can&#8217;t afford the bail. Take a deep breath. This is not Charles Dickens&#8217; England of 150 years ago, whatever it was. This is America today. Can you imagine &#8230; You talk about, thinking about things the people are not talking about, there are people in jail today who may well be innocent who can&#8217;t afford to get out of jail because they can&#8217;t afford the $500.00 bail.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Americans love their cop and lawyer shows. Altogether there&#8217;s something like 1,700 episodes of Law and Order. The reality show Cops is the longest running prime time TV show that&#8217;s not about the news. And lest we forget, Dog the Bounty Hunter graced the small screen for eight seasons and several hundred episodes.</p>
+<p><strong>Dog the Bounty Hunter: </strong>&nbsp;What does school get you? Staying in school gets you success. Not going to school gets you jail.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;But shows like these can make certain punitive aspects of our criminal justice system seem ubiquitous and normal, even natural, when the reality is, when it comes to how we treat the accused and convicted, the U.S. is an outlier.</p>
+<p> This is Hear the Bern, a podcast about the people, ideas, and politics that are driving the Bernie Sanders&#8217; 2020 campaign and the movement to secure a dignified life for everyone living in this country. My name is Briahna Joy Gray, coming to you from campaign headquarters in Washington, D.C. </p>
+<p> Take cash, or money, bail. Cash bail is money that you pay as a deposit for the release of a person who has been arrested. The money is held as a guarantee to ensure that the defendant will return to court for trial. Now, while at first glance cash bail might seem like a solid way to make sure people show up for their court dates, it turns out that there are some pretty good reasons why every other company but the Philippines and the United States avoid it.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;What cash bail does is criminalize poverty.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;That&#8217;s Lara Bazelon a law professor, writer, and Director of the Criminal Juvenile Justice Clinic and the Racial Justice Clinic at the University of San Francisco School of Law.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;So, the amounts are set in this schedule. In San Francisco, for example, a robbery will be $30,000.00 no matter what the circumstances, who you are or your ability to pay. So, if you&#8217;re a wealthy defendant accused of robbery, you&#8217;ll get out, and if you&#8217;re a poor defendant accused of robbery you will stay in.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;As Bernie Sanders often puts it, cash bail creates a modern-day debtor&#8217;s prison. It establishes a hierarchy of who walks free and who stays behind bars before any kind of trial, conviction, or sentencing, and it can have devastating effects on those who can&#8217;t afford to pay for their freedom.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;There&#8217;s also a ton of evidence that shows that case outcomes are radically affected by who is able to be released pre-trial, who is able and willing to fight their case. The longer you cage people, innocent or guilty, the more likely they are to become completely desperate and plead guilty and take whatever deal is offered because they are desperate to get out, to get a job, to keep their kids, to go back home.</p>
+<p> And in some really extreme cases, they&#8217;re held pre-trial, so meaning before any charge has proved against them, for years. And there&#8217;s a famous case involving a boy named Kalief Browder in New York who was held at Rikers Island for three years on a very minor charge, couldn&#8217;t make bail, before the case against him was finally dismissed. He was so traumatized and so broken by that experience that he took his own life. There are many examples like that.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Kalief Browder&#8217;s story is perhaps the most famous and most tragic example of what the cash bail system can do. At age 16, Kalief was accused of stealing a backpack. He was jailed at Rikers Island for three years awaiting trial, nearly two of which were spent in solitary confinement. Ultimately, the state released him when the prosecutor&#8217;s case was found to be lacking evidence and the main witness had left the country, but the damage had already been done. Two years after his release, Kalief committed suicide by hanging himself from an air conditioning unit outside of his mother&#8217;s home. </p>
+<p> Last week, I spoke to Kalief&#8217;s older brother, Akeem. Akeem Browder is a social justice advocate pursuing changes to laws, policies, and regulations that devastate poor communities and families impacted by mass incarceration and solitary confinement. He was gracious enough to speak to me about the effects that pre-trial detention had had on his brother.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;Kalief was a totally different Kalief. Kalief was released on May 29th of 2013. He was arrested May 10th of 2010. Before he left, Kalief was a fun kid. He laughed a lot. My sister mimics his laugh perfectly. He had a goofy laugh. He watched Yu-Gi-Oh, he loved Dragon Ball. He was my workout partner. Kalief played tag. He loved my mom&#8217;s cooking. He did what kids do. Kalief wasn&#8217;t even a trouble maker. He was the youngest of all of us, so he got to see the mistakes of us. Kalief was really quiet and reserved actually. He wasn&#8217;t quick to cry. He was very strong. He thought he was Vegeta from Dragon Ball. So that was the kid in him. </p>
+<p>Then when he came home, you saw that immediate, in his eyes, immediate difference because he would stare at you as though he&#8217;s still there. Or he would talk to himself as though he was still there in solitary confinement because being in solitary confinement desensitizes your senses. In solitary confinement, it takes away your senses and replaces it with &#8230; because realistically your body, your psyche, cannot operate without these human senses that we operate with. So, it has to create voices so that you can have that kind of hearing ability or thought capacity. It desensitizes your touch, your taste, your smell. It recreates it because it&#8217;s like you&#8217;re not giving this to me, I need to produce this.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I was familiar with Kalief&#8217;s story but what I didn&#8217;t know was that Akeem had also spent over a year in jail without conviction. </p>
+<p><strong>Akeem Browder: </strong>&nbsp;It happened twice to me. Kalief was arrested in 2010. I was arrested in 2009 the year before him, falsely arrested at that point as well, because they said that I was caught on video allegedly going into the cafeteria of my college and stealing from the register and stealing from the safe. Knowing that I didn&#8217;t do it, I didn&#8217;t take a plea but they were frightening me with seven years, and I can&#8217;t do seven years in jail. It&#8217;s not in my cards. It&#8217;s not in the cards for most people, or anybody, especially when you&#8217;re innocent.</p>
+<p> But my bail was $5,500, so I could not afford that, and even if I could have, I didn&#8217;t have to depend on or decide if I should give my $5,500 to the attorney or to my bail so I could be free. We just don&#8217;t have the money, and in poor communities this is the problem, not that we don&#8217;t have the money, but that our freedom is being pended on how or pending how much you can afford.</p>
+<p> My family suffered the full front of that weight of poverty. When Kalief then the very next year in 2010 was accused of allegedly stealing a backpack where his bail was $3000.00. I waited a year on Rikers, not waited like I sat around twiddling by thumbs &#8212; fighting for your life while fighting for your freedom.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Akeem was lucky enough to get an attorney to take his case pro bono and after nearly 10 months in jail the prosecutor finally turned over the video evidence they were relying on as proof. At that point it became clear that whoever did it looked nothing like Akeem.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;The video, the guy which, as an Italian man, he said in his words, &#8220;the guy&#8217;s blurple,&#8221; blackish purple. Now, you can see me but the audience probably can&#8217;t or the listeners can&#8217;t. I&#8217;m a light skinned black. Nonetheless I am black, but not every black man is a black man that you see in a video.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;He was eventually vindicated but the fact that he was ultimately released didn&#8217;t bring back the year of his life he lost at Rikers.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;Being incarcerated impacts you not just because your time was taken away from you. I was in college and in school for engineering, civil engineering. I ended up getting my Bachelor&#8217;s, but it didn&#8217;t come for a while. After I came home, charges dropped, lawsuit after, but what happens between that? Just to make the audience understand, you are incarcerated. You lose the opportunity to see your brother get married or have a kid or &#8230; Kalief missed out on that opportunity to see his niece and nephew being born. I was living in Brooklyn at the time. I lost my condo. I was engaged. I lost my relationship. I had a reputation in school. I had a job.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;All this because his family couldn&#8217;t afford bail.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;This is the Bronx, New York. We are the poorest congressional district in America. The medium household income is below poverty line. You are living check to check, if you can even do that. Then to find out that you have an emergency, like your kid is sick or your kid needs braces or your child was incarcerated. That&#8217;s $3,000.00 let alone if like my dog just died and I got rent to pay and something unexpected came up. You are way over your head so you cannot afford it. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Bail bond agents sell themselves as the answer to this dilemma, but as Akeem explains, they are often no solution at all.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;So, cash bail is &#8230; when they say have $3,000.00 to pay. If you can pay that then, that&#8217;s the cash bail. Bail over bond, so cash over bond, is the amount that&#8217;s needed so they&#8217;ll say, &#8220;Out of $3,000.00 you&#8217;ll give $900.00 plus fees and interest.&#8221;</p>
+<p> Now, that being said, you have to now come up with $900.00, and your rent is at the time, when Kalief was arrested in 2010 or when I was arrested in 1997, and you have a mother, a single mother taking care of her kids, which my mom adopted nine of us, foster cared 32 of us. My mom was the mother in the shoe kind of. She had a lot of kids and she was just trying to do the work of a mom, and not on some huge budget, and so $900.00 was even detrimental to her. She didn&#8217;t have it. </p>
+<p> Kalief was forced to stay in jail. The way our jail system works is if you don&#8217;t have the money, you can take out the loan, but you can put in the $900.00 and we&#8217;ll put up the rest, but you never get that $900.00 back, first of all. Even if your kid makes every court date and then goes home, you still don&#8217;t get that money back. That was a waste of money. So, what you&#8217;re saying is, &#8220;Can you afford to be free?&#8221; And that&#8217;s the problem. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;You might be thinking that, although this sounds sad, there is good reason to make defendants give some kind of money guarantee to ensure they&#8217;ll return to stand trial after they&#8217;re released. But most credible evidence shows that the overwhelming majority of people come back to court, and jurisdictions which abolished cash bail see no rise in failure to return rates. Professor Bazelon explains.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;So, there are all kinds of alternatives to money bail. First of all, you can set an amount that someone could possibly make, and that really varies depending on the person, right? Second of all, if you do away with the whole idea of cash money bail, you can put other incentives in place. So, you can put people in a program if they have an addiction program. You can offer wrap around support services, electronic monitoring so that the court can keep track of them using a GPS system, calling in. I mean, the truth is that studies show that people who are released on their own recognizance and released under systems like I just discussed do actually have a very strong track record of coming back. Most people come back to court. </p>
+<p> The whole idea of bail is to ensure that the person comes back to court and also to protect the community in the chance that there is a danger. When you tie it to money, what you are saying is if you can pay X amount of money those concerns go out the window. You&#8217;re somehow magically not dangerous, and you&#8217;re definitely going to come back, and that&#8217;s just not empirically true. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Defendants who can&#8217;t afford bail have few other options than to turn to private bail bond agents, who charge a percentage of the total bond, often 10%, which clients never see again. In exchange, the bail bond company puts up the rest of the court fee.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;It became popular because it started basically incentivizing big businesses to start money bail, cash bail industries, where bail bondsmen were lending sums of money to people. So, for example your bail would be set at $100,000.00, and the bail bondsman would post that amount, although often times they wouldn&#8217;t actually have to give the court anything, but you would have to give them 10%. Then that money they would keep regardless what happened in your case, and so it&#8217;s this huge profit making machine, and it&#8217;s those industries that are so tied to the business of money bail and to taking this money and keeping it that want to keep this system in place.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;According to Professor Bazelon, relying on these bail bond agents can itself lock Americans into cycles of debt.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;So just a kind of a classic example is a hard-working mom but she makes minimum wage and she doesn&#8217;t have money set aside for catastrophic emergencies; her son gets picked up on some kind of a charge. It&#8217;s San Francisco and there is a money bail system, and so the bail is set at say $20,000.00, and she has to come up with $2,000.00 to pay the bail bondsman. So, she&#8217;s scrambling thinking, &#8220;How am I going to get this money?&#8221; She doesn&#8217;t have it, so she takes out a credit card with this absurdly high interest rate, uses the credit card to pay the money. Then the bills come due, and it&#8217;s just exorbitant, and she can&#8217;t pay and she can&#8217;t pay. Then the collections agencies come calling, and then her credit score is ruined. It&#8217;s just this viscous cycle of being caught up in this debt.</p>
+<p> Let&#8217;s say, too, that her son is not guilty, or at least the case against him couldn&#8217;t be proved, which is more likely to be true than not. Let&#8217;s also say that her son is African American, which in San Francisco is seven times more likely to be true than not. What you&#8217;re also talking about is a cycle of middle-class people descending into poverty and overwhelmingly those people coming from communities of color, and all it takes is that one arrest and that one bail schedule and that one desperate need to come up with the money.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;For the 40% of Americans unable to cover a $400 emergency, any encounter with the criminal justice system, or a hospital for that matter, is likely to set off this vicious cycle. That&#8217;s part of the reason that Bernie recently teamed with Alexandria Ocasio-Cortez to propose the Stop Loan Sharks Act, which would cap interest rates on consumer loans at 15%.</p>
+<p>The bill would do away with super high interest credit cards, and it would all but eliminate the predatory pay day loan industry, where annual rates in the 100&#8217;s are the number. During the announcement, AOC explicitly linked predatory lenders and the cash bail industry, twin vultures seeking to make money off of Americans at their most desperate.</p>
+<p>AOC pointed out that she represents Rikers Island, which still has cash bail. So what happens, she asked, if your 15 year old son gets picked up because he’s accused of jumping a turnstile because he can’t afford a metro card, or if your kid gets picked up because someone said that another young man of color who looks like him allegedly ran off with a backpack? </p>
+<p>Well, she said, if you can’t afford your jail, you have to resort to a loan. She gave the following hypothetical: Let’s say the person arrested is your husband, who is a primary income earner. That’s time he has to spend away from his job. You’d have to get a payday loan or go to a bail bondsman. So, cash bail is another system where justice is purchased.</p>
+<p>As the movement to end money bail around the country gathers steam, Bernie has also led the charge at the federal level with a 2018 No Money Bail Act, which would eliminate money bail at the federal level and create incentives for states to do the same. As Bernie likes to say, &#8220;Nothing changes for better in this country without a lot of people struggling together to defeat powerful interests.&#8221; And efforts to reform cash bail show how true that is. </p>
+<p>A 2017 report from the ACLU and the Color of Change reveal that backing this country&#8217;s thousands of individual bond agents are just a handful of gigantic companies including an Oregon based private equity firm called Endeavor Capital. Last summer California passed a law, SB10, that would end cash bail and effectively put the state&#8217;s 3,000-odd private bail agents out of business. The industry responded with a well-financed campaign stoking fears about public safety.</p>
+<p><strong>Speaker: </strong>&nbsp;This bill does not consider the individual victim&#8217;s safety.</p>
+<p><strong>Speaker: </strong>&nbsp;The poor are not in jail because they&#8217;re poor, Mr. Sawyer, they&#8217;re in jail because they broke the law.</p>
+<p><strong>Speaker: </strong>&nbsp;What about the right of the rest of us to be safe?</p>
+<p><strong>Speaker: </strong>&nbsp;These clowns in the legislature ignore real issues to just further their own political agenda.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Even the bill that was passed is a watered-down version, and now the pro-bail coalition has managed to get California&#8217;s law on the 2020 ballot for a referendum. Until then, the law is suspended, and the state&#8217;s private bail agents can continue business as usual. One of the single largest donors to the campaign to overturn SB10? You guessed it. Endeavor Capital, which contributed $800,000.00 to the effort.</p>
+<p> Cash bail is hardly the only part of our criminal justice system that disproportionately harms lower income and black and brown Americans.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;I would ask or challenge anybody to spend the day in their local criminal court and see who is coming through and see who are in the orange jumpsuits. I am telling you the vast majority of those people are poor people of color, and it&#8217;s not because they commit crimes at some astronomically higher rate. It&#8217;s because they are more vulnerable to being arrested and jailed and charged.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Though a lot of public attention is on the police due to a number of high-profile incidents of over policing, a significant amount of what goes on with our system starts at the top.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;Prosecutors are the most powerful players in the criminal justice system. They are more powerful than the police, the judge, the jury and certainly the defendant and the defendant&#8217;s lawyer. So, at every pivotal decision moment, it&#8217;s the prosecutor making the decision. As you point out, the police do a lot of high-profile things including arresting people, but it&#8217;s the prosecutor&#8217;s decision whether to bring a charge and what kind of a charge to bring or whether to bring multiple charges.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Professor Bazelon explained that, contrary to our popular understanding of how the criminal justice system works a la Law and Order, the role of prosecutors isn&#8217;t to secure convictions. It&#8217;s to pursue justice.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;There&#8217;s something called the declamation rate, which means the prosecutor has discretion when brought a case to say, &#8220;I&#8217;m not actually going to go forward with that case because I don&#8217;t think that&#8217;s a good use of resources&#8221; or &#8220;I don&#8217;t think I can prove it beyond a reasonable doubt.&#8221; In many offices, the declamation rate is incredibly low, meaning that prosecutors are really just pursuing almost everything the police bring them.</p>
+<p> Then you get to plea bargaining, and the prosecutor decides what offers to make, for example, and if the case goes to trial obviously the prosecutor&#8217;s a crucial player. If the defendant is either convicted or accepts a guilty plea, the prosecutor recommends the sentence, and that recommendation often goes a long way with judges. So just to sum up, they are the most powerful actors out there.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Recently, there has been a lot of talk about progressive prosecutors. These are prosecutors who understand their role as advancing substantive justice rather than securing a high conviction rate.</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;I think my favorite example and probably the prosecutor locally who people have heard the most about is Larry Krasner in Philadelphia, which is my home town. He was elected to replace a D.A. named R. Seth Williams, who is now serving time in a federal penitentiary because of corruption. In addition to those sins, he also was just a terrible D.A. in terms of the polices that he pursued and the kinds of crimes that his prosecutors were targeting and all kinds of other policies. When Krasner came in, it was on this reform platform. He had never been a prosecutor, which is sort of amazing when you think about it, and in fact he was known for defending Black Lives Matter protestors and bringing lawsuits against the police.</p>
+<p> Since being in office, he&#8217;s made good on many of his promises including doing away with money bail for low level offenses, not pursuing the death penalty, doing away with prosecuting a number of low level offenses and other important reforms including conviction integrity, which looks at wrongful convictions and also implementing some restorative justice.</p>
+<p> Most people think that the prosecutor&#8217;s job is to convict as many people as possible, and many prosecutors also think it&#8217;s their job, and they campaign on these Tough On Crime platforms where they crow about how many people they&#8217;ve convicted and how many long sentences they&#8217;ve meted out, but actually that is emphatically not their job. While this seems counter intuitive, what their job is to do is to serve justice and to vindicate the truth. So, what that means is that they&#8217;re only pursuing convictions that could be proved beyond a reasonable doubt with competent admissible evidence and that they&#8217;re not seeking the harshest possible penalties. They&#8217;re seeking the penalties that are consistent with a just result.</p>
+<p> So more and more this conversation is coming up about what the prosecutor&#8217;s function actually is and there&#8217;s been some success. I call it a ripple not a wave, of prosecutors like Krasner, like Kim Fox, like the prosecutor in the Brooklyn District Attorney&#8217;s office who have had success running and winning on platforms where they talk about their role as justice seeking rather than punitive and carceral.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Just think about what a difference a genuinely thoughtful and progressive prosecutor would have made in Akeem&#8217;s case. He sat in jail for a year because the prosecutor had failed to disclose a video which clearly showed that the person who had committed the crime was someone else.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;There is discovery issue in New York, which we just solved in 2019. It&#8217;s in the budget for New York to establish a new discovery process. Now the discovery process is when you get your evidence and how you get your evidence and how long it takes to get your evidence. However, New York has not had and still does not have, until this bill is passed and been implemented, has not had a proper discovery practice.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Akeem is referring to reforms proposed by Governor Andrew Cuomo, which would require prosecutors to share evidence with the defense early in a case, so that defendants can make an informed decision as to whether to take a plea deal or go to trial. Currently, prosecutors in New York can withhold evidence until the morning of trial.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;In New York, like many other states, it&#8217;s usually at the time of trial. To understand what evidence they had against you, when you go to trial, then they were making it available. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;So how quickly after the video was disclosed to you were you able to be released?</p>
+<p><strong>Akeem Browder: </strong>&nbsp;Two weeks later.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Two weeks. After nearly a year in jail, it only took two weeks for Akeem to be released once he saw the evidence.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;In a nutshell, Kalief was a victim of poverty and what happens to poor, disenfranchised youth and young adults. He was allegedly accused of stealing a backpack, and a book bag, no more than what, $35.00, $25.00? And that backpack was the subject of his incarceration because someone said that he stole his brother&#8217;s backpack. That being said, Kalief was arrested and put into Rikers Island for an indeterminate amount of time because New York State incarcerates people for long periods of time until they break them. Even if it were an accusation that could have had some validity to it, Kalief was a kid and did not deserve to be in a place like Rikers Island, which is a monstrous place. I mean it&#8217;s likened to Guantanamo Bay. It&#8217;s a torture chamber. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I asked Lara and Akeem if they had any parting thoughts or advice. What should we be doing? After hearing an account like Akeem’s, it feels inadequate to be merely sympathetic or sad. How should we act?</p>
+<p><strong>Lara Bazelon: </strong>&nbsp;When I was traveling a lot for my book, people would ask me, because it&#8217;s about wrongful convictions and restorative justice, what can I do? I&#8217;m not part of the system, what can I do to be helpful?</p>
+<p> What I always say is you can do two things. One, you can take jury service incredibly seriously. A lot of people joke about how awful it is. They throw out their summons, but the truth is, it is the ultimate check ,and in those cases that go to trial you can demand the right amount of proof and insist that you&#8217;re not going to convict unless you get it and you can hold your ground. One of the worst things, especially in wrongful conviction cases is the jurors who sort of caved in because it was ten against two or eleven against one and they always have this awful feeling, and if they&#8217;d just stuck it out there would have been a different outcome.</p>
+<p> The second and I think more important thing than even than that, because few people get that opportunity, is to vote in your local D.A. elections. You would be amazed how few people understand that they even have the right to select their D.A. or know who&#8217;s running. We&#8217;re paying so much attention, rightly so, to Donald Trump, to Attorney General Barr, to everything that&#8217;s happening in the Department of Justice and yet that affects so few people in terms of who is prosecuted. 90, 95% of cases are funneled through and prosecuted at the local level and so we do have direct control over who we elect in the position of the local D.A. who brings those cases, who decides who gets punished and who doesn&#8217;t. Voting and really educating yourself about who is running is an incredibly empowering, effective way to be a good citizen and promote criminal justice reform.</p>
+<p> My parting thoughts for folks who believe that prison is the default answer, which I think a lot of people feel, is that we have to re-think that framing because we know it doesn&#8217;t work. We know what the recidivism rates are. We know what happens to people who are stuck in prison for long periods of time, in fact the criminalization of their core being is basically almost guaranteed the longer we lock people up.</p>
+<p> There is this sense that we&#8217;re spending too much money for too little results and so there is sort of the economic case, but I think there is also the moral case and the case about, well, what does justice mean to us as Americans? What are we doing in our country? You talk about how people can really get swept up. It&#8217;s hard for most people to understand that because the criminal justice system doesn&#8217;t speak to or touch most people but what I think what a lot of folks need to understand is how incredibly vulnerable you are, for example, if you&#8217;re not white and don&#8217;t carry a certain amount of privilege.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I&#8217;ll give the last word to Akeem.</p>
+<p><strong>Akeem Browder: </strong>&nbsp;We have to educate ourselves and pull ourselves up from the nothingness that was given to us and provide not just for our generation but for the generations to come, because none of the work that I&#8217;m doing now is for Kalief. He&#8217;s gone. I have a one-and-a-half-year-old son, and Raphael will never be considered white or privileged or given the opportunity unless I make those opportunities through you and I. You as I&#8217;m speaking to you, I&#8217;m hopeful that by the time Raphael gets to be a teenager and ready to go to college, you will have made that way for Raphael and kids like him, so that he has an opportunity that we weren&#8217;t given. So, the fight doesn&#8217;t stop just because one bill got passed or one law got passed or one person got held accountable. Until all of us is free, none of us is free.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;That&#8217;s it for this week. Let us know what you think at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="19717c786b6d717c7b7c6b77597b7c6b77707c6a78777d7c6b6a377a7674">[email&#160;protected]</a> or send us tweet with the hashtag #HearTheBern. If you haven&#8217;t already, please take a moment to rate, review or like us on Apple Podcasts, SoundCloud or wherever you&#8217;re listening. As always, transcripts will be up soon. &#8216;Til next time. <br></p>
+</div>
+</article>
+<footer class="footer">
+<div class="footer__address">Bernie 2020<br>
+PO Box 391<br>
+Burlington, VT 05402 </div>
+<div class="footer__paidfor">
+<span class="footer__disclaimer">Paid for by Bernie 2020</span>
+<div class="footer__bill">
+(not the billionaires)
+</div>
+</div>
+<div class="footer__sub">
+<span class="">© Bernie 2020 | <a href="/privacy-policy/">Privacy Policy</a>
+| <a href="https://boards.greenhouse.io/bernie2020" target="_blank">Jobs</a>
+| <a href="/podcast">Podcast</a>
+| <a href="/tax-returns/">Taxes</a>
+| <a href="/commitment-to-diversity-equity-and-inclusion/">Commitment to Diversity, Equity, and Inclusion</a>
+| <a href="/press/">Press</a>
+</span>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=AW-803021594" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-803021594');
+</script>
+
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '736881459842197');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=736881459842197&ev=PageView
+  &noscript=1"/>
+</noscript>
+
+
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o13k7');
+  twq('track','PageView');
+</script>
+
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-118768463-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  (function(m,o,v,a,b,l,e) {
+    if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+    m['MovableInkTrack'] = b;
+    l = o.createElement(v);
+    e = o.getElementsByTagName(v)[0];
+    l.type = 'text/javascript'; l.async = true;
+    l.src = '//' + a + '/p/js/1.js';
+    m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+    e.parentNode.insertBefore(l, e);
+
+    /* Exclusively for Bernie 2020 */
+  })(window, document, 'script', 'ycwht5le.micpn.com', 'mitr');
+</script>
+
+<script src="https://js.adsrvr.org/up_loader.1.1.0.js" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script type="9525a58351c689358b1e56f7-text/javascript">
+  ttd_dom_ready( function() {
+    if (typeof TTDUniversalPixelApi === 'function') {
+      var universalPixelApi = new TTDUniversalPixelApi();
+      universalPixelApi.init("vaoess8", ["cet59p0"], "https://insight.adsrvr.org/track/up");
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/aos.js" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/float-labels.js" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/custom.min.js" type="9525a58351c689358b1e56f7-text/javascript"></script>
+<script type="9525a58351c689358b1e56f7-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b90cc6c8e3","applicationID":"236271046","transactionName":"YFNWZERRD0JRUhENDlkZdVNCWQ5fH0IMCgZbUw==","queueTime":0,"applicationTime":185,"atts":"TBRVEgxLHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="9525a58351c689358b1e56f7-|49" defer=""></script></body>
