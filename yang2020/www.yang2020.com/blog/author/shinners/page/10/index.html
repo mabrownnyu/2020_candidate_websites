@@ -3,14 +3,15 @@
 <head >
 <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Matt Shinners, Author at Andrew Yang for President - Page 10 of 10</title>
+<title>Matt Shinners, Author at Andrew Yang for President - Page 10 of 11</title>
 
 <!-- This site is optimized with the Yoast SEO Premium plugin v10.0 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="https://www.yang2020.com/blog/author/shinners/page/10/" />
 <link rel="prev" href="https://www.yang2020.com/blog/author/shinners/page/9/" />
+<link rel="next" href="https://www.yang2020.com/blog/author/shinners/page/11/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="object" />
-<meta property="og:title" content="Matt Shinners, Author at Andrew Yang for President - Page 10 of 10" />
+<meta property="og:title" content="Matt Shinners, Author at Andrew Yang for President - Page 10 of 11" />
 <meta property="og:url" content="https://www.yang2020.com/blog/author/shinners/" />
 <meta property="og:site_name" content="Andrew Yang for President" />
 <meta property="og:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001-1024x683.jpg" />
@@ -18,7 +19,7 @@
 <meta property="og:image:width" content="1024" />
 <meta property="og:image:height" content="683" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Matt Shinners, Author at Andrew Yang for President - Page 10 of 10" />
+<meta name="twitter:title" content="Matt Shinners, Author at Andrew Yang for President - Page 10 of 11" />
 <meta name="twitter:site" content="@andrewyang" />
 <meta name="twitter:image" content="https://www.yang2020.com/wp-content/uploads/yang_iowa-001.jpg" />
 <!-- / Yoast SEO Premium plugin. -->
@@ -2555,7 +2556,10 @@ h6.giant-header {
 <li id="menu-item-2156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2156"><a href="https://my.yang2020.com/" itemprop="url"><span itemprop="name">Volunteer</span></a></li>
 <li id="menu-item-2157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2157"><a href="https://shop.yang2020.com/" itemprop="url"><span itemprop="name">Store</span></a></li>
 <li id="menu-item-2158" class="menu-donate menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a href="https://secure.actblue.com/donate/friends-of-andrew-yang" itemprop="url"><span itemprop="name">Donate</span></a></li>
-</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-1640 post type-post status-publish format-standard category-press entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/business-insider-piece-andrew-is-a-ball-of-statistics/">Business Insider Piece: Andrew Yang &#8216;Is a Ball of Statistics&#8217;</a></h2>
+</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-1642 post type-post status-publish format-standard category-andrew category-press entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/the-new-york-daily-news-runs-andrews-op-ed-on-ubi/">The New York Daily News Runs Andrew Yang&#8217;s Op-Ed on UBI</a></h2>
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-09-02T15:13:09+00:00">September 2, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>&#8220;And while you’d imagine that the lowest-paying jobs are most at risk of automation, an interesting split develops when you dig into the numbers. While food prep is one of the top two automatable jobs (87% of the tasks could be done via automation), bookkeeping and accounting, traditionally viewed as a white-collar job, could also have 86% of tasks automated.&#8221;</p>
+<p>Read the entire article <a href="http://www.nydailynews.com/opinion/ny-oped-money-for-nothing-universal-basic-income-20180830-story.html#">here</a>.</p>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/andrew/" rel="category tag">Andrew</a>, <a href="https://www.yang2020.com/blog/category/press/" rel="category tag">Press</a></span> </p></footer></article><article class="post-1640 post type-post status-publish format-standard category-press entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/business-insider-piece-andrew-is-a-ball-of-statistics/">Business Insider Piece: Andrew Yang &#8216;Is a Ball of Statistics&#8217;</a></h2>
 <p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-08-31T15:10:46+00:00">August 31, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>He&#8217;s given a lot of thought to our unknown future as a suite of emergent technologies spin into high gear. He suggests that the rise of AI will force us to reexamine what we mean by the word &#8220;work,&#8221; what we value as a society, and how we want our economy to function. He acknowledges that it could be a massive problem, but &#8220;it could also be a massive opportunity.&#8221;</p>
 <p>Read the rest of the article <a href="https://www.businessinsider.com/andrew-yang-beat-trump-universal-income-2018-8">here</a>.</p>
 </div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/press/" rel="category tag">Press</a></span> </p></footer></article><article class="post-1638 post type-post status-publish format-standard category-press entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/andrew-on-the-ezra-klein-show/">Andrew Yang on The Ezra Klein Show</a></h2>
@@ -2567,62 +2571,14 @@ h6.giant-header {
 </div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/press/" rel="category tag">Press</a></span> </p></footer></article><article class="post-1632 post type-post status-publish format-standard has-post-thumbnail category-press tag-podcast entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/andrew-yang-talks-with-sam-harris-about-ubi/">Andrew Yang talks with Sam Harris about UBI</a></h2>
 <p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-06-19T14:36:19+00:00">June 19, 2018</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><p>Andrew sat down with Sam Harris to talk about <em>The War on Normal People</em>, the future of the economy, and why he&#8217;s running for president. An exceptionally thorough and thoughtful interviewer, Sam Harris brought this conversation in many interesting directions.</p>
 <p>It&#8217;s one of Andrew&#8217;s favorite interviews &#8211; listen to it <a href="https://samharris.org/podcasts/130-universal-basic-income/">here</a>.</p>
-</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/press/" rel="category tag">Press</a></span> <span class="entry-tags">Tagged With: <a href="https://www.yang2020.com/blog/tag/podcast/" rel="tag">podcast</a></span></p></footer></article><article class="post-2581 post type-post status-publish format-standard category-uncategorized entry" itemscope itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h2 class="entry-title" itemprop="headline"><a class="entry-title-link" rel="bookmark" href="https://www.yang2020.com/blog/thecaninedividend/">The Canine Dividend (April Fools&#8217; Day!)</a></h2>
-<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2019-04-01T19:14:44+00:00">April 1, 2019</time> by <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="https://www.yang2020.com/blog/author/shinners/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Matt Shinners</span></a></span>  </p></header><div class="entry-content" itemprop="text"><div style="border: 1px solid gray; padding: 16px;">
-<h4>Brief</h4>
-<p><span style="font-weight: 400;">GDP continues to go up and up, while the number of dogs per household has remained stagnant. Nothing would do more to improve the mental health of every American than providing them with 1,000 dogs (of varying breeds) per month, free and clear, no questions asked. </span></p>
-<p><span style="font-weight: 400;">Studies show that simply by petting a friendly dog, radical improvements are seen in the health of humans. Petting dogs:</span></p>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Lowers blood pressure</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Slows heart rates</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Regulates breathing</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Relaxes muscles</span></li>
-</ul>
-<p><span style="font-weight: 400;">These health benefits are possible with just one dog; imagine the stress-reducing benefits of owning 12,000 dogs.</span></p>
-</div>
-<p>&nbsp;</p>
-<blockquote class="grayBox"><p><img class=" wp-image-512 alignleft" src="https://yang2020.com/wp-content/uploads/title494431657.png" alt="" width="110" height="110" /></p>
-<div><i><span style="font-weight: 400;">&#8220;Who’s a good boy? Yes, you’s a good boy. Oh yes you are. Yes you are. Yes you are.&#8221; -Andrew</span></i></div>
-<p><em> <span class="quoteAuthor">— Andrew</span></em></p></blockquote>
-<p>&nbsp;</p>
-<h4 style="text-align: left;">Problems to be Solved</h4>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Every American does not currently receive 1,000 dogs/month.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Too many leftovers go uneaten.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Not enough Americans have a good excuse to go for a walk.</span></li>
-</ul>
-<div style="border: 1px solid gray; padding: 16px;">
-<div class="row">
-<div id="col-a" class="col-md-4">
-<h5 style="text-align: left;">Goals</h5>
-<ul style="text-align: left;">
-<li style="font-weight: 400;"><span style="font-weight: 400;">Make Americans happy in the most direct way possible: giving people dogs.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Make every American home more secure.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Ensure an unprecedented stimulus to the carpet-cleaning industry.</span></li>
-</ul>
-</div>
-<div id="col-b" class="col-md-4">
-<h5 style="text-align: left;">Guiding Principles</h5>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Dogs are awesome</span></li>
-</ul>
-</div>
-</div>
-</div>
-<p>&nbsp;</p>
-<h4><span style="font-weight: 400;">As President, I will…</span></h4>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Create a federal agency tasked with the distribution of 1,000 dogs per month to every American.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Implement a tennis ball tax credit.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Direct the Bureau of Land Management to set aside 50% of federal land for dog parks.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Encourage the introduction of the 28th Amendment: The Right to Bear Dogs.</span></li>
-</ul>
-</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/uncategorized/" rel="category tag">Uncategorized</a></span> </p></footer></article><div class="archive-pagination pagination"><ul><li class="pagination-previous"><a href="https://www.yang2020.com/blog/author/shinners/page/9/" >&#x000AB; Previous Page</a></li>
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.yang2020.com/blog/category/press/" rel="category tag">Press</a></span> <span class="entry-tags">Tagged With: <a href="https://www.yang2020.com/blog/tag/podcast/" rel="tag">podcast</a></span></p></footer></article><div class="archive-pagination pagination"><ul><li class="pagination-previous"><a href="https://www.yang2020.com/blog/author/shinners/page/9/" >&#x000AB; Previous Page</a></li>
 <li><a href="https://www.yang2020.com/blog/author/shinners/"><span class="screen-reader-text">Page </span>1</a></li>
 <li class="pagination-omission">&#x02026;</li>
 <li><a href="https://www.yang2020.com/blog/author/shinners/page/8/"><span class="screen-reader-text">Page </span>8</a></li>
 <li><a href="https://www.yang2020.com/blog/author/shinners/page/9/"><span class="screen-reader-text">Page </span>9</a></li>
 <li class="active" ><a href="https://www.yang2020.com/blog/author/shinners/page/10/" aria-label="Current page" aria-current="page"><span class="screen-reader-text">Page </span>10</a></li>
+<li><a href="https://www.yang2020.com/blog/author/shinners/page/11/"><span class="screen-reader-text">Page </span>11</a></li>
+<li class="pagination-next"><a href="https://www.yang2020.com/blog/author/shinners/page/11/" >Next Page &#x000BB;</a></li>
 </ul></div>
 </main></div></div><h4 class='join-the-fight giant-header'>
 	Join the fight
@@ -2668,4 +2624,4 @@ h6.giant-header {
 <script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=3.0.0-beta.1'></script>
 <script type='text/javascript' src='https://www.yang2020.com/wp-content/plugins/about-andrew/public/js/about-andrew.js'></script>
 <script type='text/javascript' src='https://www.yang2020.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGVlcBQNO","queueTime":0,"applicationTime":214,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ebb1e7c3d1","applicationID":"105452192","transactionName":"YVVSMhQECxZXU0YICVgfcQUSDAoLGVlcBQNO","queueTime":0,"applicationTime":153,"atts":"TRJRRFweGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
