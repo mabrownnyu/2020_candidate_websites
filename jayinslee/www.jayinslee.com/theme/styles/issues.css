@@ -339,4 +339,42 @@
   transform:         translateY(-5%);   
 	}	
 	
-	
+  
+.list-block {
+  max-width: 1300px;
+  margin: 2em auto;
+  font-size: 150%;
+  line-height: 1.4;  
+}  
+.list-block .pad {
+  padding: 3em;
+}  
+
+h3 {
+color: #459d4d;
+font-size: 125%;
+}
+
+@media only screen and (min-width: 740px) { 
+  h3 { 
+		font-size: 150%; 
+	}
+}
+
+@media only screen and (min-width: 1000px) { 
+	h3 { 
+		font-size: 150%; 
+	}
+}
+
+@media only screen and (min-width: 1200px) { 
+	h3 { 
+		font-size: 180%; 
+	}
+}
+
+@media only screen and (min-width: 1400px) { 
+	h3 { 
+		font-size: 180%; 
+	}
+}
