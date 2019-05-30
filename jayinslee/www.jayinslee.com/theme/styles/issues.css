@@ -339,42 +339,44 @@
   transform:         translateY(-5%);   
 	}	
 	
-  
-.list-block {
-  max-width: 1300px;
-  margin: 2em auto;
-  font-size: 150%;
-  line-height: 1.4;  
-}  
-.list-block .pad {
-  padding: 3em;
-}  
-
-h3 {
-color: #459d4d;
-font-size: 125%;
+.issue-page .list-block {
+  margin-bottom: 0;
+}
+ .issue-page .text-block h3 {
+  color: #459d4d;
+  font-size: 105%;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
 }
 
+.issue-page .text-block h3 {
+  color: #459d4d;
+  font-size: 105%;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+}
 @media only screen and (min-width: 740px) { 
-  h3 { 
-		font-size: 150%; 
+  .issue-page .text-block h3 { 
 	}
 }
 
 @media only screen and (min-width: 1000px) { 
-	h3 { 
-		font-size: 150%; 
+	.issue-page .text-block h3 { 
+		font-size: 110%; 
 	}
 }
 
 @media only screen and (min-width: 1200px) { 
-	h3 { 
-		font-size: 180%; 
+	.issue-page .text-block h3 { 
+		font-size: 120%; 
 	}
 }
-
 @media only screen and (min-width: 1400px) { 
-	h3 { 
-		font-size: 180%; 
+	.issue-page .text-block h3 { 
 	}
 }
+/**
+.list-block .pad {
+  padding: 3em;
+} 
+**/
