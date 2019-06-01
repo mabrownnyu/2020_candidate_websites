@@ -97,7 +97,7 @@
 	grid-template-columns: repeat(1, 1fr);
 	position: relative;
 	box-shadow: 0 5px 10px rgba(0,0,0,.3);
-	}
+}
 .grid.five {
   margin-bottom: 2em;
 }     
@@ -179,6 +179,11 @@
 	background-position: center center;
 	background-size: cover;
 	}
+  
+.issues-index .grid article:nth-child(even) {
+  background-color: var(--green);   
+}
+
 .grid.three figure {
   background-position: center bottom;
 	background-size: 90%;
@@ -197,12 +202,7 @@
   opacity: .1;
 }
 
-.issues-index .grid.three article:nth-child(2) {
-  background: var(--green);
-}
-.issues-index .grid.three article:nth-child(3) {
-  background: var(--dark-blue);
-}
+
 /* Solutions Header */
 
 
