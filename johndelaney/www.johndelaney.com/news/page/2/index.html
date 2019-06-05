@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<html lang="en-US">
 <!--
 	
 		      ::::::::   ::::::::         ::::::::::: ::::::::  :::    ::: ::::    :::          ::::::::   ::::::::  ::: 
@@ -16,7 +16,7 @@
 -->
 
 <head>
-	<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">	
 
@@ -39,14 +39,14 @@
 //]]>
 </script>
 <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
-<!-- This site is optimized with the Yoast SEO plugin v11.1.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<!-- This site is optimized with the Yoast SEO plugin v11.3 - https://yoast.com/wordpress/plugins/seo/ -->
 <link rel="canonical" href="https://www.johndelaney.com/news/page/2/" />
 <link rel="prev" href="https://www.johndelaney.com/news/" />
 <link rel="next" href="https://www.johndelaney.com/news/page/3/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="The Latest | John Delaney for President" />
-<meta property="og:description" content="FRIENDSHIP HEIGHTS, MD – Yesterday, in a column in The Washington Post titled “2020 Democrats must run on foreign policy, not away from it,” Josh Rogin highlighted &hellip;" />
+<meta property="og:description" content="“As your President, I won’t walk out of an infrastructure meeting with Congressional leaders and act like a spoiled child; I will roll up my &hellip;" />
 <meta property="og:url" content="https://www.johndelaney.com/news/" />
 <meta property="og:site_name" content="John Delaney for President" />
 <meta property="og:image" content="https://www.johndelaney.com/wp-content/uploads/2019/02/john-delaney-open-graph-blue.jpg" />
@@ -54,7 +54,7 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="627" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="FRIENDSHIP HEIGHTS, MD – Yesterday, in a column in The Washington Post titled “2020 Democrats must run on foreign policy, not away from it,” Josh Rogin highlighted [&hellip;]" />
+<meta name="twitter:description" content="“As your President, I won’t walk out of an infrastructure meeting with Congressional leaders and act like a spoiled child; I will roll up my [&hellip;]" />
 <meta name="twitter:title" content="The Latest | John Delaney for President" />
 <meta name="twitter:site" content="@johndelaney" />
 <meta name="twitter:image" content="https://www.johndelaney.com/wp-content/uploads/2019/02/john-delaney-open-graph-blue.jpg" />
@@ -146,6 +146,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div id="primary" class="col-12 col-md-8 pr-lg-5">
 				
 				
+<article class="teaser post-3388 post type-post status-publish format-standard hentry category-press-release tag-infrastructure" id="post-3388">
+	
+	<h2 class="h3 mb-3">
+		<a href="https://www.johndelaney.com/2019/05/29/delaney-announces-2-trillion-infrastructure-plan/">
+									Delaney Announces $2 Trillion Infrastructure Plan		</a>
+	</h2>
+			
+		<div class="post-meta mb-3">
+		<span>May 29, 2019</span>
+		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
+	</div>
+				
+					<p>“As your President, I won’t walk out of an infrastructure meeting with Congressional leaders and act like a spoiled child; I will roll up my </p>
+	
+	<ul class="list-inline">
+		<li class="list-inline-item mr-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/29/delaney-announces-2-trillion-infrastructure-plan/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
+		</li>
+		<li class="list-inline-item mr-3">
+			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Announces+$2+Trillion+Infrastructure+Plan&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F29%2Fdelaney-announces-2-trillion-infrastructure-plan%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Announces $2 Trillion Infrastructure Plan&#32;&#32;https://www.johndelaney.com/2019/05/29/delaney-announces-2-trillion-infrastructure-plan/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
+		</li>
+	</ul>
+
+</article>				
+				
+<article class="teaser post-3379 post type-post status-publish format-standard hentry category-press-release tag-foreign-policy" id="post-3379">
+	
+	<h2 class="h3 mb-3">
+		<a href="https://www.johndelaney.com/2019/05/28/delaney-campaign-highlights-foreign-policy-focus/">
+									Delaney Campaign Highlights Foreign Policy Focus		</a>
+	</h2>
+			
+		<div class="post-meta mb-3">
+		<span>May 28, 2019</span>
+		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
+	</div>
+				
+					<p>Delaney Campaign Highlights&nbsp;Foreign&nbsp;Policy&nbsp;Focus FRIENDSHIP HEIGHTS, MD –&nbsp;According to multiple analysts and pundits,&nbsp;foreign&nbsp;policy&nbsp;has not played a large role in the Democratic primary to date. John Delaney’s </p>
+	
+	<ul class="list-inline">
+		<li class="list-inline-item mr-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/28/delaney-campaign-highlights-foreign-policy-focus/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
+		</li>
+		<li class="list-inline-item mr-3">
+			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Campaign+Highlights+Foreign+Policy+Focus&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F28%2Fdelaney-campaign-highlights-foreign-policy-focus%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Campaign Highlights Foreign Policy Focus&#32;&#32;https://www.johndelaney.com/2019/05/28/delaney-campaign-highlights-foreign-policy-focus/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
+		</li>
+	</ul>
+
+</article>				
+				
+<article class="teaser post-3371 post type-post status-publish format-standard hentry category-press-release" id="post-3371">
+	
+	<h2 class="h3 mb-3">
+		<a href="https://www.johndelaney.com/2019/05/27/delaney-statement-on-memorial-day/">
+									Delaney Statement on Memorial Day		</a>
+	</h2>
+			
+		<div class="post-meta mb-3">
+		<span>May 27, 2019</span>
+		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
+	</div>
+				
+					<p>&#8220;Memorial Day is one of the most sacred days on the calendar, a day to reflect and remember.&#8221;</p>
+	
+	<ul class="list-inline">
+		<li class="list-inline-item mr-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/27/delaney-statement-on-memorial-day/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
+		</li>
+		<li class="list-inline-item mr-3">
+			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Statement+on+Memorial+Day&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F27%2Fdelaney-statement-on-memorial-day%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Statement on Memorial Day&#32;&#32;https://www.johndelaney.com/2019/05/27/delaney-statement-on-memorial-day/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
+		</li>
+	</ul>
+
+</article>				
+				
 <article class="teaser post-3361 post type-post status-publish format-standard hentry category-press-release tag-foreign-policy tag-icymi" id="post-3361">
 	
 	<h2 class="h3 mb-3">
@@ -229,90 +313,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</ul>
 
 </article>				
-				
-<article class="teaser post-3349 post type-post status-publish format-standard hentry category-press-release" id="post-3349">
-	
-	<h2 class="h3 mb-3">
-		<a href="https://www.johndelaney.com/2019/05/21/delaney-statement-on-rep-amashs-call-for-trumps-impeachment/">
-									Delaney Statement on Rep. Amash&#8217;s call for Trump&#8217;s Impeachment		</a>
-	</h2>
-			
-		<div class="post-meta mb-3">
-		<span>May 21, 2019</span>
-		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
-	</div>
-				
-					<p>It is time for principled Republicans to similarly take a stand and defend the Constitution, the institutions of government, the rule of law, and the norms of our society.</p>
-	
-	<ul class="list-inline">
-		<li class="list-inline-item mr-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/21/delaney-statement-on-rep-amashs-call-for-trumps-impeachment/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
-		</li>
-		<li class="list-inline-item mr-3">
-			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Statement+on+Rep.+Amash&#8217;s+call+for+Trump&#8217;s+Impeachment&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F21%2Fdelaney-statement-on-rep-amashs-call-for-trumps-impeachment%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Statement on Rep. Amash&#8217;s call for Trump&#8217;s Impeachment&#32;&#32;https://www.johndelaney.com/2019/05/21/delaney-statement-on-rep-amashs-call-for-trumps-impeachment/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
-		</li>
-	</ul>
-
-</article>				
-				
-<article class="teaser post-3345 post type-post status-publish format-standard hentry category-press-release" id="post-3345">
-	
-	<h2 class="h3 mb-3">
-		<a href="https://www.johndelaney.com/2019/05/21/delaney-statement-on-seiu-efforts-to-unionize-mcdonalds-workers/">
-									Delaney Statement on SEIU Efforts to Unionize McDonald’s Workers		</a>
-	</h2>
-			
-		<div class="post-meta mb-3">
-		<span>May 21, 2019</span>
-		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
-	</div>
-				
-					<p>As the son of a union worker, I fully support the right of McDonald’s workers to unionize. Unions create safe work environments and fight for the rights of all workers. </p>
-	
-	<ul class="list-inline">
-		<li class="list-inline-item mr-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/21/delaney-statement-on-seiu-efforts-to-unionize-mcdonalds-workers/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
-		</li>
-		<li class="list-inline-item mr-3">
-			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Statement+on+SEIU+Efforts+to+Unionize+McDonald’s+Workers&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F21%2Fdelaney-statement-on-seiu-efforts-to-unionize-mcdonalds-workers%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Statement on SEIU Efforts to Unionize McDonald’s Workers&#32;&#32;https://www.johndelaney.com/2019/05/21/delaney-statement-on-seiu-efforts-to-unionize-mcdonalds-workers/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
-		</li>
-	</ul>
-
-</article>				
-				
-<article class="teaser post-3342 post type-post status-publish format-standard hentry category-press-release tag-rural-america tag-trump-administration tag-trump-trade-war" id="post-3342">
-	
-	<h2 class="h3 mb-3">
-		<a href="https://www.johndelaney.com/2019/05/16/delaney-congress-should-open-an-investigation-into-62-million-foreign-bailout/">
-									Delaney: Congress Should Open an Investigation Into $62 Million Foreign Bailout		</a>
-	</h2>
-			
-		<div class="post-meta mb-3">
-		<span>May 16, 2019</span>
-		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
-	</div>
-				
-					<p>FRIENDSHIP HEIGHTS, MD – According to reports, the Trump administration redirected $62 million that was earmarked for struggling farmers to provide a bailout for a Brazilian meatpacking </p>
-	
-	<ul class="list-inline">
-		<li class="list-inline-item mr-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/05/16/delaney-congress-should-open-an-investigation-into-62-million-foreign-bailout/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
-		</li>
-		<li class="list-inline-item mr-3">
-			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney:+Congress+Should+Open+an+Investigation+Into+$62+Million+Foreign+Bailout&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F05%2F16%2Fdelaney-congress-should-open-an-investigation-into-62-million-foreign-bailout%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney: Congress Should Open an Investigation Into $62 Million Foreign Bailout&#32;&#32;https://www.johndelaney.com/2019/05/16/delaney-congress-should-open-an-investigation-into-62-million-foreign-bailout/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
-		</li>
-	</ul>
-
-</article>				
 							</div>
 			<div id="secondary" class="col-8 col-sm-4">
 
@@ -339,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				  <input type="text" class="d-none" name="is_spam" id="message" />
 
 					<div class="input-group mb-3">
-					  <input type="hidden" value="2019-06-04T12:05:15+00:00" name="timestamp" />
+					  <input type="hidden" value="2019-06-05T12:04:37+00:00" name="timestamp" />
 					  <input type="text" class="form-control" placeholder="Mobile Number" aria-label="Mobile Number" aria-describedby="mobile-signup-button" name="mobile_number" />
 					  <div class="input-group-append">
 					    <button class="btn btn-red" type="button" id="mobile-signup-button">Sign Up</button>
@@ -473,5 +473,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script type='text/javascript' src='https://www.johndelaney.com/wp-content/themes/jkd/assets/js/main.min.js'></script>
 <script type='text/javascript' src='https://www.johndelaney.com/wp-includes/js/wp-embed.min.js'></script>
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"82920e9ea9","applicationID":"258621444","transactionName":"ZlAAZxQHWhIFBRFaXV8aI1ASD1sPSw4KXlc=","queueTime":0,"applicationTime":125,"atts":"ShcDEVwdSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</body>
 </html>
