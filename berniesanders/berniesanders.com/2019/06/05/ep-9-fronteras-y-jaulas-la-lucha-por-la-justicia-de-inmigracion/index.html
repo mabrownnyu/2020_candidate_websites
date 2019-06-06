@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="167ddf4033d0ef695fa56c47-text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ep. 9: Fronteras y Jaulas: la lucha por la justicia de inmigración - Bernie Sanders</title>
+<link rel="stylesheet" href="https://use.typekit.net/osh1jbn.css">
+<link rel="stylesheet" href="https://berniesanders.com/wp-content/themes/bernie/style.css">
+
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-228.png" sizes="228x228">
+
+<link rel="shortcut icon" sizes="196x196" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-196.png">
+
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-180.png" sizes="180x180">
+
+<meta name="msapplication-TileColor" content="#0073E6">
+<meta name="msapplication-TileImage" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-144.png">
+
+<meta name="msapplication-config" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/browserconfig.xml" />
+<script type="167ddf4033d0ef695fa56c47-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript" src="https://act.berniesanders.com/resources/actionkit.js"></script>
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<link rel="canonical" href="https://berniesanders.com/2019/06/05/ep-9-fronteras-y-jaulas-la-lucha-por-la-justicia-de-inmigracion/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ep. 9: Fronteras y Jaulas: la lucha por la justicia de inmigración - Bernie Sanders" />
+<meta property="og:description" content="Briahna Joy Gray: Los secretos de secreto no son divertidos. Los secretos de secreto lastiman a alguien. Michael Scott: Wow. Gracias. Briahna Joy Gray: tal vez lo reconozca como una línea del programa de televisión The Office. Una escena divertida que no pretende ser un pensamiento profundo. Pero me vino a la mente mientras pensaba &hellip;" />
+<meta property="og:url" content="https://berniesanders.com/2019/06/05/ep-9-fronteras-y-jaulas-la-lucha-por-la-justicia-de-inmigracion/" />
+<meta property="og:site_name" content="Bernie Sanders" />
+<meta property="article:section" content="Transcripts" />
+<meta property="article:published_time" content="2019-06-05T21:46:46+00:00" />
+<meta property="article:modified_time" content="2019-06-05T21:46:47+00:00" />
+<meta property="og:updated_time" content="2019-06-05T21:46:47+00:00" />
+<meta property="og:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:secure_url" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Briahna Joy Gray: Los secretos de secreto no son divertidos. Los secretos de secreto lastiman a alguien. Michael Scott: Wow. Gracias. Briahna Joy Gray: tal vez lo reconozca como una línea del programa de televisión The Office. Una escena divertida que no pretende ser un pensamiento profundo. Pero me vino a la mente mientras pensaba [&hellip;]" />
+<meta name="twitter:title" content="Ep. 9: Fronteras y Jaulas: la lucha por la justicia de inmigración - Bernie Sanders" />
+<meta name="twitter:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+
+<link rel='dns-prefetch' href='//berniesanders.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Bernie Sanders &raquo; Ep. 9: Fronteras y Jaulas: la lucha por la justicia de inmigración Comments Feed" href="https://berniesanders.com/2019/06/05/ep-9-fronteras-y-jaulas-la-lucha-por-la-justicia-de-inmigracion/feed/" />
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/berniesanders.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://berniesanders.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<script type="167ddf4033d0ef695fa56c47-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript" src='https://berniesanders.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<link rel='https://api.w.org/' href='https://berniesanders.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://berniesanders.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://berniesanders.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://berniesanders.com/?p=1256' />
+<link rel="alternate" type="application/json+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F06%2F05%2Fep-9-fronteras-y-jaulas-la-lucha-por-la-justicia-de-inmigracion%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F06%2F05%2Fep-9-fronteras-y-jaulas-la-lucha-por-la-justicia-de-inmigracion%2F&#038;format=xml" />
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+</head>
+<body class="post-template-default single single-post postid-1256 single-format-standard">
+<header class="header ">
+<h1 class="logo ">
+<a class="logo__link" href="/">
+<span class="sr-only"></span>
+</a>
+</h1>
+
+<div class="menu-main-header-container"><ul id="menu-main-header" class="menu"><li id="menu-item-1249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1249"><a href="https://berniesanders.com/volunteer">Volunteer</a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a href="https://berniesanders.com/issues/">Issues</a></li>
+<li id="menu-item-309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-309"><a href="https://map.berniesanders.com">Events</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="https://berniesanders.com/es/para-todos/">en Español</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="https://store.berniesanders.com/?utm_source=website&#038;utm_medium=navigation">Store</a></li>
+</ul></div>
+<button class="header__menu-toggle" type="button">
+<span class="sr-only">Toggle Menu</span>
+<span class="menu__bar"></span>
+</button>
+
+<a href="https://secure.actblue.com/donate/bern-site?refcode=splash-top-right" class="header__donate" data-aos="slide-left" data-aos-delay="800" data-aos-easing="ease-out-quad" data-aos-duration="400">
+Donate </a>
+</header>
+<div class="hero">
+<div class="hero__main" style="background-image: url('')">
+<div class="hero__heading">
+<h1 class="hero__title" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-out-quad" data-aos-duration="1000">
+Ep. 9: Fronteras y Jaulas: la lucha por la justicia de inmigración </h1>
+<div class="hero__content" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-quad" data-aos-duration="800">
+</div>
+</div>
+<video id="bg-vid" playsinline autoplay muted loop>
+
+<source src="" type="video/webm">
+<source src="" type="video/mp4">
+</video>
+</div>
+</div>
+<article class="main post-1256 post type-post status-publish format-standard hentry category-transcripts" id="post-1256">
+<div data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-easing="ease-out-quad" data-aos-duration="1000" class="default">
+<figure><iframe width="100%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/631197240&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe></figure>
+<p><strong>Briahna Joy Gray: </strong>Los secretos de secreto no son divertidos. Los secretos de secreto lastiman a alguien. <br></p>
+<p><strong>Michael Scott: </strong>Wow. Gracias.<br></p>
+<p><strong>Briahna Joy Gray: </strong>tal vez lo reconozca como una línea del programa de televisión <em>The Office</em>. Una escena divertida que no pretende ser un pensamiento profundo. Pero me vino a la mente mientras pensaba en todas las historias que escuché esta semana al entrevistar a la gente para este episodio especial de inmigración. Lo que realmente me sorprendió de las historias que escuché sobre los beneficiarios de DACA, los solicitantes de asilo y los abogados que trabajan para asegurarles derechos, es el poder de la verdad. <br></p>
+<p>Cuando la amenaza de la deportación cuelga sobre tu cabeza, vives una vida llena de secretos. Creas un vinculo con amigos a lo largo de la escuela secundaria, pero en el último año, te encuentras luchando para hacer excusas por qué todavía no tienes una licencia de conducir. ¿La razón? Es ilegal en tu estado que la gente indocumentada tenga una.<br></p>
+<p><strong>Luis Alcauter:</strong> conducir sin licencia, siempre con el miedo de ser detenido y perder tu carro. Tal vez hasta puedes ir a la cárcel.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Tus amigos están aplicando a la universidad, pero tu no, a pesar de ser inteligente, ambicioso, extrovertido. Puedes llegar con excusas, pero el secreto te obliga a pintar una versión de ti que es sólo, bueno, una sombra de quien realmente eres. <br></p>
+<p><strong>Belén sisa: </strong>La primera persona a la que le conté que era indocumentada fue mi consejero. Y me miró, y dijo: &#8220;sabes, no sé qué hacer. No sé cómo ayudarte. &#8221; Y así me dejaron a los 17, 18 tratando de averiguar qué hacer después de la secundaria, cuando sentí que todo el mundo estaba haciendo lo que quería hacer, y yo me sentí como si hubiera hecho todo bien, y me sentí como si la cosas no estuvieran a mi favor.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Sólo la semana pasada, CNN informó que un centro de procesamiento privado en El Paso diseñado para mantener a 125 personas estaba secretamente manteniendo a 900 personas. Una celda diseñada para mantener a un máximo de 12 personas mantenía a &nbsp;76. Otra con una capacidad máxima de ocho, mantenía a 41. Una celda diseñada para mantener a 35 personas mantenía a 155. <br></p>
+<p>Las personas detenidas que no pudieron acceder a las duchas o a ropa limpia permanecieron sucias durante semanas. La gente se subía encima de los inodoros sólo para tener espacio para respirar. Esto ha estado sucediendo durante casi un mes por lo menos. Pero siempre y cuando nadie supiera&#8230;<br></p>
+<p>Guardamos secretos para protegernos, de la deportación, del ser juzgados, pero hay una increíble cantidad de poder en la verdad.<br></p>
+<p><strong>Belén sisa: </strong>Sales para sobrevivir. Realmente no tienes una opción. Empiezas a encontrar obstáculos, y después de un tiempo tienes que tener el coraje de decírselo a alguien. Yo le dije a ese consejero que era indocumentada, pero en realidad, no le dije nada a nadie hasta después de la secundaria cuando empecé a hablar y sentir que no podía simplemente sentarme al margen de la situación &nbsp;&nbsp;mientras que muchos otros jóvenes indocumentados eran arrestados frente a la casa blanca, protestando en la capital del estado y haciendo que el presidente de los Estados Unidos tomara una acción ejecutiva. Así de poderosos éramos. <br></p>
+<p>Y yo no tenía poder porque no estaba haciendo nada. Así que decidí un año después de que DACA salió, que iba a contar mi historia en una habitación de 200 personas progresistas caucasiano en una de las reuniones del Comité Estatal demócrata. Tenía miedo porque mi imagen de una persona mayor caucasiano era que me odiaban. Pero tuve una respuesta muy positiva. Era como si un peso se levantará, que finalmente podría ser yo misma porque al no decir la verdad y esconderme durante tanto tiempo, te hace sentir como que deberías avergonzarte de la persona que eres.<br></p>
+<p><strong>Luis Alcauter: </strong>Mi recuerdo más vívido fue cuando estaba aplicando a la universidad, y me di cuenta de que era indocumentado, y de las muchas luchas y obstáculos que iba a tener que superar como estudiante indocumentado con mi objetivo de graduarme de la universidad. Incluso después de todo eso, si fuera capaz de superar todos esos obstáculos, al graduarme de la universidad, no habría oportunidades de conseguir un trabajo.<br></p>
+<p>Así que, saliendo y diciéndoles que eres &nbsp;indocumentado, era casi algo que tenías que hacer para poder superar estos obstáculos porque si ibas a ir a explicarle a tus consejeros, a tu futuro empleador que estabas buscando un trabajo, tienes que explicar tu situación. Incluso cuando te pagan, cuando recibes un sueldo, no tenía una cuenta bancaria porque no tenía seguro social. No podía abrir una cuenta bancaria. Entonces, tenía este pedazo de papel que hice dinero, ¿cómo iba a conseguir el dinero y ser capaz de gastarlo en las cosas que necesitaba?<br></p>
+<p><strong>Briahna Joy Gray: </strong>Las voces que acaban de escuchar fueron Belén Sisa, secretaria de prensa Latina para la campaña de Bernie, y Luis Alcauter, coordinador digital en español. Son dos de al menos cuatro beneficiarios de DACA que trabajan aquí en la oficina central de la campaña. <br></p>
+<p>No todos los medios de comunicación reaccionaron bien a la campaña la cual decidió emplear a beneficiarios de DACA. No lean los comentarios bajo el artículo de Breitbart sobre Belén, por ejemplo. Pero el equipo de Bernie está muy orgulloso de estar trabajando para un candidato cuya campaña es una extensión de sus valores.<br></p>
+<p><strong>Bernie Sanders: </strong>Entonces, lo que vamos a hacer no sólo es aprobar una reforma migratoria integral y un camino hacia la ciudadanía, vamos a proporcionar un estatus legal inmediato para los 1.8 millones de jóvenes en el programa DACA. Seamos claros. Sacar a los trabajadores indocumentados de las sombras y darles las protecciones básicas en su lugar de trabajo y protección laboral a las que todos los trabajadores tienen derecho, que ayudan a cada trabajador en los Estados Unidos. Se asegura de que las corporaciones y los empleadores sin escrúpulos no puedan explotar a un subconjunto de la fuerza laboral para reducir el mercado laboral en su totalidad.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Eso fue del gran discurso sobre inmigración de Bernie la semana pasada. Y este es un clip de un poderoso video elevando las voces de inmigrantes que son miembros &nbsp;de la campaña, incluyendo Belén y Luis, y también Eileen, que ustedes pueden recordar como la diabética del episodio dos, el episodio sobre el cuidado médico.<br></p>
+<p><strong>Sam Adaramola: </strong>Me pusieron inmediatamente en proceso de deportación. Mi permiso de trabajo fue cancelado. No podía trabajar. No podía proveer para mis padres ahora discapacitados.<br></p>
+<p><strong>Basi Alonso: </strong>Lo único que queríamos hacer era reunirnos con mi padre que había huido de México porque temía por su vida. Había sido secuestrado, y golpeado, y extorsionado. Y le dijeron que si no pagaba, iba a ser asesinado por sus actividades políticas.<br></p>
+<p><strong>Eileen García: </strong>Tuve una realización en dónde, hubo momentos reales a lo largo de mi vida donde toda mi familia podría ser deportado, y me quedaría sola.<br></p>
+<p><strong>Belén sisa: </strong>Fue una cosa muy real tener que esconder que eras indocumentada, o en algunos casos incluso que eras inmigrante.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Esas historias son sólo un microcosmo de todas las historias de inmigración que hay. Y en este episodio de <em>Hear The Bern</em>, queremos no sólo contarlas, sino ayudar a explicar una parte de lo que está sucediendo con esta crisis de inmigración, y hablar con algunas de las personas que están ayudando a resolverlo.<br></p>
+<p>Esto es <em>Hear the Bern</em>. Un podcast sobre la gente, las ideas y la política que están impulsando la campaña de Bernie Sanders 2020, y el movimiento para asegurar una vida digna para todos los que viven en este país. Mi nombre es Briahna Joy Gray, viniendo desde la sede de la campaña en Washington, D.C.<br></p>
+<p>Esta semana, además de hablar con Luis y Belén, entrevisté a Viridiana Martínez, una activista y &nbsp;beneficiaria de DACA, que en 2012 infiltró en un centro de detención al quedar detenida para ayudar a los que están dentro. También hablé con la abogada de inmigración y escritora Brianna Rennix, que trabaja en el centro de detención de Dilley en el sur de Texas, una instalación infame para alojar familias con niños. Ella nos guía a través del defectuoso proceso de asilo, y posibles caminos para una reforma.<br></p>
+<p>Los activistas ya han pasado años instando al gobierno a solucionar este problema. En 2012, el presidente Obama respondió a esta presión al implementar la política de Acción Diferida para los Llegados en la Infancia, conocida como DACA.<br></p>
+<p>Fundamentalmente, esto era una acción ejecutiva, no una nueva ley. Y no proporciona un camino de ciudadanía para los Dreamers que salvó temporalmente de la amenaza de la deportación. Eso significaba que los Dreamers continuaban viviendo en un estado intermedio, ni residentes permanentes, ni inmigrantes indocumentados. Y dado que DACA no es una ley, las administraciones futuras podrían cambiar la política por acción ejecutiva, tal como lo había promulgado Obama.<br></p>
+<p>Incluso con todas esas advertencias, DACA fue transformadora para personas como Belén y Luis.<br></p>
+<p><strong>Belén sisa: </strong>Me acababa de graduar de la secundaria. Vivía en el valle de San Tan, Arizona, que está justo al lado de Florencia, Arizona, donde está uno de los más grandes centros de detención de inmigrantes y prisiones federales. Y yo estaba en casa con mi mamá. Y encendimos las noticias, y la escuché gritar de repente. Y yo estaba como, &#8220;¿Qué está sucediendo?&#8221; Y ella me dijo, &#8220;Belén, oh Dios mío, el Presidente acaba de hacer esta acción ejecutiva. Significa que estarás a salvo. Finalmente podrás ir a la universidad, conseguir un trabajo y hacer todas estas cosas por las que estabas tan devastada a no poder hacer cuando te graduaste de la escuela secundaria hace un mes.”<br></p>
+<p>Todo sucedió tan rápido, pero sólo recuerdo la alegría que trajo, ni siquiera sabiendo que detrás de las escenas había miles de jóvenes indocumentados que realmente hicieron que la acción sucediera. Y mostró cuán la poca experiencia política que tenía &#8211; &nbsp;era al principio porque no sabía lo que significaba. Todos pensamos que iba a ser como la ciudadanía, pero realmente no lo era.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Para Belén, DACA fue también el comienzo de su vida como activista.<br></p>
+<p><strong>Belén sisa: </strong>El anuncio de DACA del Presidente Obama, me pareció que es donde nació la “activista política Belén”. Fue casi como si empeze a desarrollar en la persona en la que se suponía que debía ser. Y a veces pienso que eso es lo que es la lucha. A veces tienes que pasar por estas cosas para convertirte en la persona que se supone que eres, a pesar de que nadie debe pasar por las injusticias, a veces me siento como el universo lo hace por nosotros de esa manera. <br></p>
+<p><strong>Briahna Joy Gray: </strong>Es una historia que escuché una y otra vez de los beneficiarios de DACA. Que salir como un beneficiario de DACA fue empoderador. <br></p>
+<p><strong>Viridiana Martínez: </strong>Fue una de las experiencias más poderosas de todo mi trabajo de activismo porque fue cuando vimos de primera mano lo que podíamos hacer si enfrentamos el sistema y mostramos lo que en realidad es.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Esa fue la activista de inmigración Viridiana Martínez. La conocí en marzo cuando me senté junto a ella en South by Southwest. Mi colega, Rodrigo, eligió una película para que la viéramos llamada Los Infiltrados. Y no sabía mucho al respecto, sólo que tenía algo que ver con los centros de detención. Así que, me incliné a la mujer a mi izquierda, sólo conversando, y le pregunte: &#8220;¿sabes algo de esta película?&#8221; Resulta que ella era parte de la película. <br></p>
+<p>En 2012, Viridiana y un grupo de otros jóvenes indocumentados iniciaron el grupo de la Alianza Nacional de Jóvenes Inmigrantes para abogar por los derechos de los inmigrantes al enfrentar a las autoridades de inmigración. Pero su defensa aumentó cuando Mohammad, el fundador del grupo, fue contactado por el hijo de un detenido llamado Claudio Rojas.<br></p>
+<p><strong>Viridiana Martínez: </strong>Había tratado de contactar a otras organizaciones, y todos decían, &#8220;Oh, bueno, no hay nada que podamos hacer. Podemos ayudar a acelerar la deportación, pero no podemos&#8230; &#8221; y estamos como, &#8220;está bien.&#8221;<br></p>
+<p><strong>Briahna Joy Gray: </strong>Claudio había sido llevado al centro de detención de Broward, un lugar para detenidos de bajo riesgo y no violentos. En 2011, el director de ICE bajo la administración del &nbsp;Presidente Obama, John Morton, emitió un memorando en el que pedía a los abogados y empleados de ICE que se abstengan de perseguir a los no ciudadanos con lazos familiares, educativos, militares u otros vínculos con los Estados Unidos, y que en su lugar se concentren en las personas que representaban un riesgo grave a la seguridad pública.<br></p>
+<p><strong>Viridiana Martínez: </strong>Es un memorando de DHS. Y eso es lo que usamos básicamente para decir que ustedes están diciendo que los casos de baja prioridad deben ser procesados favorablemente, lo que significa liberarlos. Entonces, ¿por qué no estás revisando estos casos, para que esta gente sea liberada? Lo que estaba sucediendo es que existen centros de detención completos que albergan a ese tipo de personas.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Así que Vidi y su equipo crearon un plan. Uno de sus miembros, un joven llamado Marco, iba a ser detenido intencionalmente para que pudiera ayudar a Claudio a acceder a recursos en el exterior que podrían permitirle llamar la atención sobre su caso y liberarse. Cuando el equipo descubrió que también había area para la mujeres en el centro de detención, decidieron infiltrarse también pero esta vez con Viridiana.<br></p>
+<p><strong>Viridiana Martínez: </strong>Broward fue la instalación perfecta para probar esto. Sabes, cuando miras a Broward, en comparación con otros centros de detención, otros centros de detención se ven como una prisión. No sé si has estado, pero tienen todo el cableado. Parecen una prisión. Mientras que Broward literalmente, tu has visto la película, Broward se ve como un hotel desde el exterior. ¿Correcto?<br></p>
+<p><strong>Briahna Joy Gray: </strong>Sí.<br></p>
+<p><strong>Viridiana Martínez: </strong>De<strong> </strong>color rosa.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Palmeras.<br></p>
+<p><strong>Viridiana Martínez: </strong>No sabría que es un centro de detención. Así que, fue el lugar perfecto para hacer &nbsp;nuestro experimento.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Pero irónicamente, cuando Viridiana trató de ser detenida, bueno, no le creyeron.<br></p>
+<p><strong>Viridiana Martínez: </strong>En<strong> </strong>el primer intento, estoy usando este vestido azul de verano. Y es super lindo, y divertido, y yo dije, &#8220;Oh, va hacer tan fácil.”<br></p>
+<p><strong>Briahna Joy Gray: </strong>Tu cabello está bien peinado, todo lindo. Eres una chica linda. ¿Cuántos años tenías en ese momento? ¿Como 27? <br></p>
+<p><strong>Viridiana Martínez: </strong>26.<br></p>
+<p><strong>Briahna Joy Gray: </strong>26, sí. ¿Qué pasó cuando te presentaste mirando como si hubieras salido de las páginas de Marie Claire?<br></p>
+<p><strong>Viridiana Martínez: </strong>Entonces, el agente de la patrulla fronteriza me dijo, &#8220;¿quién eres? ¿Qué quieres? &#8220;Te vi salir de un auto.&#8221; yo pensé, &#8220;Oh no, maldición. Me descubrió.&#8221; Estaba muy nerviosa. Estaba agarrando mi pasaporte. Y yo le dije, &#8220;me voy.&#8221; Salí de allí, y luego corrí, y llamé a mis amigos que estaban en el auto. Y yo les dije a mis amigos “nos descubrieron”.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Entonces, para el segundo intento, ¿cómo te vestistes y qué fue diferente?<br></p>
+<p><strong>Viridiana Martínez: </strong>Prueba dos, terminé usando una camisa, como una camisa de botón sobre una camiseta y unos tenis, y mi pelo estaba en una cola. Y creo que tal vez no tenía maquillaje. Hablando sólo español, eso fue muy importante. Una vez que llegué a la entrada, donde me entregaré a la puerta, estaba llorando porque recuerdo diciéndome a mí misma: &#8220;Dios, ¿y si no me creen? Si me siguen rechazando, como &#8216; no, deberías quedarte aquí. &#8216; ¿Cómo voy a empujar, cómo voy a ser insistente, sin que sea, &#8216; ¿qué está haciendo esta mujer?&#8217; Sólo voy a llorar. Sólo voy a hacer este papel &#8220;esta mujer está loca, dale lo que quiere.&#8221; Y funcionó.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Entonces, dime, ¿cómo fue cuando te procesaron?<br></p>
+<p><strong>Viridiana Martínez: </strong>Una vez que finalmente me llevaron, me llevaron a una oficina de patrulla fronteriza. Fui procesada por un oficial con el apellido Izquierdo, así que creo que era cubano o dominicano, o algo así. Lo menciono por que, es relevante porque cuando llegamos a la oficina de la patrulla fronteriza, él empieza a hacerme preguntas.<br></p>
+<p>Por lo tanto, tengo arrestos previos de mi participación en protestas. Él dice, &#8220;espera, tienes un arresto en Charlotte, tienes un arresto en Atlanta.&#8221; Estoy recordando, como, &#8220;Oh Dios, ¿qué pasó en esa protesta, y que estaría en las notas?&#8221; Y digo , &#8220;Oh sí, en Charlotte, una mujer no se movía y así que salí y le dije que se moviera, y me acusaron y arrestaron por bloquear el tráfico.&#8221; El oficial dijo, &#8220;está bien.&#8221; Y solo estaba mirándome. Solo estamos hablando español.<br></p>
+<p>Vuelve y habla con sus amigos, con los otros oficiales de la patrulla fronteriza, y les habla en inglés. Dice, &#8220;¿qué te parece? ¿Crees que miente? &#8221; &#8220;Creo que miente. Creo que miente. No creo que ella&#8230; Creo que es más inteligente que todos nosotros. &#8221; Eso es lo que sus amigos decían, y él dijo, &#8220;no hombre.&#8221; Él era como&#8230; Izquierdo dijo, &#8220;no, es una mujer mexicana sumisa. Ella va a volver a México, y su marido va a estar con otra mujer, pero ella está aquí llorando por él. &#8220;<br></p>
+<p>Y él dice, &#8220;sí,&#8221; él dice, &#8220;puta perra, ella es una mujer mexicana sumisa.&#8221;<br></p>
+<p><strong>Briahna Joy Gray: </strong>¿Qué?<br></p>
+<p><strong>Viridiana Martínez: </strong>Yo pensaba, &#8220;usted sabe lo que es&#8230;&#8221; yo pensaba, &#8220;hombre,&#8221; solo pensaba.&#8221; Nunca olvidaré eso porque fue un momento en el que miré hacia abajo y pensé, &#8220;esta gente no tiene idea.&#8221;<br></p>
+<p><strong>Briahna Joy Gray: </strong>Mientras estaba adentro, Viridiana pudo ayudar a las mujeres detenidas en la misma forma en que Marco había ayudado a los hombres en el otro lado. Ella fue capaz de reunir información. Historias, listas de números de identificación, así como información de contacto de los miembros de la familia de los detenidos. En el exterior, tenían estudiantes de derecho usando esa información para redactar presentaciones legales. Otros redactan peticiones y diseñan campañas locales de sensibilización. Ahora te puedes preguntar cuál era el plan de salida de Viridiana y Marco. Resulta que, en realidad, no tenían la opción de quedarse. <br></p>
+<p><strong>Viridiana Martínez: </strong>Cuando finalmente nos echaron&#8230; Y sabíamos que esto iba a suceder. Sabíamos que de la misma manera que bajo nuestros términos llegamos, bajo nuestros términos podríamos salir, tan pronto como empezamos a hablar de ello. Y eso es exactamente lo que pasó. Marco fue &nbsp;entrevistado por Univision. Entrevistado por Telemundo. Y luego las entrevistas se emitieron, no sé, un jueves por la noche, creo que fue.<br></p>
+<p>Dentro del centro de detención hay estos televisores de pantalla plana. Muchas veces están mostrando los canales de Univision y Telemundo. En efecto, nuestras entrevistas se presentan, y este informe surge que los Dreamers se han infiltrado. Y todo el mundo, como todos los detenidos dicen, como, “oh Dios mío. Eres tú.” Y nos dicen, &#8220;Oh Dios mío, wow ella no está mintiendo.&#8221; Y digo, &#8220;sí, así que probablemente voy a ser expulsado pronto, aquí está el número para ustedes. Llame si cambia de opinión o si desea ayuda, o dele el número a los miembros de su familia y dígales que nos llamen. Será más fácil coordinar con ellos.”<br></p>
+<p>Por supuesto, al día siguiente, nos llevan al piso de abajo. En la película, es el director creo, que nos da todo el&#8230; Él nos dice, &#8220;Oh, ustedes dos están aquí ilegalmente, pero califican para ser liberados.&#8221; En realidad, era un agente de ICE que decía: &#8220;hemos revisado tus casos y tienen que irse. Nombre y número de la persona que va a venir a recogerlos.&#8221; Y le preguntamos, &#8220;¿de qué estás hablando? ¿Qué hay de todos los demás? &#8221; Y él nos dice, &#8220;no estamos aquí para hablar con ustedes sobre nadie más. Estamos aquí para hablar sobre ustedes. Ustedes califican para la liberación. ¿Nos vas a dar la información, o qué?&#8221;<br></p>
+<p>Así que, nos llevan al piso de arriba, hacemos una llamada, dejemos que nuestros amigos en el exterior sepan. Y en lugar de eso volvemos con una lista de detenidos, cuando volvemos a ICE, volvemos con una lista de detenidos y un número de personas que queremos liberar. Y eso los hizo enojarse. Y luego nos dijeron que nos fuéramos de nuevo. Creo que fue la hora del almuerzo. Pudimos ir y tener una comida final con los detenidos. Y de nuevo, le estábamos diciendo a los otros detenidos, &#8220;mira, nos van a echar a patadas. Aquí está el número. Aquí está toda la información. &#8220;<br></p>
+<p>Y lo hicieron. Entraron en nuestras habitaciones, y dijeron, &#8220;ustedes se van. Van a salir ahora, tienen que irse.&#8221; Y literalmente nos arrastraron. Pero fue increíblemente empoderador. Se siente como &#8220;Dios, si pudiéramos hacer eso y hacerlo con éxito, entonces imagina lo que un gran grupo de gente puede hacer. Y gente con más poder.” Estamos en un momento en el que todos están como, &#8220;Trump, Trump, Trump.&#8221; Bueno, claro, si Trump es todo esto, entonces todos necesitamos reunirnos y ser realmente creativos, y realmente ir a batear, y arriesgarlo todo, no solo hablar así, sino actuar. &nbsp;<br></p>
+<p><strong>Briahna Joy Gray: </strong>En Dilley, Texas, hay solo un supermercado. Y ese supermercado se llama Lowe&#8217;s. No es Lowe’s como la tienda de materiales de construcción, es totalmente diferente y legalmente una distinta tienda que también tiene como nombre Lowe&#8217;s. Así es como mi amigo, y ex colega de asuntos actuales, Brianna Rennix, comenzó su última pieza para asuntos de actualidad. En su artículo, Brianna relata que el supermercado Lowe&#8217;s está lamentablemente baja en productos. Por ejemplo, no tiene caldo vegetal. <br></p>
+<p>Aunque si tiene algo llamado carne de vaca vegetal, así como jarabe de panqueque con sabor a tocino, y &#8220;muchas &nbsp;feromonas de animales en latas de aerosol.&#8221; Lo que la tienda tiene, sin embargo, es una vela votiva que presenta &#8220;una imagen de un niño pequeño, de estilo como el Señor Fauntleroy, con un sombrero emplumado y un collar blanco, con una concha rosada clavada a su capa.&#8221; Fue el Santo Niño de Atocha, un santo patrono, que defiende a los viajeros en peligro y a los injustamente encarcelados. <br></p>
+<p>Para que Brianna pasará a través de este ofrenda en particular por casualidad se sintió como si fuera parte de su destino. Brianna es una abogada de inmigración en el centro de detención de Dilley. Un centro notorio por las malas condiciones, y el hecho de que alberga familias con niños. Ella representa a padres y sus hijos. Personas que han viajado desde lejos, huyendo de condiciones peligrosas, buscando una vida mejor.<br></p>
+<p><strong>Brianna Rennix: </strong>todas las personas que están en Dilley, en su mayor parte, son personas que buscan asilo en los Estados Unidos. La mayoría de ellos han huido recientemente de Centroamérica. La mayoría de ellos han huido recientemente de Centroamérica. Y cuando llegan a la frontera, debido a que no tienen permiso legal para ingresar, se les asigna de inmediato un proceso súper rápido de deportación completamente extrajudicial, denominado Deportación Expedita, y tienen un período de tiempo muy corto para tratar de convencer a la oficina de asilo de que tienen una solicitud de asilo, o de lo contrario serán deportados muy rápidamente.</p>
+<p></p>
+<p>Dilley es un lugar donde las madres son detenidas con niños. Al menos por el momento, hay algunas protecciones legales para los niños detenidos que no existen para los adultos, de alguna manera estas unidades familiares están un poco mejor, porque pueden tener éxito en pasar entrevista en este umbral etapa, la familia puede ser liberada, mientras que para la mayoría de las personas detenidas, simplemente languidecen en detención, tal vez durante toda la duración de sus casos.<br></p>
+<p>Dicho esto, ver a los niños en este entorno es muy desconcertante, y hay mucho en juego &nbsp;cuando hay personas al borde de la deportación. Una de las cosas más difíciles es que para las personas cuyas demandas no tienen éxito, por lo general no es porque no están en peligro, es porque sus casos no encajan en las vías legales correctas. Y así, cuando mis clientes son deportados con sus hijos pequeños, por lo general creo plenamente que están volviendo a un ambiente donde pueden ser heridos y tal vez asesinados.<br></p>
+<p>Trabajar con esas familias es muy intenso, y a mis colegas y a las personas que vienen a ofrecerse como voluntarios les cuesta mucho estar cerca de ese tipo de sufrimiento. Y realmente cuando se ve la escala de la operación, la cantidad de recursos que se vierten en encerrar a estas familias y encerrar a los inmigrantes, en general, y lo comparas con sólo la realidad humana de estar frente a estas personas y ver que son seres humanos tratando de protegerse, y mantener a su familia a salvo, y no son ningún peligro para nadie, el contraste entre este tipo de pesadilla burocrática fuera de control que es nuestro sistema de inmigración, y este tipo de necesidades muy comprensibles y simpáticas de estas personas es muy inquietante. Es difícil de ver.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Las narrativas en torno a la inmigración son multiplicadas y, a menudo, terribles. Y uno de ellos es que hay personas ilegales que han violado la ley y que han hecho algo perjudicial &nbsp;por lo cual merecen ser castigados. Y esa narrativa es anti-humanista, y terrible por innumerables razones. Pero creo que es útil entender también que el asilo es una cuestión separada y aparte. ¿Puedes ayudar a los oyentes que podrían no entender, distinguir entre los diferentes estados legales de las personas, y lo que significa buscar asilo, en particular?<br></p>
+<p><strong>Brianna Rennix: </strong>Sí, ciertamente creo que puede haber una variedad de razones por las que la gente emigra, las cuales son razones completamente legítimas. Personas que vienen a reunirse con miembros de su familia, personas que abandonan la pobreza, personas que simplemente quieren reubicarse. Creo que todas estas son razones legítimas para venir. Desafortunadamente, no son razones que son reconocidas como legítimas por nuestro marco legal actual. Viniendo a buscar asilo, por otro lado, es reconocido como legítimo bajo nuestro marco legal actual, y es reconocido dentro de nuestro régimen de asilo que uno no necesita tener una visa o cualquier otra forma de permiso para entrar en un país con el fin de buscar asilo. Todo lo que tiene que hacer es presentarse en la frontera y pedirlo. <br></p>
+<p>Hay mucha discusión sobre cómo la gente viene aquí ilegalmente para buscar asilo. Y que en sí mismo no tiene sentido porque incrustado en el derecho a pedir asilo es el derecho a venir a un país con el fin de buscar asilo. Por lo tanto, para cualquier cosa que valga esta distinción, las personas que vienen aquí a buscar asilo no están rompiendo la ley y la mayoría de ellas vienen porque han agotado todas sus opciones en su país de origen para protegerse. Temen por sus vidas; temen por la vida de sus familias. Las autoridades de sus países son directamente responsables de tratar de dañarlas, o no han hecho nada para protegerlos frente a las personas que intentan hacerles daño.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Entonces, ¿qué tipo de reclamo tienen que hacer? ¿Cuál es el estándar que tienen que cumplir para ser aprobados para tener asilo en los Estados Unidos?<br></p>
+<p><strong>Brianna Rennix: </strong>Nuestras leyes de asilo se basan en la Convención de Refugiados del 1951, que básicamente dice que si usted teme la persecución a causa de uno de los cinco motivos protegidos que se definen en la ley. Los cuales son raza, religión, nacionalidad, pertenencia a un grupo social en particular, u opinión política. Si teme la persecución basada en una de esas razones, ya sea a manos de su gobierno o algún grupo que su gobierno no está dispuesto o incapaz de controlar, entonces se supone que debe ser capaz de obtener asilo. <br></p>
+<p>Ahora, la Convención de los Refugiados fue escrita después de la segunda guerra mundial, por lo que está muy informada por los tipos de persecución, en su mayoría directamente a manos de actores estatales, que fueron motivo de preocupación en las secuelas inmediatas de la segunda guerra mundial. Por el momento, tenemos muchas personas que huyen de la violencia por actores no estatales, y por lo que las razones por buscar asilo son un poco diferente.<br></p>
+<p>Y también, lo importante que hay que entender acerca de las personas que están tratando de calificar para asilo en los Estados Unidos es que la mayoría de las veces, la pregunta operativa en los tribunales no es si la persona tiene un verdadero y legítimo temor de que serán perjudicados o asesinados si son deportados. Eso tiende a ser una cuestión sin disputa. La pregunta es, ¿pueden encajar en una de &nbsp;vías legales correctas que se establecieron después de la segunda guerra mundial. Además de eso, también se enfrentan ahora a barreras para incluso entrar en los Estados Unidos para buscar asilo, lo cual es su derecho legal.<br></p>
+<p><strong>Briahna Joy Gray: </strong>¿Puedes ayudarnos a entenderlo mejor dándonos un ejemplo de un solicitante de asilo que haz conocido quien temía la persecución y para quién eso no era un problema, pero que no era capaz de encajar perfectamente en una de esas vías legales?<br></p>
+<p><strong>Brianna Rennix: </strong>Bueno, para dar un ejemplo muy, muy común. Tomemos el ejemplo de un niño que ha sido sometido a intentos de reclutamiento forzado por una pandilla. Entonces, la pandilla se ha encontrado con ellos y dijo, tienes que unirte a nosotros o te vamos a matar y vamos a matar a toda tu familia. Y ese niño no quería unirse a la pandilla, y ese niño huyó del país. Lo creas o no, ese niño va a tener mucha dificultad para probar una demanda de asilo en los Estados Unidos. <br></p>
+<p>Hay tribunales en muchas partes del país que van a decir que el niño no encaja bajo ninguno de los terrenos protegidos. Su abogado podría tratar de argumentar diciendo: &#8220;bueno, los jóvenes en Honduras son un grupo social en particular.&#8221; Su abogado podría tratar de argumentar que resistirse a los juegos es la expresión de una opinión política. Pero en muchas partes del país, los jueces no aceptan estos argumentos. Y las personas que se encuentran en estas situaciones, incluso quienes han sido objetores de conciencia, en efecto, con un gran riesgo para sus vidas, van a tener dificultades para encajar en una de esas categorías bajo las normas jurídicas que son reconocidas por los tribunales en muchas partes del país.<br></p>
+<p>Y también es importante tener en cuenta que la forma en que se interpretan las leyes de asilo varía ampliamente en todo el país. Para dar una estadística muy llamativa, hasta este punto, yo diría, si estoy recordando correctamente, el 80% de los casos de asilo que van ante el Tribunal de Nueva York son exitosos. En Georgia, alrededor del 2% de los casos tienen éxito. Y eso es una diferencia completamente arbitraria en la forma en que las leyes se aplican en esos dos lugares.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Eso es muy interesante. No soy, y nunca fui una abogada de inmigración, pero hice un caso pro bono cuando estaba trabajando en un despacho de abogados. La única cosa que probablemente valió la pena durante mi carrera como abogada. Y era un caso de asilo LGBT-QIA donde la cuestión no era si encajaba en un grupo protegido, sino que establecía que había sido perseguido por el estado. Esa fue la parte más difícil de demostrar. Y así, tenemos este tipo de&#8230; Trabajé con un grupo llamado Immigration Equality que trabaja específicamente con los solicitantes de asilo LGBT-QIA. Nos dieron estas declaraciones sobre las condiciones de los países, donde básicamente había ciertos países en los que ya habían recopilado pruebas para demostrar que esos países eran hostiles a los homosexuales y lesbianas.<br></p>
+<p>La parte que teníamos que refinar, y se me recomendó que trabajara arduamente, era probar, demostrar que no podía recurrir al estado si iba a ser golpeado, como lo había sido, por su orientación sexual. Afortunadamente, quiero decir que es difícil decir que esto es algo afortunado, pero en realidad él sufrió abusos por parte de la policía, lo que nos hizo tener una demanda muy fuerte, y finalmente tuvo éxito.<br></p>
+<p>Pero lo hace &#8230; Como digo, solo para dar otro ejemplo de lo arbitrarios y específicos que pueden ser estos daños, ya que existe una realidad perversa en la que, a menos que se haya quedado el tiempo suficiente para que suceda lo malo, en cuyo punto podría ser demasiado tarde.<br></p>
+<p><strong>Brianna Rennix: </strong>Exactamente. sí,<br></p>
+<p><strong>Briahna Joy Gray: </strong>Sí, sí.<br></p>
+<p><strong>Brianna Rennix: </strong>Y las cosas se están poniendo aún más difíciles, especialmente para las personas que vienen a la frontera. Hay un nuevo programa llamado “Permanecer en México” que el gobierno ha implementado en Tijuana, y planea expandir a otros puertos de entrada, que es básicamente donde, si estás solicitando asilo, te obligan a esperar en México por la duración de tu demanda en la frontera del lado de México, que es increíblemente peligroso en este momento, y donde no hay instalaciones para los migrantes. Y, básicamente, lo que sucede es que te entran en libertad condicional en los Estados Unidos, y te llevan a tus audiencias allí, y después de tus audiencias, te suben a un autobús de regreso a México, donde no tienes acceso a un abogado, donde estás con miedo por tu vida. <br></p>
+<p>Así que, está el problema que pasa en la corte, que es realmente difícil, aún más difícil si te detienen, y ahora es esta otra cosa realmente difícil donde a veces ni siquiera se te permite estar en los Estados Unidos mientras tu demanda está siendo procesado.<br></p>
+<p><strong>Briahna Joy Gray: </strong>¿cómo se ve? ¿Cuáles son las condiciones como dentro de estas instalaciones?<br></p>
+<p><strong>Brianna Rennix: </strong>Dentro de los centros de detención de la familia, normalmente digo&#8230; Los centros de detención para adultos son indistinguibles de las prisiones. La gente usa uniformes, viven en celdas, &nbsp;como celdas de la prisión. No hay diferencia. Los centros de detención familiar donde hay niños son un poco diferentes. Normalmente digo que son un poco más como campamentos de internamiento japoneses que como prisiones. Nuestro centro de detención familiar es un montón de remolques rodeados por una valla. Por lo tanto, las personas tienen cierta capacidad de moverse libremente dentro de ciertas partes de la instalación, pero son monitoreados en todo momento. Hay guardias que los vigilan.<br></p>
+<p>Es algo interesante porque algunas personas llegan al centro de detención e inmediatamente dicen, &#8220;Esto es una prisión, no quiero estar aquí, ¿cómo puedo salir de aquí?&#8221; Y hay otras personas que llegan allí desde un viaje muy trágico a través de México y dicen, &#8220;Esto es lo mejor que he dormido en mucho tiempo. Realmente me siento seguro aquí.&#8221; Es un contraste interesante. <br></p>
+<p>Pero me he dado cuenta de que hasta las personas que inicialmente están felices de tener una cama para dormir, después de haber estado allí durante dos semanas, se arrastran por las paredes porque es muy difícil estar en un espacio pequeño y confinado como ese. Y no se les permite tener acceso a sus pertenencias. Sus pertenencias son tomadas de ellos. Se ponen en uniformes. Por lo tanto, también es una experiencia muy despersonalizadora.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Quiero concluir preguntándole qué tipo de intervenciones pueden hacer los políticos, cuando saquemos a Donald Trump en 2020&#8230; Sabes, hablas de cómo-<br></p>
+<p><strong>Brianna Rennix: </strong>Dios quiere.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Vamos a hacer El Secreto con esto. Vamos a manifestarlo porque tiene que suceder. Mencionas que, estado por estado, por la forma en que varias jurisdicciones eligen administrar o aplicar las leyes, hay resultados increíblemente diferentes con la cantidad de personas que reciben asilo. Mucho de esto, al parecer, es un tema de voluntad política, incluso sin cambios legales. ¿Puede hablar sobre lo que puede suceder o lo que espera que suceda desde una perspectiva de voluntad política? Y también, qué intervenciones legales le gustaría que sucedieran que cambiarían significativamente el estado de las personas y mejorarían el acceso a un proceso de asilo humano para las personas que buscan asilo en este país.<br></p>
+<p><strong>Brianna Rennix: </strong>sí. Hay muchas cosas que creo que deberían cambiar. En primer lugar, desde el punto de vista de la observancia, creo que el uso de la detención contra todos los inmigrantes, incluidos los solicitantes de asilo, es increíblemente perjudicial y no proporcional a cualquier necesidad real, ya sea de seguridad o de otra índole, que exista. Y la detención se ha disparado increíblemente desde 9/11. Antes no era la práctica normal en este país detener a los inmigrantes, y ahora lo es. Y es cada vez más. Por lo tanto, creo que el uso de la detención debe reducirse enormemente para todos los inmigrantes, incluidos los solicitantes de asilo. Creo que la detención, y ese tipo de restricción de la libertad sólo debe reservarse para las circunstancias más extremas, la forma en que idealmente debería estar en todos los contextos.<br></p>
+<p>Creo que en términos de asilo en el lado legal, nosotros necesitamos cambios en la ley que reconozcan que las personas que huyen de la violencia necesitan ciertas formas de protección, y que incluso si usted no encaja en una de esas vías legales particulares que se reconocen bajo la ley de asilo, que todavía debe ser capaz de obtener algún tipo de protección. Así que eso es sin duda un cambio en la ley que me gustaría ver.<br></p>
+<p>Creo que nuestros tribunales de inmigración están bajo la supervisión del Departamento de Justicia, y siendo parte de la rama ejecutiva presenta un enorme conflicto de intereses. Hace que nuestros tribunales de inmigración sean inherentemente politizados, y permiten ser controlados directamente por el Procurador General. Creo que han habido algunos muy buenos argumentos que han hecho que nuestros tribunales de inmigración deben ser tribunales del Artículo I, y que deben estar separados de la rama ejecutiva. Así que esos son cambios que me gustaría ver.<br></p>
+<p>Y en términos de cambiar las políticas de cumplimiento, y en términos de cerrar los centros de detención, estas son cosas que la rama ejecutiva puede hacer en gran medida sin necesidad de aprobación del Congreso. En términos de mayores cambios en la ley que permitirían a las personas que huyen de la violencia obtener estatus, y eso permitiría que todo tipo de inmigrantes en este país aparecieran legalmente sin temor a ser detenidos por ICE y ser deportados.<br></p>
+<p>Algo de eso se puede lograr a través de la acción ejecutiva, pero mucho de ello va a necesitar también ayuda del Congreso. Parte de esto va a ser sobre conseguir un cambio en presidente, pero también va a ser sobre tener un cambio más grande en la mentalidad en todo el espectro político sobre el tratamiento de la inmigración como lo que es, y no como una amenaza nacional.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Antes de terminar nuestra conversación, también le pregunté a Belén y Luis qué cambios querían ver en el futuro.<br></p>
+<p><strong>Belén sisa: </strong>Cuando miramos hacia el futuro, lo que quiero ver es una visión más inclusiva y más amplia, primero, recoger las piezas de los últimos cuatro años, y tratar de ayudar a la gente que más fue dañada. Por lo tanto, queremos un levantamiento de esta prohibición musulmana. Hay miles de personas que trataban de reunirse con sus familias, tratando de escapar del peligro y que fueron rechazadas. <br></p>
+<p>Quiero ver la reforma migratoria, obviamente, para ayudar a las personas que ya están aquí viviendo en las sombras. Quiero ver un asilo real, como una política de asilo humana e inclusiva que no vamos a tener gente bajo puentes. No vamos a tener niños muriendo bajo custodia cuando están aquí escapando de la violencia política y económica.<br></p>
+<p>Hay tantas cosas que creo que una presidencia de Bernie Sanders es capaz de hacer, y sé que va a estar en buenas manos, porque sé que la gente que va a poner a cargo de esto van a ser los mismos inmigrantes que han pasado por este proceso. No va a poner a un Jared Kushner a cargo de escribir la política de inmigración cuando no ha tenido un día difícil en su vida. Se pone a la gente que realmente sabe algo sobre esto, porque han sido afectados personalmente, que es la mejor manera de hacerlo, o en realidad tienen el conocimiento para hacer algo humano, que es digno, y &nbsp;que es justo.<br></p>
+<p>Creo que la gente tiene este pensamiento en su cabeza que la inmigración es tan fácil en este país. Dicen, &#8220;póngase en la línea. Hazlo bien.&#8221; &#8220;¿Cual linea? Si tuviera una línea, podría entrar. Pero no hay ninguna.&#8221; &nbsp;Los casos de todos son muy diferentes. Tenemos que tener una política de inmigración que sea más inclusiva que decir que tienes que ser perfecto haciendo X, Y, Z. No todas las historia de las personas son tan fáciles. Al igual que algunas personas cruzan la frontera, algunas personas vinieron aquí con una visa de visitante y se quedaron hasta que se expiró. Algunas personas vinieron aquí buscando asilo. Algunas personas vinieron aquí con exenciones de visado, como yo, es una complicada forma de venir a este país.<br></p>
+<p>Y tenemos que luchar por la justicia de todas las personas. Si todas las personas no son libres, y no son capaces de estar en este país sin tener miedo, entonces no lo estamos haciendo bien.<br></p>
+<p><strong>Luis Alcauter: </strong>Apoyo a Bernie Sanders porque ha estado luchando por muchos de los temas me importan desde la desigualdad del ingreso hasta al cambio climático, incluyendo una reforma migratoria humana, así como la estructura de nuestro sistema de inmigración como Belén aludido. Soy un partidario, y soy parte de esa campaña. Quiero asegurarme de que mi voz, y mi mensaje, y lo que quiero representar es capaz de propagarse alrededor de la campaña, y podemos tener una reforma migratoria de la que todos estarán orgullosos. Y continuamos haciendo nuestro trabajo todos los días, y estamos muy orgullosos del trabajo y del equipo que tenemos aquí.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Quiero agradecerles tanto por acompañarme hoy. Creo que es muy importante que la gente te vea, que te escuche directamente, que ponga un rostro humano en lo que a menudo es un problema deshumanizado, y muchas gracias por to apoyo y tu valentía. Honestamente, es realmente inspirador.<br></p>
+<p><strong>Luis Alcauter: </strong>Gracias por tenernos.<br></p>
+<p><strong>Briahna Joy Gray: </strong>Sí.<br></p>
+<p><strong>Belén Sisa: </strong>Y como dijo Bernie, la vida de las personas está contando con nosotros. Al igual que las vidas de los inmigrantes cuentan con nosotros estando en esta campaña y cambiando las cosas para la gente. Así que, eso es lo que estamos aquí para hacer. <br></p>
+<p><strong>Briahna Joy Gray: </strong>Eso es todo por hoy. Háganos saber lo que piensa en <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a727f7b686e727f787f68745a787f6874737f697b747e7f68693479757734">[email&#160;protected]</a> O envíanos un tweet con el #HearTheBern. Si aún no lo has hecho, por favor toma un momento para calificar, revisar, o click “Like” en una de esta plataformas: Apple podcasts, SoundCloud, o dondequiera que estés escuchando. Las transcripciones estarán listas pronto. Hasta la próxima vez.<br></p>
+</div>
+</article>
+<footer class="footer">
+<div class="footer__address">Bernie 2020<br>
+PO Box 391<br>
+Burlington, VT 05402 </div>
+<div class="footer__paidfor">
+<span class="footer__disclaimer">Paid for by Bernie 2020</span>
+<div class="footer__bill">
+(not the billionaires)
+</div>
+</div>
+<div class="footer__sub">
+<span class="">© Bernie 2020 | <a href="/privacy-policy/">Privacy Policy</a>
+| <a href="https://boards.greenhouse.io/bernie2020" target="_blank">Jobs</a>
+| <a href="/podcast">Podcast</a>
+| <a href="/tax-returns/">Taxes</a>
+| <a href="/commitment-to-diversity-equity-and-inclusion/">Commitment to Diversity, Equity, and Inclusion</a>
+| <a href="/press/">Press</a>
+</span>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=AW-803021594" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-803021594');
+</script>
+
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '736881459842197');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=736881459842197&ev=PageView
+  &noscript=1"/>
+</noscript>
+
+
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o13k7');
+  twq('track','PageView');
+</script>
+
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-118768463-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  (function(m,o,v,a,b,l,e) {
+    if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+    m['MovableInkTrack'] = b;
+    l = o.createElement(v);
+    e = o.getElementsByTagName(v)[0];
+    l.type = 'text/javascript'; l.async = true;
+    l.src = '//' + a + '/p/js/1.js';
+    m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+    e.parentNode.insertBefore(l, e);
+
+    /* Exclusively for Bernie 2020 */
+  })(window, document, 'script', 'ycwht5le.micpn.com', 'mitr');
+</script>
+
+<script src="https://js.adsrvr.org/up_loader.1.1.0.js" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript">
+  ttd_dom_ready( function() {
+    if (typeof TTDUniversalPixelApi === 'function') {
+      var universalPixelApi = new TTDUniversalPixelApi();
+      universalPixelApi.init("vaoess8", ["cet59p0"], "https://insight.adsrvr.org/track/up");
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/aos.js" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/float-labels.js" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/custom.min.js" type="167ddf4033d0ef695fa56c47-text/javascript"></script>
+<script type="167ddf4033d0ef695fa56c47-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b90cc6c8e3","applicationID":"236271046","transactionName":"YFNWZERRD0JRUhENDlkZdVNCWQ5fH0IMCgZbUw==","queueTime":0,"applicationTime":233,"atts":"TBRVEgxLHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="167ddf4033d0ef695fa56c47-|49" defer=""></script></body>
