@@ -16,7 +16,7 @@
 -->
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">	
 
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="The Latest | John Delaney for President" />
-<meta property="og:description" content="Delaney Delivered In-Depth Foreign Policy Speech in April at Johns Hopkins FRIENDSHIP HEIGHTS, MD&nbsp;– John Delaney offered kudos today to Mayor Pete Buttigieg for joining &hellip;" />
+<meta property="og:description" content="Delaney: If we become the party of Medicare for All, we will lose the House FRIENDSHIP HEIGHTS, MD – Today, the House Committee on Ways &amp; &hellip;" />
 <meta property="og:url" content="https://www.johndelaney.com/news/" />
 <meta property="og:site_name" content="John Delaney for President" />
 <meta property="og:image" content="https://www.johndelaney.com/wp-content/uploads/2019/02/john-delaney-open-graph-blue.jpg" />
@@ -53,7 +53,7 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="627" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Delaney Delivered In-Depth Foreign Policy Speech in April at Johns Hopkins FRIENDSHIP HEIGHTS, MD&nbsp;– John Delaney offered kudos today to Mayor Pete Buttigieg for joining [&hellip;]" />
+<meta name="twitter:description" content="Delaney: If we become the party of Medicare for All, we will lose the House FRIENDSHIP HEIGHTS, MD – Today, the House Committee on Ways &amp; [&hellip;]" />
 <meta name="twitter:title" content="The Latest | John Delaney for President" />
 <meta name="twitter:site" content="@johndelaney" />
 <meta name="twitter:image" content="https://www.johndelaney.com/wp-content/uploads/2019/02/john-delaney-open-graph-blue.jpg" />
@@ -143,6 +143,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="row justify-content-center">
 			<div id="primary" class="col-12 col-md-8 pr-lg-5">
 				
+				
+<article class="teaser post-3448 post type-post status-publish format-standard hentry category-press-release tag-universal-health-care" id="post-3448">
+	
+	<h2 class="h3 mb-3">
+		<a href="https://www.johndelaney.com/2019/06/12/delaney-statement-on-house-ways-means-hearing-on-universal-health-care/">
+									Delaney Statement on House Ways &#038; Means Hearing on Universal Health Care		</a>
+	</h2>
+			
+		<div class="post-meta mb-3">
+		<span>June 12, 2019</span>
+		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
+	</div>
+				
+					<p>Delaney: If we become the party of Medicare for All, we will lose the House FRIENDSHIP HEIGHTS, MD – Today, the House Committee on Ways &amp; </p>
+	
+	<ul class="list-inline">
+		<li class="list-inline-item mr-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/06/12/delaney-statement-on-house-ways-means-hearing-on-universal-health-care/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
+		</li>
+		<li class="list-inline-item mr-3">
+			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Statement+on+House+Ways+&#038;+Means+Hearing+on+Universal+Health+Care&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F06%2F12%2Fdelaney-statement-on-house-ways-means-hearing-on-universal-health-care%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Statement on House Ways &#038; Means Hearing on Universal Health Care&#32;&#32;https://www.johndelaney.com/2019/06/12/delaney-statement-on-house-ways-means-hearing-on-universal-health-care/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
+		</li>
+	</ul>
+
+</article>				
+				
+<article class="teaser post-3445 post type-post status-publish format-standard hentry category-press-release" id="post-3445">
+	
+	<h2 class="h3 mb-3">
+		<a href="https://www.johndelaney.com/2019/06/12/delaney-on-sanders-speech-the-right-answer-is-to-fix-our-economy-the-wrong-answer-is-to-replace-it-with-socialism/">
+									Delaney on Sanders Speech: The Right Answer is to Fix Our Economy, the Wrong Answer is to Replace it with Socialism		</a>
+	</h2>
+			
+		<div class="post-meta mb-3">
+		<span>June 12, 2019</span>
+		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
+	</div>
+				
+					<p>&#8220;Sanders has been consistent in his support for socialism and even, at times, communism&#8221; FRIENDSHIP HEIGHTS, MD – John Delaney releases the following statement on Senator </p>
+	
+	<ul class="list-inline">
+		<li class="list-inline-item mr-3">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/06/12/delaney-on-sanders-speech-the-right-answer-is-to-fix-our-economy-the-wrong-answer-is-to-replace-it-with-socialism/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
+		</li>
+		<li class="list-inline-item mr-3">
+			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+on+Sanders+Speech:+The+Right+Answer+is+to+Fix+Our+Economy,+the+Wrong+Answer+is+to+Replace+it+with+Socialism&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F06%2F12%2Fdelaney-on-sanders-speech-the-right-answer-is-to-fix-our-economy-the-wrong-answer-is-to-replace-it-with-socialism%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
+		</li>
+		<li class="list-inline-item">
+			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney on Sanders Speech: The Right Answer is to Fix Our Economy, the Wrong Answer is to Replace it with Socialism&#32;&#32;https://www.johndelaney.com/2019/06/12/delaney-on-sanders-speech-the-right-answer-is-to-fix-our-economy-the-wrong-answer-is-to-replace-it-with-socialism/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
+		</li>
+	</ul>
+
+</article>				
 				
 <article class="teaser post-3440 post type-post status-publish format-standard hentry category-press-release tag-foreign-policy" id="post-3440">
 	
@@ -255,62 +311,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</ul>
 
 </article>				
-				
-<article class="teaser post-3422 post type-post status-publish format-standard hentry category-press-release tag-gun-control" id="post-3422">
-	
-	<h2 class="h3 mb-3">
-		<a href="https://www.johndelaney.com/2019/06/07/delaney-releases-gun-safety-plan-on-gun-violence-awareness-day/">
-									Delaney Releases Gun Safety Plan on Gun Violence Awareness Day		</a>
-	</h2>
-			
-		<div class="post-meta mb-3">
-		<span>June 7, 2019</span>
-		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
-	</div>
-				
-					<p>FRIENDSHIP HEIGHTS, MD – June 7 is Gun Violence Awareness Day and John Delaney announces today his comprehensive plan to reduce gun violence in America.  “A </p>
-	
-	<ul class="list-inline">
-		<li class="list-inline-item mr-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/06/07/delaney-releases-gun-safety-plan-on-gun-violence-awareness-day/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
-		</li>
-		<li class="list-inline-item mr-3">
-			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Releases+Gun+Safety+Plan+on+Gun+Violence+Awareness+Day&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F06%2F07%2Fdelaney-releases-gun-safety-plan-on-gun-violence-awareness-day%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Releases Gun Safety Plan on Gun Violence Awareness Day&#32;&#32;https://www.johndelaney.com/2019/06/07/delaney-releases-gun-safety-plan-on-gun-violence-awareness-day/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
-		</li>
-	</ul>
-
-</article>				
-				
-<article class="teaser post-3411 post type-post status-publish format-standard hentry category-press-release tag-health-care tag-medicare-for-all tag-universal-health-care" id="post-3411">
-	
-	<h2 class="h3 mb-3">
-		<a href="https://www.johndelaney.com/2019/06/05/delaney-doubles-down-on-universal-health-care-plan/">
-									Delaney Doubles Down on Universal Health Care Plan		</a>
-	</h2>
-			
-		<div class="post-meta mb-3">
-		<span>June 5, 2019</span>
-		<span><a href="https://www.johndelaney.com/category/press-release/" rel="category tag">Press Release</a></span>
-	</div>
-				
-					<p>“Sen. Sanders’ Medicare For All Bill is bad policy and bad politics and will help get Donald Trump re-elected” FRIENDSHIP HEIGHTS, MD – In light of new </p>
-	
-	<ul class="list-inline">
-		<li class="list-inline-item mr-3">
-			<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.johndelaney.com/2019/06/05/delaney-doubles-down-on-universal-health-care-plan/"><i class="fab fa-facebook fa-lg"></i><span class="sr-only">Facebook</span></a>
-		</li>
-		<li class="list-inline-item mr-3">
-			<a target="_blank" href="https://www.twitter.com/intent/tweet?text=Delaney+Doubles+Down+on+Universal+Health+Care+Plan&url=https%3A%2F%2Fwww.johndelaney.com%2F2019%2F06%2F05%2Fdelaney-doubles-down-on-universal-health-care-plan%2F&via=johnkdelaney"><i class="fab fa-twitter fa-lg"></i><span class="sr-only">Twitter</span></a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:?subject=Check out this post from John Delaney&body=Delaney Doubles Down on Universal Health Care Plan&#32;&#32;https://www.johndelaney.com/2019/06/05/delaney-doubles-down-on-universal-health-care-plan/"><i class="far fa-envelope fa-lg"></i><span class="sr-only">Email</span></a>
-		</li>
-	</ul>
-
-</article>				
 							</div>
 			<div id="secondary" class="col-8 col-sm-4">
 
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				  <input type="text" class="d-none" name="is_spam" id="message" />
 
 					<div class="input-group mb-3">
-					  <input type="hidden" value="2019-06-12T12:04:21+00:00" name="timestamp" />
+					  <input type="hidden" value="2019-06-13T12:05:16+00:00" name="timestamp" />
 					  <input type="text" class="form-control" placeholder="Mobile Number" aria-label="Mobile Number" aria-describedby="mobile-signup-button" name="mobile_number" />
 					  <div class="input-group-append">
 					    <button class="btn btn-red" type="button" id="mobile-signup-button">Sign Up</button>
@@ -469,5 +469,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script type='text/javascript' src='https://www.johndelaney.com/wp-content/themes/jkd/assets/js/main.min.js'></script>
 <script type='text/javascript' src='https://www.johndelaney.com/wp-includes/js/wp-embed.min.js'></script>
 
-</body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"82920e9ea9","applicationID":"258621444","transactionName":"ZlAAZxQHWhIFBRFaXV8aI1ASD1sPSw4KXlc=","queueTime":0,"applicationTime":131,"atts":"ShcDEVwdSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
