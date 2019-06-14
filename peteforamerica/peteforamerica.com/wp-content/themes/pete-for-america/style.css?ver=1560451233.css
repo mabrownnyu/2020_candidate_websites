@@ -1,0 +1,377 @@
+/*
+Theme name: Pete for America
+Description: Custom Theme
+*/
+
+/*
+	Source post-css styles are located in resources/css/
+	The compiled bundle is saved to `dist/css/bundle-${fingerprint}.css`
+	(dist/manifest.json provides the exact path mapping).
+
+	DEVELOPMENT.md file contains instructions how to get the compilation
+	process up & running.
+
+	If you need to make a quick fix, feel free to add CSS
+	below this comment -- it's loaded after the compiled bundle.
+*/
+
+.section--report .section__right .btn--video span {
+	background: url(https://peteforamerica.wpengine.com/wp-content/themes/pete-for-america/dist/images/btn-play.png) no-repeat 0/60px 60px;
+}
+
+.home--involved .entry .link--yellow {
+	text-transform: uppercase;
+}
+
+.ticker--news {
+	height: 25px;
+}
+
+.entry__title-inner .es h1 {
+	font-size: 3.5vw;
+}
+
+.ticker--news .ti_slide {
+	top: 2px;
+	left: 5px;
+}
+
+.ti_slide a {
+	text-decoration: none;
+}
+
+.home--video .section__image .btn--video {
+	background: rgb(0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 46%);
+}
+
+.home--video .entry h4 {
+	right: -100vw;
+	width: auto;
+	border-bottom: solid 5px #f2ba42;
+}
+
+.home--video-yellow .entry h4 {
+	right: -100vw;
+	width: auto;
+	border-bottom: solid 5px #1d253c;
+}
+
+.home .home--video .entry:after, .page-template-homepage .home--video .entry:after {
+	background: none;
+}
+
+.gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea {
+	border: none;
+	font-size: 18px;
+}
+
+	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container {
+	width: 102%;
+}
+
+	#join-us .gform_wrapper .gform_body .gform_fields .gfield .ginput_container {
+	width: 100%;
+}
+
+.section--report .gform_confirmation_message {
+	color: #1d253c;
+}
+
+#menu-secondary-footer-menu li a, #menu-secondary-footer-menu-spanish a, .nav--second li a {
+		text-decoration: none;
+}
+
+#menu-secondary-footer-menu li a:hover, #menu-secondary-footer-menu-spanish a:hover, .nav--second li a:hover {
+		text-decoration: underline;
+}
+
+.design-wrap {
+	width: 100%;
+	background-color: #D34E23;
+	text-align: center;
+	margin: 0 auto;
+	color: #1D253C;
+}
+
+.design-wrap img {
+	max-width: 40%;
+	height: auto;
+	padding-bottom: 5%;
+}
+
+.design-wrap h2 {
+	font-family: aktiv-grotesk-extended,sans-serif;
+}
+
+.design-wrap p {
+	padding-bottom: 3%;
+}
+
+.design-wrap .btn {
+	    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: Industry,sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+	padding: 20px 25px;
+    border: 2px solid #1D253C;
+}
+
+.design-wrap .btn:hover {
+	background-color: #1D253C;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+	padding: 20px 25px;
+    border: 2px solid #1D253C;
+	color: #D34E23;
+}
+
+.design-wrap-pad {
+	padding: 10% 20%;
+}
+
+.footer_wrap {
+	padding-bottom: 50px;
+}
+
+@media (min-width: 1023px) and (max-width: 1600px) {
+	.inner--intro .entry, .section-404 .entry {
+		max-width: 47%;
+		padding-right: 20px;
+	}
+
+	.inner--intro:before, .section-404:before {
+		height: 158px;
+	}
+
+	.wrapper {
+		padding-top: 60px;
+	}
+
+	.section--involved h1 {
+		padding-top: 95px;
+	}
+
+	.section-404 {
+		padding-top: 80px;
+	}
+
+	.section-404 .entry h6 {
+		margin-bottom: 72px;
+	}
+}
+
+@media (min-width: 1023px) and (max-width: 1250px) {
+	.home--involved .entry .link--yellow {
+		width: 50vw;
+	}
+
+	.inner--intro, .section-404 {
+		padding-bottom: 50px;
+		padding-top: 30px;
+	}
+
+	.inner--intro:before, .section-404:before {
+		height: 95px;
+	}
+
+	.footer_wrap {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.footer_wrap {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.inner--intro {
+		padding-top: 0px;
+	}
+
+	.inner--intro:before {
+		height: 70px;
+	}
+}
+
+@media (max-width: 499px) {
+
+	.entry__title-inner .es h1 {
+	font-size: 7vw;
+}
+
+	.home--about .entry h4, .home--involved .entry h4, .home--video .entry h4 {
+		font-size: 36px;
+	}
+
+	.intro--home .gform_wrapper.gform_wrapper {
+		padding: 20px;
+	}
+
+	.intro--home .gform_wrapper.btn__right_wrapper .gform_footer input.button, .intro--home .gform_wrapper .gform_footer input.button {
+		padding: 13px 8px;
+	}
+
+	.inner--intro .entry h2, .section--banner h2 {
+		font-size: 36px;
+	}
+
+	.intro--home .entry h1 {
+		font-size: 9vw;
+	}
+
+	.design-wrap-pad {
+	padding: 12%;
+}
+
+	.section--contact .mobile__tabs li a {
+		color: #1d253c;
+	}
+
+	.intro--home .section__image {
+		background-position: center 0px;
+	}
+}
+
+span.bar {
+    top: 2px;
+    left: 2px;
+    width: 2px;
+    height: 12px;
+    display: inline-block;
+    background: #f2e4d6;
+}
+a.current-menu-item {
+    color: #f2ba42 !important;
+}
+.ti_news + .ti_news { display:none !important;}
+
+.page-id-283 .ticker--news,
+.page-id-289 .ticker--news{
+    display: none !important;
+}
+
+
+
+.btn--menu::before {
+    bottom: 120%;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+}
+
+
+.btn--menu.is-active::before {
+    bottom: 60%;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+/*
+
+.btn--menu::before {
+    display:none !important;
+}
+
+#PeteMenuIcon {
+    display: none;
+}
+#PeteMenuIcon .PeteMenuIcon-stripe1,
+#PeteMenuIcon .PeteMenuIcon-stripe2,
+#PeteMenuIcon .PeteMenuIcon-star {
+    transition: opacity .3s, transform .3s;
+}
+.btn--menu.is-active #PeteMenuIcon .PeteMenuIcon-stripe1 {
+    transform: translate(18px, -9px) rotate(45deg);
+}
+.btn--menu.is-active #PeteMenuIcon .PeteMenuIcon-stripe2 {
+    transform: translate(-17px, 6px) rotate(-45deg);
+}
+.btn--menu.is-active #PeteMenuIcon .PeteMenuIcon-star {
+    opacity: 0;
+}
+
+@media (max-width: 767px), screen and  (max-width: 812px) and )orientation: landscape) {
+#PeteMenuIcon {
+    display: block;
+}
+.btn--menu {
+    bottom: 12px !important;
+ }
+}
+*/
+
+
+.page-template-streaming-report .header .nav--lang {
+    opacity: 0;
+    visibility: hidden;
+}
+.page-template-streaming-report .header .nav__left,
+.page-template-streaming-report .header .nav__right .menu-item {
+    display:none !important;
+}
+
+.home--about .section__image .btn--video span {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    padding: 17px 0 12px 70px;
+    font-family: Industry,sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: .1em;
+    color: #fff;
+    -webkit-transition: all 0s;
+    -o-transition: all 0s;
+    transition: all 0s;
+    background: url(dist/images/btn-play.png) no-repeat 0/60px 60px;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+    text-transform: uppercase;
+}
+
+/*** Works on common browsers ***/
+::selection {
+    background-color: #D34E23;
+    color: #1d253c;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: #D34E23;
+    color: #1d253c;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: #D34E23;
+    color: #1d253c;
+}
+
+::-ms-selection {
+    background-color: #D34E23;
+    color: #1d253c;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: #D34E23;
+    color: #1d253c;
+}
