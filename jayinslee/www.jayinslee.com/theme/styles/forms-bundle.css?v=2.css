@@ -1,0 +1,760 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea, label, button, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, main,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video  {
+  -moz-box-sizing:    border-box; 
+  -webkit-box-sizing: border-box; 
+	box-sizing:         border-box; 
+}
+  
+@font-face {
+  font-family: 'hub-survey';
+  src:  url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.eot?c6ymz1');
+  src:  url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.eot?c6ymz1#iefix') format('embedded-opentype'),
+    url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.woff2?c6ymz1') format('woff2'),
+    url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.ttf?c6ymz1') format('truetype'),
+    url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.woff?c6ymz1') format('woff'),
+    url('https://s3.amazonaws.com/icomoon.io/31537/HUBSurvey/hub-survey.svg?c6ymz1#hub-survey') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------- Long Form ---------- */
+form .group {
+	padding: 1em 0; 
+  position: relative;
+}
+
+form .survey-step .group:first-child {
+	padding: 0 0 1em; 
+}
+
+form .field {
+	display:  block;
+	width: 100%;
+	padding: .2em 0; 
+	text-align: left;
+  position: relative;  
+}
+
+form .cols2,   
+form .cols3,
+form .cols4 { 
+	padding: 0;
+} 	
+
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+  form .field {
+  	padding: .2em 0; 
+  }  
+	form .cols2,   
+	form .cols3,
+	form .cols4 { 
+		width: 100%;
+		display:  table; 
+		padding: 0;
+	} 	
+	form .cols2 .field,
+	form .cols3 .field,
+	form .cols4 .field { 
+		display:  table-cell;
+    padding: .2em; 
+
+	 }
+	form .cols2 .field { width: 50%; } 	
+	form .cols3 .field { width: 33.33%; }
+	form .cols4 .field { width: 25%; }
+}
+
+form .radio { text-align: center; }
+
+form .option {
+	display: block;
+  padding: .3em 0;
+}
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+  form .option {
+    display: inline-block;
+    padding: 0;
+  }
+  .single-line .option {
+    display: block;
+    text-align: left;
+  }
+}
+form .radio .option input,
+form .checkbox .option input {
+  display: none;
+}
+
+form input,
+form select,
+form textarea {
+	width: 100%;
+	cursor: pointer; 
+  outline: none;
+	-moz-transition:    all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-o-transition:      all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-webkit-transition: all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	transition:         all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75); 	
+}
+
+form select {
+}	
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+
+}
+form textarea {
+	height: 11em;
+}	
+form label {
+	display: block;
+	cursor: pointer;
+	margin-bottom: .15em;
+	-moz-transition:    all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-o-transition:      all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-webkit-transition: all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	transition:         all .3s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+}
+form .option input {
+  display: none !important;
+}
+form .option label { 
+  padding-left: 1.8em;  
+  cursor: pointer;
+  display: block;
+  transition:         color .3s ease-in-out;    
+  -webkit-transition: color .3s ease-in-out;  
+  -moz-transition:    color .3s ease-in-out;  
+  -o-transition:      color .3s ease-in-out;  
+  -ms-transition:     color .3s ease-in-out;   
+}
+.single-line .option label { 
+  padding-left: 0;  
+}
+form .option .selector { 
+  width: 1em;
+  height: 1em;  
+  margin-right: .2em;
+  padding: .65em;
+  line-height: 1.6;  
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block; 
+  position: relative;
+  top: .25em;
+  transition:         all .3s ease-in-out;    
+  -webkit-transition: all .3s ease-in-out;  
+  -moz-transition:    all .3s ease-in-out;  
+  -o-transition:      all .3s ease-in-out;  
+  -ms-transition:     all .3s ease-in-out;     
+}
+form .checkbox .option .selector { 
+  -webkit-border-radius:  .1em;
+  -moz-border-radius:     .1em;
+  border-radius:          .1em;
+}
+form .radio .option .selector { 
+  -webkit-border-radius:  50%;
+  -moz-border-radius:     50%;
+  border-radius:          50%;
+}
+form .option .selector::before { 
+  display: block; 
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  opacity: 0;
+  font-size: 50%;  
+  font-family: 'hub-survey';  
+  -moz-transform:    translateX(-50%) translateY(-50%);
+  -ms-transform:     translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+	transform:         translateX(-50%) translateY(-50%); 
+  -moz-transition:    all .2s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-o-transition:      all .2s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	-webkit-transition: all .2s cubic-bezier(0.75, -0.25, 0.25, 0.75);
+	transition:         all .2s cubic-bezier(0.75, -0.25, 0.25, 0.75);    
+}
+form .option input:checked + label .selector::before { 
+  font-size: 90%;
+  opacity: 1;
+}  
+
+form .checkbox .option .selector::before { 
+  content:'-';  
+}
+form .radio .option .selector::before { 
+  content:'.';  
+}
+form .option em { 
+  font-style: normal;
+}
+.yes_no .option {
+  margin: 0 .5em;
+  font-size: 130%;
+}
+
+.yes_no .option label {
+  padding: .4em 1em;
+  transition:         all .3s ease-in-out;    
+  -webkit-transition: all .3s ease-in-out;  
+  -moz-transition:    all .3s ease-in-out;  
+  -o-transition:      all .3s ease-in-out;  
+  -ms-transition:     all .3s ease-in-out;    
+}
+form .button-row {
+  text-align: center;
+}
+form .button-row button {
+	cursor: pointer;	
+	display: inline-block;	
+}
+
+
+
+/* Survey and Simple landing Page */
+
+.options { 
+	text-align: center; 
+	}
+	
+.grid .survey-step { 
+	padding: 0;	
+	}
+
+.landing-simple form input,
+.landing-simple form select,
+.landing-simple form textarea,
+.survey form input,
+.survey form select,
+.survey form textarea { 
+  padding: .5em;  
+}	
+
+
+.landing-simple .button,
+.survey .button {
+    margin-top: 0;
+}
+
+html { 
+  background-color: #ebebeb;
+  background: -moz-linear-gradient(top, #ebebeb 0%, #e4e4e4 100%);
+  background: -webkit-linear-gradient(top, #ebebeb 0%,#e4e4e4 100%);
+  background: linear-gradient(to bottom, #ebebeb 0%,#e4e4e4 100%);
+  color: var(--gray);  
+}
+
+body { 
+  text-align: center;
+  position: relative;
+}
+
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  body { 
+    padding: 0em;
+  }
+}  
+
+/* Site Header
+------------------------------------ */
+
+header { 
+  background: var(--dark-blue-gradient);
+  padding: 1em 0;
+  position: relative; 
+  width: 100%;
+}   
+.logo {
+  width: 30%;
+}
+@media only screen and (min-width: 640px) and (min-device-width: 480px) {  
+  .logo {
+    width: 20%;
+  }
+}  
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  header { 
+    padding: 1.5em 0;
+  }      
+  .logo {
+    width: 12em;
+  }
+}  
+@media only screen and (min-width: 1200px) and (min-device-width: 480px) {  
+  header { 
+    margin-bottom: 2em;
+  }
+}  
+
+/* ---- Structural ---- */
+.wrap {
+  margin: auto;
+  position: relative;  
+  z-index: 1000;
+  padding: 0;
+  max-width: 1300px;
+}
+.text,
+.form { 
+  text-align: left;
+}
+.dark .text,
+.dark .form { 
+  color: #fff;
+}
+section.text { 
+  background: #fff;
+}
+
+h1, h2, h3 { 
+  color: var(--gray);
+}
+.dark h1, .dark h2, .dark h3 { 
+  color: white;
+}
+.text p { 
+  font-size: 115%;
+  line-height: 1.3;
+}
+.dark .text p { 
+  color: #fff;
+}
+.text strong { 
+  font-weight: 700;
+}
+.dark h2,
+.dark h3 { 
+  color: #fff;
+}
+.join-old h2,
+.join-old h3 { 
+  margin-bottom: .25em;
+}
+.grid section {
+  padding: 2em;    
+} 
+.landing-simple small {
+  padding: 0 0 1.5em;
+}
+.landing-simple .button-row .skip {
+  display: block;
+  margin-top: 1em;
+  padding-left: 0;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition:    all .15s ease-in-out;
+  -o-transition:      all .15s ease-in-out;
+  -ms-transition:     all .15s ease-in-out;
+  transition:         all .15s ease-in-out;
+}
+.landing-simple .button-row .skip:hover {
+  text-decoration: underline;
+  -moz-transform:    translateY(-5%);
+  -ms-transform:     translateY(-5%);
+  -webkit-transform: translateY(-5%);
+  transform:         translateY(-5%);  
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .grid section {
+    display: table-cell;
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 640px) and (min-device-width: 480px) {  
+  .wrap { 
+    padding: 2em;
+  } 
+}
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+	.grid.form-first .form {
+	    grid-row:    1;
+			grid-column: 2 / 3 
+  }  
+  .grid section {
+    margin: 0;    
+  }      
+}  
+
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .join-old .grid section {
+    padding: 4em;    
+  }      
+  .text p { 
+    font-size: 135%;
+  }
+}  
+@media only screen and (min-width: 1200px) and (min-device-width: 480px) {  
+  .grid section {
+    padding: 3em;
+    margin: 0;
+  }  
+  .join-old .grid section {
+    padding: 5em;    
+  }   
+  .text p { 
+    font-size: 145%;
+  }   
+}
+@media only screen and (min-width: 1400px) and (min-device-width: 480px) {  
+  .grid section {
+    padding: 4em;
+  }
+  .text p { 
+    font-size: 150%;
+  }   
+}
+@media only screen and (min-width: 1800px) and (min-device-width: 480px) {  
+  .join-old .grid section {
+    padding: 6em;    
+  }   
+  .text p { 
+    font-size: 175%;
+  }   
+}
+form {
+  padding-top: 0;
+}
+
+form label,
+form fieldset {
+  color: var(--gray);
+  font-size: 1.1em;
+  padding: .35em 0 .2em;
+  display: inline-block; 
+  position: relative;
+}
+form label {
+  cursor: pointer;
+}
+form label:hover {
+  color: var(--green);
+}
+form.dark label,
+form.dark fieldset {
+  color: #fff;
+}
+form.dark label:hover,
+form.dark fieldset:hover {
+  color: var(--light-blue);
+}
+
+.survey form.dark fieldset:hover {
+  color: white;
+}
+
+form fieldset {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1em;
+  font-size: 130%;
+}
+
+input,
+select,
+textarea {
+}
+.join-old #zip {
+  width: 50%;
+  float: left;
+}
+input:hover,
+select:hover,
+textarea:hover {
+  	
+}
+input:focus,
+select:focus,
+textarea:focus {
+
+}
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+  .form input,
+  .form select,
+  .form textarea {
+  }
+}
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .form input,
+  .form select,
+  .form textarea {
+  }
+}
+@media only screen and (min-width: 1200px) and (min-device-width: 480px) {  
+  .form input,
+  .form select,
+  .form textarea {
+  }  
+}
+.button-row {
+  text-align: center;
+	padding-top: 0;
+  font-size: 140%;  
+  vertical-align: center;
+}
+.join-old .button-row,
+.contact .button-row {
+  text-align: left;
+  padding-top: 0;
+}
+.join-old .button-row .button,
+.contact .button-row .button {
+  margin-top: .5em;
+}
+.button-row button {
+  background: #4eae4f;  
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+}
+.green .button-row button {
+  background: var(--blue);
+}
+.button-row button.previous {
+  margin-right: .5em;
+}
+.button-row button:hover  {
+  background: var(--blue);
+}
+.button-row button:active {
+  background: var(--blue);  
+}
+.blue .button-row button:active {
+  background: #00334c;    
+  background: var(--dark-blue);  
+}
+.button-row .skip {
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  font-size: 80%;
+  padding: 1em 0 0;
+  display: inline-block;
+  padding: .3em 0 1em 1em;
+  vertical-align: middle;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition:    all .25s ease-in-out;
+  -o-transition:      all .25s ease-in-out;
+  -ms-transition:     all .25s ease-in-out;
+  transition:         all .25s ease-in-out;      
+}
+.button-row .skip:hover {
+  color: rgba(255,255,255,1);
+}
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+  .button-row {
+    font-size: 120%;  
+  }
+}
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .button-row {
+    font-size: 140%;  
+  }  
+}
+@media only screen and (min-width: 1200px) and (min-device-width: 480px) {  
+  .button-row {
+    font-size: 140%;  
+  }  
+}
+.join-old .yes_no .options {
+  text-align: left;
+}
+.option .selector { 
+  background-color: rgba(var(--gray-rgb),0);
+  border: 2px solid rgba(var(--gray-rgb),.5);  
+}
+.option:hover .selector { 
+  background-color: rgba(var(--gray-rgb),.2);
+  border-color: rgba(var(--gray-rgb), .8);    
+}
+.dark .option .selector { 
+  background-color: rgba(var(--blue-rgb),0);  
+  border: 2px solid rgba(var(--light-blue-rgb),.6);
+}
+.dark .option:hover .selector { 
+  background-color: rgba(var(--blue-rgb),.2);    
+  border-color: var(--light-blue);    
+}
+
+form .checkbox .option .selector::before { 
+  color: #e5e5e5;
+}
+form .option input:checked + label .selector { 
+  background:  var(--blue); 
+  border-color: var(--blue);
+}
+form .option input:checked + label .selector::before { 
+  color: #fff;
+}  
+
+.yes_no .option label {
+  background: var(--green);
+  font-weight: 700;
+  font-size: 1.5em;
+  display: block;
+  color: white; 
+  text-align: center;
+}
+.join-old .yes_no .option label {
+  font-size: 170%;
+}
+.yes_no .option:hover label {
+  background: var(--light-blue); 
+  color: #fff;
+}
+.yes_no .option input:checked + label { 
+  background: white; 
+  color: var(--blue); 
+}
+small {
+  font-size: 80%;
+}
+.dark small {
+  color: #fff;
+}
+strong.error { 
+  background: var(--red);
+  padding: .2em .3em; 
+  margin: 0 .1em;
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 9999;    
+  font-size: .7em;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff; 
+  text-transform: uppercase; 
+} 
+
+div[data-error=checkbox] strong.error,
+div[data-error=radio] strong.error { 
+  position: relative;
+  left: auto;
+  top: auto;
+  display: inline-block;
+  font-size: 105%;
+  margin-top: .5em;
+} 
+div[data-error=checkbox] strong.error:after,
+div[data-error=radio] strong.error:after { 
+  display: none;
+}
+
+/* ---- Landing with Photo ---- */
+
+.landing-bg-photo section {
+  padding: 2em;    
+}    
+.landing-bg-photo .content {
+  position: relative;
+  z-index: 100;
+}
+.landing-bg-photo form {
+  margin-top: 2em;
+}
+.landing-bg-photo figure { 
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;   
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+.left figure {
+  right: 0;
+}
+.right figure {
+  left: 0;
+}
+@media only screen and (min-width: 740px) and (min-device-width: 480px) {  
+  .landing-bg-photo section {
+    padding: 4em;    
+  }   
+}
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .landing-bg-photo section {
+    padding: 3em;    
+  }   
+  .landing-bg-photo.left section {
+    float: left;
+  } 
+  .landing-bg-photo.right section {
+    float: right;
+  } 
+  .landing-bg-photo .content {
+    width: 50%;
+  }
+  .landing-bg-photo figure { 
+    width: 50%;
+    display: block;
+  }
+  .landing-bg-photo.center figure { 
+    width: 100%;
+  }  
+  .landing-bg-photo.left figure { 
+    right: 0;
+    left: auto;
+    background-position: right bottom;    
+  } 
+  .landing-bg-photo.right figure { 
+    left: 0;
+    right: auto;
+    background-position: left bottom;        
+  }  
+}
+@media only screen and (min-width: 1200px) and (min-device-width: 480px) {  
+  .landing-bg-photo section {
+    padding: 4em;    
+  }      
+  .landing-bg-photo .content {
+    width: 45%;
+  }
+  .landing-bg-photo figure { 
+    width: 65%;
+  }  
+}
+@media only screen and (min-width: 1400px) and (min-device-width: 480px) { 
+  .landing-bg-photo section {
+    padding: 5em;    
+  }    
+  .landing-bg-photo .content {
+    width: 37%;
+  }
+  .landing-bg-photo figure { 
+    width: 63%;
+  }    
+}
+/* ---- Video Landing ---- */
+.embed { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%;
+} 
+.embed iframe, 
+.embed object, 
+.embed embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+}
