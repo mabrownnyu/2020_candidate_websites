@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="445c4db34c6ac9ec713c9f90-text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ep. 10: But the Union Makes Us Strong - Bernie Sanders</title>
+<link rel="stylesheet" href="https://use.typekit.net/osh1jbn.css">
+<link rel="stylesheet" href="https://berniesanders.com/wp-content/themes/bernie/style.css">
+
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-192.png" sizes="192x192">
+<link rel="icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-228.png" sizes="228x228">
+
+<link rel="shortcut icon" sizes="196x196" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-196.png">
+
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-180.png" sizes="180x180">
+
+<meta name="msapplication-TileColor" content="#0073E6">
+<meta name="msapplication-TileImage" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/favicon-144.png">
+
+<meta name="msapplication-config" content="https://berniesanders.com/wp-content/themes/bernie/assets/favicon/browserconfig.xml" />
+<script type="445c4db34c6ac9ec713c9f90-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript" src="https://act.berniesanders.com/resources/actionkit.js"></script>
+ <script type="445c4db34c6ac9ec713c9f90-text/javascript"> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '6a8c47a0-5e9d-4ec3-a07d-bac730519ce8', {}); snaptr('track', 'PAGE_VIEW'); </script> 
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+
+
+<link rel="canonical" href="https://berniesanders.com/2019/06/18/ep-10-but-the-union-makes-us-strong/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ep. 10: But the Union Makes Us Strong - Bernie Sanders" />
+<meta property="og:description" content="Speaker 1: &nbsp;Working at Walmart has been mentally and physically draining. Speaker 2: &nbsp;Many of my colleagues rely on public assistance just to survive, and some are homeless. Speaker 3: &nbsp;I feel like management sometimes puts aside safety in order to be more productive. Speaker 4: &nbsp;You couldn&#8217;t miss too many days, even if it &hellip;" />
+<meta property="og:url" content="https://berniesanders.com/2019/06/18/ep-10-but-the-union-makes-us-strong/" />
+<meta property="og:site_name" content="Bernie Sanders" />
+<meta property="article:section" content="Transcripts" />
+<meta property="article:published_time" content="2019-06-18T14:13:32+00:00" />
+<meta property="article:modified_time" content="2019-06-18T14:13:33+00:00" />
+<meta property="og:updated_time" content="2019-06-18T14:13:33+00:00" />
+<meta property="og:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:secure_url" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Speaker 1: &nbsp;Working at Walmart has been mentally and physically draining. Speaker 2: &nbsp;Many of my colleagues rely on public assistance just to survive, and some are homeless. Speaker 3: &nbsp;I feel like management sometimes puts aside safety in order to be more productive. Speaker 4: &nbsp;You couldn&#8217;t miss too many days, even if it [&hellip;]" />
+<meta name="twitter:title" content="Ep. 10: But the Union Makes Us Strong - Bernie Sanders" />
+<meta name="twitter:image" content="https://berniesanders.com/wp-content/uploads/2019/02/fob-sap-social.png" />
+
+<link rel='dns-prefetch' href='//berniesanders.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Bernie Sanders &raquo; Ep. 10: But the Union Makes Us Strong Comments Feed" href="https://berniesanders.com/2019/06/18/ep-10-but-the-union-makes-us-strong/feed/" />
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/berniesanders.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://berniesanders.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<script type="445c4db34c6ac9ec713c9f90-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript" src='https://berniesanders.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript" src='https://berniesanders.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<link rel='https://api.w.org/' href='https://berniesanders.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://berniesanders.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://berniesanders.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://berniesanders.com/?p=1344' />
+<link rel="alternate" type="application/json+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F06%2F18%2Fep-10-but-the-union-makes-us-strong%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://berniesanders.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fberniesanders.com%2F2019%2F06%2F18%2Fep-10-but-the-union-makes-us-strong%2F&#038;format=xml" />
+
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+</head>
+<body class="post-template-default single single-post postid-1344 single-format-standard">
+<header class="header ">
+<h1 class="logo ">
+<a class="logo__link" href="/">
+<span class="sr-only"></span>
+</a>
+</h1>
+
+<div class="menu-main-header-container"><ul id="menu-main-header" class="menu"><li id="menu-item-1249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1249"><a href="https://berniesanders.com/volunteer">Volunteer</a></li>
+<li id="menu-item-602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-602"><a href="https://berniesanders.com/issues/">Issues</a></li>
+<li id="menu-item-309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-309"><a href="https://map.berniesanders.com">Events</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="https://berniesanders.com/es/para-todos/">en Español</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="https://store.berniesanders.com/?utm_source=website&#038;utm_medium=navigation">Store</a></li>
+</ul></div>
+<button class="header__menu-toggle" type="button">
+<span class="sr-only">Toggle Menu</span>
+<span class="menu__bar"></span>
+</button>
+
+<a href="https://secure.actblue.com/donate/bern-site?refcode=splash-top-right" class="header__donate" data-aos="slide-left" data-aos-delay="800" data-aos-easing="ease-out-quad" data-aos-duration="400">
+Donate </a>
+</header>
+<div class="hero">
+<div class="hero__main" style="background-image: url('')">
+<div class="hero__heading">
+<h1 class="hero__title" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-out-quad" data-aos-duration="1000">
+Ep. 10: But the Union Makes Us Strong </h1>
+<div class="hero__content" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-out-quad" data-aos-duration="800">
+</div>
+</div>
+<video id="bg-vid" playsinline autoplay muted loop>
+
+<source src="" type="video/webm">
+<source src="" type="video/mp4">
+</video>
+</div>
+</div>
+<article class="main post-1344 post type-post status-publish format-standard hentry category-transcripts" id="post-1344">
+<div data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-easing="ease-out-quad" data-aos-duration="1000" class="default">
+<p></p>
+<p><strong>Speaker 1: </strong>&nbsp;Working at Walmart has been mentally and physically draining.</p>
+<p><strong>Speaker 2: </strong>&nbsp;Many of my colleagues rely on public assistance just to survive, and some are homeless.</p>
+<p><strong>Speaker 3: </strong>&nbsp;I feel like management sometimes puts aside safety in order to be more productive.</p>
+<p><strong>Speaker 4: </strong>&nbsp;You couldn&#8217;t miss too many days, even if it was a family emergency.</p>
+<p><strong>Speaker 5: </strong>&nbsp;We barely had time for our family.</p>
+<p><strong>Speaker 6: </strong>&nbsp;Favoritism and picking up on a lot of heavy stuff.</p>
+<p><strong>Speaker 7: </strong>&nbsp;I&#8217;m constantly having to worry about whether or not my hours are going to get cut.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Walmart is the largest company on the planet. In 2018, it pulled in $500 billion in revenue. Its owners, the Waltons, are the richest family in the United States, worth around $175 billion. It employs 2.2 million. That&#8217;s about a million more than the entire US military.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Yet, as you just heard, Walmart&#8217;s workers, you know, the people who make the entire thing possible, are scraping by on some of the lowest wages in the country. Many work multiple jobs or rely on food aid from the federal government. They deal with unpredictable schedules, almost zero job security, and bad bosses.</p>
+<p>And they&#8217;re far from alone. How, in the richest country on earth, did we let this happen? Well, it&#8217;s a story that stretches back to the early 20th century, when workers won the right to form unions and pressured employers for their share of corporate profits.</p>
+<p><strong>Lane Windham: </strong>&nbsp;There was massive class conflict. There were major strikes, and the federal government would often suppress the strikes. There was literally lots of bloodshed and conflict.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;It&#8217;s the story of the 1980s, when industry leaders began to roll back the gains that workers had made at the same time that the Democratic Party made a fateful shift toward big money fundraising.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;You know, it took capital a good 30 years or so to really loosen the reins that had been put on them during the New Deal. Particularly, in the late &#8217;70s and in the election of 1980, Republicans figure out how to use big money in a serious way.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Finally, it&#8217;s a story about today, when a new wave of progressive politicians and activists are fighting back.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;This is Hear the Bern, a podcast about the people, ideas, and politics that are driving the Bernie Sanders 2020 campaign and the movement to secure a dignified life for everyone living in this country. My name is Briahna Joy Gray, coming to you from campaign headquarters in Washington, DC.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;On this, the 10th episode of Hear the Bern, we&#8217;ll tell the story of how working Americans came to endure some of the weakest labor protections in the developed world, on par with Iran and Honduras. I talk Georgetown professor Lane Windham about her book, Knocking on Labor&#8217;s Door, which describes a working class that looks very different from the white men in hard hats conjured by the corporate media. I talk to my former Intercept colleague, Ryan Grim, whose new book, We&#8217;ve Got People, recounts the Democratic Party&#8217;s decision in the 1980s to turn toward big money donors and centrist politics, as well as the more recent upsurge in left-wing organizing that is challenging the status quo.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;So let&#8217;s go back, way back. Back into time.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Starting in the 1940s and the 1950s, workers began to strike over the issue of benefits, health benefits, and pensions. What ended up happening in this country is that unions began to negotiate on wages, healthcare, pensions, and began to demand that corporations basically share the profits with them. They won that for a number of years. It not only was for unionized companies, but all the big corporate giants followed the unionized lead. Millions and millions of workers began to get those benefits.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;That was Dr. Lane Windham, currently a professor at Georgetown and formerly a labor organizer who helped organize textile workers across the southern United States.</p>
+<p><strong>Lane Windham: </strong>&nbsp;We made a decision after World War II. We&#8217;re not going to have the government take care of healthcare. We&#8217;re not going to have the government really take care of a robust pension, which is what happened in other countries. Instead, in this country, what we said is employers are going to do that. Are we going to require that employers provide healthcare and pensions? No, we&#8217;re not going to do that, right? Instead, what we&#8217;re going to do is say, &#8220;Unions, you have the right to negotiate this if your workers jump through all the hoops that it takes to form a union.&#8221;</p>
+<p><strong>Lane Windham: </strong>&nbsp;That&#8217;s what they did is that unions ended up really being the mechanism for redistribution that the government was in other countries. For a time, this system worked. Not for everyone, because many women and people of color couldn&#8217;t get the kinds of jobs that were most likely to be unionized, and so they didn&#8217;t have full access to this golden system of the employer-provided social welfare state that came through union contracts, but what started to change after the 1964 Civil Rights Act is they started to have that access. They demanded it. They&#8217;re like, &#8220;Okay, we want into the whole thing. Not just the jobs, but we want into the whole golden system.&#8221; They started to unionize and organize.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;There&#8217;s a direct correlation between union participation and wage equality. As union power has declined since the 1960s, income inequality has gone up. Unions were not only able to lobby for higher wages and more benefits for their own members. Non-unionized companies, afraid that their employees would follow suit and unionize, preemptively improved their conditions, as well, meaning that the effect of union organizing extended well beyond the field of unionized employees.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Still, today, despite the erosion of unions, union workers earn about 20% more than non-union workers in similar jobs. That union premium, as it&#8217;s called, is even higher for women and people of color.</p>
+<p><strong>Lane Windham: </strong>&nbsp;By the end of the 1970s, as much as a third of African American men and a quarter of African American women were part of labor unions. In particular, that&#8217;s a higher rate of unionization than you had for white workers. The premium, at that time, was workers of color were making anywhere from 25 to 34% more than those who did not have a union, and better benefits, and more say on the job.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Let me give you an example of how this played out. For instance, I write about the Newport News shipyard, which is 19,000 workers in Newport News, Virginia, in 1978, formed a union. They formed a union with United Steelworkers.</p>
+<p><strong>Lane Windham: </strong>&nbsp;The Newport News shipyard was a really interesting case, because it was one of the first places where workers began to agitate after the Civil Rights Act and say, &#8220;Hey, we&#8217;re looking &#8230;&#8221; There had long been black males, especially, working in the shipyard, but they had the worst jobs, the dirtiest jobs, right?</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;My grandfather was one of them, actually. He&#8217;s from Newport News and worked in the shipyards.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Okay, great, great. They filed suit under the Civil Rights Act. There were several cases, federal cases. Overall, they won those, and won the right to train for the higher jobs, won the right to move up, and many did. </p>
+<p><strong>Lane Windham: </strong>&nbsp;What&#8217;s interesting is that group of men who pushed forward the union did so with victories with the civil rights movement at their back. For them, it was intertwined. It wasn&#8217;t like, &#8220;Well, over here, I&#8217;m the black guy, and over here, I&#8217;m the unionist.&#8221; It&#8217;s like, &#8220;That&#8217;s who I am. That&#8217;s my lived experience. I want my rights. I want all of them.&#8221; That&#8217;s what they did, is they pushed forward and demanded them.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;It&#8217;s often said that addressing economic issues alone won&#8217;t cure racism or sexism. Of course, that&#8217;s true, but it&#8217;s also important to recognize that union participation did have a significant effect on both the gender and racial wealth gaps.</p>
+<p><strong>Lane Windham: </strong>&nbsp;By the late 1970s, which was the peak of the time when you had the most African American both men and women within unions, by that time, the racial income gap had actually narrowed for union members. Among men, there was still a small gap, far less than there was in the non-union sector. It had effectively been eliminated among women who were union members.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Then, in the 1980s, when you begin to see, there&#8217;s such a continued attack on unions. You begin to see unions pull back from union organizing, starting in the early 1980s. During that time, you begin to see a decrease in the percentage of overall workers and workers of color who are part of a color. Then, that wage gap, both for union workers and for non-union works begins, that racial wage gap comes back.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Labor rights are a racial justice issue. Labor rights are a gender equality issue, too.</p>
+<p><strong>Lane Windham: </strong>&nbsp;There are millions of African American women, African American men, Hispanic men and women, white women, who have pushed to form unions. In fact, your listeners might not know that by 2025, the majority of union members in this country will be female. We are going to have a majority women labor movement in 2025.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Today, the labor movement already is enormously diverse. The lived experience is that it&#8217;s not just now that that&#8217;s happening. We&#8217;ve had 40 years of people of color and women leading the efforts to expand the labor movement.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Really, anytime, I think, that people spend time, in a union hall, spend time with union members, they&#8217;re often surprised by the incredible diversity of the movement. I guess I would say, get to know some union members, because they&#8217;re probably going to be really different than what you&#8217;re picturing.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Don&#8217;t just rely on the media. Too often, our corporate media wants you to see Joe the plumber or whatever. They still show the one white guy. That&#8217;s just not reality. I mean, think about the most recent strikes, right? The teachers, Red for Ed, all those hospital workers in the University of California system. Even the Stop &amp; Shop, up in the northeast, was majority women. All of these are a diverse set of groups, often led by women, led by women of color who are demanding a new future for themselves and their families. They see a union and collective bargaining as the tool to get there.</p>
+<p><strong>Bernie Sanders: </strong>On behalf of every worker in America who is facing the same kind of pressure, thank you for what you’re doing. We’re going to win this thing. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;We cannot forget that the Civil Rights Movement was fundamentally rooted in labor struggle. Decades before the Newport News shipyard organizing Dr. Windham described, civil rights icon A. Philip Randolph organized shipyard and dock workers in the very same part of the country. Later, he famously organized the Brotherhood of Sleeping Car Porters in 1925 and led them to a strike which earned them $2 million in pay increases, a shorter work week, and overtime pay.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;A socialist, he argued that people could not be free as long as they were economically deprived and that civil rights legislation alone, without opportunities for economic and educational advancement, would leave black Americans second-class citizens. Now, here we are with union participation at an all-time low, just 10.5%, and income inequality is reaching heights not seen since the gilded age dominance of the Rockefellers, Vanderbilts, and Carnegies.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;The racial wealth gap is 10 to 1, and women, depending on their race, earn between 53 and 80 cents on the dollar. How did this happen? How did the gains in economic equality earned through labor activism in the mid 20th century become lost?</p>
+<p><strong>Lane Windham: </strong>&nbsp;All through the 1970s, employers were fighting workers&#8217; efforts to unionize, ramping up resistance, bending and breaking labor law at a whole new level. Then, we come to the 1980s, when there is a recession that hits especially the unionized sectors really hard, so the steelworkers and the auto workers both lose about 40% of their membership in about five years. They&#8217;re just decimated in the late &#8217;70s, early 1980s.</p>
+<p><strong>Lane Windham: </strong>&nbsp;In addition, of course, then, you have Reagan elected. He does fire the air traffic controllers who are striking, which dampens union organizing efforts. In addition, you have Reagan appoint a labor board that&#8217;s very hostile to union organizing. </p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I want to try to unpack some of that, because I think it&#8217;s important for us to understand the relationship between the wellbeing of American workers and the political choices made by the people we elect. The National Labor Relations Board, or NLRB, was established in the mid-1930s by president FDR to enforce US labor law. The New Deal established a number of new protections for US workers, including the right to form unions and collectively bargain for more rights.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;What it means to collectively bargain is for employees to negotiate the terms of their employment with management, that is, their employers. Prior to the National Labor Relations Act of 1935, it was perfectly legal for employers to discriminate, harass, retaliate against, or fire workers if they attempted to organize together or to advocate for their rights as a group. To be clear, that happened all the time.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;When they agreed to organize and act as one, laborers have an incredible amount of power. A power they don&#8217;t have when they stand alone. A strike can bring a business to a standstill and cost employers dearly. Employers have a great deal of incentive to make sure their employees don&#8217;t organize. As a result, companies invest vast resources in internal, anti-union propaganda.</p>
+<p><strong>Michael Brooks: </strong>&nbsp;This is a Delta ad. Union dues cost around 700 a year. A video game system with the latest hit sounds like fun. Put your money towards that instead of paying dues to a union. Then, there is a gaming, what do you call that?</p>
+<p><strong>Speaker: </strong>&nbsp;A controller.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;The Reagan administration created a hostile environment for union organizers. He appointed management-friendly leaders to the NLRB. As Dr. Windham noted, he made an unambiguous show of force against organized labor when he responded to the strike of 13,000 airport controllers by firing all of them, save the 1,300 or so who went back to work when ordered to do so.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Across the country, conservative lawmakers have enacted anti-labor policies called Right to Work laws, which make it much more difficult for unions to collect the dues that enable them to operate. In 2017, the Supreme Court issued the Janus decision, which overturned 40 years of precedent, which required public employees to pay union dues to cover the costs of collective bargaining.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Dr. Windham also explained that globalization put more pressure on corporations to extract profit. CEO salaries didn&#8217;t take a hit. Worker salaries did.</p>
+<p><strong>Lane Windham: </strong>&nbsp;What was happening in the 1970s is that we began to see the shift from an industrial to a financialized capitalism. This means that what the banks and the shareholders matter a lot more than what you make and who makes it. This is also a time when you&#8217;re seeing a shift to a far more globalized capitalism. The markets are just strung together in a whole new way because of technology.</p>
+<p><strong>Lane Windham: </strong>&nbsp;That&#8217;s what&#8217;s happening. How that happens is how we need to have a discussion about neoliberalism, if you will, or the rise of a certain kind of conservatism. The how is that we, the ideas that the individual market, that people should be turned out into the market as individuals and compete within that market, market over community. Those ideas ended up shaping how we went to the new forms of capitalism instead of the kind of collectivism that workers were pushing for.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Workers said, &#8220;We want to be part of unions. We want to have power. If the shift is going to happen, we want to have a say.&#8221; A lot of experts say, &#8220;By the time you got to neoliberalism, there was a shift to service and retail over industry,&#8221; right? As though that explains neoliberalism.</p>
+<p><strong>Lane Windham: </strong>&nbsp;What I explain in the book is, yeah, there&#8217;s a shift to retail. Yeah, you have a lot more retail. You have a lot more service workers, but those workers wanted to unionize. They had a different vision.</p>
+<p><strong>Lane Windham: </strong>&nbsp;One of my examples is the workers at the Woodward &amp; Lothrop Department Store. It was called Woodies, here in Washington, DC. This workforce was three quarters women. It was, half of the workforce was under the age of 35. It was over a quarter African American women. This workforce demanded a union, and they won that, in a very clearly a retail industry.</p>
+<p><strong>Lane Windham: </strong>&nbsp;In that case, their employer did not fight them as hard as some of the other employers. For instance, the department store Hex really fought its workers. Those workers weren&#8217;t able to form a union. What we see there is it&#8217;s not like service and retail jobs are naturally bad jobs.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Today, when we&#8217;re talking, is Tuesday. It&#8217;s the day that Bernie Sanders is at Walmart attending a board meeting and standing behind Walmart workers.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Huge parts of our economy today are people who are either service workers, and the fast food industry, something like one out of eight Americans have worked in the fast food industry. We have people overwhelmingly participating in the gig economy. That in and of itself can’t be an excuse to write off those populations as deserving of the equal protections that unions have historically provided.</p>
+<p><strong>Lane Windham: </strong>&nbsp;Absolutely. That&#8217;s exactly what those workers said is, &#8220;Hey, if this is the kind of job I&#8217;m going to have, if I&#8217;m going to have my feet on this low rung, I at least want some power. I want some say.&#8221; They demanded a union contract, right? Lots of workers, while the workers I talk about in the book succeeded, many, many more retail workers tried and lost.</p>
+<p><strong>Lane Windham: </strong>&nbsp;I think, again, it&#8217;s important to recognize, it&#8217;s not that workers didn&#8217;t fight. They did fight, but then, they lost. When we understand the fight that&#8217;s ahead of us today, I think, I hope that it helps today&#8217;s retail workers or fast food workers to understand, hey, I come from a long tradition of people who have fought. I am part of a long struggle. That&#8217;s a really different thing than not fighting at all.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Labor unions haven&#8217;t just had an effect on workers&#8217; fortunes. They&#8217;ve historically been huge supporters of Democrats, both by providing organizing support on the ground and by making financial contributions. As journalist Eric Levitz explained in an article for New York Mag last year, the Republican Party fully understands how important labor unions have been to the Democratic Party. It&#8217;s part of what&#8217;s behind their choice to push these so-called Right to Work laws across the country. By weakening unions, they weaken the Democratic Party base.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;A study from the National Bureau of Economic Research last year showed that Right to Work laws decreased the Democratic presidential share of the vote by 3.5%. The impact trickled down to down-ballot races and may have given Republicans more power in the Senate, House, governors&#8217; mansions, and state legislatures.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;What happened? How did Republicans get such an edge here? To better understand the shifting incentives within the Democratic Party that contributed to where we are today, I spoke to Ryan Grim, DC Bureau Chief at the Intercept, my former boss, and author of a new book on the rise of the progressive movement.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The big realignment goes back to the 1970s and &#8217;80s, when you have a bunch of different things coming together all at the same time. This is post-Civil Rights Movement. You have the kind of rise of capital. Wall Street and corporate America is really feeling it. They&#8217;ve been on like a 30-year run, and now they&#8217;re just absolutely flush with cash that they figure out how to start weaponizing politically in a way that they hadn&#8217;t before. The wheels start coming off the labor movement. You start getting what we think of now as the backlash to the Civil Rights Movement, busing, and segregation, and questions about what a post-civil rights America look like.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;When you say that big money was being weaponized in a way that it hadn&#8217;t figured out before, what do you mean by that?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The late 1800s were a period, the gilded age. A lot of people say we&#8217;re in now a new gilded age. That original gilded age was a time when Carnegies and the other, what would be now, billionaires really dominated American politics and just whip-sawed us into crisis after crisis. Reconstruction, to me, actually fell apart not for all of the reasons that we think of, some of those, but because of this massive financial crisis in 1873 that just sapped the strength of the north.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;You had these just repeatedly until the huge one in the 1930s. Then, the New Deal comes in and gets capital under control for a while. It took capital a good 30 years or so to really loosen the reins that had been put on them during the New Deal.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Particularly in the late &#8217;70s and then the election in 1980, Republicans figure out how to use big money in a serious way. It&#8217;s not a coincidence that this comes with the rise of television. The 30-second ad was not a thing before, say, you know, they were cutting them in the &#8217;60s and the &#8217;70s, but it was really in the 1980 campaign that Republicans really figured out how to do the negative 30-second ad. That&#8217;s how they took out this whole slew of liberal lions from the Senate.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Not just Reagan comes in in 1980, but Democrats lose the Senate and lose just champions that had been in there for decades. People like Frank Church and Birch Bayh who were front-runners for the president in &#8217;76, and then in &#8217;80, they&#8217;re just tossed out.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Ryan explained that at the same time Republicans were mounting an attack on labor and increasingly spending big money dollars on TV ads, some Democrats chose to respond by racing to the bottom, shifting their donor base from traditional sources like organized labor to big money, in order to compete. This had the effect of shifting Democratic Party messaging to the right.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;There were two different roads that they could go down. The one road that the left was advocating for was, we need to think about what our new coalition is and put a populist, progressive coalition together. You can still win these white, working class voters. You have to appeal to them based on their economic interests. You have to ally them with black and brown workers against this rising power of capital.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The other side said, &#8220;What we need to do is worry about the 1982 midterms. We need to go to corporate America,&#8221; develop what they called a PAC strategy, at the time. Now, it&#8217;s just called fundraising. That meant setting up political action committees that would be filled with Wall Street money, corporate money, and that makes it impossible, then, to do this populist, progressive messaging.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;In order to try to appeal to the white, working class voters that are fleeing, you have to just appeal to a little bit of racial anxiety. Not as much as the Republicans, because you&#8217;re not terrible, but just a little bit. Just, you keep your dog whistles a little bit quieter, because you can&#8217;t do the broad-based populist argument and still get all that corporate cash, they elected to go that direction.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;In kind of a fluke of history, in &#8217;82, they win this huge wave, just like 2018, and &#8217;94 to Bill Clinton&#8217;s &#8217;92. In &#8217;82, they&#8217;re like, &#8220;Wow, this worked. We went to corporate America. We raised all this money. We put up television ads, and boom, big blue wave in 1982, so this clearly is our path back,&#8221; but it turned out to be a mirage.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I want to be really clear and explicit about why it is that you can&#8217;t maintain the same progressive messaging if you take the money from big money, because that in a lot of ways is a story of why, I would argue, there has been so much political dissatisfaction that has generated the movement that we&#8217;re seeing, now. What really distinguishes candidates like Ocasio-Cortez and Bernie Sanders from the rest of the pack is a willingness to say things that haven&#8217;t been said, not because they aren&#8217;t politically popular, polls show that they&#8217;re popular, but because they have the freedom to say them because they&#8217;re not constrained by the desires of their donor base.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;It’s not that you are necessarily taking money and doing something for that money. What it was is that, let&#8217;s say you were thinking about doing something on housing policy or energy policy. If it was going to rub up against the interests of the people that you&#8217;re fundraising from, then you probably just don&#8217;t do it. Nobody asked you not to do it. Nobody hands you a brown paper bag and says, &#8220;If you don&#8217;t do that, I give you this cash.&#8221; These are smart people. You just know. You just self-censor yourself because you know that you&#8217;re going to soon be talking to these special interests that you need money from.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The broader point is that if you&#8217;re going to put together a populist, progressive coalition, you&#8217;re going to be calling out big money, specifically. That is the thing that you&#8217;re rallying people around and against. If you&#8217;re hitting them up at the same time, it&#8217;s just, you know &#8230;</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I want to go back to the 1980s and talk about Jesse Jackson as an example of someone who bucked the trend. For those who aren&#8217;t as familiar with the history of his candidacy, what was going on there, and how did he manage to do the second choice you set out, which is not to take the corporate money, but to put together this working-class, multiracial, rainbow coalition?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Yeah, so it sort of starts in, he was a top aide, very close to Martin Luther King, so he&#8217;s a prominent figure by the late &#8217;60s.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Ryan explained that Jackson was frustrated by the extent to which progressive candidates weren&#8217;t getting the backing of mainstream, established Democrats.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;He says something like, &#8220;This kind of liberalism isn&#8217;t liberating.&#8221; He&#8217;s like, &#8220;You know what? Let&#8217;s go out on our own.&#8221; Jesse Jackson and a bunch of black leaders from around the country get together and are like, &#8220;We need to do something about this. We need to run somebody for president in 1984.&#8221; Nobody would step up and do it, so eventually Jackson&#8217;s like, &#8220;Fine, I&#8217;ll do it,&#8221; but he didn&#8217;t get in until January or so of 1984.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I didn&#8217;t realize that.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Things used to start much later, but not that late. By then, the caucuses were already underway. He got in in a very symbolic way, as a way to register a lot of voters to get his message out. Then, he does a lot better than he thought he would. Echoes of 2016 into 2020 &#8230;</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Sounds a little familiar.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Yeah. He gets in, for real, in 1988. Gets in earlier, gets in with staff, with a platform, with a structure, and does it in a populist, progressive way, on what he&#8217;s calling a rainbow coalition. He identifies what he calls economic violence that&#8217;s being done by neoliberalism, the right wing of the Democratic Party, and the Republican party are hollowing out the middle class, and that only by uniting all workers can the party push back on Reaganism and neoliberalism.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;There was about a week and a half where Washington was in a complete meltdown, because it looked like he might actually have a chance to win the nomination. That moment has been suppressed. That&#8217;s down the memory hole, but there was a period after Michigan, again, another echo. He won a huge upset in Michigan, and all of a sudden, panic set in. Wait, we&#8217;re now 36, 37 caucuses and primaries in, and he&#8217;s in a delegate tie with Michael Dukakis. He ended up fading from there, as the full weight of the party came down on him.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I asked Ryan why it was that Jackson didn&#8217;t get establishment support. In addition to some substantive reasons, like Jackson&#8217;s relative lack of executive experience, some familiar pretexts were bandied about.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Then, there&#8217;s this thing that Democratic primary voters do, they say, &#8220;I&#8217;m not racist, but everybody else is, and so, therefore, I can&#8217;t vote for a black person.&#8221; It&#8217;s like, &#8220;Well, walk that back. Think about that one for a second.&#8221;</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;We also did see the same thing happen with Jackson that we saw with Barack Obama, where not until he won Iowa did black primary voters actually shift and support him. I think they say in the book that he had single-digit support among African American voters until Iowa, until there was some demonstration that he was actually &#8220;electable&#8221;.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The country obviously was ready to elect Barack Obama and did twice. It&#8217;s the only time since the &#8217;70s that a Democrat won more than 50% in an election, because Clinton squeaked through because Ross Perot was running both times. He had 43% in &#8217;92. It&#8217;s really the only time that primary voters didn&#8217;t listen to that devil on their shoulder saying, &#8220;This guy&#8217;s not electable. Go with the safe, electable choice.&#8221; They said, &#8220;You know what? We&#8217;re going to go with the person that inspires us, and that we believe in, and we can hope for.&#8221;</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Let&#8217;s talk about that a little bit, because to my mind, electability and capturing people&#8217;s political imagination, being inspiring, are of the same ilk. It seems natural to me that if you&#8217;re relying on grassroots organizing, if you&#8217;re relying on individuals giving you donations, if you&#8217;re worried about general enthusiasm, and the kids getting on Twitter and pushing your message, that actually inspiring people by offering them a vision of the future that they like, which actually represents a substantive change from the status quo, status quo that many people are suffering under, is exactly the way to be electable. How did we get into this place where there is this detachment between ideology, and substance, and politics, and policy, and what&#8217;s actually being affirmatively offered, and what is perceived to be electable?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;You know, it&#8217;s been a feature of American politics pretty much the entire time. Like, the party that the Republicans replaced, the Whig party, they famously would look for generals who had absolutely no politics, like that had nothing written down, because they felt like the American people loved generals. Just put up a general, and they&#8217;re going to be electable, and they win. It worked a couple times, but it also backfired on them a couple times.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;What do you think is going on there with people like Ocasio-Cortez, who went up against, similarly, a Democratic machine, a candidate who was a 10-time incumbent, who was incredibly powerful and out-fundraised her, what, 10 to 1? What do you make of her success and how the public as a whole has reacted to her success and interpreted what was going on there in Queens, in the Bronx?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;These Democratic primary voters, they&#8217;re kind of two minds. They&#8217;re like, &#8220;That&#8217;s great.&#8221; They love her, and they&#8217;re like, &#8220;That&#8217;s great for the Bronx,&#8221; but they still have this fear that they live in some conservative country. This is people who are baby boomers and up, who lived through the Reagan years, are convinced that the rest of the country hates them. The rest of the country hates Democrats, hates liberals, and you just have to be as right-wing as you possibly can to be electable.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;They&#8217;re very nervous to lean into their own politics. That&#8217;s where it&#8217;s going to be organizing against fear. That is probably the best hope for this section of the primary that thinks what you think, which is like, if we bring somebody who&#8217;s inspiring, they&#8217;re actually more electable against the argument that, no, no, no, no, you don&#8217;t want to scare the American people. Just give them the blandest thing that you possibly can, and then just hope that they hate the alternative so much. In this case, it&#8217;s Trump, but it&#8217;s been Reagan, or George H.W. Bush, or George W. Bush. That&#8217;s been the model. Don&#8217;t worry about what you&#8217;re putting up. Just focus on how bad the Republican is.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;One of the mythologies that was put out there was America&#8217;s not ready for a black president. America&#8217;s racist. Americans, there was this projection of a certain kind of American that becomes an excuse for not pursuing progressive policies even though polling now shows that an overwhelming majority of those policies are popular not just with an overwhelming majority of Americans, but even slim majorities of Republicans. Sometimes it&#8217;s not so slim majorities of Republicans. Everything from Medicare for All to $15 minimum wage, job guarantees. All of these things are increasingly popular in, in fact, pluralities.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;The contemporary version of that is, and you get into this in the book a little bit. The only way to reach out to white voters who were a part of the Obama coalition is to activate them with racism. The idea that there is a such thing as an economic approach, a class-based approach, an approach that used to be advanced through greater participation in the labor movement and unions, who did a lot of work informing their membership about politicians in a way that is more, I would argue, neutral than sometimes what you get on mainstream media, that that mechanism is no longer in place.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Now, the idea of pitching to that constituency is in and of itself perceived as racist, because the choice of the Democrats that go with big money meant that the only way to do it therefore was racist, right? We&#8217;ve got ourselves in this catch 22, where to even say the words economic anxiety is, to some people, a dog whistle that you are planning to appeal to the nativist, racist instincts of a certain part of the population.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;There is a kind of failure to credit a legitimate economic need from white America, and that that need can be met along with overwhelming economic needs of other populations. What do you make of that? How do we get out of that kind of messaging that serves the big money arm of the Democratic Party?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;It can be a self-affirming thing, if you get it going. If Democrats can be reminded of the percentage of white, working-class voters that Obama won, and if they can see that, whether it&#8217;s white, working-class women, for instance, if they see that start to be a reliable part of the coalition, then attitudes around that will change, I think, if they start delivering at the polls.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Now, what Jesse Jackson didn&#8217;t have was a mechanism to raise small dollars. Mail was a thing, then. You could make decent money, but it was extraordinarily expensive to do what he &#8230; A lot of logistics involved. You couldn&#8217;t just say, &#8220;Go to jessejackson.com. There&#8217;s my fundraiser.&#8221;</p>
+<p><strong>Ryan Grim: </strong>&nbsp;There was no way to channel all the energy around him into small donors. The deeper he got into the primary, the more of a skeleton and volunteer crew that he&#8217;s running on. The difference, now, is that voters, white, black, and brown, can see that there are Democratic candidates who are not taking big money. That&#8217;s a big step, because it tells regular people that they are for regular people. To the extent that you might shape your policies to attract the big dollars, you do the same for small dollars. You start shaping policies that will inspire people to give to you.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;If you can get rid of some of the hypocrisy, the stench of hypocrisy around the Democratic Party, then you have a much better chance of making an economic argument. Otherwise, voters don&#8217;t have any reason to really believe that what you&#8217;re saying is going to be something that you&#8217;re going to deliver on.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Yeah. I mean, that&#8217;s a concern that I sometimes have, even with respect to the no super PAC pledges, which is that pretty much everybody has made some kind of noise. All of the major candidates, anyway, have made some kind of noise along those lines, but they have committed to it to varying degrees. There is a risk that there is room for some of this progressive messaging, which I think everybody has cottoned onto is popular, can start to be exploited by those who aren&#8217;t genuinely independent, who are only recently independent, financially independent &#8230;</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Right, but it doesn&#8217;t really work. People don&#8217;t buy it. People see right through it. You can just look at who&#8217;s having trouble raising the, what is it, 65,000, or 130,000, now, or whatever you need to qualify. You see these stories about people having to go out and spend, what, $45 to raise $1 online, which shows that people aren&#8217;t dumb about this.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Yeah. Another thing that you hit on in the book, which, I got to tell you, as my political education evolves, is always something that I find to be incredibly galling, is that the risk of running as a financially unencumbered progressive with actual progressive ideas, it&#8217;s not just the resistance from the very top, but there all of these threats along the way.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;In some ways, it makes sense that if you&#8217;re on a particular team, and your team wins, you get to go to the playoff with them.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;It also goes to the question of what the purpose of a party is. There is one idea that a party is a vehicle to express the wishes of the people that it represents.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Novel idea.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Crazy idea.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Sounds right. Okay, what&#8217;s the other idea?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;The other one is that a party exists to perpetuate the party itself.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;Right. The hashtag Bernie&#8217;s not a Democrat view of things.</p>
+<p><strong>Ryan Grim: </strong>&nbsp;Which would help explain how the Democratic party could go from a far right party in the 19th century to a center left party, moderately left in the 1930s, to then, you know, it moves all over the spectrum based on its own interests, its own survival, rather than on a particular ideological belief. Otherwise, it goes the way of the Whig party, just disappears.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;I&#8217;d like to think that the average Democratic voter, regardless of who they supported in 2016, would like to think of the Democratic party, the purpose of the Democratic party as promoting the interests of the people who vote for Democratic politicians. How, then, do we shift some of the narratives around the Democratic Party so that people are putting policy first? People are conceiving of themselves in the Democratic Party as a vehicle for advancing progressive politics as opposed to being about loyalty to individual figures?</p>
+<p><strong>Ryan Grim: </strong>&nbsp;I actually think that AOC&#8217;s win goes a great distance toward that goal. To say to people, both people who weren&#8217;t involved in politics because they cynically and perhaps accurately thought that it wasn&#8217;t for them, all of a sudden, they see somebody like them who&#8217;s involved in it, and saying, &#8220;No, no, you should participate, because this is real. It&#8217;s happening,&#8221; or to people who think that the party is beyond repair. To have AOC saying that, &#8220;No, it&#8217;s not beyond repair, we can work from within it, and we can wrestle control of it, and point it in a good direction,&#8221; to have that evidence, to have that actual, physical form of a person that you can put some faith in is much better than the theoretical argument that you can make to people.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;With the emergence of a new crop of progressive candidates, the excitement around Bernie Sanders&#8217; 2016 campaign, and the subsequent adoption of huge swaths of his 2016 platform by most of the leading Democratic candidates, it seems like things are moving in the right direction. That is to say, to the left. I, for one, am optimistic that we&#8217;re leaving the second big money gilded age and headed toward a new era of people-centered politics.</p>
+<p><strong>Briahna Joy Gray: </strong>&nbsp;That&#8217;s it for this week. We want to thank everyone who has tuned into this podcast over the last 10 episodes, shared their thoughts via email or Twitter, spread the word, and helped make this show what it is today. We&#8217;re so excited for what&#8217;s coming next. As always, please share your ideas and feedback at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f070a0e1d1b070a0d0a1d012f0d0a1d01060a1c0e010b0a1d1c410c0002">[email&#160;protected]</a>, or send us a tweet using the hashtag #HeartheBern. If you haven&#8217;t already, please take a moment to rate, review, or like us on Apple Podcasts, SoundCloud, or wherever you are listening. Transcripts will be up soon. Till next time.</p>
+<p></p>
+</div>
+</article>
+<footer class="footer">
+<div class="footer__address">Bernie 2020<br>
+PO Box 391<br>
+Burlington, VT 05402 </div>
+<div class="footer__paidfor">
+<span class="footer__disclaimer">Paid for by Bernie 2020</span>
+<div class="footer__bill">
+(not the billionaires)
+</div>
+</div>
+<div class="footer__sub">
+<span class="">© Bernie 2020 | <a href="/privacy-policy/">Privacy Policy</a>
+| <a href="https://boards.greenhouse.io/bernie2020" target="_blank">Jobs</a>
+| <a href="/podcast">Podcast</a>
+| <a href="/tax-returns/">Taxes</a>
+| <a href="/commitment-to-diversity-equity-and-inclusion/">Commitment to Diversity, Equity, and Inclusion</a>
+| <a href="/press/">Press</a>
+| <a href="/cdn-cgi/l/email-protection#87eee9e1e8c7e5e2f5e9eee2f4e6e9e3e2f5f4a9e4e8ea"><span class="__cf_email__" data-cfemail="2a43444c456a484f5844434f594b444e4f585904494547">[email&#160;protected]</span></a>
+</span>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=AW-762516841" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-762516841');
+</script>
+
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  gtag('event', 'conversion', {'send_to': 'AW-762516841/DW1nCNH7wKIBEOmqzOsC'});
+</script>
+
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '736881459842197');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=736881459842197&ev=PageView
+  &noscript=1"/>
+</noscript>
+
+
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','o13k7');
+  twq('track','PageView');
+</script>
+
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-118768463-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  (function(m,o,v,a,b,l,e) {
+    if (typeof m['MovableInkTrack'] !== 'undefined') { return; }
+    m['MovableInkTrack'] = b;
+    l = o.createElement(v);
+    e = o.getElementsByTagName(v)[0];
+    l.type = 'text/javascript'; l.async = true;
+    l.src = '//' + a + '/p/js/1.js';
+    m[b] = m[b] || function() { (m[b].q=m[b].q||[]).push(arguments); };
+    e.parentNode.insertBefore(l, e);
+
+    /* Exclusively for Bernie 2020 */
+  })(window, document, 'script', 'ycwht5le.micpn.com', 'mitr');
+</script>
+
+<script src="https://js.adsrvr.org/up_loader.1.1.0.js" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">
+  ttd_dom_ready( function() {
+    if (typeof TTDUniversalPixelApi === 'function') {
+      var universalPixelApi = new TTDUniversalPixelApi();
+      universalPixelApi.init("vaoess8", ["cet59p0"], "https://insight.adsrvr.org/track/up");
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/aos.js" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/vendor/float-labels.js" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script src="https://berniesanders.com/wp-content/themes/bernie/assets/js/custom.min.js" type="445c4db34c6ac9ec713c9f90-text/javascript"></script>
+<script type="445c4db34c6ac9ec713c9f90-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b90cc6c8e3","applicationID":"236271046","transactionName":"YFNWZERRD0JRUhENDlkZdVNCWQ5fH0IMCgZbUw==","queueTime":0,"applicationTime":167,"atts":"TBRVEgxLHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="445c4db34c6ac9ec713c9f90-|49" defer=""></script></body>
