@@ -568,7 +568,7 @@ section.donate .actblue-disclaimer {
 .alert.large-alert .alert-link {
   color: #fff;
   padding: 2em 2em 3em;
-  font-size: 110%;
+  font-size: 95%;
   display: block;
   -moz-transition:    all .25s ease-in-out;
   -o-transition:      all .25s ease-in-out;
@@ -597,8 +597,8 @@ section.donate .actblue-disclaimer {
 .alert-teaser {
   max-width: 740px;
   display: block;
-  line-height: 1.4;
-  margin-bottom: 2em;
+  line-height: 1.3;
+  margin-bottom: 1em;
 }
 
 .fixed .alert-teaser {
@@ -703,16 +703,29 @@ section.donate .actblue-disclaimer {
 }
 .large-alert .donate-amounts a {
   color: var(--dark-blue);
+  padding: .5em;
 }
+
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .large-alert .donate-amounts a{
+	  padding: .7em;
+	}
+}
+
 .large-alert .donate-amounts a:hover {
   color: white;
 }
 .large-alert .actblue-disclaimer {
   display: inline-block;
-  margin-top: 1.5em;
+  margin-top: 1em;
   max-width: 580px;
+  font-size: 80%;  
 }
 
-
+@media only screen and (min-width: 1000px) and (min-device-width: 480px) {  
+  .large-alert .actblue-disclaimer {
+	  font-size: 90%;  
+	}
+}
 
 
