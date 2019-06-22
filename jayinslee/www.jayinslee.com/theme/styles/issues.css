@@ -102,7 +102,8 @@
   margin-bottom: 2em;
 }     
 @media only screen and (min-width: 740px) and (min-device-width: 480px) {    
-  .grid.three {
+  .grid.three,
+  .grid.six {
     -ms-grid-columns: (1fr)[3];	
   	grid-template-columns: repeat(3, 1fr);
 	}  
@@ -115,6 +116,7 @@
   	grid-template-columns: repeat(5, 1fr);
     margin-bottom: 3em;
 	}   
+  
 }
 	
 .grid.squares article {
