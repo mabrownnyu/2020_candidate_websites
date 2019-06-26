@@ -18,7 +18,7 @@ function attachFormListeners(form) {
     }
 
     const SIGNUP_URL = '/wp-json/yang-api/v1/sign-up';
-    const DONATE_URL = 'https://secure.actblue.com/donate/friends-of-andrew-yang';
+    const DONATE_URL = 'https://secure.actblue.com/donate/ayorganicdefault190622webegall?utm_source=website&utm_medium=Organic&utm_campaign=Default&utm_term=&utm_content=190622Signup&refcode=Default190622Signup';
     // const DONATE_URL = 'https://secure.actblue.com/donate/yang-cnn-townhall-web';
     fetch(SIGNUP_URL, {
       method: 'POST',
