@@ -6,7 +6,7 @@
 -->
   <head>
     <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-<script src="/sites/default/files/hotjar/hotjar.script.js?ptn7rj"></script>
+<script src="/sites/default/files/hotjar/hotjar.script.js?ptqhui"></script>
 <meta name="title" content="Scheduling Request: Event or Speaking Request | TULSI 2020" />
 <link rel="canonical" href="https://www.tulsi2020.com/s/event" />
 <meta name="twitter:site" content="@TulsiGabbard" />
@@ -28,13 +28,13 @@
 <link rel="shortcut icon" href="/themes/custom/tulsi/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="alternate" hreflang="en" href="https://www.tulsi2020.com/s/event" />
 <link rel="revision" href="https://www.tulsi2020.com/s/event" />
-<script src="/sites/default/files/google_tag/google_tag.script.js?ptn7rj"></script>
+<script src="/sites/default/files/google_tag/google_tag.script.js?ptqhui"></script>
 
     <title>Scheduling Request: Event or Speaking Request | TULSI 2020</title>
-    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_byWAxOHkwLtMWx4o3Q1wi6dueF8GXtOztcrshmJjWwY.css?ptn7rj" />
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_byWAxOHkwLtMWx4o3Q1wi6dueF8GXtOztcrshmJjWwY.css?ptqhui" />
 <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/gh/jonthornton/jquery-timepicker@1.11.14/jquery.timepicker.min.css" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css_19NZ_kzpII57416rOZU3LGtqEGzNnNwtm5m0ERn-Q0E.css?ptn7rj" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css_dsGC1NAzcKmSEQtw7h_YCz8u1kBRhDUBtjWe16gUU5c.css?ptn7rj" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_19NZ_kzpII57416rOZU3LGtqEGzNnNwtm5m0ERn-Q0E.css?ptqhui" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_s9UrwEJLPER75eQZHDMwXJvWFogC64DIkgD8-6Bxxb4.css?ptqhui" />
 <link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
 
     
@@ -67,10 +67,13 @@
         <a href="/about" class="about js-megamenu-trigger" data-megamenu="mm-one" data-drupal-link-system-path="node/1">About</a>
               </li>
                 <li class="menu-item">
+        <a href="/vision" data-drupal-link-system-path="node/158">Vision</a>
+              </li>
+                <li class="menu-item">
         <a href="/volunteer" class="volunteer js-megamenu-trigger" data-megamenu="mm-three" data-drupal-link-system-path="node/4">Join Us</a>
               </li>
                 <li class="menu-item">
-        <a href="" class="more js-megamenu-trigger" data-megamenu="mm-four">Events &amp; Press</a>
+        <a href="https://secure.ngpvan.com/p/uEk71xTbu0iDkh_D4IJSuw2?ms=web-events-nav" class="more js-megamenu-trigger" data-megamenu="mm-four">Events</a>
               </li>
                 <li class="menu-item">
         <a href="https://shop.tulsi2020.com" class="shop">Shop</a>
@@ -108,6 +111,12 @@
           <p>Love for others, for her community, and her country has inspired Tulsi to live a life defined by service.</p>
           <ul class="vertical menu strong">
             <li><a href="/about">Read Tulsi's Bio <i class="fas fa-caret-right fa-sm"></i></a></li>
+            <li>
+                <a href="/vision">Tulsi's Vision for America
+                    <i class="fas fa-caret-right fa-sm"></i>
+                </a>
+            </li>
+
           </ul>
 
           
@@ -330,12 +339,12 @@
         <div id="edit-event-date-time" class="container-inline">
   <div class="js-form-item form-item js-form-type-date form-item-event-date-time-date js-form-item-event-date-time-date form-no-label">
       <label for="edit-event-date-time-date" class="visually-hidden js-form-required form-required">Start Date and Time: Date</label>
-        <input data-webform-required-error="Event start date and time is required" data-drupal-selector="edit-event-date-time-date" title="Date (e.g. 2019-06-25)" type="date" data-drupal-date-format="Y-m-d" id="edit-event-date-time-date" name="event_date_time[date]" value="" size="12" class="form-date required" required="required" aria-required="true" />
+        <input data-webform-required-error="Event start date and time is required" data-drupal-selector="edit-event-date-time-date" title="Date (e.g. 2019-06-27)" type="date" data-drupal-date-format="Y-m-d" id="edit-event-date-time-date" name="event_date_time[date]" value="" size="12" class="form-date required" required="required" aria-required="true" />
 
         </div>
 <div class="js-form-item form-item js-form-type-webform-time form-item-event-date-time-time js-form-item-event-date-time-time form-no-label">
       <label for="edit-event-date-time-time" class="visually-hidden js-form-required form-required">Start Date and Time: Time</label>
-        <input data-webform-required-error="Event start date and time is required" data-drupal-selector="edit-event-date-time-time" title="Time (e.g. 12:19 PM)" type="text" step="1800" data-webform-time-format="g:i A" id="edit-event-date-time-time" name="event_date_time[time]" value="" size="12" maxlength="12" class="form-time webform-time required" required="required" aria-required="true" />
+        <input data-webform-required-error="Event start date and time is required" data-drupal-selector="edit-event-date-time-time" title="Time (e.g. 2:11 AM)" type="text" step="1800" data-webform-time-format="g:i A" id="edit-event-date-time-time" name="event_date_time[time]" value="" size="12" maxlength="12" class="form-time webform-time required" required="required" aria-required="true" />
 
         </div>
 
@@ -347,12 +356,12 @@
         <div id="edit-event-date-time-end" class="container-inline">
   <div class="js-form-item form-item js-form-type-date form-item-event-date-time-end-date js-form-item-event-date-time-end-date form-no-label">
       <label for="edit-event-date-time-end-date" class="visually-hidden js-form-required form-required">End Date and Time: Date</label>
-        <input data-webform-required-error="Event end date and time is required" data-drupal-selector="edit-event-date-time-end-date" title="Date (e.g. 2019-06-25)" type="date" data-drupal-date-format="Y-m-d" id="edit-event-date-time-end-date" name="event_date_time_end[date]" value="" size="12" class="form-date required" required="required" aria-required="true" />
+        <input data-webform-required-error="Event end date and time is required" data-drupal-selector="edit-event-date-time-end-date" title="Date (e.g. 2019-06-27)" type="date" data-drupal-date-format="Y-m-d" id="edit-event-date-time-end-date" name="event_date_time_end[date]" value="" size="12" class="form-date required" required="required" aria-required="true" />
 
         </div>
 <div class="js-form-item form-item js-form-type-webform-time form-item-event-date-time-end-time js-form-item-event-date-time-end-time form-no-label">
       <label for="edit-event-date-time-end-time" class="visually-hidden js-form-required form-required">End Date and Time: Time</label>
-        <input data-webform-required-error="Event end date and time is required" data-drupal-selector="edit-event-date-time-end-time" title="Time (e.g. 12:19 PM)" type="text" step="1800" data-webform-time-format="g:i A" id="edit-event-date-time-end-time" name="event_date_time_end[time]" value="" size="12" maxlength="12" class="form-time webform-time required" required="required" aria-required="true" />
+        <input data-webform-required-error="Event end date and time is required" data-drupal-selector="edit-event-date-time-end-time" title="Time (e.g. 2:11 AM)" type="text" step="1800" data-webform-time-format="g:i A" id="edit-event-date-time-end-time" name="event_date_time_end[time]" value="" size="12" maxlength="12" class="form-time webform-time required" required="required" aria-required="true" />
 
         </div>
 
@@ -566,14 +575,14 @@
         <input data-webform-required-error="Deadline is required" type="date" data-drupal-selector="edit-deadline-to-confirm" data-drupal-date-format="Y-m-d" id="edit-deadline-to-confirm" name="deadline_to_confirm" value="" class="form-date required" required="required" aria-required="true" />
 
         </div>
-    <div class="captcha"><input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="89" />
-<input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="d4aa30c6ca4713f25d0360b9185c25d1" />
+    <div class="captcha"><input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="105" />
+<input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="eac9836079b50343c5eb688d3c655954" />
 <input data-drupal-selector="edit-captcha-response" type="hidden" name="captcha_response" value="Google no captcha" />
 <div class="g-recaptcha" data-sitekey="6Lfby4MUAAAAAHfMKbJz7v3-T_py31Jpn34NJfTn" data-theme="light" data-type="image"></div></div>
 <div data-drupal-selector="edit-actions" class="form-actions webform-actions js-form-wrapper form-wrapper" id="edit-actions"><input class="webform-button--submit large secondary button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" type="submit" id="edit-actions-submit" name="op" value="Submit" />
 
 </div>
-<input autocomplete="off" data-drupal-selector="form-tpodobdsp8h36hb7rkbcwobfdfr96gbs3y8z-ssgp4c" type="hidden" name="form_build_id" value="form-TPODobdSP8H36HB7rKbcWOBfdFr96GbS3y8z_ssGp4c" />
+<input autocomplete="off" data-drupal-selector="form-pelglcdccvrg-l2ua5ppxrkpohnpw-q-kf47uc4n6ki" type="hidden" name="form_build_id" value="form-peLGLcDcCvrg_l2UA5PpXrKPOHnPW_Q_Kf47Uc4N6KI" />
 <input data-drupal-selector="edit-webform-submission-scheduling-event-request-paragraph-111-add-form" type="hidden" name="form_id" value="webform_submission_scheduling_event_request_paragraph_111_add_form" />
 
 
@@ -827,8 +836,12 @@
 
                 <ul class="nav-list large vertical menu">
               <li class="menu-item">
-              <a href="/about" data-drupal-link-system-path="/about">About</a>
-        </li>
+                <a href="/about" data-drupal-link-system-path="/about">About</a>
+              </li>
+              <li class="menu-item">
+                <a href="/vision"data-drupal-link-system-path="/vision">Vision</a>
+              </li>
+
                 <li class="menu-item">
         <a href="/volunteer" data-drupal-link-system-path="node/4" data-screen="volunteer" class="js-mobile-nav-screen-trigger">
           Get Involved
@@ -857,9 +870,6 @@
                 <li class="menu-item">
         <a href="https://shop.tulsi2020.com">Shop</a>
               </li>
-              <li class="menu-item">
-                <a href="/contact">Contact</a>
-            </li>
         </ul>
       </div>
 
@@ -1022,13 +1032,18 @@
 <iframe frameborder="0" scrolling="no" src="//pd.trysera.com/p/14797942988700909568" style="width:1px;height:1px;border:0;"></iframe>
 
 
+
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/34","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"captcha\/base,core\/html5shiv,paragraphs\/drupal.paragraphs.unpublished,tulsi\/global-css,tulsi\/global-js,webform\/webform.composite,webform\/webform.element.date,webform\/webform.element.details.save,webform\/webform.element.details.toggle,webform\/webform.element.flexbox,webform\/webform.element.message,webform\/webform.element.select2,webform\/webform.element.time,webform\/webform.form,webform\/webform.form.submit_once","theme":"tulsi","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"jquery":{"ui":{"datepicker":{"isRTL":false,"firstDay":0}}},"webform":{"dateFirstDay":0},"user":{"uid":0,"permissionsHash":"f9165ecc0d06fd5f3d3802ee842bba544be9f63f48de08054ab3ef7372888d45"}}</script>
-<script src="/sites/default/files/js/js_I5XUQ2BlFOQ4cCBGxD1Gy7XaIYG1hx4aZaJzw9h2qwY.js"></script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/34","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"captcha\/base,core\/html5shiv,paragraphs\/drupal.paragraphs.unpublished,tulsi\/brandcdn,tulsi\/global-css,tulsi\/global-js,webform\/webform.composite,webform\/webform.element.date,webform\/webform.element.details.save,webform\/webform.element.details.toggle,webform\/webform.element.flexbox,webform\/webform.element.message,webform\/webform.element.select2,webform\/webform.element.time,webform\/webform.form,webform\/webform.form.submit_once","theme":"tulsi","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"jquery":{"ui":{"datepicker":{"isRTL":false,"firstDay":0}}},"webform":{"dateFirstDay":0},"user":{"uid":0,"permissionsHash":"f9165ecc0d06fd5f3d3802ee842bba544be9f63f48de08054ab3ef7372888d45"}}</script>
+<script src="/sites/default/files/js/js_-cZJiDDzi9f_JMoez9m1Nt4aomtzCJ0MT5IidnWJkYM.js"></script>
+<script src="https://tag.brandcdn.com/autoscript/tulsi2020_vg5wrk5vmvjqvda9/reagan_iowa.js"></script>
+<script src="https://tag.brandcdn.com/autoscript/tulsi2020_vg5wrk5vmvjqvda9/reagan_newhampshire.js"></script>
+<script src="https://tag.brandcdn.com/autoscript/tulsi2020_vg5wrk5vmvjqvda9/reagan_southcarolina.js"></script>
+<script src="/sites/default/files/js/js_SZOaG_aMKaUAGvvJhqBbaq-aPdPBeq32KUPSkBZ39Pg.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/jonthornton/jquery-timepicker@1.11.14/jquery.timepicker.min.js"></script>
 <script src="/sites/default/files/js/js_EFvI2BEVKod9mZz4L1rakCUjoyUiPEEdBgmCDyYgJA4.js"></script>
 
-  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877e78ad18","applicationID":"229453582","transactionName":"ZlYBY0RZVkRQB0JdCl8cIlRCUVdZHiBEQRVQXz90WUpda3cLRFk5d1wRWnRNUVtVAUQZW0NWDVNTSmhbUAdTXApdVwZFcFdKWnAHQl0KXw==","queueTime":0,"applicationTime":1177,"atts":"ShECFQxDRUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"877e78ad18","applicationID":"229453582","transactionName":"ZlYBY0RZVkRQB0JdCl8cIlRCUVdZHhRXUwBuUAJUXl0=","queueTime":0,"applicationTime":18,"atts":"ShECFQxDRUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>

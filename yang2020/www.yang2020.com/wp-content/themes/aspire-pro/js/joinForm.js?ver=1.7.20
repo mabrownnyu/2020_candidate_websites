@@ -1,0 +1,57 @@
+function attachFormListeners(form) {
+  form.onsubmit = event => {
+    event.preventDefault();
+
+    var emailInput = form.querySelector('[name=\'email\']');
+    var zipInput = form.querySelector('[name=\'zip\']');
+    var userEmail = emailInput.value;
+    var userZip = zipInput.value;
+
+    if (! userEmail) {
+      console.error('Email required!');
+      return;
+    }
+
+    if (! userZip) {
+      console.error('Zip code required!');
+      return;
+    }
+
+    const SIGNUP_URL = '/wp-json/yang-api/v1/sign-up';
+    const DONATE_URL = 'https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627Signup&refcode=DebateJune19190627Signup';
+    // const DONATE_URL = 'https://secure.actblue.com/donate/yang-cnn-townhall-web';
+    fetch(SIGNUP_URL, {
+      method: 'POST',
+      body: JSON.stringify({email: userEmail, zip: userZip}),
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+      .then(response => {
+        window.location.href = DONATE_URL;
+        return response.json();
+      })
+      .catch(error => {
+        console.error('error', error);
+        window.location.href = DONATE_URL;
+      });
+  };
+}
+
+function setupFormListeners() {
+  var joinForms = Array.from(document.querySelectorAll('.join-form'));
+  joinForms.forEach(attachFormListeners);
+};
+
+DomReady.ready(function () {
+  setupFormListeners();
+console.log('here joinForm');
+  if (navigator && navigator.platform) {
+    if (navigator.platform.toLowerCase().includes('mac')) {
+      document.body.classList.add('mac-computer');
+    }
+    else {
+      document.body.classList.add('pc-computer');
+    }
+  }
+});
