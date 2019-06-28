@@ -1,0 +1,512 @@
+.volunteer-page .site-inner {
+  max-width: 100%;
+  padding: 0;
+}
+
+.volunteer-page fieldset {
+  display: block;
+  border: 0;
+}
+
+.volunteer-page iframe {
+  width: 100%;
+  height: 480px;
+}
+
+.volunteer-page .grid .column {
+  width: 50%;
+}
+
+.volunteer-page .show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page .submit-info.wrap {
+    max-width: 100%;
+  }
+
+  .volunteer-page .site-inner {
+    margin-top: 180px;
+  }
+
+  .volunteer-page .grid .column {
+    width: 100%;
+  }
+
+  .volunteer-page .grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .volunteer-page .show-on-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .volunteer-page .site-inner {
+    margin-top: 90px;
+  }
+}
+
+.volunteer-page h2,
+.volunteer-page h3 {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.volunteer-page h2 {
+  margin-bottom: 0;
+  color: var(--red);
+  font-size: 21px;
+  letter-spacing: 3px;
+}
+
+.volunteer-page h3 {
+  color: var(--blueDark);
+  font-size: 50px;
+  letter-spacing: 4px;
+}
+
+.volunteer-page p {
+  margin: 0 auto;
+  max-width: 860px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page p {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 640px) {
+  .volunteer-page h2 {
+    font-size: 18px;
+  }
+
+  .volunteer-page h3 {
+    font-size: 40px;
+  }
+
+  .volunteer-page p {
+    font-size: 18px;
+  }
+}
+
+.volunteer-page .submit-info .grid {
+  border-left: 30px solid var(--red);
+  margin-bottom: 37px;
+}
+
+.volunteer-page .contact-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 125px 0 77px;
+  margin-right: 65px;
+  background-image: linear-gradient(to right, white, hsla(0, 0%, 80%, 0.3));
+}
+
+.volunteer-page .contact-info .wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (min-width: 1025px) {
+  .volunteer-page .contact-info .wrap {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page .submit-info .grid {
+    padding-left: 0;
+    border-left-width: 0px;
+  }
+
+  .volunteer-page .contact-info {
+    padding: 35px 0 100px;
+    margin-right: 0;
+    margin-bottom: 35px;
+    background-image: linear-gradient(to bottom, white, hsla(0, 0%, 80%, 0.3));
+  }
+
+  .volunteer-page .submit-info.wrap {
+    padding: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .volunteer-page .contact-info {
+    padding-bottom: 110px;
+  }
+}
+
+.volunteer-page .triangle {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  height: 50%;
+  border-top: 256px solid transparent;
+  border-bottom: 256px solid transparent;
+  border-right: 60px solid white;
+}
+
+.volunteer-page .triangle.top {
+  border-top-width: 0;
+}
+
+.volunteer-page .triangle.bottom {
+  bottom: 0;
+  border-bottom-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page .triangle {
+    right: unset;
+    bottom: 0;
+    border-left: 504px solid transparent;
+    border-right: 504px solid transparent;
+    border-bottom: 60px solid white;
+  }
+
+  .volunteer-page .triangle.mobile-left {
+    border-left-width: 0;
+  }
+
+  .volunteer-page .triangle.mobile-right {
+    right: 0;
+    border-right-width: 0;
+    border-bottom-width: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .volunteer-page .triangle {
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-bottom-width: 60px;
+  }
+}
+
+.volunteer-page .contact-info input {
+  border: 10px solid var(--blueDark);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page .contact-info .wrap,
+  .volunteer-page .submit-info .skills {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .volunteer-page .contact-info .wrap,
+  .volunteer-page .submit-info .skills {
+    width: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .volunteer-page .contact-info input {
+    width: 100%;
+  }
+}
+
+.volunteer-page .contact-info input:first-of-type {
+  margin-top: auto;
+}
+
+.volunteer-page .contact-info input:last-of-type {
+  margin-bottom: auto;
+}
+
+.volunteer-page .skills fieldset {
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.volunteer-page .skills input[type="checkbox"] {
+  opacity: 0;
+}
+
+.volunteer-page .skills label::before,
+.volunteer-page .skills label::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+/*Outer box of the fake checkbox*/
+.volunteer-page .skills label::before{
+  height: 36px;
+  width: 36px;
+  border: 7px solid var(--blueDark);
+  border-radius: 50%;
+  top: calc((24px - 36px) / 2);
+  left: -20px;
+}
+
+/*Checkmark of the fake checkbox*/
+.volunteer-page .skills label::after {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--red);
+  top: 3px;
+  left: -11px;
+}
+
+/*Hide the checkmark by default*/
+.volunteer-page .skills input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/*Unhide on the checked state*/
+.volunteer-page .skills input[type="checkbox"]:checked + label::after {
+  content: '';
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.volunteer-page .skills input[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+}
+
+.volunteer-page .skills label {
+  position: relative;
+  display: inline-block;
+  padding-left: calc(36px + 6px);
+  color: var(--blueDark);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+@media (max-width: 1280px) {
+  .volunteer-page .skills label {
+    font-size: 18px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 1210px) {
+  .volunteer-page .skills label {
+    font-size: 18px;
+    padding-left: 24px;
+    letter-spacing: 1px;
+  }
+
+  .volunteer-page .skills label::before {
+    height: 29px;
+    width: 29px;
+    border: 6px solid var(--blueDark);
+    border-radius: 50%;
+    top: calc((24px - 32px) / 2);
+    left: -20px;
+  }
+
+  .volunteer-page .skills label::after {
+    width: 13px;
+    height: 13px;
+    top: 4px;
+    left: -12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .volunteer-page .skills label::before {
+    top: 0;
+  }
+
+  .volunteer-page .skills label::after {
+    top: 8px;
+  }
+}
+
+.volunteer-page .skills label strong {
+  color: var(--red);
+}
+
+.volunteer-page .skills button {
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.volunteer-page .volunteer-form {
+  position: relative;
+  max-height: 515px;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-page .volunteer-form {
+    max-height: 1081px;
+  }
+}
+
+@media (max-width: 800px) {
+  .volunteer-page .volunteer-form {
+    max-height: 1131px;
+  }
+}
+
+.volunteer-page .volunteer-form .column {
+  opacity: 1;
+  transition: 0.3s opacity;
+}
+
+.volunteer-page .submit-info .thank-you {
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+
+.volunteer-page .submit-info .thank-you h3 {
+  margin: auto;
+}
+
+.volunteer-page .show-thanks .thank-you {
+  opacity: 1;
+}
+
+.volunteer-page .show-thanks.volunteer-form {
+  border-color: transparent;
+}
+
+.volunteer-page .show-thanks .column {
+  opacity: 0;
+}
+
+/* Take Action */
+
+.volunteer-page .take-action {
+  background-color: var(--blueDark);
+  padding: 50px 20px 70px;
+  margin-bottom: 50px;
+}
+
+.volunteer-page .take-action h3,
+.volunteer-page .take-action p {
+  color: var(--white);
+}
+
+.volunteer-page .take-action p {
+  margin-bottom: 85px;
+}
+
+.volunteer-page .volunteer-progress-bar .outer {
+  position: relative;
+  height: 136px;
+  border: 9px solid #959595;
+  margin-bottom: 10px;
+  /* background-color: var(--white); */
+  background-image: linear-gradient(90deg, rgba(232,232,232,0.28) 0%, #FFFFFF 100%);
+}
+
+.volunteer-page .volunteer-progress-bar .inner {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background-color: var(--red);
+}
+
+.volunteer-page .volunteer-progress-bar .lines {
+  position: relative;
+  height: 100%;
+}
+
+.volunteer-page .volunteer-progress-bar hr {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid var(--white);
+  margin: 0;
+  opacity: 0.5;
+}
+
+.volunteer-page .volunteer-progress-bar hr:nth-child(1) {
+  left: 25%;
+}
+
+.volunteer-page .volunteer-progress-bar hr:nth-child(2) {
+  left: 50%;
+}
+
+.volunteer-page .volunteer-progress-bar hr:nth-child(3) {
+  left: 75%;
+}
+
+.volunteer-page .volunteer-progress-bar .hours-count {
+  position: absolute;
+  top: -60px;
+  left: 30%;
+  margin-left: -130px;
+  color: var(--white);
+  font-size: 41px;
+}
+
+.volunteer-page .volunteer-progress-bar .total.goal {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .volunteer-page .volunteer-progress-bar .outer {
+    height: 112px;
+    border-width: 6px;
+  }
+
+  .volunteer-page .volunteer-progress-bar .hours-count {
+    top: -45px;
+    margin-left: -110px;
+    font-size: 30px;
+  }
+
+  .volunteer-page .volunteer-progress-bar .total.goal {
+    font-size: 20px;
+  }
+}
+
+.volunteer-page .yang-gang-map {
+  margin-bottom: 70px;
+}
+
+.volunteer-page .take-action .button-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.volunteer-page .take-action button {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .volunteer-page .take-action button {
+    font-size: 28px;
+  }
+}
+
+.volunteer-page .yang-gang-map p {
+  margin-bottom: 23px;
+  color: var(--blueDark);
+  font-size: 18px;
+}

@@ -1,314 +1,1417 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-
-  <link rel="icon" type="image/x-icon" href="/wp-content/themes/cftf/favicon.ico">
-  <link rel="stylesheet" href="https://fonts.typotheque.com/WF-032393-010559.css" type="text/css" >
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
-      {'gtm.start': new Date().getTime(),event:'gtm.js'}
-
-    );var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WLVRFC8');</script>
-  <!-- End Google Tag Manager -->
-
-  <title>People First Education - Julián 2020</title>
-<link rel="alternate" hreflang="en" href="https://www.julianforthefuture.com/news-events/people-first-education/" />
-<link rel="alternate" hreflang="es" href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/" />
-
-<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
-<link rel="canonical" href="https://www.julianforthefuture.com/news-events/people-first-education/" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="content-type" content="text/html; charset=utf-8"/> 
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People First Education - Julián Castro Policies for 2020</title>
+<meta name="description" content="Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student. However, our government has failed to live up to its end of the bargain.">
+<!-- Google Fonts -->
+<link rel="stylesheet" id="du-google-fonts" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" type="text/css" media="all" />
+<!-- Typekit Embed Code -->
+<!-- This site is optimized with the Yoast SEO plugin v11.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://issues.juliancastro.com/people-first-education/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="People First Education - Julián 2020" />
-<meta property="og:description" content="Our Smartest Investment Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to &hellip;" />
-<meta property="og:url" content="https://www.julianforthefuture.com/news-events/people-first-education/" />
-<meta property="og:site_name" content="Julián 2020" />
-<meta property="article:section" content="Uncategorized" />
-<meta property="article:published_time" content="2019-05-13T06:59:32+00:00" />
-<meta property="article:modified_time" content="2019-06-15T21:23:41+00:00" />
-<meta property="og:updated_time" content="2019-06-15T21:23:41+00:00" />
-<meta property="og:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
-<meta property="og:image:secure_url" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<meta property="og:title" content="People First Education - Julián Castro Policies for 2020" />
+<meta property="og:description" content="Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student. However, our government has failed to live up to its end of the bargain." />
+<meta property="og:url" content="https://issues.juliancastro.com/people-first-education/" />
+<meta property="og:site_name" content="Julián Castro Policies for 2020" />
+<meta property="og:image" content="https://issues.juliancastro.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<meta property="og:image:secure_url" content="https://issues.juliancastro.com/wp-content/uploads/2019/05/jc-university.jpg" />
 <meta property="og:image:width" content="1100" />
 <meta property="og:image:height" content="740" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Our Smartest Investment Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to [&hellip;]" />
-<meta name="twitter:title" content="People First Education - Julián 2020" />
-<meta name="twitter:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.julianforthefuture.com/#organization","name":"","url":"https://www.julianforthefuture.com/","sameAs":[]},{"@type":"WebSite","@id":"https://www.julianforthefuture.com/#website","url":"https://www.julianforthefuture.com/","name":"Juli\u00e1n 2020","publisher":{"@id":"https://www.julianforthefuture.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.julianforthefuture.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.julianforthefuture.com/news-events/people-first-education/#webpage","url":"https://www.julianforthefuture.com/news-events/people-first-education/","inLanguage":"en-US","name":"People First Education - Juli\u00e1n 2020","isPartOf":{"@id":"https://www.julianforthefuture.com/#website"},"image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/news-events/people-first-education/#primaryimage","url":"https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg","width":1100,"height":740},"primaryImageOfPage":{"@id":"https://www.julianforthefuture.com/news-events/people-first-education/#primaryimage"},"datePublished":"2019-05-13T06:59:32+00:00","dateModified":"2019-06-15T21:23:41+00:00"},{"@type":"Article","@id":"https://www.julianforthefuture.com/news-events/people-first-education/#article","isPartOf":{"@id":"https://www.julianforthefuture.com/news-events/people-first-education/#webpage"},"author":{"@id":"https://www.julianforthefuture.com/news-events/author/binsler/#author","name":"Brielle Insler"},"publisher":{"@id":"https://www.julianforthefuture.com/#organization"},"headline":"People First Education","datePublished":"2019-05-13T06:59:32+00:00","dateModified":"2019-06-15T21:23:41+00:00","commentCount":0,"mainEntityOfPage":"https://www.julianforthefuture.com/news-events/people-first-education/#webpage","image":{"@id":"https://www.julianforthefuture.com/news-events/people-first-education/#primaryimage"},"articleSection":""},{"@type":"Person","@id":"https://www.julianforthefuture.com/news-events/author/binsler/#author","name":"Brielle Insler","image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/#personlogo","url":"https://secure.gravatar.com/avatar/31b238ec00b8a8b2edd56305efadf471?s=96&d=mm&r=g","caption":"Brielle Insler"},"sameAs":[]}]}</script>
+<meta name="twitter:description" content="Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student. However, our government has failed to live up to its end of the bargain." />
+<meta name="twitter:title" content="People First Education - Julián Castro Policies for 2020" />
+<meta name="twitter:image" content="https://issues.juliancastro.com/wp-content/uploads/2019/05/jc-university.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://issues.juliancastro.com/#organization","name":"Juli\u00e1n Castro 2020","url":"https://issues.juliancastro.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://issues.juliancastro.com/#logo","url":"https://issues.juliancastro.com/wp-content/uploads/2019/06/jc-2020-rgb-transparent.png","width":2772,"height":1001,"caption":"Juli\u00e1n Castro 2020"},"image":{"@id":"https://issues.juliancastro.com/#logo"}},{"@type":"WebSite","@id":"https://issues.juliancastro.com/#website","url":"https://issues.juliancastro.com/","name":"Juli\u00e1n Castro Policies for 2020","publisher":{"@id":"https://issues.juliancastro.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://issues.juliancastro.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://issues.juliancastro.com/people-first-education/#primaryimage","url":"https://issues.juliancastro.com/wp-content/uploads/2019/05/jc-university.jpg","width":1100,"height":740},{"@type":"WebPage","@id":"https://issues.juliancastro.com/people-first-education/#webpage","url":"https://issues.juliancastro.com/people-first-education/","inLanguage":"en-US","name":"People First Education - Juli\u00e1n Castro Policies for 2020","isPartOf":{"@id":"https://issues.juliancastro.com/#website"},"primaryImageOfPage":{"@id":"https://issues.juliancastro.com/people-first-education/#primaryimage"},"datePublished":"2019-05-29T18:05:48+00:00","dateModified":"2019-06-28T05:14:55+00:00"}]}</script>
 <!-- / Yoast SEO plugin. -->
-
-<link rel='dns-prefetch' href='//www.julianforthefuture.com' />
+<link rel='dns-prefetch' href='//code.jquery.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Julián 2020 &raquo; People First Education Comments Feed" href="https://www.julianforthefuture.com/news-events/people-first-education/feed/" />
-<link rel='stylesheet' id='wp-block-library-css'  href='https://www.julianforthefuture.com/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
-<link rel='stylesheet' id='site-css-css'  href='https://www.julianforthefuture.com/wp-content/themes/cftf/style.css?ver=1561590390' type='text/css' media='all' />
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='https://www.julianforthefuture.com/wp-json/' />
-<link rel='shortlink' href='https://www.julianforthefuture.com/?p=548' />
-<link rel="alternate" type="application/json+oembed" href="https://www.julianforthefuture.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fnews-events%2Fpeople-first-education%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.julianforthefuture.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fnews-events%2Fpeople-first-education%2F&#038;format=xml" />
-<meta name="generator" content="WPML ver:4.1.3 stt:1,2;" />
-
+<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://issues.juliancastro.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/8hzn5bwt/a80kh.css" media="all"/>
+<link rel='stylesheet' id='font-awesome-5-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+<!-- <link rel='stylesheet' id='elementor-icons-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=4.3.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='font-awesome-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-animations-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.5.16' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-frontend-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.5.16' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-pro-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.5.9' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-global-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/global.css?ver=1561575309' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-32-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-32.css?ver=1561698924' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-21-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-21.css?ver=1561590915' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-307-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-307.css?ver=1561575289' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='du-base-css'  href='https://issues.juliancastro.com/wp-content/themes/jftf-landing/assets/css/base.min.css' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/l1hxtkx2/a862b.css" media="all"/>
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWork+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.2.2' type='text/css' media='all' />
+<script type='text/javascript' src='//code.jquery.com/jquery-1.11.1.min.js'></script>
+<link rel='https://api.w.org/' href='https://issues.juliancastro.com/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="https://issues.juliancastro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fissues.juliancastro.com%2Fpeople-first-education%2F" />
+<style type="text/css">
+@font-face { font-family:Mallory Black;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/MalloryMP-Black.otf) format('opentype');}@font-face { font-family:Mallory Compact Ultra;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/MalloryBETACpct-Ultra.otf) format('opentype');}@font-face { font-family:Mallory Medium;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/Mallory-Medium.otf) format('opentype');}@font-face { font-family:Mallory Ultra;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/Mallory-Ultra.otf) format('opentype');}				</style>
+<link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
-
-<body class="post-template-default single single-post postid-548 single-format-standard wrapper" data-template="base.twig">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLVRFC8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <div class="wrapper__content">
-    <svg class="sprite" width="0" height="0" style="position:absolute"><symbol viewBox="0 0 23 23" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M11.175 22.995C4.974 22.823 0 17.742 0 11.5 0 5.149 5.149 0 11.5 0S23 5.149 23 11.5c0 5.288-3.57 9.743-8.432 11.086v-9.262h2.453c.181 0 .328-.138.328-.31l.001-2.493a.3.3 0 0 0-.096-.218.339.339 0 0 0-.232-.091h-2.454V8.753c0-.701.177-1.057 1.146-1.057h1.406c.181 0 .328-.14.328-.31V5.071c0-.17-.147-.309-.328-.31l-2.086-.002c-2.344 0-3.86 1.465-3.86 3.732v1.72H9.078c-.182 0-.328.14-.328.31v2.494c0 .17.147.309.328.309h2.098v9.671z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="instagram" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm-4.494-4.759h8.988a2.247 2.247 0 0 0 2.247-2.247V7.006a2.247 2.247 0 0 0-2.247-2.247H7.006a2.247 2.247 0 0 0-2.247 2.247v8.988a2.247 2.247 0 0 0 2.247 2.247zm10.112-2.247c0 .62-.503 1.124-1.124 1.124H7.006c-.62 0-1.124-.503-1.124-1.124v-3.932h2.81c.019 0 .036-.01.055-.011a2.809 2.809 0 0 0 5.506 0c.02 0 .036.01.056.01h2.809v3.933zM9.815 11.5a1.685 1.685 0 1 1 3.37 0 1.685 1.685 0 0 1-3.37 0zm5.65-2.776a1.19 1.19 0 1 1 0-2.38 1.19 1.19 0 0 1 0 2.38z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol id="logo" viewBox="0 0 1181.1 384.8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.cst0{fill:#1380d9}.cst1{fill:#003}</style><path class="cst0" d="M736.1 358.7c0-14.8 9.6-26.1 24.8-26.1 6.5 0 11.6 2 15.1 4.6v17l-.2.1c-3.4-3.3-7.8-5.7-12.1-5.7-5.9 0-9.5 3.7-9.5 10 0 6.4 3.7 10.1 9.8 10.1 5 0 9.3-2.3 12.5-5.1l.3.1-1.9 17.1c-3.5 2.2-7.8 3.8-14.5 3.8-14 0-24.3-9.9-24.3-25.9zM803.9 333.4h20.5l17.9 50.4h-18.6l-2.1-6.8h-15.7l-2.1 6.8H786l17.9-50.4zm14.2 30.3l-4.4-13.9-4.4 13.9h8.8zM871.2 332.5c6.6 0 12.1 1.7 15.6 3.6v15.1h-.1c-4-2.4-10.8-4.9-15.1-4.9-2.1 0-2.7.6-2.7 1.5 0 1.2 1.3 1.9 5.6 3.5 9.8 3.5 15.2 7.4 15.2 16.8 0 10.5-7.8 16.6-19.9 16.6-6.7 0-12.7-2-16.6-4.6l-1.5-16.1.2-.1c5.5 4 13 7.1 17.3 7.1 2.5 0 3.3-.6 3.3-1.8 0-1.2-.9-1.9-6-3.6-8.6-3.1-14.8-7.1-14.8-16.5-.1-9.5 7-16.6 19.5-16.6zM930.6 348.8v35h-17.5v-35h-13.9v-15.4h45.2v15.4h-13.8zM974.7 368.5v15.3h-17.5v-50.4h20.5c14.5 0 21.3 5.9 21.3 16.6 0 6.3-3 11.2-7.8 14.3l12.7 19.5H984l-9.3-15.3zm-.3-22v10.4h2c3.4 0 5.5-1.8 5.5-5.3s-2.1-5-5.5-5h-2zM1036.4 332.4c15 0 25.4 11.2 25.4 26.1 0 15.2-10.4 26.3-25.6 26.3-15.3 0-25.4-11.2-25.4-26.1.1-15 10.5-26.3 25.6-26.3zm0 36.9c4.7 0 7.6-3.9 7.6-10.7 0-6.8-3.1-10.8-7.7-10.8-4.8 0-7.6 4-7.6 10.7 0 6.9 3 10.8 7.7 10.8zM821.7 72.3l61-72.3h-77.3l-60.2 72.3z"/><path class="cst1" d="M109.2 95.4h72.5v136.3c0 47.4-30.1 74.9-77.2 74.9-21.2 0-37-4.5-49.5-10.7l-6.3-62.6.9-.6c12.5 7.5 23 10.4 34.9 10.4 14.6 0 24.8-9.5 24.8-25.1V95.4zM205.8 95.4h72.5V214c0 20 9.2 29.5 24.5 29.5 15.5 0 24.5-9.5 24.5-29.5V95.4h71.3v114.5c0 65-34.6 97.5-96.3 97.5-62.3 0-96.3-32.5-96.3-97.5V95.4zM419.7 95.4h72.5v144.9h70.4v63.8H419.7V95.4zM580.4 95.4h72.5v208.8h-72.5V95.4zM739.9 95.4h84.7l74.3 208.8H822l-8.7-28.3h-65l-8.7 28.3H666l73.9-208.8zM799 220.9l-18.2-57.6-18.2 57.6H799zM1110.6 304.1H1051l-69.8-91.6.9 91.6h-70.7V95.4h70.1l59.6 78.1-.9-78.1h70.4v208.7z"/><g><path class="cst1" d="M19.3 56.9L730 55.1l16.1-19.3-726.9 1.8-19.2.1v332.5h701.5v-19.3H19.3zM1161.7 34.8l-279.3.7-16.3 19.3 295.7-.7v296.8h-69.6v19.3H1181.1V34.7z"/></g></symbol><symbol viewBox="0 0 31 30" id="star" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 24.875L5.92 30l1.83-10.854L0 11.459l10.71-1.584L15.5 0l4.79 9.875L31 11.46l-7.75 7.687L25.08 30z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="twitter" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm3.703-17.448c-.125 0-.25.018-.321.018-.643.056-1.196.315-1.678.759-.66.592-1.018 1.332-1.072 2.238-.017.277 0 .573.054.85 0 .056 0 .075-.036.075h-.071a9.972 9.972 0 0 1-1.268-.185C8.847 8.863 7.223 7.864 5.92 6.292c-.036-.056-.071-.093-.125-.148-.393.74-.518 1.517-.34 2.33.18.814.608 1.443 1.269 1.943-.482 0-.947-.148-1.375-.389 0 .777.214 1.462.678 2.054.464.591 1.054.98 1.768 1.146a3.136 3.136 0 0 1-.821.111c-.179 0-.375 0-.554-.037.5 1.35 1.464 2.09 2.875 2.22a5.733 5.733 0 0 1-2.143 1.129 5.998 5.998 0 0 1-1.714.24c-.232 0-.446-.018-.678-.037l.053.056a8.616 8.616 0 0 0 2.785 1.165c.411.092.822.166 1.25.166h1.5a9.39 9.39 0 0 0 1.571-.296c1.678-.462 3.071-1.387 4.196-2.737 1.375-1.702 2.107-3.663 2.178-5.864v-.019-.536c0-.056.018-.074.054-.111a6.73 6.73 0 0 0 1.035-.999c.16-.185.304-.388.447-.61-.304.129-.59.24-.875.314a6.67 6.67 0 0 1-.875.167 3.26 3.26 0 0 0 1.339-1.758 2.704 2.704 0 0 0-.232.13 6.683 6.683 0 0 1-1.643.629h-.035c-.036 0-.072-.019-.108-.056-.624-.629-1.357-.943-2.196-.943z" fill="currentColor" fill-rule="evenodd"/></symbol></svg>    <header class="mobile-header">
-      <div class="mobile-header__bar">
-        <a href="https://www.julianforthefuture.com" class="mobile-header__logo">
-          <svg>
-            <title>Julián 2020</title>
-            <use xlink:href="#logo"></use>
-          </svg>
-        </a>
-        <button class="mobile-header__toggle" aria-label="Menu"><span></span></button>
-      </div>
-      <div class="mobile-header__menu">
-        <nav class="utility">
-          <div class="utility__inner container">
-            <ul class="utility__toggle">
-      <li class="utility__toggle-item is-current">
-      <a href="https://www.julianforthefuture.com/news-events/people-first-education/">English</a>
-    </li>
-      <li class="utility__toggle-item">
-      <a href="https://www.julianforthefuture.com/es/news-events/educacion-las-personas-primero/">Español</a>
-    </li>
-  </ul>
-            <div class="social social--white">
-  <a href="https://www.facebook.com/julianforthefuture/" class="social__icon">
-    <svg>
-      <title>Facebook</title>
-      <use xlink:href="#facebook" />
-    </svg>
-  </a>
-  <a href="https://twitter.com/juliancastro" class="social__icon">
-    <svg>
-      <title>Twitter</title>
-      <use xlink:href="#twitter" />
-    </svg>
-  </a>
-  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
-    <svg>
-      <title>Instagram</title>
-      <use xlink:href="#instagram" />
-    </svg>
-  </a>
-</div>          </div>
-        </nav>
-        <nav class="header container">
-          <a href="https://www.julianforthefuture.com" class="header__logo">
-            <svg>
-              <title>Julián 2020</title>
-              <use xlink:href="#logo"></use>
-            </svg>
-          </a>
-          <ul class="header__nav nav nav--dark">
-                          <li class="nav__item"><a href="https://www.julianforthefuture.com/about/">About</a></li>
-                          <li class="nav__item"><a href="https://issues.juliancastro.com">Issues</a></li>
-                          <li class="nav__item is-active"><a href="https://www.julianforthefuture.com/news-events/">News</a></li>
-                          <li class="nav__item"><a href="https://mobilize.us/julianforthefuture">Events</a></li>
-                          <li class="nav__item"><a href="https://action.julianforthefuture.com/page/s/get-updates">Updates</a></li>
-                          <li class="nav__item"><a href="https://store.julianforthefuture.com/">Store</a></li>
-                      </ul>
-                      <div class="header__button">
-              <a href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_home" class="badge">
-                <span class="badge__decoration" role="presentation">
-                    <svg class="badge__star" aria-hidden="true">
-                      <use xlink:href="#star"></use>
-                    </svg>
-                  </span>
-                <span class="badge__text">Donate</span>
-              </a>
-            </div>
-                  </nav>
-      </div>
-    </header>
-
-      <main class="background--light">
-    <div class="container">
-      <header class="post__header post__header--full">
-        <h1 class="post__headline" itemprop="headline">People First Education</h1>
-        <p class="post__info">By Julián Castro on May 13, 2019</p>
-      </header>
-    </div>
-    <div class="blog__inner container">
-      <article class="blog__post" id="post-548" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-        <section itemprop="articleBody">
-                    <img class="blog__feature-image" src="https://www.julianforthefuture.com/wp-content/uploads/2019/05/jc-university.jpg" alt="">
-                    <h2>Our Smartest Investment</h2>
-<p>Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student.</p>
-<p>However, our government has failed to live up to its end of the bargain. Chronic underinvestment in our schools, teachers, and students over many decades and at all levels has allowed our competitors to leave us behind, and made an already unequal system more inequitable. Structural flaws, growing financial burdens, and inadequate support for students and families have prevented many from accessing quality education, from childhood to post secondary school. Our antiquated commitment to a K-12 system that starts some children ahead of others, and prevents many from continuing their education after high school has left our students and nation at a disadvantage.</p>
-<p>We need a new commitment and a new approach that puts people first—one that sees the federal role in education as supporting a seamless continuum that begins before elementary school and continues after high school. If the United States is to continue being a leader in the generations to come, it means we can’t afford to waste a single student. That begins with extending our commitment to pre-kindergarten learning, which research tells us is one of the most critical periods for childhood development. But we can’t stop there. We need to ensure every student in our public education system can graduate high school and put their foot in the door for college, vocational training, or a quality career. And it means that those who have committed to further their education in college aren’t saddled with tens of thousands of dollars in student loan debt that hampers their ability to start a family, buy a home, or launch their careers. We also have to make a new commitment to the thousands of teachers and support staff that guide and teach our children. We need to pay our teachers more, cut down on class sizes to foster individualized learning, and equip our educators and schools with the resources they need to be successful.</p>
-<p>Finally, we need to make a new commitment to ensure our schools are more fair and equitable to all students. At the onset of our public school system, one student’s success was valued over another. Although we ended sanctioned segregation in our schools many years ago, widespread disparities between students continue today. We can’t have integrated schools if our housing and communities are segregated. We also haven’t done enough to protect LGBTQ students, or ensure that students with disabilities have an equal opportunity to succeed in every community. It’s not enough to just invest in our schools and hope that inequities are repaired—we need targeted approaches that ensure all students have access to a quality education.</p>
-<p>My People First Education plan would make a new commitment by the federal government to see that every student has access to a quality education—from pre-K through college and beyond. My plan would help bridge the gap both in access and achievement by ensuring every student begins elementary school with a strong foundation, and leaves high school prepared for college or a good job. My plan would invest in our nation’s educators, and ensure that the teaching profession remains competitive and attractive for future generations. My plan would help mitigate chronic inequities between students, and extend our educational commitment to those whom it has been out of reach. And my plan would address the pervasive student loan debt crisis—both for those who are feeling crushed under insurmountable debt, and for those who have yet to enroll in higher education. These investments are not only helpful in addressing the long-standing problems in our education system, but are required if we are to remain a competitive leader in the generations to come.</p>
-<h3>1. Pre-K for USA: Making Pre-K the Foundation for Lifelong Learning</h3>
-<p>Decades of research has told us that a significant portion of childhood development begins prior to entry into kindergarten. These formative years lay the groundwork for the future health and success of our nation’s students. While competitors like Germany, Japan, and China have made significant investments in early childhood education and school readiness, the United States continues to trail behind, both on enrollment and quality of pre-K programs. In an increasingly competitive global economy, the United States cannot afford to leave our youngest students at a disadvantage. As the former Mayor of the city of San Antonio, I know first hand the benefits of investing in access to high quality pre-kindergarten education. I asked the residents of San Antonio to support a citywide pre-K initiative, ‘Pre-K for SA’, that has transformed our city’s education system, and delivered results for thousands of children and families that participated.</p>
-<p>My People First Education plan aims to close the pre-K access gap, making high-quality preschool universal for 3- and 4-year-olds across the United States through a nationwide ‘Pre-K for USA’ program. This will require making a serious investment in existing local programs and expanding successful models to new communities, boosting training, education, compensation, and support for pre-K teachers across the country, and linking pre-K to kindergarten—ensuring the transition from early childhood education to elementary school is seamless. For every dollar we invest in early childhood education, we see up to $9 in return on investment. Investing in early childhood education isn’t just the right thing to do on behalf of our children, it’s an investment that we can’t afford not to make.</p>
-<ul>
-<li><b>Create a universal, high-quality, publicly-funded, full-day Pre-K for USA program for 3 and 4-year-olds</b>. Funded through a grant program to state and local governments, this program would provide children a foundation for educational success and provide parents the flexibility to return to work if desired.</li>
-<li><b>Support sustained training and education for pre-K teachers, </b>including access to post-secondary degrees and professional skills development, to ensure that all teachers have, or are on a supported path, to earn the required competencies and appropriate bachelors degree to educate our youngest learners. Support state-level partnerships with institutions of higher education that enable pathways for early childhood teacher preparation.</li>
-<li><b>Require linkages between pre-K and K-12 systems</b>, ensuring kindergarten readiness and a seamless transition into a high quality full-day kindergarten program with alignment across standards, curricula, and educator professional development.</li>
-<li><b>Expand home visiting and other programs for infants and toddlers</b>, through Early Head Start and relevant state-federal partnerships. These programs promote healthy prenatal outcomes for pregnant women, enhance the development of infants and toddlers, and promote healthy and supportive family environments.</li>
-</ul>
-<h3>2. Reimagining High School</h3>
-<p>In an increasingly competitive global economy where the United States can’t afford to waste a single student, high school graduation remains critically important to both individual potential for success, and U.S. competitiveness around the globe. At around 85%, the U.S. graduation rate ranks behind many of our international competitors. To continue to remain competitive in the years to come, we should make sure every student can graduate from high school by targeting resources to students and schools where persistent gaps exist, and that graduates leave high school with the skills to succeed in universities, community colleges, apprenticeship programs, or in their careers.</p>
-<p>My People First Education plan would help students get their foot in the door to college by expanding access to college credits and accelerated learning opportunities. My plan would ensure that students have the flexibility and support to pursue careers in trade, and would encourage high schools to partner with employers to help students obtain work-based learning opportunities after they graduate. Additionally, my plan would support and encourage students interested in opportunities in the arts and language—strengthening programs that celebrate cultural and language learning that are required in an interconnected global economy.</p>
-<ul>
-<li><b>Close the modernization gap of our nation’s schools. </b>Make a $150 billion dollar investment in school facilities, technology infrastructure, and organizational support across the pre-K through 12th grade system to ensure teachers are well-supported with the tools needed to educate their students and require state governments contribute funding to qualify for this assistance.</li>
-<li><b>Support investment in music, arts, and foreign language programs </b>to provide a broad range of educational opportunities in high school<b>. </b></li>
-<li><b>Ensure all students have the opportunity to graduate from high school with at least one year of college credit, at no additional cost, </b>by expanding access to dual enrollment, early college, and other accelerated learning opportunities, especially for traditionally underserved students and those likely to require remediation at the postsecondary level.</li>
-<li><b>Provide educators and public schools flexibility in defining success, </b>including competency-based assessments and support for transitions away from seat-time requirements. Provide maximum flexibility for school leaders, teachers, and students to work together to develop rigorous, competency-based pathways to a diploma and industry-recognized credentials.</li>
-<li><b>Address the shortage of skilled workers in the economy </b>by establishing dedicated trade programs in high school and partnerships between schools and employers<b>. </b>Expand work-based learning opportunities, inform program design — at both the secondary and postsecondary levels — according to labor-market needs, and provide federal tax credits to support hiring and on-the-job educational opportunities.</li>
-</ul>
-<h3>3. Creating Affordable Pathways to Success After High School</h3>
-<p>The student loan debt crisis has now topped $1.5 trillion, surpassing both auto loan debt and credit card debt, nationally. As states have picked up less and less of the bill for public universities and colleges, tuition rates have skyrocketed to defray the costs—driving students to take out thirty, forty, fifty, and even a hundred thousand dollars in loans just to get their undergraduate degrees. To make matters worse, the federal government has failed to adequately step in to support students and universities—pushing more and more students towards costly loans that can at times be predatory. Make no mistake: this is a crisis. More and more students are defaulting on their loans, tanking their credit for years to come. College graduates are finding it increasingly difficult to pursue advanced degrees, to buy a home or start a business, or to just keep up with their day-to-day bills. <b>It’s time we break the work-school tug of war. </b></p>
-<p>Serious problems like these deserve serious solutions. That’s why my People First Education plan would eliminate tuition at public universities, community colleges, and technical and vocational programs, expand grant programs and loan forgiveness programs to lower-income students, boost transparency and accountability of student loan programs, and institute an income-based repayment program that guarantees no student is paying more than their income allows. Students and graduates who have made a commitment to invest in their futures should see an investment from their government in return. My plan would make that investment, knowing it will pay off both for students and for our national prosperity in the long run.</p>
-<ul>
-<li><b>Eliminate tuition at public colleges, universities, community colleges, and technical and vocational schools, </b>breaking the work-school tug of war. Share the financing of tuition costs with state governments and provide incentives to reduce the cost of college programs including fees, discourage underinvestment into public education by states. Require accountability and standards that include fair pay for all employees and staff, including adjuncts and non-faculty staff, and respect for their right to join a union.</li>
-<li><b>Alleviate burdens of existing student loan debt, </b>ensuring no student pays more than their income allows. Reform the student loan and repayment process to ensure that payment is not expected until the investment of higher education begins to pay off for the borrower and so that student loan debt does not impede major life choices.
-<ul>
-<li>Until a borrower is earning at least 250% of the federal poverty line, their monthly loan payment will be capped at $0 with no interest accrual on unpaid interest for three years, exempting half of unpaid interest after three years. <b>This is not a deferred payment. The payment amount is $0. </b></li>
-<li><b>Once the borrower is earning above 250% of the federal poverty line, they will not pay more than 10% of their qualified income each month. </b>Qualified income referring to adjusted gross income with an amount equivalent to 250% of the federal poverty line exempted.</li>
-<li>After 240 monthly payments (including any where the repayment amount was capped at $0), the borrower will receive non-taxable forgiveness of any remaining amount.</li>
-<li>All loans will have an interest accumulation cap relative to the borrowed amount to limit lifetime increase in the loan to 50%, and any balance in excess of that will be forgiven.</li>
-<li>This program will be streamlined and easy for borrowers, including automatic enrollment once loans go into repayment, streamlining the process for those who opt-in. This program will allow borrowers to credit payments made under other programs, including existing income-driven repayment programs that will be ended for future borrowers. Charging origination or similar fees will be prohibited.</li>
-</ul>
-</li>
-<li><b>Expand the Pell Grant program </b>to a maximum grant of $10,000, and allow these grants to be used for living expenses, summer programs, short term programs, and for emergency assistance.</li>
-<li><b>Support Historically Black Colleges and Universities (HBCUs) and other minority serving institutions, </b>that serve an important role in American society through an additional investment of $3 billion per year towards financial support and increasing access for low-income students.</li>
-<li><b>Create a new program of targeted loan forgiveness </b>to forgive a proportion of loans for individuals who qualify for and receive means tested federal assistance such as Supplemental Security Income (SSI), Supplemental Nutrition Assistance Program (SNAP), or Medicaid for any three years within a five year period.</li>
-<li><b>Allow borrowers to discharge or structure a payment plan for student loans through bankruptcy</b>.</li>
-<li><b>Reform and Improve the Public Service Loan Forgiveness program </b>to make it significantly more borrower-friendly and transparent.
-<ul>
-<li>Streamline the program by automating the enrollment process and ending the practice of un-enrolling borrowers in the program because of missed payments or without their knowledge.</li>
-<li>Allow for consolidated loans, legacy Federal Family Education Loan Program loans, and all other types of student loans to be eligible for loan forgiveness.</li>
-<li>Grant early credit towards loan forgiveness at intervals before ten years have elapsed.</li>
-</ul>
-</li>
-<li><b>Require universities to certify private loans</b>, provide financial counseling, and inform students about any federal loans that may offer more favorable terms. Strengthen federal consumer protections through the Consumer Financial Protection Bureau, including responsiveness to complaints, for borrowers who utilize private loans.</li>
-<li><b>Restructure the university endowment tax </b>from the 2017 Tax Cuts and Jobs Act to fund debt relief for students and allow schools that provide substantial financial aid to undergraduate students an exemption from the tax.</li>
-<li><b>Streamline the Free Application for Federal Student Aid (FAFSA) program </b>to reduce complexity and promote accuracy, including through pre-populating the FAFSA with information from tax returns on file.</li>
-<li><b>End public support for private for-profit colleges</b>, including the use of benefits and federal student loans for private enrollment and ensure oversight for for-profit schools that convert to non-profit status, after a transition period to minimize harm to current students.</li>
-<li><b>Increase awareness of higher education opportunities</b>, especially among students from low-income families. Assist communities in establishing targeted programs such as San Antonio’s “Cafe College,” which provides students with helpful information on higher-education school choices, college admissions, and financial aid.</li>
-<li><b>Ensure transparency and accountability in higher education</b>, including through expanding the College Scorecard initiative with data available to prospective students and their families to better understand college costs, degree completion, and employment outcomes; and by creating an accountability system that protects students from colleges that too often leave students saddled with debt and no degree or improved employment prospects.</li>
-</ul>
-<h3>4. Elevating the Profession of Teaching</h3>
-<p>Educators play a vital role in shaping the success of our students and the prosperity of our nation. They are the backbone of our education system, and shape the lives of their pupils from pre-K to college and beyond. And yet, too often, teachers are not fairly compensated for their critical work or equipped with the resources and facilities required to meet the needs of our students. Nationwide, nearly 80% of parents say their children’s teachers are underpaid and, adjusted for inflation, the national average teacher salary has decreased 4.5% over the last decade. This chronic underpayment and under-appreciation of our nation’s teachers has led to a severe drop in college enrollment in education programs, a high rate of teachers leaving the profession within five years, and a teacher shortage that some estimate is in the millions.</p>
-<p>Additionally, the lack of sustained investment in our schools’ infrastructure has contributed to dilapidated school buildings and inequities in access to broadband internet—creating a multi-billion dollar gap between what is currently spent on education and what is needed to fully modernize our schools. My People First Education plan would end decades of under-investment in our nation’s teachers. It would help close the modernization gap in our school systems—ensuring properly-equipped teachers have the facilities and technology to foster quality learning. My plan would also help to ensure that teaching is an attractive profession to future generations—strengthening programs that incentivize teaching and attracting quality teachers that are representative of the diversity of our country to underlooked communities.</p>
-<ul>
-<li><b>Bridge the teacher pay gap </b>with a federal tax credit that boosts teacher pay by up to $10,000 per year, with a minimum credit of $2,000 and increasing for teachers at schools based on the proportion of students on free or reduced lunch programs within their schools<b>. </b>This investment would help address chronic underinvestment in education, combat teacher attrition, provide incentives for state and local governments to pay teachers fairly, and direct federal resources to the communities with the greatest need.</li>
-<li><b>Support unionization in education for educators and for student workers</b>, including graduate students, at every level of federal education policy, including in judicial policy.</li>
-<li><b>Create a clear and consistent pipeline of qualified teachers to high need areas and combat teacher shortage with a national teacher residency initiative. </b>Fund 1-year teacher residency programs and grants to states to support transitions of local students and educational professionals into a teaching career, including Grow Your Own Programs—directing these initiatives at individuals who intend on making a life-long commitment to teaching. Integrate these programs with teacher preparation programs at Minority Serving Institutions to support hiring and retention of teachers of color. Residency program would be prioritized in high-need, underserved communities through placement and training, and would support individuals and mentors in these programs for five years through direct grants and stipends.</li>
-<li><b>Incentivize teaching in the highest-need communities </b>through competitive grant funding to states and through federal tax credits, loan forgiveness programs, and enhanced title funding and grants to boost compensation for all of the educators serving in hard-to-staff positions and schools.</li>
-<li><b>Foster supportive and rewarding teaching environments </b>through targeted investments in school infrastructure that increase access to mental health and behavioral supports, lowering class sizes, improving physical spaces and access to key technology resources, and ensuring that students, families, and educators form a cohesive, collaborative community.</li>
-</ul>
-<h3>5. Fairness in Education</h3>
-<p>Despite the goal of our public education system to offer mobility and opportunity to all students, the status quo exacerbates, rather than alleviates, inequities that exist between students. Historic and stark disparities between rich and poor, black and white, documented and undocumented, and abled and disabled, are made worse by decades of underinvestment in a public school system that, in many ways, remains segregated. On top of these inequities, research tells us that race is a strong determinant in whether a student is suspended or expelled, and affects placement in gifted and talented programs. All of these disparities have led to an achievement gap between students—highlighting that a child’s race and social class are clear predictors of their potential for educational success.</p>
-<p>My People First Education plan seeks to combat the inequities in our school system that exist from pre-kindergarten through college. My plan would take major steps forward in closing gaps both in access and achievement for students of color, it would extend protections against discrimination for LGBTQ students, it would boost diversity at universities and community colleges, and it would ensure that no student—regardless of their criminal history or immigration status—is prevented from obtaining a quality education.</p>
-<ul>
-<li><b>End the school-to-prison pipeline and reform student discipline practices. </b>Combat unfair, harsh, and unequal disciplinary methods by ensuring that schools receiving federal funding commit to reforms including eliminating the use of police officers as disciplinary agents, implementing positive, evidenced-based disciplinary practices, and requiring unconscious bias training for school personnel. Provide federal grants to promote positive and supporting school climates and reforming disciplinary practices. Provide expanded support and counseling for students and training for teachers and staff.</li>
-<li><b>Combat racial segregation in schools and reduce educational disparities by working to integrate communities. </b>Fulfill the promise of <i>Brown v. Board of Education </i>through a progressive housing policy that includes affirmatively furthering fair housing, implementing zoning reform, and expanding affordable housing in high opportunity areas. These efforts will reduce racial segregation in classrooms.</li>
-<li><b>Create school environments that are accessible, affirming, and inclusive for students with disabilities, including learning disabilities. </b>Fully fund and expand disability programs under the Individuals with Disabilities Education Act to ensure all schools receiving federal funding are equipped to meet the needs of students with disabilities. Support increased flexibility and individualized education plans for all students who could benefit from them. Partner with schools to establish a pathway to meaningful employment after graduation from school for students with disabilities. Additionally, all education professionals should have access to meaningful, ongoing professional development to enhance skills and strengthen the learning of students with disabilities.</li>
-<li><strong>Expand educational opportunities, including higher education, for individuals currently incarcerated or detained, and repeal restrictions on Pell Grant eligibility.</strong> End discrimination against the formerly incarcerated in higher education in admissions and financial aid decisions, including financial assistance and Pell Grants. Support educational opportunities for juvenile and adult individuals who are incarcerated. Ensure those residing in immigration detention facilities have access to educational opportunities.</li>
-<li><b>Strengthen and clarify Title IX protections so they are fully extended to all students. </b>Issue regulations clarifying that Title IX protections include a prohibition against discrimination based on sexual orientation, gender identity, pregnancy, and parenting status. Increase oversight and enforcement to ensure that violations of students’ Title IX rights are properly addressed.</li>
-<li><b>Encourage meaningful family engagement in school. </b>Create federal grants for schools adopting family and community engagement policies to encourage shared leadership and true partnerships between the family, community, and school to best support student learning, including LGBTQ parents and non-traditional families such as single parents, foster parents, and grandparents raising their grandchildren as their own.</li>
-<li><b>Launch an 8-year plan to extend the community schools model to schools in areas of high-need </b>to operate as community hubs that have resources and facilities, such as health centers, adult education classes, food banks, and other support facilities for families and support nutrition through food pantries to combat hunger and serve the nutritional needs of students, their families, and their communities while cutting down on food waste.</li>
-<li><b>Ensure no student goes hungry at school. </b>Create a partnership between the Department of Education and the U.S. Department of Agriculture to expand free breakfast and lunch programs for all students at public schools, and to expand access to meals during the summer.</li>
-<li><b> </b><b>Institute strong federal protections against sexual assault, bullying and harassment at school. </b>Establish federal regulations that promote transparent, accountable, and just recourse for victims. Support discipline and resolution methods that are positive and evidence-based, and, where practical, based on a restorative justice model.</li>
-<li><b>Equip public schools to support immigrant families. </b>Prohibit immigration enforcement agents from conducting arrests, interviews, searches, or surveillance at schools and school bus stops. Ensure support for families that are integrating into the United States through well-funded English as a Second Language programs.</li>
-<li><b>Ensure DACA recipients, TPS, and DED holders are eligible for federal higher education assistance. </b>Pending final passage of the Dream and Promise Act, ensure these individuals can access federal funding and other public education programs, and that citizenship status is not considered in admissions decisions by public schools or institutions of higher education.</li>
-<li><b> </b><b>Ensure Americans in Puerto Rico, U.S. territories, and indigenous communities are not left behind. </b>Invest in school infrastructure, residency programs, and teacher compensation to include the entirety of the United States.</li>
-<li><b> </b><b>Protect students in schools and universities from gun violence by </b>repealing Trump administration policies that promote arming educators and instead taking meaningful steps to address gun violence, such as instituting universal background checks, a renewed assault weapons ban, and extreme risk protection orders.</li>
-<li><b>Work with local communities to combat cyber-bullying, </b>and support laws that allow law enforcement officials to investigate and deter instances of cyber-bullying, including through criminal penalties for adults that enable or incite such behavior.</li>
-<li><b>Prioritize student wellness. </b>Make a significant investment in onsite school healthcare personnel including school nurses, counselors, and mental health providers.</li>
-</ul>
-
-        </section>
-      </article>
-      <aside class="blog__sidebar">
-        <div class="blog__signup">
-          <form action="https://juliancastro.bsd.net/page/s/" id="blog_signup" class="js-tools-signup form form--vertical" data-success="Thank you for signing up!">
-      <h2 class="form__title">Sign up to help make a future for all of us.</h2>
-    <div class="form__inner">
-    <div class="form__field form__field--long input">
-      <input type="email" name="email" required id="blog_signup-email" class="input__field" autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,63}$"/>
-      <label for="blog_signup-email" class="input__label">Email</label>
-    </div>
-    <div class="form__field form__field--short input">
-      <input type="tel" name="zip" required id="blog_signup-zip" class="input__field" autocomplete="postal-code" pattern="^[0-9]{5}(?:-[0-9]{4})?$"/>
-      <label for="blog_signup-zip" class="input__label">Zip</label>
-    </div>
-    <input type="hidden" name="custom-12" id="blog_signup-custom-12" value="0">
-    <button class="button button--dark-blue button--large" type="submit">Join!</button>
-  </div>
-</form>          
-        </div>
-      </aside>
-    </div>
-  </main>
-  </div>
-<div class="wrapper__footer">
-    <footer class="footer">
-    <div class="footer__inner container container--padded">
-      <nav class="footer__nav">
-        <ul class="nav nav--light">
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/about/">About</a></li>
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/news-events/">News</a></li>
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/contact/">Contact</a></li>
-                      <li class="nav__item"><a href="https://recruiting.paylocity.com/recruiting/jobs/List/5552/Julian-For-The-Future-Presidential-Exploratory-Co">Jobs</a></li>
-                  </ul>
-      </nav>
-      <div class="footer__cta">
-        <div class="social footer__social social--white social--right social--medium">
-  <a href="https://www.facebook.com/julianforthefuture/" class="social__icon">
-    <svg>
-      <title>Facebook</title>
-      <use xlink:href="#facebook" />
-    </svg>
-  </a>
-  <a href="https://twitter.com/juliancastro" class="social__icon">
-    <svg>
-      <title>Twitter</title>
-      <use xlink:href="#twitter" />
-    </svg>
-  </a>
-  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
-    <svg>
-      <title>Instagram</title>
-      <use xlink:href="#instagram" />
-    </svg>
-  </a>
-</div>                  <a class="button button--blue button--large" href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_home">Donate</a>
-              </div>
-      <div class="footer__links-text">
-        <ul class="footer__small-links">
-                      <li class="footer__small-link"><a href="https://www.julianforthefuture.com/privacy-policy/">Privacy Policy</a></li>
-                  </ul>
-        <p class="footer__text">Julián for the Future
-P.O. Box 501<br>
-San&nbsp;Antonio, TX
-78292</p>
-      </div>
-      <p class="footer__paid-copy">Paid for by Julián for the Future</p>
-      </div>
-    </div>
-  </footer>
-  <script type='text/javascript' src='https://www.julianforthefuture.com/wp-content/themes/cftf/assets/js/source.js?ver=1561590390'></script>
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
-
+<body class="page-template-default page page-id-32 wp-custom-logo subpage elementor-default elementor-page elementor-page-32">
+<div data-elementor-type="header" data-elementor-id="21" class="elementor elementor-21 elementor-location-header" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-5ed61e0c elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="5ed61e0c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-773f2d37 elementor-column elementor-col-50 elementor-top-column" data-id="773f2d37" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-50e9f70 elementor-widget elementor-widget-heading" data-id="50e9f70" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default"><a href="https://juliancastro.com">Back to JulianCastro.com</a></h5>		</div>
 </div>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1bc4e2a25b","applicationID":"259152731","transactionName":"b1cBZkIEXUUCUhVfV1YdIlFEDFxYTEIIWF9NXgJA","queueTime":0,"applicationTime":251,"atts":"QxACEAoeTks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
-</html>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3471f32d elementor-column elementor-col-50 elementor-top-column" data-id="3471f32d" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7c45be38 elementor-shape-circle elementor-widget elementor-widget-social-icons" data-id="7c45be38" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook" href="https://facebook.com/julianforthefuture/" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<i class="fa fa-facebook"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter" href="https://twitter.com/JulianCastro" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fa fa-twitter"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram" href="https://www.instagram.com/juliancastrotx/" target="_blank">
+<span class="elementor-screen-only">Instagram</span>
+<i class="fa fa-instagram"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-47a02d25 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="47a02d25" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-fe5f9fa elementor-column elementor-col-33 elementor-top-column" data-id="fe5f9fa" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-75b9990 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="75b9990" data-element_type="widget" data-widget_type="theme-site-logo.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<a href="https://issues.juliancastro.com" data-elementor-open-lightbox="">
+<img src="https://issues.juliancastro.com/wp-content/uploads/2019/06/jc-2020-rgb.svg" class="attachment-full size-full" alt="" />								</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-4a66341a elementor-column elementor-col-33 elementor-top-column" data-id="4a66341a" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7d27b575 elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu__text-align-aside elementor-widget elementor-widget-nav-menu" data-id="7d27b575" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-background e--animation-fade"><ul id="menu-1-7d27b575" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-31"><a href="/" class="elementor-item">Issues</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-sub-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-37"><a href="https://issues.juliancastro.com/people-first-education/" aria-current="page" class="elementor-sub-item elementor-item-active">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-sub-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-305"><a href="https://issues.juliancastro.com/people-first-housing/" class="elementor-sub-item">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-304"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-sub-item">Lead Exposure</a></li>
+</ul>
+</li>
+</ul></nav>
+<div class="elementor-menu-toggle">
+<i class="eicon" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"><ul id="menu-2-7d27b575" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-31"><a href="/" class="elementor-item">Issues</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-sub-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-37"><a href="https://issues.juliancastro.com/people-first-education/" aria-current="page" class="elementor-sub-item elementor-item-active">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-sub-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-305"><a href="https://issues.juliancastro.com/people-first-housing/" class="elementor-sub-item">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-304"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-sub-item">Lead Exposure</a></li>
+</ul>
+</li>
+</ul></nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a417878 elementor-column elementor-col-33 elementor-top-column" data-id="a417878" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-ed2f1a5 elementor-mobile-align-right elementor-hidden-phone elementor-widget elementor-widget-global elementor-global-158 elementor-widget-button" data-id="ed2f1a5" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_issues" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-rotate" target="_blank" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Donate</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<main id="body" class="single-page" role="main">
+<div data-elementor-type="post" data-elementor-id="32" class="elementor elementor-32" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-3ea4edb1 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="3ea4edb1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-99900d4 elementor-column elementor-col-50 elementor-top-column" data-id="99900d4" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-7daf572b elementor-column elementor-col-50 elementor-top-column" data-id="7daf572b" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-435f5c2f elementor-widget elementor-widget-heading" data-id="435f5c2f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">People First Education</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-1a0649cb elementor-section-full_width elementor-hidden-phone elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1a0649cb" data-element_type="section" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-3f50c00 elementor-column elementor-col-50 elementor-top-column" data-id="3f50c00" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-b9c8d95 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="b9c8d95" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#intro">Intro</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-3559b4e9 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="3559b4e9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#1-pre-k">1. Pre-K</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-3b97bd7d elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="3b97bd7d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#2-high-school">2. High School</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-f7753b9 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="f7753b9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#3-debt">3. Student Debt</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-9f07755 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="9f07755" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#4-teachers">4. Teachers</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-222056e elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="222056e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#5-fairness">5. Fairness</a></h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-732b066c elementor-column elementor-col-50 elementor-top-column" data-id="732b066c" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-6e340ebe elementor-section-full_width elementor-hidden-phone elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6e340ebe" data-element_type="section" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-4462553c elementor-column elementor-col-50 elementor-top-column" data-id="4462553c" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-60707108 elementor-column elementor-col-50 elementor-top-column" data-id="60707108" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-703628af elementor-widget elementor-widget-heading" data-id="703628af" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Sign up to help make a future for all of us.</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-2d820352 elementor-widget elementor-widget-wp-widget-gform_widget" data-id="2d820352" data-element_type="widget" data-widget_type="wp-widget-gform_widget.default">
+<div class="elementor-widget-container">
+<!-- <link rel='stylesheet' id='gforms_reset_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_formsmain_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_ready_class_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_browsers_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/e1vkuidg/a80kh.css" media="all"/>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/gravityforms/js/jquery.maskedinput.min.js?ver=2.4.10'></script>
+<div class='gf_browser_chrome gform_wrapper' id='gform_wrapper_2' ><form method='post' enctype='multipart/form-data'  id='gform_2'  action='/people-first-education/'>
+<div class='gform_body'><ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'><li id='field_2_1'  class='gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label' for='input_2_1' >Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
+<input name='input_1' id='input_2_1' type='text' value='' class='medium' tabindex='1'  placeholder='Email' aria-required="true" aria-invalid="false" />
+</div></li><li id='field_2_3'  class='gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label' for='input_2_3' >Phone</label><div class='ginput_container ginput_container_phone'><input name='input_3' id='input_2_3' type='text' value='' class='medium' tabindex='2' placeholder='Mobile Phone*'  aria-invalid="false"  /></div></li><li id='field_2_2'  class='gfield gfield_contains_required field_sublabel_hidden_label field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label gfield_label_before_complex'  >Address<span class='gfield_required'>*</span></label>    
+<div class='ginput_complex ginput_container has_zip ginput_container_address' id='input_2_2' >
+<input type='hidden' class='gform_hidden' name='input_2.4' id='input_2_2_4' value=''/><span class='ginput_right address_zip' id='input_2_2_5_container' >
+<input type='text' name='input_2.5' id='input_2_2_5' value='' tabindex='5'  placeholder='Zip' aria-required="true"/>
+<label for='input_2_2_5' id='input_2_2_5_label' class='hidden_sub_label screen-reader-text'>ZIP Code</label>
+</span><input type='hidden' class='gform_hidden' name='input_2.6' id='input_2_2_6' value='United States'/>
+<div class='gf_clear gf_clear_complex'></div>
+</div></li><li id='field_2_4'  class='gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible' ><input name='input_4' id='input_2_4' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://issues.juliancastro.com/' /></li><li id='field_2_5'  class='gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible' ><input name='input_5' id='input_2_5' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://issues.juliancastro.com/people-first-education/' /></li>
+</ul></div>
+<div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Submit' tabindex='6' onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' /> 
+<input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+<input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+<input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+<input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImExM2FkMjQxY2ExZDYzNWQzNjA5NGZlZjkyYWUyODk5Il0=' />
+<input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+<input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+<input type='hidden' name='gform_field_values' value='' />
+</div>
+</form>
+</div><script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+Placeholders.enable();
+}jQuery('#input_2_3').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [2, 1]) } ); </script>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-1b426bd9 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="1b426bd9" data-element_type="section" id="intro" data-settings="{&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-44cfc189 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="44cfc189" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-2035d9ac elementor-widget elementor-widget-heading" data-id="2035d9ac" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Our Smartest Investment</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-6bb4d1b7 elementor-widget elementor-widget-heading" data-id="6bb4d1b7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-57609e7d elementor-widget elementor-widget-heading" data-id="57609e7d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">However, our government has failed to live up to its end of the bargain. Chronic underinvestment in our schools, teachers, and students over many decades and at all levels has allowed our competitors to leave us behind, and made an already unequal system more inequitable. Structural flaws, growing financial burdens, and inadequate support for students and families have prevented many from accessing quality education, from childhood to post secondary school. Our antiquated commitment to a K-12 system that starts some children ahead of others, and prevents many from continuing their education after high school has left our students and nation at a disadvantage.</p>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3c39b02d elementor-column elementor-col-50 elementor-top-column" data-id="3c39b02d" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-205c499 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="205c499" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-87dbb2e elementor-column elementor-col-50 elementor-top-column" data-id="87dbb2e" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7b5bee0 elementor-invisible elementor-widget elementor-widget-heading" data-id="7b5bee0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">We need a new commitment and a new approach that puts people first—one that sees the federal role in education as supporting a seamless continuum that begins before elementary school and continues after high school.</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6799b32 elementor-column elementor-col-50 elementor-top-column" data-id="6799b32" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-eba633b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="eba633b" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-cb5ba49 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="cb5ba49" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-bc64cec elementor-widget elementor-widget-heading" data-id="bc64cec" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">If the United States is to continue being a leader in the generations to come, it means we can’t afford to waste a single student.</span> That begins with extending our commitment to pre-kindergarten learning, which research tells us is one of the most critical periods for childhood development. But we can’t stop there. We need to ensure every student in our public education system can graduate high school and put their foot in the door for college, vocational training, or a quality career. And it means that those who have committed to further their education in college aren’t saddled with tens of thousands of dollars in student loan debt that hampers their ability to start a family, buy a home, or launch their careers. We also have to make a new commitment to the thousands of teachers and support staff that guide and teach our children. We need to pay our teachers more, cut down on class sizes to foster individualized learning, and equip our educators and schools with the resources they need to be successful.<br><br><span style="font-weight: 500">Finally, we need to make a new commitment to ensure our schools are more fair and equitable to all students.</span> At the onset of our public school system, one student’s success was valued over another. Although we ended sanctioned segregation in our schools many years ago, widespread disparities between students continue today. We can’t have integrated schools if our housing and communities are segregated. We also haven’t done enough to protect LGBTQ students, or ensure that students with disabilities have an equal opportunity to succeed in every community. It’s not enough to just invest in our schools and hope that inequities are repaired—we need targeted approaches that ensure all students have access to a quality education.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-1fbc9ec elementor-widget elementor-widget-heading" data-id="1fbc9ec" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">My People First Education plan would make a new commitment by the federal government to see that every student has access to a quality education—from pre-K through college and beyond.</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-bcfb869 elementor-widget elementor-widget-heading" data-id="bcfb869" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">My plan would help bridge the gap both in access and achievement by ensuring every student begins elementary school with a strong foundation, and leaves high school prepared for college or a good job. My plan would invest in our nation’s educators, and ensure that the teaching profession remains competitive and attractive for future generations. My plan would help mitigate chronic inequities between students, and extend our educational commitment to those whom it has been out of reach. And my plan would address the pervasive student loan debt crisis—both for those who are feeling crushed under insurmountable debt, and for those who have yet to enroll in higher education. These investments are not only helpful in addressing the long-standing problems in our education system, but are required if we are to remain a competitive leader in the generations to come.</p>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-bbbdc6c elementor-column elementor-col-50 elementor-top-column" data-id="bbbdc6c" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-3aa2fc41 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3aa2fc41" data-element_type="section" id="1-pre-k" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-7ed544c9 elementor-column elementor-col-50 elementor-top-column" data-id="7ed544c9" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-676035d0 elementor-invisible elementor-widget elementor-widget-heading" data-id="676035d0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">1</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-2f09d1f9 elementor-invisible elementor-widget elementor-widget-heading" data-id="2f09d1f9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Pre-K for USA: Making Pre-K the Foundation for Lifelong Learning</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-38eea878 elementor-column elementor-col-50 elementor-top-column" data-id="38eea878" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-28b52d93 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="28b52d93" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-5be7803 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="5be7803" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-89ac080 elementor-widget elementor-widget-heading" data-id="89ac080" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">Decades of research has told us that a significant portion of childhood development begins prior to entry into kindergarten.</span> These formative years lay the groundwork for the future health and success of our nation’s students. While competitors like Germany, Japan, and China have made significant investments in early childhood education and school readiness, the United States continues to trail behind, both on enrollment and quality of pre-K programs. In an increasingly competitive global economy, the United States cannot afford to leave our youngest students at a disadvantage. As the former Mayor of the city of San Antonio, I know first hand the benefits of investing in access to high quality pre-kindergarten education. I asked the residents of San Antonio to support a citywide pre-K initiative, ‘Pre-K for SA’, that has transformed our city’s education system, and delivered results for thousands of children and families that participated.<br><br><span style="font-weight: 500">
+My People First Education plan aims to close the pre-K access gap, making high-quality preschool universal for 3- and 4-year-olds across the United States through a nationwide ‘Pre-K for USA’ program. </span> This will require making a serious investment in existing local programs and expanding successful models to new communities, boosting training, education, compensation, and support for pre-K teachers across the country, and linking pre-K to kindergarten—ensuring the transition from early childhood education to elementary school is seamless. For every dollar we invest in early childhood education, we see up to $9 in return on investment. Investing in early childhood education isn’t just the right thing to do on behalf of our children, it’s an investment that we can’t afford not to make.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-60964a5 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="60964a5" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Create a universal, high-quality, publicly-funded, full-day Pre-K for USA program for 3 and 4-year-olds. </span>Funded through a grant program to state and local governments, this program would provide children a foundation for educational success and provide parents the flexibility to return to work if desired.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5ec6fd99 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5ec6fd99" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support sustained training and education for pre-K teachers, </span>including access to post-secondary degrees and professional skills development, to ensure that all teachers have, or are on a supported path, to earn the required competencies and appropriate bachelors degree to educate our youngest learners. Support state-level partnerships with institutions of higher education that enable pathways for early childhood teacher preparation.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5c1ffe33 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5c1ffe33" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Require linkages between pre-K and K-12 systems,</span> ensuring kindergarten readiness and a seamless transition into a high quality full-day kindergarten program with alignment across standards, curricula, and educator professional development.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3c349419 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3c349419" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand home visiting and other programs for infants and toddlers,</span> through Early Head Start and relevant state-federal partnerships. These programs promote healthy prenatal outcomes for pregnant women, enhance the development of infants and toddlers, and promote healthy and supportive family environments.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2a9f5ff4 elementor-column elementor-col-50 elementor-top-column" data-id="2a9f5ff4" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-237a2238 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="237a2238" data-element_type="section" id="2-high-school" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-68b99552 elementor-column elementor-col-50 elementor-top-column" data-id="68b99552" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-25f451af elementor-invisible elementor-widget elementor-widget-heading" data-id="25f451af" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">2</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-165431ab elementor-invisible elementor-widget elementor-widget-heading" data-id="165431ab" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Reimagining High School</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-7d54f02c elementor-column elementor-col-50 elementor-top-column" data-id="7d54f02c" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-36ea0e8d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="36ea0e8d" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-938756b elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="938756b" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4ffc321 elementor-widget elementor-widget-heading" data-id="4ffc321" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">In an increasingly competitive global economy where the United States can’t afford to waste a single student, high school graduation remains critically important to both individual potential for success, and U.S. competitiveness around the globe. </span> At around 85%, the U.S. graduation rate ranks behind many of our international competitors. To continue to remain competitive in the years to come, we should make sure every student can graduate from high school by targeting resources to students and schools where persistent gaps exist, and that graduates leave high school with the skills to succeed in universities, community colleges, apprenticeship programs, or in their careers.<br><br><span style="font-weight: 500">
+My People First Education plan would help students get their foot in the door to college by expanding access to college credits and accelerated learning opportunities.</span> My plan would ensure that students have the flexibility and support to pursue careers in trade, and would encourage high schools to partner with employers to help students obtain work-based learning opportunities after they graduate. Additionally, my plan would support and encourage students interested in opportunities in the arts and language—strengthening programs that celebrate cultural and language learning that are required in an interconnected global economy.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-98302bf elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="98302bf" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Close the modernization gap of our nation’s schools.</span>Make a $150 billion dollar investment in school facilities, technology infrastructure, and organizational support across the pre-K through 12th grade system to ensure teachers are well-supported with the tools needed to educate their students and require state governments contribute funding to qualify for this assistance.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-05275a4 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="05275a4" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support investment in music, arts, and foreign language programs</span> to provide a broad range of educational opportunities in high school. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-821723c elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="821723c" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure all students have the opportunity to graduate from high school with at least one year of college credit, at no additional cost,</span> by expanding access to dual enrollment, early college, and other accelerated learning opportunities, especially for traditionally underserved students and those likely to require remediation at the postsecondary level.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6395f77 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6395f77" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Provide educators and public schools flexibility in defining success,</span> including competency-based assessments and support for transitions away from seat-time requirements. Provide maximum flexibility for school leaders, teachers, and students to work together to develop rigorous, competency-based pathways to a diploma and industry-recognized credentials.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-c335441 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="c335441" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Address the shortage of skilled workers in the economy</span> by establishing dedicated trade programs in high school and partnerships between schools and employers. Expand work-based learning opportunities, inform program design — at both the secondary and postsecondary levels — according to labor-market needs, and provide federal tax credits to support hiring and on-the-job educational opportunities.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-149ade29 elementor-column elementor-col-50 elementor-top-column" data-id="149ade29" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-aa0b385 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="aa0b385" data-element_type="section" id="3-debt" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-8fce866 elementor-column elementor-col-50 elementor-top-column" data-id="8fce866" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-db2147e elementor-invisible elementor-widget elementor-widget-heading" data-id="db2147e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">3</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-b9ba1db elementor-invisible elementor-widget elementor-widget-heading" data-id="b9ba1db" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Creating Affordable Pathways to Success After High School</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-cc522e3 elementor-column elementor-col-50 elementor-top-column" data-id="cc522e3" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-c847d48 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="c847d48" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-1e9a0547 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="1e9a0547" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-8b1303e elementor-widget elementor-widget-heading" data-id="8b1303e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">The student loan debt crisis has now topped $1.5 trillion, surpassing both auto loan debt and credit card debt, nationally. </span> As states have picked up less and less of the bill for public universities and colleges, tuition rates have skyrocketed to defray the costs—driving students to take out thirty, forty, fifty, and even a hundred thousand dollars in loans just to get their undergraduate degrees. To make matters worse, the federal government has failed to adequately step in to support students and universities—pushing more and more students towards costly loans that can at times be predatory. Make no mistake: this is a crisis. More and more students are defaulting on their loans, tanking their credit for years to come. College graduates are finding it increasingly difficult to pursue advanced degrees, to buy a home or start a business, or to just keep up with their day-to-day bills. <b>It’s time we break the work-school tug of war.</b>
+<br><br><span style="font-weight: 500">
+Serious problems like these deserve serious solutions.</span> That’s why my People First Education plan would eliminate tuition at public universities, community colleges, and technical and vocational programs, expand grant programs and loan forgiveness programs to lower-income students, boost transparency and accountability of student loan programs, and institute an income-based repayment program that guarantees no student is paying more than their income allows. Students and graduates who have made a commitment to invest in their futures should see an investment from their government in return. My plan would make that investment, knowing it will pay off both for students and for our national prosperity in the long run.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-e843ee7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e843ee7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Eliminate tuition at public colleges, universities, community colleges, and technical and vocational schools,</span> breaking the work-school tug of war. Share the financing of tuition costs with state governments and provide incentives to reduce the cost of college programs including fees, discourage underinvestment into public education by states. Require accountability and standards that include fair pay for all employees and staff, including adjuncts and non-faculty staff, and respect for their right to join a union.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-637bc2f2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="637bc2f2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500"> Alleviate burdens of existing student loan debt,</span> ensuring no student pays more than their income allows. Reform the student loan and repayment process to ensure that payment is not expected until the investment of higher education begins to pay off for the borrower and so that student loan debt does not impede major life choices.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4e4ee053 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4e4ee053" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Until a borrower is earning at least 250% of the federal poverty line, their monthly loan payment will be capped at $0 with no interest accrual on unpaid interest for three years, exempting half of unpaid interest after three years.  <span style="font-weight: 500">This is not a deferred payment. The payment amount is $0. </span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-ff45369 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="ff45369" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Once the borrower is earning above 250% of the federal poverty line, they will not pay more than 10% of their qualified income each month.</span> Qualified income referring to adjusted gross income with an amount equivalent to 250% of the federal poverty line exempted.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-73f5175 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="73f5175" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">After 240 monthly payments (including any where the repayment amount was capped at $0), the borrower will receive non-taxable forgiveness of any remaining amount.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-a73c91b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="a73c91b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">All loans will have an interest accumulation cap relative to the borrowed amount to limit lifetime increase in the loan to 50%, and any balance in excess of that will be forgiven.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3a1795a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3a1795a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">This program will be streamlined and easy for borrowers, including automatic enrollment once loans go into repayment, streamlining the process for those who opt-in. This program will allow borrowers to credit payments made under other programs, including existing income-driven repayment programs that will be ended for future borrowers. Charging origination or similar fees will be prohibited.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3168d485 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3168d485" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand the Pell Grant program</span> to a maximum grant of $10,000, and allow these grants to be used for living expenses, summer programs, short term programs, and for emergency assistance.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-caad4c6 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="caad4c6" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support Historically Black Colleges and Universities (HBCUs) and other minority serving institutions,</span> that serve an important role in American society through an additional investment of $3 billion per year towards financial support and increasing access for low-income students.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7be8a62 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="7be8a62" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Create a new program of targeted loan forgiveness</span> to forgive a proportion of loans for individuals who qualify for and receive means tested federal assistance such as Supplemental Security Income (SSI), Supplemental Nutrition Assistance Program (SNAP), or Medicaid for any three years within a five year period.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-113abbe elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="113abbe" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Allow borrowers to discharge or structure a payment plan for student loans through bankruptcy.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-ad27057 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="ad27057" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reform and Improve the Public Service Loan Forgiveness program</span> to make it significantly more borrower-friendly and transparent.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-38daa86 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="38daa86" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Streamline the program by automating the enrollment process and ending the practice of un-enrolling borrowers in the program because of missed payments or without their knowledge.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1cd3f86 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1cd3f86" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Allow for consolidated loans, legacy Federal Family Education Loan Program loans, and all other types of student loans to be eligible for loan forgiveness.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-97654a4 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="97654a4" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Grant early credit towards loan forgiveness at intervals before ten years have elapsed.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1bdd7ad elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1bdd7ad" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Require universities to certify private loans,</span> provide financial counseling, and inform students about any federal loans that may offer more favorable terms. Strengthen federal consumer protections through the Consumer Financial Protection Bureau, including responsiveness to complaints, for borrowers who utilize private loans.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-d1abfc0 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="d1abfc0" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Restructure the university endowment tax</span> from the 2017 Tax Cuts and Jobs Act to fund debt relief for students and allow schools that provide substantial financial aid to undergraduate students an exemption from the tax.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5f27cd8 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5f27cd8" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Streamline the Free Application for Federal Student Aid (FAFSA) program</span> to reduce complexity and promote accuracy, including through pre-populating the FAFSA with information from tax returns on file.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1435d2e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1435d2e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">End public support for private for-profit colleges,</span> including the use of benefits and federal student loans for private enrollment and ensure oversight for for-profit schools that convert to non-profit status, after a transition period to minimize harm to current students.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-67f3222 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="67f3222" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Increase awareness of higher education opportunities,</span> especially among students from low-income families. Assist communities in establishing targeted programs such as San Antonio’s “Cafe College,” which provides students with helpful information on higher-education school choices, college admissions, and financial aid.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-21cdd00 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="21cdd00" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure transparency and accountability in higher education,</span> including through expanding the College Scorecard initiative with data available to prospective students and their families to better understand college costs, degree completion, and employment outcomes; and by creating an accountability system that protects students from colleges that too often leave students saddled with debt and no degree or improved employment prospects.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-1a0fd2c elementor-column elementor-col-50 elementor-top-column" data-id="1a0fd2c" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-968242c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="968242c" data-element_type="section" id="4-teachers" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-821e5a4 elementor-column elementor-col-50 elementor-top-column" data-id="821e5a4" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-84df827 elementor-invisible elementor-widget elementor-widget-heading" data-id="84df827" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">4</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-dc3ccbb elementor-invisible elementor-widget elementor-widget-heading" data-id="dc3ccbb" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Elevating the Profession of Teaching</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-741db4d elementor-column elementor-col-50 elementor-top-column" data-id="741db4d" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-f820bc5 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="f820bc5" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-bcdff07 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="bcdff07" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-1973c0c elementor-widget elementor-widget-heading" data-id="1973c0c" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">Educators play a vital role in shaping the success of our students and the prosperity of our nation. </span> They are the backbone of our education system, and shape the lives of their pupils from pre-K to college and beyond. And yet, too often, teachers are not fairly compensated for their critical work or equipped with the resources and facilities required to meet the needs of our students. Nationwide, nearly 80% of parents say their children’s teachers are underpaid and, adjusted for inflation, the national average teacher salary has decreased 4.5% over the last decade. This chronic underpayment and under-appreciation of our nation’s teachers has led to a severe drop in college enrollment in education programs, a high rate of teachers leaving the profession within five years, and a teacher shortage that some estimate is in the millions.<br><br><span style="font-weight: 500">
+Additionally, the lack of sustained investment in our schools’ infrastructure has contributed to dilapidated school buildings and inequities in access to broadband internet</span>—creating a multi-billion dollar gap between what is currently spent on education and what is needed to fully modernize our schools. My People First Education plan would end decades of under-investment in our nation’s teachers. It would help close the modernization gap in our school systems—ensuring properly-equipped teachers have the facilities and technology to foster quality learning. My plan would also help to ensure that teaching is an attractive profession to future generations—strengthening programs that incentivize teaching and attracting quality teachers that are representative of the diversity of our country to overlooked communities.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-2912398 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2912398" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Bridge the teacher pay gap</span> with a federal tax credit that boosts teacher pay by up to $10,000 per year, with a minimum credit of $2,000 and increasing for teachers at schools based on the proportion of students on free or reduced lunch programs within their schools. This investment would help address chronic underinvestment in education, combat teacher attrition, provide incentives for state and local governments to pay teachers fairly, and direct federal resources to the communities with the greatest need.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-e96a3a3 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e96a3a3" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support unionization in education for educators and for student workers,</span> including graduate students, at every level of federal education policy, including in judicial policy.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-87fac3f elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="87fac3f" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Create a clear and consistent pipeline of qualified teachers to high need areas and combat teacher shortage with a national teacher residency initiative.</span> Fund 1-year teacher residency programs and grants to states to support transitions of local students and educational professionals into a teaching career, including Grow Your Own Programs—directing these initiatives at individuals who intend on making a life-long commitment to teaching. Integrate these programs with teacher preparation programs at Minority Serving Institutions to support hiring and retention of teachers of color. Residency program would be prioritized in high-need, underserved communities through placement and training, and would support individuals and mentors in these programs for five years through direct grants and stipends.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-818d8b7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="818d8b7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Incentivize teaching in the highest-need communities</span> through competitive grant funding to states and through federal tax credits, loan forgiveness programs, and enhanced title funding and grants to boost compensation for all of the educators serving in hard-to-staff positions and schools.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-f849aec elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f849aec" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Foster supportive and rewarding teaching environments</span> through targeted investments in school infrastructure that increase access to mental health and behavioral supports, lowering class sizes, improving physical spaces and access to key technology resources, and ensuring that students, families, and educators form a cohesive, collaborative community.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-ae77d7b elementor-column elementor-col-50 elementor-top-column" data-id="ae77d7b" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-bebeb65 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="bebeb65" data-element_type="section" id="5-fairness" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-036152f elementor-column elementor-col-50 elementor-top-column" data-id="036152f" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-2122fb9 elementor-invisible elementor-widget elementor-widget-heading" data-id="2122fb9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">5</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-a02f36a elementor-invisible elementor-widget elementor-widget-heading" data-id="a02f36a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Fairness in Education</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-f10d733 elementor-column elementor-col-50 elementor-top-column" data-id="f10d733" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-585f136 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="585f136" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-139c2aa elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="139c2aa" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-e40a6cb elementor-widget elementor-widget-heading" data-id="e40a6cb" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><span style="font-weight: 500">Despite the goal of our public education system to offer mobility and opportunity to all students, the status quo exacerbates, rather than alleviates, inequities that exist between students.</span> Historic and stark disparities between rich and poor, black and white, documented and undocumented, and abled and disabled, are made worse by decades of underinvestment in a public school system that, in many ways, remains segregated. On top of these inequities, research tells us that race is a strong determinant in whether a student is suspended or expelled, and affects placement in gifted and talented programs. All of these disparities have led to an achievement gap between students—highlighting that a child’s race and social class are clear predictors of their potential for educational success.<br><br><span style="font-weight: 500">
+My People First Education plan seeks to combat the inequities in our school system that exist from pre-kindergarten through college.</span> My plan would take major steps forward in closing gaps both in access and achievement for students of color, it would extend protections against discrimination for LGBTQ students, it would boost diversity at universities and community colleges, and it would ensure that no student—regardless of their criminal history or immigration status—is prevented from obtaining a quality education.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-b80a0ca elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="b80a0ca" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">End the school-to-prison pipeline and reform student discipline practices.</span> Combat unfair, harsh, and unequal disciplinary methods by ensuring that schools receiving federal funding commit to reforms including eliminating the use of police officers as disciplinary agents, implementing positive, evidenced-based disciplinary practices, and requiring unconscious bias training for school personnel. Provide federal grants to promote positive and supporting school climates and reforming disciplinary practices. Provide expanded support and counseling for students and training for teachers and staff.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-f91e386 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f91e386" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Combat racial segregation in schools and reduce educational disparities by working to integrate communities.</span> Fulfill the promise of <em>Brown v. Board of Education</em> through a progressive housing policy that includes affirmatively furthering fair housing, implementing zoning reform, and expanding affordable housing in high opportunity areas. These efforts will reduce racial segregation in classrooms.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-da8cb0a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="da8cb0a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Create school environments that are accessible, affirming, and inclusive for students with disabilities, including learning disabilities.</span> Fully fund and expand disability programs under the Individuals with Disabilities Education Act to ensure all schools receiving federal funding are equipped to meet the needs of students with disabilities. Support increased flexibility and individualized education plans for all students who could benefit from them. Partner with schools to establish a pathway to meaningful employment after graduation from school for students with disabilities. Additionally, all education professionals should have access to meaningful, ongoing professional development to enhance skills and strengthen the learning of students with disabilities.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-989cc40 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="989cc40" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand educational opportunities, including higher education, for individuals currently incarcerated or detained, and repeal restrictions on Pell Grant eligiblity.</span> End discrimination against the formerly incarcerated in higher education in admissions and financial aid decisions, including financial assistance and Pell Grants. Support educational opportunities for juvenile and adult individuals who are incarcerated. Ensure those residing in immigration detention facilities have access to educational opportunities.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1c8f16b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1c8f16b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Strengthen and clarify Title IX protections so they are fully extended to all students.</span> Issue regulations clarifying that Title IX protections include a prohibition against discrimination based on sexual orientation, gender identity, pregnancy, and parenting status. Increase oversight and enforcement to ensure that violations of students’ Title IX rights are properly addressed.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2b88836 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2b88836" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Encourage meaningful family engagement in school.</span> Create federal grants for schools adopting family and community engagement policies to encourage shared leadership and true partnerships between the family, community, and school to best support student learning, including LGBTQ parents and non-traditional families such as single parents, foster parents, and grandparents raising their grandchildren as their own.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-c561578 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="c561578" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Launch an 8-year plan to extend the community schools model to schools in areas of high-need</span> to operate as community hubs that have resources and facilities, such as health centers, adult education classes, food banks, and other support facilities for families and support nutrition through food pantries to combat hunger and serve the nutritional needs of students, their families, and their communities while cutting down on food waste.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-a3ad405 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="a3ad405" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure no student goes hungry at school.</span> Create a partnership between the Department of Education and the U.S. Department of Agriculture to expand free breakfast and lunch programs for all students at public schools, and to expand access to meals during the summer.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-65a2a65 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="65a2a65" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Institute strong federal protections against sexual assault, bullying and harassment at school.</span> Establish federal regulations that promote transparent, accountable, and just recourse for victims. Support discipline and resolution methods that are positive and evidence-based, and, where practical, based on a restorative justice model.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7ab9485 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="7ab9485" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Equip public schools to support immigrant families.</span> Prohibit immigration enforcement agents from conducting arrests, interviews, searches, or surveillance at schools and school bus stops. Ensure support for families that are integrating into the United States through well-funded English as a Second Language programs.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-19a8546 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="19a8546" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure DACA recipients, TPS, and DED holders are eligible for federal higher education assistance.</span> Pending final passage of the Dream and Promise Act, ensure these individuals can access federal funding and other public education programs, and that citizenship status is not considered in admissions decisions by public schools or institutions of higher education.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-90a9db2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="90a9db2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure Americans in Puerto Rico, U.S. territories, and indigenous communities are not left behind.</span> Invest in school infrastructure, residency programs, and teacher compensation to include the entirety of the United States.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1012c5c elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1012c5c" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Protect students in schools and universities from gun violence by</span> repealing Trump administration policies that promote arming educators and instead taking meaningful steps to address gun violence, such as instituting universal background checks, a renewed assault weapons ban, and extreme risk protection orders.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-61fee1a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="61fee1a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Work with local communities to combat cyber-bullying,</span> and support laws that allow law enforcement officials to investigate and deter instances of cyber-bullying, including through criminal penalties for adults that enable or incite such behavior.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-82c3fac elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="82c3fac" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Prioritize student wellness.</span> Make a significant investment in onsite school healthcare personnel including school nurses, counselors, and mental health providers.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-ac4c69f elementor-column elementor-col-50 elementor-top-column" data-id="ac4c69f" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+
+<div data-elementor-type="footer" data-elementor-id="307" class="elementor elementor-307 elementor-location-footer" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-7d36945 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7d36945" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-6926fd3 elementor-column elementor-col-50 elementor-top-column" data-id="6926fd3" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4e2150f elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu__text-align-aside elementor-widget elementor-widget-nav-menu" data-id="4e2150f" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade"><ul id="menu-1-4e2150f" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-82"><a href="https://issues.juliancastro.com/people-first-education/" aria-current="page" class="elementor-item elementor-item-active">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-250"><a href="https://issues.juliancastro.com/people-first-housing/" class="elementor-item">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-item">Lead</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="/" class="elementor-item">All Issues</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318"><a href="http://juliancastro.com" class="elementor-item">Home</a></li>
+</ul></nav>
+<div class="elementor-menu-toggle">
+<i class="eicon" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"><ul id="menu-2-4e2150f" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-82"><a href="https://issues.juliancastro.com/people-first-education/" aria-current="page" class="elementor-item elementor-item-active">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-250"><a href="https://issues.juliancastro.com/people-first-housing/" class="elementor-item">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-item">Lead</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="/" class="elementor-item">All Issues</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318"><a href="http://juliancastro.com" class="elementor-item">Home</a></li>
+</ul></nav>
+</div>
+</div>
+<div class="elementor-element elementor-element-fc36ef3 elementor-widget elementor-widget-spacer" data-id="fc36ef3" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e43f563 elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading" data-id="e43f563" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Paid for by Julián for the Future</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-86cf18f elementor-column elementor-col-50 elementor-top-column" data-id="86cf18f" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-35f0ea8 elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="35f0ea8" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="#" class="elementor-button-link elementor-button elementor-size-md" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Donate</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-b9cc161 elementor-shape-circle elementor-widget elementor-widget-global elementor-global-73 elementor-widget-social-icons" data-id="b9cc161" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook" href="https://facebook.com/julianforthefuture/" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<i class="fa fa-facebook"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter" href="https://twitter.com/JulianCastro" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fa fa-twitter"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram" href="https://www.instagram.com/juliancastrotx/" target="_blank">
+<span class="elementor-screen-only">Instagram</span>
+<i class="fa fa-instagram"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fabbdc6 elementor-widget elementor-widget-heading" data-id="fabbdc6" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="https://www.julianforthefuture.com/privacy-policy/">Privacy Policy</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-0782204 elementor-widget elementor-widget-heading" data-id="0782204" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Julián for the Future P.O. Box 501 <br>
+San Antonio, TX 78292</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130644994-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-130644994-2');
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var the_ajax_script = {"ajax_url":"https:\/\/issues.juliancastro.com\/wp\/wp-admin\/admin-ajax.php","nonce":"b3fa5c6a50"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/themes/jftf-landing/assets/js/global.min.js'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp/wp-includes/js/wp-embed.min.js?ver=5.2.2'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.4.10'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=2.5.16'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=2.5.9'></script>
+<script type='text/javascript'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/issues.juliancastro.com\/wp\/wp-admin\/admin-ajax.php","nonce":"e64639eb76","shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=2.5.9'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.7.1'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=4.4.6'></script>
+<script type='text/javascript'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.16","urls":{"assets":"https:\/\/issues.juliancastro.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":32,"title":"People First Education","excerpt":"Education is at the core of the American Dream. It is the foundation by which we fulfill our collective promise to every student that if they work hard, they have a shot at reaching their dreams. Quality education powers economic mobility, helps to alleviate poverty, and ensures that opportunity is available to every student. However, our government has failed to live up to its end of the bargain."}};
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.5.16'></script>
+</body>
+</html><!-- WP Fastest Cache file was created in 0.7157621383667 seconds, on 28-06-19 5:17:49 --><!-- via php -->

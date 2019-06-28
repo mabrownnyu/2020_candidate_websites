@@ -1,0 +1,57 @@
+function attachFormListener() {
+  var form = document.querySelector('.volunteer-form');
+  // form.style.maxHeight = form.offsetHeight.toString() + 'px';
+
+  if (! form) {
+    return;
+  }
+
+  form.onsubmit = event => {
+    form.style.transition = '0.3s border-color, 0.3s max-height';
+    event.preventDefault();
+
+    var nameInput = form.querySelector('[name=\'name\']');
+    var emailInput = form.querySelector('[name=\'email\']');
+    var phoneInput = form.querySelector('[name=\'phone\']');
+    var zipInput = form.querySelector('[name=\'zip\']');
+    var skillInputs = Array.from(form.querySelectorAll('[name=\'skills\']'));
+
+    var name = nameInput.value;
+    var email = emailInput.value;
+    var phone = phoneInput.value;
+    var zip = zipInput.value;
+    var skills = skillInputs.map(skillInput => skillInput.checked && skillInput.value).filter(v => v);
+
+    var data = {name, email, phone, zip, skills};
+
+    const invalidMessage = Object.entries(data).reduce((
+      (message, [key, value]) => message + (value ? '' : key + ' required! ')
+    ), '');
+    if (invalidMessage) {
+      console.error(invalidMessage);
+      return;
+    }
+
+    const SIGNUP_URL = '/wp-json/yang-api/v1/sign-up-volunteer';
+    fetch(SIGNUP_URL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      form.classList.add('show-thanks');
+      form.style.maxHeight = '60px';
+      return response.json();
+    })
+    .then(json => {
+      console.log('json', json)
+    })
+    .catch(error => {
+      console.error('error', error);
+    });
+  }
+}
+
+DomReady.ready(attachFormListener);

@@ -1,293 +1,1707 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-
-  <link rel="icon" type="image/x-icon" href="/wp-content/themes/cftf/favicon.ico">
-  <link rel="stylesheet" href="https://fonts.typotheque.com/WF-032393-010559.css" type="text/css" >
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
-      {'gtm.start': new Date().getTime(),event:'gtm.js'}
-
-    );var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WLVRFC8');</script>
-  <!-- End Google Tag Manager -->
-
-  <title>People First Housing - Julián 2020</title>
-<link rel="alternate" hreflang="en" href="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/" />
-
-<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
-<link rel="canonical" href="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="content-type" content="text/html; charset=utf-8"/> 
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People First Housing - Julián Castro Policies for 2020</title>
+<meta name="description" content="Housing is a human right. But for too many Americans, affordable, safe, and healthy housing is out of reach—forcing them to pay 40, 50, or even 60 percent of their income in rent, and forcing others on the streets. We need a president who will match the urgency of this issue with concrete, bold plans.">
+<!-- Google Fonts -->
+<link rel="stylesheet" id="du-google-fonts" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" type="text/css" media="all" />
+<!-- Typekit Embed Code -->
+<!-- This site is optimized with the Yoast SEO plugin v11.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://issues.juliancastro.com/people-first-housing/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="People First Housing - Julián 2020" />
-<meta property="og:description" content="Part II: Providing Fair Housing to All Americans and Aligning Housing Policy with Climate Goals Discrimination in housing is nothing new. For centuries, many Americans have been prevented from finding quality, affordable housing because of their race, gender, sexual orientation, legal status, or disability. Additionally, historically discriminatory practices like redlining, limiting access to credit, or &hellip;" />
-<meta property="og:url" content="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/" />
-<meta property="og:site_name" content="Julián 2020" />
-<meta property="article:section" content="Uncategorized" />
-<meta property="article:published_time" content="2019-06-18T05:00:09+00:00" />
-<meta property="article:modified_time" content="2019-06-24T21:04:47+00:00" />
-<meta property="og:updated_time" content="2019-06-24T21:04:47+00:00" />
-<meta property="og:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/06/hud.jpg" />
-<meta property="og:image:secure_url" content="https://www.julianforthefuture.com/wp-content/uploads/2019/06/hud.jpg" />
-<meta property="og:image:width" content="1099" />
-<meta property="og:image:height" content="478" />
+<meta property="og:title" content="People First Housing - Julián Castro Policies for 2020" />
+<meta property="og:description" content="Housing is a human right. But for too many Americans, affordable, safe, and healthy housing is out of reach—forcing them to pay 40, 50, or even 60 percent of their income in rent, and forcing others on the streets. We need a president who will match the urgency of this issue with concrete, bold plans." />
+<meta property="og:url" content="https://issues.juliancastro.com/people-first-housing/" />
+<meta property="og:site_name" content="Julián Castro Policies for 2020" />
+<meta property="og:image" content="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1a.jpg" />
+<meta property="og:image:secure_url" content="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1a.jpg" />
+<meta property="og:image:width" content="1100" />
+<meta property="og:image:height" content="678" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Part II: Providing Fair Housing to All Americans and Aligning Housing Policy with Climate Goals Discrimination in housing is nothing new. For centuries, many Americans have been prevented from finding quality, affordable housing because of their race, gender, sexual orientation, legal status, or disability. Additionally, historically discriminatory practices like redlining, limiting access to credit, or [&hellip;]" />
-<meta name="twitter:title" content="People First Housing - Julián 2020" />
-<meta name="twitter:image" content="https://www.julianforthefuture.com/wp-content/uploads/2019/06/hud.jpg" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.julianforthefuture.com/#organization","name":"","url":"https://www.julianforthefuture.com/","sameAs":[]},{"@type":"WebSite","@id":"https://www.julianforthefuture.com/#website","url":"https://www.julianforthefuture.com/","name":"Juli\u00e1n 2020","publisher":{"@id":"https://www.julianforthefuture.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.julianforthefuture.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#webpage","url":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/","inLanguage":"en-US","name":"People First Housing - Juli\u00e1n 2020","isPartOf":{"@id":"https://www.julianforthefuture.com/#website"},"image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#primaryimage","url":"https://www.julianforthefuture.com/wp-content/uploads/2019/06/hud.jpg","width":1099,"height":478},"primaryImageOfPage":{"@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#primaryimage"},"datePublished":"2019-06-18T05:00:09+00:00","dateModified":"2019-06-24T21:04:47+00:00"},{"@type":"Article","@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#article","isPartOf":{"@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#webpage"},"author":{"@id":"https://www.julianforthefuture.com/news-events/author/binsler/#author","name":"Brielle Insler"},"publisher":{"@id":"https://www.julianforthefuture.com/#organization"},"headline":"People First Housing","datePublished":"2019-06-18T05:00:09+00:00","dateModified":"2019-06-24T21:04:47+00:00","commentCount":0,"mainEntityOfPage":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#webpage","image":{"@id":"https://www.julianforthefuture.com/news-events/people-first-housing-part-2/#primaryimage"},"articleSection":""},{"@type":"Person","@id":"https://www.julianforthefuture.com/news-events/author/binsler/#author","name":"Brielle Insler","image":{"@type":"ImageObject","@id":"https://www.julianforthefuture.com/#personlogo","url":"https://secure.gravatar.com/avatar/31b238ec00b8a8b2edd56305efadf471?s=96&d=mm&r=g","caption":"Brielle Insler"},"sameAs":[]}]}</script>
+<meta name="twitter:description" content="Housing is a human right. But for too many Americans, affordable, safe, and healthy housing is out of reach—forcing them to pay 40, 50, or even 60 percent of their income in rent, and forcing others on the streets. We need a president who will match the urgency of this issue with concrete, bold plans." />
+<meta name="twitter:title" content="People First Housing - Julián Castro Policies for 2020" />
+<meta name="twitter:image" content="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1a.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://issues.juliancastro.com/#organization","name":"Juli\u00e1n Castro 2020","url":"https://issues.juliancastro.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://issues.juliancastro.com/#logo","url":"https://issues.juliancastro.com/wp-content/uploads/2019/06/jc-2020-rgb-transparent.png","width":2772,"height":1001,"caption":"Juli\u00e1n Castro 2020"},"image":{"@id":"https://issues.juliancastro.com/#logo"}},{"@type":"WebSite","@id":"https://issues.juliancastro.com/#website","url":"https://issues.juliancastro.com/","name":"Juli\u00e1n Castro Policies for 2020","publisher":{"@id":"https://issues.juliancastro.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://issues.juliancastro.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://issues.juliancastro.com/people-first-housing/#primaryimage","url":"https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1a.jpg","width":1100,"height":678},{"@type":"WebPage","@id":"https://issues.juliancastro.com/people-first-housing/#webpage","url":"https://issues.juliancastro.com/people-first-housing/","inLanguage":"en-US","name":"People First Housing - Juli\u00e1n Castro Policies for 2020","isPartOf":{"@id":"https://issues.juliancastro.com/#website"},"primaryImageOfPage":{"@id":"https://issues.juliancastro.com/people-first-housing/#primaryimage"},"datePublished":"2019-06-24T03:21:23+00:00","dateModified":"2019-06-28T05:15:50+00:00"}]}</script>
 <!-- / Yoast SEO plugin. -->
-
-<link rel='dns-prefetch' href='//www.julianforthefuture.com' />
+<link rel='dns-prefetch' href='//code.jquery.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Julián 2020 &raquo; People First Housing Comments Feed" href="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/feed/" />
-<link rel='stylesheet' id='wp-block-library-css'  href='https://www.julianforthefuture.com/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
-<link rel='stylesheet' id='site-css-css'  href='https://www.julianforthefuture.com/wp-content/themes/cftf/style.css?ver=1561592901' type='text/css' media='all' />
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='https://www.julianforthefuture.com/wp-json/' />
-<link rel='shortlink' href='https://www.julianforthefuture.com/?p=635' />
-<link rel="alternate" type="application/json+oembed" href="https://www.julianforthefuture.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fnews-events%2Fpeople-first-housing-part-2%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.julianforthefuture.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.julianforthefuture.com%2Fnews-events%2Fpeople-first-housing-part-2%2F&#038;format=xml" />
-<meta name="generator" content="WPML ver:4.1.3 stt:1,2;" />
-
+<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://issues.juliancastro.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/8hzn5bwt/a80kh.css" media="all"/>
+<link rel='stylesheet' id='font-awesome-5-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+<!-- <link rel='stylesheet' id='elementor-icons-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=4.3.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='font-awesome-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-animations-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.5.16' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-frontend-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.5.16' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-pro-css'  href='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.5.9' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-global-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/global.css?ver=1561575309' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-245-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-245.css?ver=1561698978' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-21-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-21.css?ver=1561590915' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-post-307-css'  href='https://issues.juliancastro.com/wp-content/uploads/elementor/css/post-307.css?ver=1561575289' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='du-base-css'  href='https://issues.juliancastro.com/wp-content/themes/jftf-landing/assets/css/base.min.css' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/23j5282x/a862s.css" media="all"/>
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWork+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.2.2' type='text/css' media='all' />
+<script type='text/javascript' src='//code.jquery.com/jquery-1.11.1.min.js'></script>
+<link rel='https://api.w.org/' href='https://issues.juliancastro.com/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="https://issues.juliancastro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fissues.juliancastro.com%2Fpeople-first-housing%2F" />
+<style type="text/css">
+@font-face { font-family:Mallory Black;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/MalloryMP-Black.otf) format('opentype');}@font-face { font-family:Mallory Compact Ultra;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/MalloryBETACpct-Ultra.otf) format('opentype');}@font-face { font-family:Mallory Medium;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/Mallory-Medium.otf) format('opentype');}@font-face { font-family:Mallory Ultra;src:url(https://issues.juliancastro.com/wp-content/uploads/2019/05/Mallory-Ultra.otf) format('opentype');}				</style>
+<link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
-
-<body class="post-template-default single single-post postid-635 single-format-standard wrapper" data-template="base.twig">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLVRFC8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <div class="wrapper__content">
-    <svg class="sprite" width="0" height="0" style="position:absolute"><symbol viewBox="0 0 23 23" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M11.175 22.995C4.974 22.823 0 17.742 0 11.5 0 5.149 5.149 0 11.5 0S23 5.149 23 11.5c0 5.288-3.57 9.743-8.432 11.086v-9.262h2.453c.181 0 .328-.138.328-.31l.001-2.493a.3.3 0 0 0-.096-.218.339.339 0 0 0-.232-.091h-2.454V8.753c0-.701.177-1.057 1.146-1.057h1.406c.181 0 .328-.14.328-.31V5.071c0-.17-.147-.309-.328-.31l-2.086-.002c-2.344 0-3.86 1.465-3.86 3.732v1.72H9.078c-.182 0-.328.14-.328.31v2.494c0 .17.147.309.328.309h2.098v9.671z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="instagram" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm-4.494-4.759h8.988a2.247 2.247 0 0 0 2.247-2.247V7.006a2.247 2.247 0 0 0-2.247-2.247H7.006a2.247 2.247 0 0 0-2.247 2.247v8.988a2.247 2.247 0 0 0 2.247 2.247zm10.112-2.247c0 .62-.503 1.124-1.124 1.124H7.006c-.62 0-1.124-.503-1.124-1.124v-3.932h2.81c.019 0 .036-.01.055-.011a2.809 2.809 0 0 0 5.506 0c.02 0 .036.01.056.01h2.809v3.933zM9.815 11.5a1.685 1.685 0 1 1 3.37 0 1.685 1.685 0 0 1-3.37 0zm5.65-2.776a1.19 1.19 0 1 1 0-2.38 1.19 1.19 0 0 1 0 2.38z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol id="logo" viewBox="0 0 1181.1 384.8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.cst0{fill:#1380d9}.cst1{fill:#003}</style><path class="cst0" d="M736.1 358.7c0-14.8 9.6-26.1 24.8-26.1 6.5 0 11.6 2 15.1 4.6v17l-.2.1c-3.4-3.3-7.8-5.7-12.1-5.7-5.9 0-9.5 3.7-9.5 10 0 6.4 3.7 10.1 9.8 10.1 5 0 9.3-2.3 12.5-5.1l.3.1-1.9 17.1c-3.5 2.2-7.8 3.8-14.5 3.8-14 0-24.3-9.9-24.3-25.9zM803.9 333.4h20.5l17.9 50.4h-18.6l-2.1-6.8h-15.7l-2.1 6.8H786l17.9-50.4zm14.2 30.3l-4.4-13.9-4.4 13.9h8.8zM871.2 332.5c6.6 0 12.1 1.7 15.6 3.6v15.1h-.1c-4-2.4-10.8-4.9-15.1-4.9-2.1 0-2.7.6-2.7 1.5 0 1.2 1.3 1.9 5.6 3.5 9.8 3.5 15.2 7.4 15.2 16.8 0 10.5-7.8 16.6-19.9 16.6-6.7 0-12.7-2-16.6-4.6l-1.5-16.1.2-.1c5.5 4 13 7.1 17.3 7.1 2.5 0 3.3-.6 3.3-1.8 0-1.2-.9-1.9-6-3.6-8.6-3.1-14.8-7.1-14.8-16.5-.1-9.5 7-16.6 19.5-16.6zM930.6 348.8v35h-17.5v-35h-13.9v-15.4h45.2v15.4h-13.8zM974.7 368.5v15.3h-17.5v-50.4h20.5c14.5 0 21.3 5.9 21.3 16.6 0 6.3-3 11.2-7.8 14.3l12.7 19.5H984l-9.3-15.3zm-.3-22v10.4h2c3.4 0 5.5-1.8 5.5-5.3s-2.1-5-5.5-5h-2zM1036.4 332.4c15 0 25.4 11.2 25.4 26.1 0 15.2-10.4 26.3-25.6 26.3-15.3 0-25.4-11.2-25.4-26.1.1-15 10.5-26.3 25.6-26.3zm0 36.9c4.7 0 7.6-3.9 7.6-10.7 0-6.8-3.1-10.8-7.7-10.8-4.8 0-7.6 4-7.6 10.7 0 6.9 3 10.8 7.7 10.8zM821.7 72.3l61-72.3h-77.3l-60.2 72.3z"/><path class="cst1" d="M109.2 95.4h72.5v136.3c0 47.4-30.1 74.9-77.2 74.9-21.2 0-37-4.5-49.5-10.7l-6.3-62.6.9-.6c12.5 7.5 23 10.4 34.9 10.4 14.6 0 24.8-9.5 24.8-25.1V95.4zM205.8 95.4h72.5V214c0 20 9.2 29.5 24.5 29.5 15.5 0 24.5-9.5 24.5-29.5V95.4h71.3v114.5c0 65-34.6 97.5-96.3 97.5-62.3 0-96.3-32.5-96.3-97.5V95.4zM419.7 95.4h72.5v144.9h70.4v63.8H419.7V95.4zM580.4 95.4h72.5v208.8h-72.5V95.4zM739.9 95.4h84.7l74.3 208.8H822l-8.7-28.3h-65l-8.7 28.3H666l73.9-208.8zM799 220.9l-18.2-57.6-18.2 57.6H799zM1110.6 304.1H1051l-69.8-91.6.9 91.6h-70.7V95.4h70.1l59.6 78.1-.9-78.1h70.4v208.7z"/><g><path class="cst1" d="M19.3 56.9L730 55.1l16.1-19.3-726.9 1.8-19.2.1v332.5h701.5v-19.3H19.3zM1161.7 34.8l-279.3.7-16.3 19.3 295.7-.7v296.8h-69.6v19.3H1181.1V34.7z"/></g></symbol><symbol viewBox="0 0 31 30" id="star" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 24.875L5.92 30l1.83-10.854L0 11.459l10.71-1.584L15.5 0l4.79 9.875L31 11.46l-7.75 7.687L25.08 30z" fill="currentColor" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 23 23" id="twitter" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 23C5.149 23 0 17.851 0 11.5S5.149 0 11.5 0 23 5.149 23 11.5 17.851 23 11.5 23zm3.703-17.448c-.125 0-.25.018-.321.018-.643.056-1.196.315-1.678.759-.66.592-1.018 1.332-1.072 2.238-.017.277 0 .573.054.85 0 .056 0 .075-.036.075h-.071a9.972 9.972 0 0 1-1.268-.185C8.847 8.863 7.223 7.864 5.92 6.292c-.036-.056-.071-.093-.125-.148-.393.74-.518 1.517-.34 2.33.18.814.608 1.443 1.269 1.943-.482 0-.947-.148-1.375-.389 0 .777.214 1.462.678 2.054.464.591 1.054.98 1.768 1.146a3.136 3.136 0 0 1-.821.111c-.179 0-.375 0-.554-.037.5 1.35 1.464 2.09 2.875 2.22a5.733 5.733 0 0 1-2.143 1.129 5.998 5.998 0 0 1-1.714.24c-.232 0-.446-.018-.678-.037l.053.056a8.616 8.616 0 0 0 2.785 1.165c.411.092.822.166 1.25.166h1.5a9.39 9.39 0 0 0 1.571-.296c1.678-.462 3.071-1.387 4.196-2.737 1.375-1.702 2.107-3.663 2.178-5.864v-.019-.536c0-.056.018-.074.054-.111a6.73 6.73 0 0 0 1.035-.999c.16-.185.304-.388.447-.61-.304.129-.59.24-.875.314a6.67 6.67 0 0 1-.875.167 3.26 3.26 0 0 0 1.339-1.758 2.704 2.704 0 0 0-.232.13 6.683 6.683 0 0 1-1.643.629h-.035c-.036 0-.072-.019-.108-.056-.624-.629-1.357-.943-2.196-.943z" fill="currentColor" fill-rule="evenodd"/></symbol></svg>    <header class="mobile-header">
-      <div class="mobile-header__bar">
-        <a href="https://www.julianforthefuture.com" class="mobile-header__logo">
-          <svg>
-            <title>Julián 2020</title>
-            <use xlink:href="#logo"></use>
-          </svg>
-        </a>
-        <button class="mobile-header__toggle" aria-label="Menu"><span></span></button>
-      </div>
-      <div class="mobile-header__menu">
-        <nav class="utility">
-          <div class="utility__inner container">
-            <ul class="utility__toggle">
-      <li class="utility__toggle-item is-current">
-      <a href="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/">English</a>
-    </li>
-      <li class="utility__toggle-item">
-      <a href="https://www.julianforthefuture.com/es/">Español</a>
-    </li>
-  </ul>
-            <div class="social social--white">
-  <a href="https://www.facebook.com/julianforthefuture/" class="social__icon">
-    <svg>
-      <title>Facebook</title>
-      <use xlink:href="#facebook" />
-    </svg>
-  </a>
-  <a href="https://twitter.com/juliancastro" class="social__icon">
-    <svg>
-      <title>Twitter</title>
-      <use xlink:href="#twitter" />
-    </svg>
-  </a>
-  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
-    <svg>
-      <title>Instagram</title>
-      <use xlink:href="#instagram" />
-    </svg>
-  </a>
-</div>          </div>
-        </nav>
-        <nav class="header container">
-          <a href="https://www.julianforthefuture.com" class="header__logo">
-            <svg>
-              <title>Julián 2020</title>
-              <use xlink:href="#logo"></use>
-            </svg>
-          </a>
-          <ul class="header__nav nav nav--dark">
-                          <li class="nav__item"><a href="https://www.julianforthefuture.com/about/">About</a></li>
-                          <li class="nav__item"><a href="https://issues.juliancastro.com">Issues</a></li>
-                          <li class="nav__item is-active"><a href="https://www.julianforthefuture.com/news-events/">News</a></li>
-                          <li class="nav__item"><a href="https://mobilize.us/julianforthefuture">Events</a></li>
-                          <li class="nav__item"><a href="https://action.julianforthefuture.com/page/s/get-updates">Updates</a></li>
-                          <li class="nav__item"><a href="https://store.julianforthefuture.com/">Store</a></li>
-                      </ul>
-                      <div class="header__button">
-              <a href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_home" class="badge">
-                <span class="badge__decoration" role="presentation">
-                    <svg class="badge__star" aria-hidden="true">
-                      <use xlink:href="#star"></use>
-                    </svg>
-                  </span>
-                <span class="badge__text">Donate</span>
-              </a>
-            </div>
-                  </nav>
-      </div>
-    </header>
-
-      <main class="background--light">
-    <div class="container">
-      <header class="post__header post__header--full">
-        <h1 class="post__headline" itemprop="headline">People First Housing</h1>
-        <p class="post__info">By Julián Castro on June 18, 2019</p>
-      </header>
-    </div>
-    <div class="blog__inner container">
-      <article class="blog__post" id="post-635" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-        <section itemprop="articleBody">
-                    <img class="blog__feature-image" src="https://www.julianforthefuture.com/wp-content/uploads/2019/06/hud.jpg" alt="">
-                    <h2 style="text-align: left;" align="center">Part II: Providing Fair Housing to All Americans and Aligning Housing Policy with Climate Goals</h2>
-<p><span id="m_7351319269469720538docs-internal-guid-270450f1-7fff-07de-d095-497bddbb0132">Discrimination in housing is nothing new. For centuries, many Americans have been prevented from finding quality, affordable housing because of their race, gender, sexual orientation, legal status, or disability. Additionally, historically discriminatory practices like redlining, limiting access to credit, or stacking housing-assisted families in high rises have left  our neighborhoods racially segregated and prevented many from obtaining housing opportunity. </span></p>
-<p><span id="m_7351319269469720538docs-internal-guid-270450f1-7fff-07de-d095-497bddbb0132">We made tremendous progress in 1968 with the passage of the Fair Housing Act, groundbreaking legislation that has helped to reduce barriers to housing opportunities for Americans of all different backgrounds. Five decades later, the Fair Housing Act remains critically important to our efforts to prevent housing discrimination</span>—but we must go further. We must strengthen enforcement of our fair housing laws. We must do more to make sure housing is accessible to our seniors and those with disabilities. We must do more ensure that Americans are not prevented from obtaining housing because of their sexual orientation or gender identity. We must protect against gentrification as we work to revitalize our neighborhoods. And we must do more to desegregate our neighborhoods, which will also lead to desegregation of our children&#8217;s schools.</p>
-<p><span id="m_7351319269469720538docs-internal-guid-270450f1-7fff-07de-d095-497bddbb0132">However, in recent years we&#8217;ve taken steps backward. Rather than working to eliminate housing discrimination, the Trump administration froze a landmark rule passed during my time at HUD to ensure all communities had the resources needed to overcome historic segregation. My People First Housing plan calls for a redoubling of our efforts to crack down on discriminatory housing practices, to desegregate our neighborhoods, to foster inclusive communities, and to ensure our housing goals are climate-conscious.</span></p>
-<p>&nbsp;</p>
-<h3>Providing Fair Housing for All Americans</h3>
-<p>Beginning by re-implementing the Affirmatively Furthering Fair Housing rule to help communities accurately measure and reduce racial disparities in housing, and protecting the rights of women, LGBTQ individuals.</p>
-<ul>
-<li><strong>Reinstitute the Affirmatively Furthering Fair Housing rule</strong>, the Department of Housing and Urban Development’s ability to enforce the Fair Housing Act and mechanism for combating discrimination in housing.</li>
-<li><strong>Enforce the Fair Housing Act with the full power of the Department of Housing and Urban Development’s Office of Fair Housing and Equal Opportunity</strong>. Expand and empower the department to investigate the role of corporations, including banks and technology companies, and those who run them, in driving up the cost of housing.</li>
-<li><strong>Prohibit discrimination in housing and denial of access to capital based </strong><strong>on previous arrest or criminal records and support reintegration </strong>from the criminal justice system, as part of a broader effort to end consideration of criminal history in employment and access to government services.</li>
-<li><strong>Defend housing protections for women by passing the Violence Against Women Act (VAWA) </strong>and building on the progress made in 2016 to strengthen its protections for vulnerable women<strong>.</strong></li>
-<li><strong>Extend non-discrimination protections for members of the LGBTQ community in housing and employment</strong> through passing the Equality Act, which also combats discrimination against the LGBTQ community broadly.</li>
-<li><strong>Reinstate and formalize the Gender Identity Rule </strong>to provide transgender and gender nonconforming people access to sex-segregated housing and shelter facilities on the basis of their gender identity.</li>
-<li><strong>Ensure long-term support services are provided for an expanded Medicare program</strong>, including for individuals with disabilities and senior citizens.</li>
-<li><strong>Support individuals with disabilities’ access to affordable housing units by:</strong>
-<ul>
-<li>Supporting the Office of Fair Housing and Opportunity in enforcing relevant parts of disability protections in housing;</li>
-<li><strong>Committing to the construction of affordable housing units for individuals with disabilities through all federal programs, </strong>including through the National Housing Trust Fund, the Capital Magnet Fund, and the Low-Income Housing Tax Credit; and</li>
-<li><strong>Ensuring individuals with disabilities have priority </strong>to occupy units designed for their needs.</li>
-</ul>
-</li>
-<li><strong>Support tribal sovereignty, housing innovation, and government-to-government communication. </strong>Establish a Tribal Intergovernmental Advisory Committee to increase communication with tribal leadership on housing programs.
-<ul>
-<li>Work with Congress to ensure full funding of Indian Housing Block Grant program, the Indian Community Development Block Grant Program program, and the Native Hawaiian Housing Block Grant.</li>
-</ul>
-</li>
-<li><strong>Reverse discriminatory policies currently under consideration by the Trump administration, </strong>including the ‘Public Charge Rule’ and the rule to prohibit ‘mixed-status’ immigrant families in public housing.</li>
-<li><strong>Expand protections for homeowners residing in manufactured and mobile homes and actively prevent gentrification</strong> by working with state and local governments to improve<a> oversight of rent increases and redevelopment that displaces families</a>, supporting the renters in purchasing the land their homes reside on, addressing the effect of corporate practices that have displaced families in manufactured and mobile homes, and investigating the role of private equity and Real Estate Investment Trusts in displacing families and raising housing costs.</li>
-<li><strong>Support aging in place for seniors, </strong>allowing them to stay in their homes and neighborhoods after retirement, including modifications of homes through Medicare to prevent falls and other hazards, and encouraging development that centers public-transit.</li>
-</ul>
-<p>&nbsp;</p>
-<h3>Revitalizing communities</h3>
-<ul>
-<li><strong>Combat the impact of gentrification and urban decay to communities and prevent displacement of residents.</strong>
-<ul>
-<li>Identify metrics to identify communities that are in the early stages of gentrification, and enact affirmative efforts to prevent displacement before it happens.</li>
-<li>Use demonstrable efforts to prevent displacement due to gentrification as a consideration in awarding competitive grants for localities.</li>
-<li>Provide additional forms of assistance designed to keep rents affordable and communities stable, including technical support and small business loans to support entrepreneurship.</li>
-<li>Increase use of Small Area Fair Market Rents designations so that rental assistance can more quickly respond to rent increases and keep rents affordable.</li>
-</ul>
-</li>
-<li><strong>Constitute a federal initiative to target assistance to high-poverty communities</strong>, identifying communities through a competitive process that builds on the successes of previous programs such as the Choice Neighborhoods and Promise Zone initiatives.</li>
-<li><strong>Expand access to capital and technical support for small businesses</strong>, a vital part of our communities. By <strong>providing $75 billion annually in additional loans</strong> through the Small Business Administration’s loan program, we would support an additional 150,000 small businesses each year, adjusting fees and loan guarantees to reduce risk and raising loan guarantee amounts.</li>
-<li><strong>Develop more Live/Work communities </strong>that co-locate residences with work spaces using affordable housing programs like the Low-Income Housing Tax Credit. These plans promote urban growth and sustainable development, and foster transit-oriented development.</li>
-</ul>
-<p>&nbsp;</p>
-<h3>Aligning Housing and Community Planning Policy with Climate Goals</h3>
-<p>The climate-driven natural disasters of this era demand a proactive plan for our nation’s infrastructure and zoning, as well as a defensive plan to rebuild following damaging storms.</p>
-<ul>
-<li><strong>Establish a $200 Billion Green Infrastructure Fund</strong> as part of a broader climate-conscious infrastructure plan that would bridge the $2 trillion infrastructure gap in the United States.
-<ul>
-<li>Support public transportation, energy efficiency building upgrades, climate resilience, a modernized energy grid that includes high-voltage direct current lines, energy storage, water conservation, public electric vehicle charging stations, and other investments through direct grants and concessional and non-concessional loans.</li>
-<li>Part of a broader effort to combat climate change, achieve <strong>net-zero global greenhouse gas emissions</strong> by 2050, reduce U.S. emissions to at least half of 2005 emissions levels by 2030, and meet the promise of the <strong>Green New Deal</strong>.</li>
-<li>The Green Infrastructure Fund would <strong>leverage private capital</strong>, <strong>support local jobs and communities</strong>, and include strong <strong>protections for unionized labor</strong> in construction, maintenance, and operation.</li>
-</ul>
-</li>
-<li><strong>Require climate sensitivity and ‘Carbon Scoring’ in future planning and government projects </strong>that would ensure any government project contributes towards meeting climate goals and sets benchmarks to reduce carbon impact and mitigate climate change, including net-zero carbon emission targets for new federal housing construction. The Environmental Protection Agency would be required to score all major federal government projects with their impact on our carbon goals.</li>
-<li><strong>Ensure zoning reforms enacted through this plan further climate goals </strong>through higher density housing, transit-oriented development, incorporating resilience in new developments, and other city planning practices that lower commute times, diminish reliance on personal vehicles, reduce destruction by natural weather events, and lower carbon emissions.</li>
-<li><strong>Establish Community Development Block Grant Disaster Recovery Assistance as a permanent program</strong> to help communities recover from natural disasters more effectively, and support long-term sustainable land use.</li>
-</ul>
-<p>&nbsp;</p>
-<hr />
-<h2>People First Housing</h2>
-<p><a class="button" style="text-decoration: none; display: inline-block;" href="https://www.julianforthefuture.com/news-events/people-first-housing-part-1/">Housing Part I</a></p>
-<p><a class="button" style="text-decoration: none; display: inline-block;" href="https://www.julianforthefuture.com/news-events/people-first-housing-part-2/">Housing Part II</a></p>
-<p><a class="button" style="text-decoration: none; display: inline-block;" href="/news-events/people-first-housing-part-3/">Housing Part III</a></p>
-
-        </section>
-      </article>
-      <aside class="blog__sidebar">
-        <div class="blog__signup">
-          <form action="https://juliancastro.bsd.net/page/s/" id="blog_signup" class="js-tools-signup form form--vertical" data-success="Thank you for signing up!">
-      <h2 class="form__title">Sign up to help make a future for all of us.</h2>
-    <div class="form__inner">
-    <div class="form__field form__field--long input">
-      <input type="email" name="email" required id="blog_signup-email" class="input__field" autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,63}$"/>
-      <label for="blog_signup-email" class="input__label">Email</label>
-    </div>
-    <div class="form__field form__field--short input">
-      <input type="tel" name="zip" required id="blog_signup-zip" class="input__field" autocomplete="postal-code" pattern="^[0-9]{5}(?:-[0-9]{4})?$"/>
-      <label for="blog_signup-zip" class="input__label">Zip</label>
-    </div>
-    <input type="hidden" name="custom-12" id="blog_signup-custom-12" value="0">
-    <button class="button button--dark-blue button--large" type="submit">Join!</button>
-  </div>
-</form>          
-        </div>
-      </aside>
-    </div>
-  </main>
-  </div>
-<div class="wrapper__footer">
-    <footer class="footer">
-    <div class="footer__inner container container--padded">
-      <nav class="footer__nav">
-        <ul class="nav nav--light">
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/about/">About</a></li>
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/news-events/">News</a></li>
-                      <li class="nav__item"><a href="https://www.julianforthefuture.com/contact/">Contact</a></li>
-                      <li class="nav__item"><a href="https://recruiting.paylocity.com/recruiting/jobs/List/5552/Julian-For-The-Future-Presidential-Exploratory-Co">Jobs</a></li>
-                  </ul>
-      </nav>
-      <div class="footer__cta">
-        <div class="social footer__social social--white social--right social--medium">
-  <a href="https://www.facebook.com/julianforthefuture/" class="social__icon">
-    <svg>
-      <title>Facebook</title>
-      <use xlink:href="#facebook" />
-    </svg>
-  </a>
-  <a href="https://twitter.com/juliancastro" class="social__icon">
-    <svg>
-      <title>Twitter</title>
-      <use xlink:href="#twitter" />
-    </svg>
-  </a>
-  <a href="https://www.instagram.com/juliancastrotx/?hl=en" class="social__icon">
-    <svg>
-      <title>Instagram</title>
-      <use xlink:href="#instagram" />
-    </svg>
-  </a>
-</div>                  <a class="button button--blue button--large" href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_home">Donate</a>
-              </div>
-      <div class="footer__links-text">
-        <ul class="footer__small-links">
-                      <li class="footer__small-link"><a href="https://www.julianforthefuture.com/privacy-policy/">Privacy Policy</a></li>
-                  </ul>
-        <p class="footer__text">Julián for the Future
-P.O. Box 501<br>
-San&nbsp;Antonio, TX
-78292</p>
-      </div>
-      <p class="footer__paid-copy">Paid for by Julián for the Future</p>
-      </div>
-    </div>
-  </footer>
-  <script type='text/javascript' src='https://www.julianforthefuture.com/wp-content/themes/cftf/assets/js/source.js?ver=1561592901'></script>
-<script type='text/javascript' src='https://www.julianforthefuture.com/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
-
+<body class="page-template-default page page-id-245 wp-custom-logo subpage elementor-default elementor-page elementor-page-245">
+<div data-elementor-type="header" data-elementor-id="21" class="elementor elementor-21 elementor-location-header" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-5ed61e0c elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="5ed61e0c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-773f2d37 elementor-column elementor-col-50 elementor-top-column" data-id="773f2d37" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-50e9f70 elementor-widget elementor-widget-heading" data-id="50e9f70" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default"><a href="https://juliancastro.com">Back to JulianCastro.com</a></h5>		</div>
 </div>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1bc4e2a25b","applicationID":"259152731","transactionName":"b1cBZkIEXUUCUhVfV1YdIlFEDFxYTEIIWF9NXgJA","queueTime":0,"applicationTime":236,"atts":"QxACEAoeTks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
-</html>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3471f32d elementor-column elementor-col-50 elementor-top-column" data-id="3471f32d" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7c45be38 elementor-shape-circle elementor-widget elementor-widget-social-icons" data-id="7c45be38" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook" href="https://facebook.com/julianforthefuture/" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<i class="fa fa-facebook"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter" href="https://twitter.com/JulianCastro" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fa fa-twitter"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram" href="https://www.instagram.com/juliancastrotx/" target="_blank">
+<span class="elementor-screen-only">Instagram</span>
+<i class="fa fa-instagram"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-47a02d25 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="47a02d25" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-fe5f9fa elementor-column elementor-col-33 elementor-top-column" data-id="fe5f9fa" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-75b9990 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="75b9990" data-element_type="widget" data-widget_type="theme-site-logo.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<a href="https://issues.juliancastro.com" data-elementor-open-lightbox="">
+<img src="https://issues.juliancastro.com/wp-content/uploads/2019/06/jc-2020-rgb.svg" class="attachment-full size-full" alt="" />								</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-4a66341a elementor-column elementor-col-33 elementor-top-column" data-id="4a66341a" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7d27b575 elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu__text-align-aside elementor-widget elementor-widget-nav-menu" data-id="7d27b575" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-background e--animation-fade"><ul id="menu-1-7d27b575" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-31"><a href="/" class="elementor-item">Issues</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-sub-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://issues.juliancastro.com/people-first-education/" class="elementor-sub-item">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-sub-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-245 current_page_item menu-item-305"><a href="https://issues.juliancastro.com/people-first-housing/" aria-current="page" class="elementor-sub-item elementor-item-active">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-304"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-sub-item">Lead Exposure</a></li>
+</ul>
+</li>
+</ul></nav>
+<div class="elementor-menu-toggle">
+<i class="eicon" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"><ul id="menu-2-7d27b575" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-31"><a href="/" class="elementor-item">Issues</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-sub-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://issues.juliancastro.com/people-first-education/" class="elementor-sub-item">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-sub-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-245 current_page_item menu-item-305"><a href="https://issues.juliancastro.com/people-first-housing/" aria-current="page" class="elementor-sub-item elementor-item-active">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-304"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-sub-item">Lead Exposure</a></li>
+</ul>
+</li>
+</ul></nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a417878 elementor-column elementor-col-33 elementor-top-column" data-id="a417878" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-ed2f1a5 elementor-mobile-align-right elementor-hidden-phone elementor-widget elementor-widget-global elementor-global-158 elementor-widget-button" data-id="ed2f1a5" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="https://secure.actblue.com/donate/julianforthefuture?refcode=web_issues" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-rotate" target="_blank" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Donate</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<main id="body" class="single-page" role="main">
+<div data-elementor-type="post" data-elementor-id="245" class="elementor elementor-245" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-f1f8482 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="f1f8482" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-1a9062f7 elementor-column elementor-col-50 elementor-top-column" data-id="1a9062f7" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-23712f3b elementor-widget elementor-widget-heading" data-id="23712f3b" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">People First Housing</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-9e137f7 elementor-column elementor-col-50 elementor-top-column" data-id="9e137f7" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-61784f9c elementor-section-full_width elementor-hidden-phone elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="61784f9c" data-element_type="section" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-3c6d1ab7 elementor-column elementor-col-50 elementor-top-column" data-id="3c6d1ab7" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-652ce590 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="652ce590" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#intro">1. Intro</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-2563e74 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="2563e74" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#1-rent-homelessness">1. Rent + Homelessness</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-2088a4f3 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="2088a4f3" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#2-fair-housing">2. Fair Housing + Climate</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-41c1562f elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="41c1562f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="#3-ownership">3. Homeownership + Wall Street</a></h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-73ade0af elementor-column elementor-col-50 elementor-top-column" data-id="73ade0af" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-51e7b90d elementor-section-full_width elementor-hidden-phone elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="51e7b90d" data-element_type="section" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-38f72703 elementor-column elementor-col-50 elementor-top-column" data-id="38f72703" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-1c3a6dca elementor-column elementor-col-50 elementor-top-column" data-id="1c3a6dca" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-28cd4a59 elementor-widget elementor-widget-heading" data-id="28cd4a59" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Sign up to help make a future for all of us.</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-5f9838a4 elementor-widget elementor-widget-wp-widget-gform_widget" data-id="5f9838a4" data-element_type="widget" data-widget_type="wp-widget-gform_widget.default">
+<div class="elementor-widget-container">
+<!-- <link rel='stylesheet' id='gforms_reset_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_formsmain_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_ready_class_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='gforms_browsers_css-css'  href='https://issues.juliancastro.com/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.4.10' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//issues.juliancastro.com/wp-content/cache/wpfc-minified/e1vkuidg/a80kh.css" media="all"/>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/gravityforms/js/jquery.maskedinput.min.js?ver=2.4.10'></script>
+<div class='gf_browser_chrome gform_wrapper' id='gform_wrapper_2' ><form method='post' enctype='multipart/form-data'  id='gform_2'  action='/people-first-housing/'>
+<div class='gform_body'><ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'><li id='field_2_1'  class='gfield gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label' for='input_2_1' >Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
+<input name='input_1' id='input_2_1' type='text' value='' class='medium' tabindex='1'  placeholder='Email' aria-required="true" aria-invalid="false" />
+</div></li><li id='field_2_3'  class='gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label' for='input_2_3' >Phone</label><div class='ginput_container ginput_container_phone'><input name='input_3' id='input_2_3' type='text' value='' class='medium' tabindex='2' placeholder='Mobile Phone*'  aria-invalid="false"  /></div></li><li id='field_2_2'  class='gfield gfield_contains_required field_sublabel_hidden_label field_description_below hidden_label gfield_visibility_visible' ><label class='gfield_label gfield_label_before_complex'  >Address<span class='gfield_required'>*</span></label>    
+<div class='ginput_complex ginput_container has_zip ginput_container_address' id='input_2_2' >
+<input type='hidden' class='gform_hidden' name='input_2.4' id='input_2_2_4' value=''/><span class='ginput_right address_zip' id='input_2_2_5_container' >
+<input type='text' name='input_2.5' id='input_2_2_5' value='' tabindex='5'  placeholder='Zip' aria-required="true"/>
+<label for='input_2_2_5' id='input_2_2_5_label' class='hidden_sub_label screen-reader-text'>ZIP Code</label>
+</span><input type='hidden' class='gform_hidden' name='input_2.6' id='input_2_2_6' value='United States'/>
+<div class='gf_clear gf_clear_complex'></div>
+</div></li><li id='field_2_4'  class='gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible' ><input name='input_4' id='input_2_4' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://issues.juliancastro.com/' /></li><li id='field_2_5'  class='gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible' ><input name='input_5' id='input_2_5' type='hidden' class='gform_hidden'  aria-invalid="false" value='https://issues.juliancastro.com/people-first-housing/' /></li>
+</ul></div>
+<div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Submit' tabindex='6' onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' /> 
+<input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+<input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+<input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+<input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImExM2FkMjQxY2ExZDYzNWQzNjA5NGZlZjkyYWUyODk5Il0=' />
+<input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+<input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+<input type='hidden' name='gform_field_values' value='' />
+</div>
+</form>
+</div><script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+Placeholders.enable();
+}jQuery('#input_2_3').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [2, 1]) } ); </script>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-68d5cedd elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="68d5cedd" data-element_type="section" id="intro" data-settings="{&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-654126f6 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="654126f6" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-5a7a8beb elementor-widget elementor-widget-heading" data-id="5a7a8beb" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Housing is a human right.</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-508d379a elementor-widget elementor-widget-heading" data-id="508d379a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Housing is also a platform to opportunity, something I know through personal experience, through data, and through the stories of the many people I have met in my 11 years of public service. As Secretary of Housing and Urban Development in the Obama administration, I led a team of 8,000 employees and managed a $48 billion annual budget to create a stronger platform that would lift people out of poverty and into the middle class.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-d1cd91a elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="d1cd91a" data-element_type="widget" data-settings="{&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
+<div class="elementor-widget-container">
+<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
+<iframe class="elementor-video-iframe" allowfullscreen src="https://www.youtube.com/embed/UETt6UXkch4?feature=oembed&amp;start&amp;end&amp;wmode=opaque&amp;loop=0&amp;controls=1&amp;mute=0&amp;rel=0&amp;modestbranding=0"></iframe>		</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-9d269c6 elementor-widget elementor-widget-heading" data-id="9d269c6" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">At HUD, we worked to end homelessness, we made homeownership more available and affordable for all families, we worked to make sure all HUD homes were healthy homes, we made more housing opportunities available for returning citizens, we expanded fair housing, we required federally-funded homeless shelters to open their doors to transgender individuals seeking shelter that conforms to their identity, and we worked to connect families in public housing to low-cost, high-speed internet.</p>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-227468f1 elementor-column elementor-col-50 elementor-top-column" data-id="227468f1" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-7cb28437 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7cb28437" data-element_type="section" id="1-rent-homelessness" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-4547e6b0 elementor-column elementor-col-50 elementor-top-column" data-id="4547e6b0" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-21a25a2c elementor-invisible elementor-widget elementor-widget-heading" data-id="21a25a2c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">1</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-45cab8af elementor-invisible elementor-widget elementor-widget-heading" data-id="45cab8af" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Solving the Rental Affordability Crisis and Ending Homelessness</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-43ddf231 elementor-column elementor-col-50 elementor-top-column" data-id="43ddf231" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-18dd80e5 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="18dd80e5" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-3fbd2b84 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="3fbd2b84" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-48bcc66 elementor-widget elementor-widget-heading" data-id="48bcc66" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Making Rents More Affordable</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-60486a07 elementor-widget elementor-widget-heading" data-id="60486a07" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">To help folks cover skyrocketing rent prices, I would combine the traditional Housing Choice Voucher program that serves lower-income folks with a new renters’ tax credit to give relief to middle-income folks. The vouchers will help to stabilize those who need to get their feet under them, and the tax credit will help to move renters into homeownership where they can create intergenerational wealth.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-74e6e50 elementor-widget elementor-widget-heading" data-id="74e6e50" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">1. Expand and Reform the Housing Choice Voucher Program</h4>		</div>
+</div>
+<div class="elementor-element elementor-element-d761ee7 elementor-widget elementor-widget-heading" data-id="d761ee7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">The housing choice voucher program is designed to target families with the highest need and to increase housing mobility, help deconcentrate poverty, and combat racial segregation. However, too many families in need are left out of this critical assistance. Right now, only 25% of eligible families receive vouchers, and the program is defined so narrowly that many more are waiting for help. <span style="font-weight: 500">My plan would:</span></p>		</div>
+</div>
+<div class="elementor-element elementor-element-1742e72e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1742e72e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure every family that needs a voucher will receive one</span> by transforming the program to a fully-funded entitlement program.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6a29a1ff elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6a29a1ff" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand the housing choice voucher program to cover all families under 50 percent of area median income,</span> providing a safety net for individuals who need assistance.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6c7fe073 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6c7fe073" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500"> Work with Congress to prohibit discrimination based on source of income,</span> to protect individuals that use federal housing support or vouchers, state or local support, or other forms of government support.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-16f74ae1 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="16f74ae1" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand access to the program by creating an exemption for eligible income based on student loan payments</span> to ensure that income taken up by student loan debt does not disqualify families from eligibility.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-28ecfb2a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="28ecfb2a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure vouchers are priced to reflect market rents</span> by fully implementing, increasing enforcement, and closely monitoring the Small Area Fair Market Rents Rule.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7917d57 elementor-widget elementor-widget-image" data-id="7917d57" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="1024" height="728" src="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-2-1-1024x728.jpg" class="attachment-large size-large" alt="" srcset="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-2-1-1024x728.jpg 1024w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-2-1-300x213.jpg 300w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-2-1-768x546.jpg 768w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-2-1.jpg 1100w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-9d566a3 elementor-widget elementor-widget-heading" data-id="9d566a3" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">2. Create a Renters’ Tax Credit</h4>		</div>
+</div>
+<div class="elementor-element elementor-element-9cf7002 elementor-widget elementor-widget-heading" data-id="9cf7002" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Many low- and middle-income renters are ineligible for the Housing Choice Voucher program, but, because prices in many markets are skyrocketing, they are still struggling to pay rent. According to one recent <a href="https://reports.nlihc.org/oor/about" target="_blank" rel="noopener">study</a>, a renter earning the federal minimum wage would need to work 122 hours per week to afford a two-bedroom rental home and 99 hours per week to afford a one-bedroom rental home. In 2017, one in four renters paid more than 30 percent of their monthly income in rent. <span style="font-weight: 500">My plan would:</span></p>		</div>
+</div>
+<div class="elementor-element elementor-element-870f5db elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="870f5db" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Provide relief for low- and middle-income renters by creating a refundable tax credit</span> or a portion of rent payments that exceed 30 percent of income.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-fab6df5 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="fab6df5" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">The progressive renters’ tax credit would support individuals with incomes up to the area median income, prioritizing support for lower-income individuals, would cover families between 50 percent and 100 percent of Area Median Income, would be paid monthly, and would, take into account the local Small Area Fair Market Rents designation.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2f11b38 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2f11b38" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Participants could choose to direct credits to a tax-advantaged savings account to be used for a down payment on a mortgage.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9c7bdc9 elementor-widget elementor-widget-heading" data-id="9c7bdc9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">3. Increase the Supply of Affordable Housing</h4>		</div>
+</div>
+<div class="elementor-element elementor-element-0b3c8c7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0b3c8c7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Support construction of affordable housing units by increasing the Housing Trust Fund and the Capital Magnet Fund by at least $45 billion per year.</span> </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-14df0fd elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="14df0fd" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">The Trust Fund will also be used for <span style="font-weight: 500;">additional public housing construction</span> for vulnerable communities including senior citizens.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-a4c9b2b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="a4c9b2b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Lowering long-term costs </span>in affordable and public housing by investing in durability, sustainability, and energy efficiency through an 8-year initiative to <span style="font-weight: 500;">upgrade all public housing units with capital improvements,</span> totaling $5 billion a year for ten years.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-946ba1d elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="946ba1d" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Expand the Low Income Housing Tax Credit (LIHTC) by $4 billion a year and reform it</span> to better direct private investment in expanding the supply of affordable housing for low-income families, pilot local revolving loan funds to accelerate development timelines, and adapt and reform the program to accommodate its expansion. These reforms will ensure its effectiveness, lower its costs, and strengthen federal oversight and protections over state-run LIHTC programs. They will also spur incentives to extend the period before apartments can be converted to market-rate units to up to 50 years and prioritize new construction in high-opportunity areas. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-ec090ec elementor-widget elementor-widget-heading" data-id="ec090ec" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">4. Reform local zoning reforms that inhibit affordable housing development:</h4>		</div>
+</div>
+<div class="elementor-element elementor-element-5b37666 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5b37666" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Establish federal guidelines on land use and zoning</span> through a Presidential Commission on Zoning Reform, with input from government agencies that include the Departments of Housing and Urban Development, Transportation, Justice, and the Environmental Protection Agency, in addition to civil rights groups and representatives from state and local governments. Ensure guidelines are consistent with efforts to combat segregation in public schools and address practices like red-lining and exclusionary zoning.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4c5a9b6 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4c5a9b6" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Reform local zoning practices</span>         by expanding the Community Development Block Grants (CDBG) and Rural Development programs by $2 billion a year. Require zoning reforms in communities that promote affordable, inclusive, and transit-oriented housing to be eligible for new funding and in prioritizing existing CDBG, Home Investment Partnerships Program, and transportation grant funding. Require an affirmative implementation of policies that further the purposes of the Fair Housing Act to address racial disparities in local zoning.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-aa2c934 elementor-widget elementor-widget-heading" data-id="aa2c934" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">End Homelessness in the United States</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-e91d765 elementor-widget elementor-widget-image" data-id="e91d765" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="1024" height="684" src="https://issues.juliancastro.com/wp-content/uploads/2019/06/24615613660_f7968666af_o-1024x684.jpg" class="attachment-large size-large" alt="" srcset="https://issues.juliancastro.com/wp-content/uploads/2019/06/24615613660_f7968666af_o-1024x684.jpg 1024w, https://issues.juliancastro.com/wp-content/uploads/2019/06/24615613660_f7968666af_o-300x200.jpg 300w, https://issues.juliancastro.com/wp-content/uploads/2019/06/24615613660_f7968666af_o-768x513.jpg 768w, https://issues.juliancastro.com/wp-content/uploads/2019/06/24615613660_f7968666af_o.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fa0f133 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="fa0f133" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Set bold targets to: </span> </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-0555539 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0555539" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Build on the progress of the Obama administration and <span style="font-weight: 500;">end veteran homelessness</span> by the end of my first term.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3f978f3 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3f978f3" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">End child, family, and youth homelessness</span> by the end of my first term.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-09198e0 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="09198e0" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">End chronic homelessness by 2028.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3784de7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3784de7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Permanently authorize the United States Interagency Council on Homelessness oversee this effort.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2f1f768 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2f1f768" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Ensure individuals impacted by homelessness have a meaningful and direct hand in developing and implementing policies to address homelessness.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1cfe8f2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1cfe8f2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Increase funding for McKinney-Vento Homeless Assistance Grants by $5 billion, to $7.5 billion, </span>tripling current spending. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4341fe6 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4341fe6" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Establish a consistent, government-wide definition of homelessness</span> that accounts for variable housing arrangements experienced by homeless families, children, and youth.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-efa9eff elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="efa9eff" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Invest in programs for individuals who are homeless or housing insecure:</span> </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6ef690b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6ef690b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Establish permanent supportive housing initiatives</span> to provide healthcare and other services to individuals in need who are at risk of becoming homeless.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-f7e19cc elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f7e19cc" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand local crisis response systems</span> to provide healthcare and other services to individuals in need who are at risk of becoming homeless.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-949ebd7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="949ebd7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support rapid rehousing and case management programs</span> that provide immediate, short-term wrap-around services in a comprehensive effort to reduce the amount of time an individual or family is between homes.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-cb6ebfa elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="cb6ebfa" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure community development programs,</span> including infrastructure development, accounts for the impact on homeless and other vulnerable communities.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2e2d8c8 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2e2d8c8" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support eligible organizations in repurposing vacant federal properties under Title V of the McKinney-Vento Homeless Assistance Act</span> into facilities that assist homeless communities, including through permanent housing, and streamline Section V enforcement by designating the Department of Housing and Urban Development as the main implementing agency.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-16d7746 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="16d7746" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Decriminalize homelessness</span> and encourage local efforts to end loitering, vagrancy, and other discriminatory laws.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-ae67c00 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="ae67c00" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Work with Congress to prohibit discrimination based on actual or perceived housing status</span> in housing, voting, education, voter registration, interactions with law enforcement, and employment. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-0a29251 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0a29251" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">End homelessness among college students</span> through an expansion of Pell Grants to cover non-tuition expenses for students, including food and housing. Expand McKinney-Vento support for housing-insecure students and encourage institutional assessments on basic needs instability.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1776447 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1776447" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Work to guarantee a right to counsel for tenants facing eviction through incentives for state and local governments to amend their laws.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-0f702bf elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0f702bf" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;"> Combat homelessness for people with mental illness by expanding access to medical care, including mental health care,</span> through universal healthcare coverage under an expanded Medicare program.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-b3af46e elementor-column elementor-col-50 elementor-top-column" data-id="b3af46e" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-738306ad elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="738306ad" data-element_type="section" id="2-fair-housing" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-4486c9f5 elementor-column elementor-col-50 elementor-top-column" data-id="4486c9f5" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-1a37b770 elementor-invisible elementor-widget elementor-widget-heading" data-id="1a37b770" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">2</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-5bc82c09 elementor-invisible elementor-widget elementor-widget-heading" data-id="5bc82c09" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Providing Fair Housing to All Americans and Aligning Housing Policy with Climate Goals</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-509852c4 elementor-column elementor-col-50 elementor-top-column" data-id="509852c4" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-6fb793b3 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="6fb793b3" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-186a727f elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="186a727f" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-a0452ea elementor-widget elementor-widget-heading" data-id="a0452ea" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Discrimination in housing is nothing new. For centuries, many Americans have been prevented from finding quality, affordable housing because of their race, gender, sexual orientation, legal status, or disability. Additionally, historically discriminatory practices like redlining, limiting access to credit, or stacking housing-assisted families in high rises have left  our neighborhoods racially segregated and prevented many from obtaining housing opportunity. </p>		</div>
+</div>
+<div class="elementor-element elementor-element-450b4dc elementor-widget elementor-widget-image" data-id="450b4dc" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="1024" height="655" src="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1-1-1024x655.jpg" class="attachment-large size-large" alt="" srcset="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1-1-1024x655.jpg 1024w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1-1-300x192.jpg 300w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1-1-768x491.jpg 768w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-1-1.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-423c668 elementor-widget elementor-widget-heading" data-id="423c668" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">We made tremendous progress in 1968 with the passage of the Fair Housing Act, groundbreaking legislation that has helped to reduce barriers to housing opportunities for Americans of all different backgrounds. Five decades later, the Fair Housing Act remains critically important to our efforts to prevent housing discrimination—but we must go further. We must strengthen enforcement of our fair housing laws. We must do more to make sure housing is accessible to our seniors and those with disabilities. We must do more ensure that Americans are not prevented from obtaining housing because of their sexual orientation or gender identity. We must protect against gentrification as we work to revitalize our neighborhoods. And we must do more to desegregate our neighborhoods, which will also lead to desegregation of our children’s schools.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-8eb4338 elementor-widget elementor-widget-heading" data-id="8eb4338" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">However, in recent years we’ve taken steps backward. Rather than working to eliminate housing discrimination, the Trump administration froze a landmark rule passed during my time at HUD to ensure all communities had the resources needed to overcome historic segregation.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-ab33006 elementor-widget elementor-widget-heading" data-id="ab33006" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">My People First Housing plan calls for a redoubling of our efforts to crack down on discriminatory housing practices, to desegregate our neighborhoods, to foster inclusive communities, and to ensure our housing goals are climate-conscious.</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-fefabed elementor-widget elementor-widget-heading" data-id="fefabed" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Providing Fair Housing for All Americans</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-a0e7a8a elementor-widget elementor-widget-heading" data-id="a0e7a8a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Beginning by re-implementing the Affirmatively Furthering Fair Housing rule to help communities accurately measure and reduce racial disparities in housing, and protecting the rights of women, LGBTQ individuals.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-35d979ba elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="35d979ba" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reinstitute the Affirmatively Furthering Fair Housing rule,</span> the Department of Housing and Urban Development’s ability to enforce the Fair Housing Act and mechanism for combating discrimination in housing.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-15f76f9e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="15f76f9e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Enforce the Fair Housing Act with the full power of the Department of Housing and Urban Development’s Office of Fair Housing and Equal Opportunity.</span> Expand and empower the department to investigate the role of corporations, including banks and technology companies, and those who run them, in driving up the cost of housing.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-72da21c7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="72da21c7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Prohibit discrimination in housing and denial of access to capital based on previous arrest or criminal records and support reintegration</span> from the criminal justice system, as part of a broader effort to end consideration of criminal history in employment and access to government services.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-577bd3e7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="577bd3e7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Defend housing protections for women by passing the Violence Against Women Act (VAWA)</span> and building on the progress made in 2016 to strengthen its protections for vulnerable women.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5bc2284e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5bc2284e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Extend non-discrimination protections for members of the LGBTQ community in housing and employment</span> through passing the Equality Act, which also combats discrimination against the LGBTQ community broadly.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-38220877 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="38220877" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reinstate and formalize the Gender Identity Rule</span> to provide transgender and gender nonconforming people access to sex-segregated housing and shelter facilities on the basis of their gender identity.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1b59c618 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1b59c618" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure long-term support services are provided for an expanded Medicare program,</span> including for individuals with disabilities and senior citizens.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5874ac85 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="5874ac85" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support individuals with disabilities’ access to affordable housing units by:</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-f184a75 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f184a75" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Supporting the <span style="font-weight: 500;">Office of Fair Housing and Opportunity</span> in enforcing relevant parts of disability protections in housing;</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-e4dc846 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e4dc846" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Committing to the construction of affordable housing units for individuals with disabilities through all federal programs,</span> including through the National Housing Trust Fund, the Capital Magnet Fund, and the Low-Income Housing Tax Credit; and</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2bf7b3a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2bf7b3a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Ensuring individuals with disabilities have priority</span> to occupy units designed for their needs.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-206c99e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="206c99e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support tribal sovereignty, housing innovation, and government-to-government communication.</span> Establish a Tribal Intergovernmental Advisory Committee to increase communication with tribal leadership on housing programs. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-8c88758 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="8c88758" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Work with Congress to ensure full funding of Indian Housing Block Grant program, the Indian Community Development Block Grant Program program, and the Native Hawaiian Housing Block Grant.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-2e354bf elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="2e354bf" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reverse discriminatory policies currently under consideration by the Trump administration,</span> ‘Public Charge Rule’ and the rule to prohibit ‘mixed-status’ immigrant families in public housing.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6f709b2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6f709b2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand protections for homeowners residing in manufactured and mobile homes and actively prevent gentrification</span> by working with state and local governments to improve oversight of rent increases and redevelopment that displaces families, supporting the renters in purchasing the land their homes reside on, addressing the effect of corporate practices that have displaced families in manufactured and mobile homes, and investigating the role of private equity and Real Estate Investment Trusts in displacing families and raising housing costs.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-8a08c01 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="8a08c01" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500"> Support aging in place for seniors,</span> allowing them to stay in their homes and neighborhoods after retirement, including modifications of homes through Medicare to prevent falls and other hazards, and encouraging development that centers public-transit.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5571ac4 elementor-widget elementor-widget-heading" data-id="5571ac4" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Revitalizing Communities</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-b0435ec elementor-widget elementor-widget-image" data-id="b0435ec" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="1024" height="445" src="https://issues.juliancastro.com/wp-content/uploads/2019/06/hud-1024x445.jpg" class="attachment-large size-large" alt="" srcset="https://issues.juliancastro.com/wp-content/uploads/2019/06/hud-1024x445.jpg 1024w, https://issues.juliancastro.com/wp-content/uploads/2019/06/hud-300x130.jpg 300w, https://issues.juliancastro.com/wp-content/uploads/2019/06/hud-768x334.jpg 768w, https://issues.juliancastro.com/wp-content/uploads/2019/06/hud.jpg 1099w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-0ec4e15 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0ec4e15" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Combat the impact of gentrification and urban decay to communities and prevent displacement of residents.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4e7eb39 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4e7eb39" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Identify metrics to identify communities that are in the early stages of gentrification, and enact affirmative efforts to prevent displacement before it happens.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-c213edb elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="c213edb" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Use demonstrable efforts to prevent displacement due to gentrification as a consideration in awarding competitive grants for localities.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9c2445e elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="9c2445e" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Provide additional forms of assistance designed to keep rents affordable and communities stable, including technical support and small business loans to support entrepreneurship.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3994d57 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3994d57" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Increase use of Small Area Fair Market Rents designations so that rental assistance can more quickly respond to rent increases and keep rents affordable.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7e53eec elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="7e53eec" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Constitute a federal initiative to target assistance to high-poverty communities,</span> identifying communities through a competitive process that builds on the successes of previous programs such as the Choice Neighborhoods and Promise Zone initiatives.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-f19b36d elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f19b36d" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Expand access to capital and technical support for small businesses,</span> a vital part of our communities. By<span style="font-weight: 500"> providing $75 billion annually in additional loans</span> through the Small Business Administration’s loan program, we would support an additional 150,000 small businesses each year, adjusting fees and loan guarantees to reduce risk and raising loan guarantee amounts.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4588d85 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4588d85" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Develop more Live/Work communities</span> that co-locate residences with work spaces using affordable housing programs like the Low-Income Housing Tax Credit. These plans promote urban growth and sustainable development, and foster transit-oriented development.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-479f840 elementor-widget elementor-widget-heading" data-id="479f840" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Aligning Housing and Community Planning Policy with Climate Goals</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-a50cbf4 elementor-widget elementor-widget-heading" data-id="a50cbf4" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">The climate-driven natural disasters of this era demand a proactive plan for our nation’s infrastructure and zoning, as well as a defensive plan to rebuild following damaging storms.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-dd5ec6f elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="dd5ec6f" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Establish a $200 Billion Green Infrastructure Fund</span> as part of a broader climate-conscious infrastructure plan that would bridge the $2 trillion infrastructure gap in the United States.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-e0fa568 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e0fa568" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Support public transportation, energy efficiency building upgrades, climate resilience, a modernized energy grid that includes high-voltage direct current lines, energy storage, water conservation, public electric vehicle charging stations, and other investments through direct grants and concessional and non-concessional loans.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-e0b1dab elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e0b1dab" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Part of a broader effort to combat climate change, achieve <span style="font-weight: 500;">net-zero global greenhouse gas emissions</span> by 2050, reduce U.S. emissions to at least half of 2005 emissions levels by 2030, and meet the promise of the <span style="font-weight: 500;">Green New Deal.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-ce37d15 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="ce37d15" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">The Green Infrastructure Fund would <span style="font-weight: 500;">leverage private capital, support local jobs and communities,</span> and include strong <span style="font-weight: 500;">protections for unionized labor</span> in construction, maintenance, and operation.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-e7dc412 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="e7dc412" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Require climate sensitivity and ‘Carbon Scoring’ in future planning and government projects</span> that would ensure any government project contributes towards meeting climate goals and sets benchmarks to reduce carbon impact and mitigate climate change, including net-zero carbon emission targets for new federal housing construction. The Environmental Protection Agency would be required to score all major federal government projects with their impact on our carbon goals.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-3a379d2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="3a379d2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure zoning reforms enacted through this plan further climate goals</span> through higher density housing, transit-oriented development, incorporating resilience in new developments, and other city planning practices that lower commute times, diminish reliance on personal vehicles, reduce destruction by natural weather events, and lower carbon emissions.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1437ea7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1437ea7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Establish Community Development Block Grant Disaster Recovery Assistance as a permanent program</span> to help communities recover from natural disasters more effectively, and support long-term sustainable land use.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2a8e784 elementor-column elementor-col-50 elementor-top-column" data-id="2a8e784" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-100ed854 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="100ed854" data-element_type="section" id="3-ownership" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-6c276071 elementor-column elementor-col-50 elementor-top-column" data-id="6c276071" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-294147e elementor-invisible elementor-widget elementor-widget-heading" data-id="294147e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">3</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-79178d73 elementor-invisible elementor-widget elementor-widget-heading" data-id="79178d73" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Boost Homeownership and Hold Wall Street Accountable</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6f13f4f1 elementor-column elementor-col-50 elementor-top-column" data-id="6f13f4f1" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-element elementor-element-748f2ba0 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="748f2ba0" data-element_type="section" data-settings="{&quot;shape_divider_top&quot;:&quot;tilt&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-4da1f3d1 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="4da1f3d1" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-2a58835e elementor-widget elementor-widget-heading" data-id="2a58835e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Part of the American Dream is to own a home — a place where we raise our kids and make meals, where we study and relax, and where we gather for celebrations and find comfort amongst family members. Owning a home not only opens the doors of opportunity, it spurs intergenerational wealth and provides millions of Americans with a sense of community and belonging.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-e5be00a elementor-widget elementor-widget-image" data-id="e5be00a" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="1024" height="602" src="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-3-1-1024x602.jpg" class="attachment-large size-large" alt="" srcset="https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-3-1-1024x602.jpg 1024w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-3-1-300x177.jpg 300w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-3-1-768x452.jpg 768w, https://issues.juliancastro.com/wp-content/uploads/2019/06/housing-part-3-1.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-233aee4 elementor-widget elementor-widget-heading" data-id="233aee4" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">But for far too many, the dream of owning a home has been out of reach. Stagnant wages, limited access to credit, and economic uncertainty stemming from the Great Recession has made homeownership more and more difficult for millions of Americans. Families across the country are doubling up in relatives’ homes, college graduates are returning home to live with their parents, and the increasing cost of rental housing is keeping families stuck in a cycle. </p>		</div>
+</div>
+<div class="elementor-element elementor-element-0d3654f elementor-widget elementor-widget-heading" data-id="0d3654f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">As HUD Secretary under President Obama, we worked everyday to help more Americans realize their dream of homeownership, and to ensure those who are struggling to pay their mortgages could stay in their homes. But we can do more. My plan would help more families get the credit they need to mortgage a home, would provide support for those who are housing insecure, would increase homeownership and rental literacy, and boost accountability, transparency, and oversight of Wall Street’s housing practices to ensure more families can stay in their homes.</p>		</div>
+</div>
+<div class="elementor-element elementor-element-8edc792 elementor-widget elementor-widget-heading" data-id="8edc792" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Increase Homeownership</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-009c372 elementor-widget elementor-widget-heading" data-id="009c372" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Homeownership increases intergenerational wealth and economic mobility — in other words, it’s good for our economy.  Encouraging responsible borrowers to become homeowners by reducing the barriers to homeownership is particularly impactful for communities of color, young people, and others who have historically been locked out of this critical economic opportunity. I want more folks to have that opportunity. Here’s how I would increase homeownership:</p>		</div>
+</div>
+<div class="elementor-element elementor-element-1800f01b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1800f01b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Establish a National Housing Stabilization Fund,</span> jointly operated by the Department of Housing and Urban Development and the Department of Health and Human Services, to provide support for individuals who are experiencing housing insecurity, including managing small expenses that put them at risk for foreclosure.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1ab403e5 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="1ab403e5" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Make credit more accessible and reduce the number of “credit invisible” would-be borrowers by:</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9193cc2 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="9193cc2" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Requiring issuers of FHA-backed mortgages to account for a greater variety of indicators when assessing creditworthiness,</span> including crediting on-time payments for rent, cell phone payments, utilities, student loans, and other transactions prioritized by low-income individuals and families.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-fd59c78 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="fd59c78" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Work with financial institutions to expand access in under-served communities, including minority and rural communities.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4a01f5e7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4a01f5e7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reduce premiums for FHA-backed mortgages</span> to boost access to affordable mortgages and make homeownership more affordable.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-615e9284 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="615e9284" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Reserve up to 10% of the National Housing Trust Fund towards down-payment assistance</span> for prospective low-income first-time home buyers.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9bf216b elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="9bf216b" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Encourage homeownership under the Renters Tax Credit</span> by allowing credits to be placed in tax-advantaged savings accounts for down payments, helping close the racial wealth and homeownership gap.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-d46b7eb elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="d46b7eb" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support housing counseling, renter education, and financial literacy programs</span> that are proven to help homebuyers, homeowners and renters keep more money in their pockets.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9c2b63e elementor-widget elementor-widget-heading" data-id="9c2b63e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Hold Wall Street Accountable</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-f2329a7 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="f2329a7" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Defend and rebuild the Consumer Financial Protection Bureau (CFPB),</span> preserving its independence and expanding its ability to protect the rights of consumers and conduct oversight of banks, payday lenders, and other financial institutions in a transparent and effective manner. </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-dcef3be elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="dcef3be" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Restore the enforcement and oversight powers of Office of Fair Lending and Opportunity within the CFPB.</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4f4f87a elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="4f4f87a" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Reopen the Office for Students and Young Consumers</span> to protect young individuals, including students.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-0663529 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="0663529" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500;">Provide maximum transparency for the Consumer Complaint Database,</span> allowing the public to utilize the database to better understand the behavior of financial institutions.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9585fc1 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="9585fc1" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Support reforms to the housing finance system, including Fannie Mae and Freddie Mac,</span> that reinforce their mission to support housing opportunities for low and moderate income and minority communities while protecting taxpayers and the economy.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-9bfe937 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="9bfe937" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Ensure any distressed mortgages that need to be sold are placed in the hands of mission-driven non-profits with a track record of working in communities,</span> passing legislation to enable these non-profits to receive a discount on these mortgages, requiring purchasers of these mortgages to retain the terms and protections of the original loan, and prioritizing principal reduction during any sale.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-30c08cd elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="30c08cd" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Strengthen the Department of Justice’s independence and ability to hold banks and bankers accountable</span> for violations of the law, including civil rights violations, to ensure high standards of accountability, transparency, and actions by financial institutions.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-65b1322 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="65b1322" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item" >
+<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text"><span style="font-weight: 500">Direct the Securities and Exchange Commission to publish information from large private funds,</span> including Real Estate Investment Trusts, and other firms that are involved in the real estate market on their portfolios and impact on communities they are active in, including on increased housing costs and impact on vulnerable communities including senior citizens, minorities, and families in poverty.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-3ec2dd5e elementor-column elementor-col-50 elementor-top-column" data-id="3ec2dd5e" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+
+<div data-elementor-type="footer" data-elementor-id="307" class="elementor elementor-307 elementor-location-footer" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-element elementor-element-7d36945 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7d36945" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-element elementor-element-6926fd3 elementor-column elementor-col-50 elementor-top-column" data-id="6926fd3" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4e2150f elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu__text-align-aside elementor-widget elementor-widget-nav-menu" data-id="4e2150f" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade"><ul id="menu-1-4e2150f" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="https://issues.juliancastro.com/people-first-education/" class="elementor-item">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-245 current_page_item menu-item-250"><a href="https://issues.juliancastro.com/people-first-housing/" aria-current="page" class="elementor-item elementor-item-active">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-item">Lead</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="/" class="elementor-item">All Issues</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318"><a href="http://juliancastro.com" class="elementor-item">Home</a></li>
+</ul></nav>
+<div class="elementor-menu-toggle">
+<i class="eicon" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"><ul id="menu-2-4e2150f" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://issues.juliancastro.com/people-first-immigration/" class="elementor-item">Immigration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="https://issues.juliancastro.com/people-first-education/" class="elementor-item">Education</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://issues.juliancastro.com/people-first-policing/" class="elementor-item">Policing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-245 current_page_item menu-item-250"><a href="https://issues.juliancastro.com/people-first-housing/" aria-current="page" class="elementor-item elementor-item-active">Housing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://issues.juliancastro.com/eliminate-lead-exposure/" class="elementor-item">Lead</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="/" class="elementor-item">All Issues</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318"><a href="http://juliancastro.com" class="elementor-item">Home</a></li>
+</ul></nav>
+</div>
+</div>
+<div class="elementor-element elementor-element-fc36ef3 elementor-widget elementor-widget-spacer" data-id="fc36ef3" data-element_type="widget" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e43f563 elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading" data-id="e43f563" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Paid for by Julián for the Future</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-86cf18f elementor-column elementor-col-50 elementor-top-column" data-id="86cf18f" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-35f0ea8 elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="35f0ea8" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="#" class="elementor-button-link elementor-button elementor-size-md" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Donate</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-b9cc161 elementor-shape-circle elementor-widget elementor-widget-global elementor-global-73 elementor-widget-social-icons" data-id="b9cc161" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook" href="https://facebook.com/julianforthefuture/" target="_blank">
+<span class="elementor-screen-only">Facebook</span>
+<i class="fa fa-facebook"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter" href="https://twitter.com/JulianCastro" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fa fa-twitter"></i>
+</a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram" href="https://www.instagram.com/juliancastrotx/" target="_blank">
+<span class="elementor-screen-only">Instagram</span>
+<i class="fa fa-instagram"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fabbdc6 elementor-widget elementor-widget-heading" data-id="fabbdc6" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><a href="https://www.julianforthefuture.com/privacy-policy/">Privacy Policy</a></h2>		</div>
+</div>
+<div class="elementor-element elementor-element-0782204 elementor-widget elementor-widget-heading" data-id="0782204" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Julián for the Future P.O. Box 501 <br>
+San Antonio, TX 78292</h2>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130644994-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-130644994-2');
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var the_ajax_script = {"ajax_url":"https:\/\/issues.juliancastro.com\/wp\/wp-admin\/admin-ajax.php","nonce":"b3fa5c6a50"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/themes/jftf-landing/assets/js/global.min.js'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp/wp-includes/js/wp-embed.min.js?ver=5.2.2'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.4.10'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=2.5.16'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=2.5.9'></script>
+<script type='text/javascript'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/issues.juliancastro.com\/wp\/wp-admin\/admin-ajax.php","nonce":"e64639eb76","shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=2.5.9'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.7.1'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'></script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=4.4.6'></script>
+<script type='text/javascript'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.16","urls":{"assets":"https:\/\/issues.juliancastro.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":245,"title":"People First Housing","excerpt":"Housing is a human right. But for too many Americans, affordable, safe, and healthy housing is out of reach\u2014forcing them to pay 40, 50, or even 60 percent of their income in rent, and forcing others on the streets. We need a president who will match the urgency of this issue with concrete, bold plans."}};
+</script>
+<script type='text/javascript' src='https://issues.juliancastro.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.5.16'></script>
+</body>
+</html><!-- WP Fastest Cache file was created in 0.85772204399109 seconds, on 28-06-19 5:20:49 --><!-- via php -->
