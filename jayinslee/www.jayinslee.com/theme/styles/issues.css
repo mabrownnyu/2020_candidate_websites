@@ -91,6 +91,7 @@
 	
 /* Button Grid */
 .grid.squares {
+  background: var(--dark-blue);
   display: -ms-grid;
   display: grid;		
   -ms-grid-columns: (1fr)[1];	
