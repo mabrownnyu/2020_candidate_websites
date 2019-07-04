@@ -14,14 +14,14 @@
 <title>Veteranos — Cory 2020</title>
 <link rel="alternate" hreflang="en" href="corybooker.com" />
 <link rel="alternate" hreflang="es" href="corybooker.com/?lang=es" />
-<meta name="description" content="Nuestros veteranos merecen gratitud, respeto y apoyo" />
 <link rel="canonical" href="https://corybooker.com/?lang=es" />
-<meta property="og:type" content="website" />
+<meta name="description" content="Nuestros veteranos merecen gratitud, respeto y apoyo" />
+<meta property="fb:app_id" content="2280198298859797" />
 <meta property="og:title" content="Veteranos — Cory 2020" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://corybooker.com/issues/veterans/?lang=es" />
 <meta property="og:site_name" content="Cory 2020" />
-<meta property="fb:app_id" content="2280198298859797" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="en_ES" />
 <meta property="og:image" content="https://corybooker.com/wp-content/themes/bookerstrap/images/share/cory-share-justice.jpg" />
 <meta property="og:image:secure_url" content="https://corybooker.com/wp-content/themes/bookerstrap/images/share/cory-share-justice.jpg" />
 <meta property="og:description" content="Nuestros veteranos merecen gratitud, respeto y apoyo" />
@@ -221,7 +221,7 @@ Veteranos
 <ul class="donation-button-group">
 <li class="donation-amount">
 <a aria-label="Donate $3 to Cory 2020" href="https://secure.actblue.com/donate/cory2020/web-donate-bar?express_lane=true&amount=3&refcode=donation_bar">
-$3
+ $3
 </a>
 </li>
 <li class="donation-amount">
@@ -395,10 +395,11 @@ Otro
 </style>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js" integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/brands.js" integrity="sha384-rUOIFHM3HXni/WG5pzDhA1e2Js5nn4bWudTYujHbbI9ztBIxK54CL4ZNZWwcBQeD" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script> <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es6%2CPromise%2Cfetch%2ClocalStorage%2CArray.prototype.forEach%2CURL"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script> <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.includes%2Ces6%2CPromise%2Cfetch%2ClocalStorage%2CArray.prototype.forEach%2CURL"></script>
 <script src="https://corybooker.com/wp-content/themes/bookerstrap/dist/scripts/index.js" async defer></script>
 <script>
-    if (document.domain != "corybooker.com") {
+    var approved_domains = ['corybooker.com', 'optimizelyit.com'];
+    if (!approved_domains.includes(document.domain)) {
       var l = location.href;
       var r = document.referrer;
       var m = new Image();
