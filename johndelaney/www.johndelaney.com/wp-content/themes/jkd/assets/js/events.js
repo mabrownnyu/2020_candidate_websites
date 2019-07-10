@@ -59,7 +59,8 @@ $.getJSON(eventsData, function(data){
       if ( category == 'office-opening' ||
            category == 'meet-and-greet' ||
            category == 'town-hall'      ||
-           category == 'watch-party' ) {
+           category == 'watch-party'    ||
+           category == 'phone-bank' ) {
         map.addLayer(marker);
         markerArray.push(L.marker([lat, lon]));
         eventsList.push( '<li class="' + category + '"><a href="' + link + '"><h3 class="h6 mb-2">' + event.title + '</h3><p class="date mb-0">' + event.venue_addr1 + ', ' + event.venue_city + ', ' + st + '<br />' + d + '</p></a></li>' );
